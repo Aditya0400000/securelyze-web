@@ -10,7 +10,7 @@ const HOMEPAGE_LINKS = {
   docs: "/#docs",
   mission: "/about#mission",
   pricing: "/pricing",
-  pricingIncluded: "/pricing#included",
+  pricingIncluded: "/pricing#plans-features",
   pricingFaq: "/pricing#faq",
 };
 
@@ -90,7 +90,7 @@ const NAV_ITEMS = [
     id: "pricing",
     label: "Pricing",
     summary:
-      "One free plan with every core Securelyze tool included.",
+      "Compare the checks and capabilities included with Silver and Custom.",
     icon: "pricing",
     align: "center",
     width: "w-[22rem]",
@@ -116,6 +116,12 @@ const NAV_ITEMS = [
         ],
       },
     ],
+  },
+  {
+    id: "included",
+    label: "What's Included",
+    href: HOMEPAGE_LINKS.pricingIncluded,
+    icon: "included",
   },
   {
     id: "resources",
@@ -327,6 +333,12 @@ const MENU_ICON_CONTENT = {
   overview: (
     <path d="M4.5 19.5V14m5 5.5V9.5m5 10V5.5m5 14V12" />
   ),
+  included: (
+    <>
+      <path d="M5 6.5h9M5 12h9M5 17.5h5" />
+      <path d="m15.5 16.5 1.8 1.8 3.2-3.6" />
+    </>
+  ),
   learn: (
     <path d="M9.2 18h5.6M10 21h4M8.3 14.3a6 6 0 1 1 7.4 0c-.8.6-1.2 1.3-1.2 2.2H9.5c0-.9-.4-1.6-1.2-2.2Z" />
   ),
@@ -528,22 +540,28 @@ function DropdownGroup({ group, linkColumns = "grid-cols-1", onLinkClick, classN
   );
 }
 
+function DropdownHeader({ item }) {
+  return (
+    <div className="flex items-start gap-3.5 rounded-t-[22px] border-b border-[#EDF2F7] bg-[linear-gradient(180deg,#FBFDFF_0%,#FFFFFF_100%)] px-5 py-4">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#E1EAF2] bg-white text-[#1C3A54] shadow-[inset_0_1px_0_#FFFFFF]">
+        <MenuIcon type={item.icon} />
+      </span>
+      <div className="min-w-0 pt-0.5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5F7284]">
+          {item.label}
+        </p>
+        <p className="mt-1.5 max-w-[36rem] text-[12.5px] leading-[1.6] text-[#5F7284]">
+          {item.summary}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function DropdownContent({ item, onLinkClick }) {
   return (
     <div className={`${item.scrollable === false ? "overflow-hidden " : "max-h-[calc(100dvh-10rem)] overflow-y-auto overscroll-contain "}rounded-[22px] border border-[#E1EAF2] bg-white shadow-[0_28px_80px_-40px_rgba(7,29,52,0.5),0_4px_14px_-8px_rgba(7,29,52,0.14)] ring-1 ring-[#0B2239]/[0.02]`}>
-      <div className="flex items-start gap-3.5 rounded-t-[22px] border-b border-[#EDF2F7] bg-[linear-gradient(180deg,#FBFDFF_0%,#FFFFFF_100%)] px-5 py-4">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#E1EAF2] bg-white text-[#1C3A54] shadow-[inset_0_1px_0_#FFFFFF]">
-          <MenuIcon type={item.icon} />
-        </span>
-        <div className="min-w-0 pt-0.5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5F7284]">
-            {item.label}
-          </p>
-          <p className="mt-1.5 max-w-[36rem] text-[12.5px] leading-[1.6] text-[#5F7284]">
-            {item.summary}
-          </p>
-        </div>
-      </div>
+      <DropdownHeader item={item} />
 
       {item.groupColumns ? (
         <div className={`grid ${item.groupColumns === 2 ? "grid-cols-2" : "grid-cols-3"} divide-x divide-[#EDF2F7] px-2 py-2`}>
@@ -702,9 +720,58 @@ export default function Navbar() {
     setOpenMenu((current) => (current === menuId ? null : menuId));
   };
 
+  const handleHeaderClickCapture = (event) => {
+    const link =
+      event.target instanceof Element
+        ? event.target.closest("a[href]")
+        : null;
+    const href = link?.getAttribute("href");
+
+    if (!href || !href.includes("#")) return;
+
+    const [targetPath, rawHash] = href.split("#");
+    const hash = rawHash ? decodeURIComponent(rawHash) : "";
+    if (!hash) return;
+
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+    const normalizedTargetPath =
+      (targetPath || window.location.pathname).replace(/\/$/, "") || "/";
+
+    if (normalizedTargetPath !== currentPath) return;
+
+    const target = document.getElementById(hash);
+    if (!target) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const shouldWaitForMobileMenu = mobileOpen && !prefersReducedMotion;
+
+    closeNavigation();
+    window.history.pushState(null, "", href);
+
+    const scrollToTarget = () => {
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    };
+
+    if (shouldWaitForMobileMenu) {
+      // Let the mobile menu finish closing before measuring the target.
+      window.setTimeout(scrollToTarget, 320);
+    } else {
+      scrollToTarget();
+    }
+  };
+
   return (
     <header
       ref={headerRef}
+      onClickCapture={handleHeaderClickCapture}
       className="sticky top-0 z-50 w-full border-b border-[#DCE5EF] bg-white/95 font-sans shadow-[inset_0_1px_0_rgba(255,255,255,0.96),inset_0_-1px_0_rgba(17,48,78,0.035),0_16px_38px_-34px_rgba(7,27,48,0.55)] backdrop-blur-md"
     >
       <div
@@ -720,6 +787,25 @@ export default function Navbar() {
 
         <div className="hidden h-full items-center gap-0.5 xl:flex">
             {NAV_ITEMS.map((item) => {
+              if (item.href) {
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    onClick={closeNavigation}
+                    className="group/nav relative flex h-11 items-center whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] text-[#2B4053] transition-colors duration-150 hover:bg-[#F8FAFC] hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                  >
+                    <span className="relative">
+                      {item.label}
+                      <span
+                        aria-hidden="true"
+                        className="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 rounded-full bg-[#86B435] transition-transform duration-300 ease-out group-hover/nav:scale-x-100 group-focus-visible/nav:scale-x-100 motion-reduce:transition-none"
+                      />
+                    </span>
+                  </Link>
+                );
+              }
+
               const isOpen = openMenu === item.id;
 
               return (
@@ -860,6 +946,28 @@ export default function Navbar() {
             <div className="mx-auto w-full max-w-7xl">
               <div className="divide-y divide-[#EEF3F7]">
                 {NAV_ITEMS.map((item) => {
+                  if (item.href) {
+                    return (
+                      <Link
+                        key={item.id}
+                        href={item.href}
+                        onClick={closeNavigation}
+                        className="my-0.5 flex items-center gap-3 rounded-xl px-3 py-3.5 text-[#22394D] transition-colors duration-150 hover:bg-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
+                        >
+                          <MenuIcon type={item.icon} className="h-4 w-4" />
+                        </span>
+                        <span className="min-w-0 flex-1 truncate text-[14px] font-semibold tracking-[-0.005em]">
+                          {item.label}
+                        </span>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-[#7E90A1]" />
+                      </Link>
+                    );
+                  }
+
                   const isActive = mobileSection === item.id;
 
                   return (

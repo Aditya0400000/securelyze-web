@@ -2,24 +2,24 @@ import { CheckIcon, ChevronDownIcon } from "./PricingIcons";
 
 const FAQS = [
   {
-    question: "Is Securelyze free?",
+    question: "What is included in the Silver plan?",
     answer:
-      "Yes. All currently offered Securelyze tools are free to use. There is no paid subscription required.",
+      "Silver includes basic SSL/TLS, domain/DNS, security-header, and HTTPS checks, plus a basic issue summary. The 100-checks-per-month limit is a proposed plan limit.",
   },
   {
-    question: "Are there any paid plans?",
+    question: "Is the Silver plan really $0?",
     answer:
-      "No. Securelyze does not currently offer paid subscription plans. There are no paid tiers to upgrade to.",
+      "Yes. Silver is presented at $0/month. The crossed-out $49 figure is a visual reference only, not a previous or discounted price.",
   },
   {
-    question: "What tools are included?",
+    question: "What is the Custom plan?",
     answer:
-      "The page covers the Website Security Checker and Asset Discovery tool areas. The included checks span SSL/TLS certificate analysis, DNS and record analysis, HTTP security headers, HTTPS and TLS configuration checks, email security checks, CAA records verification, and asset and subdomain discovery.",
+      "Custom is designed for teams that need higher limits, multiple users, advanced scanning, detailed reports and integrations, or priority support. These custom capabilities are proposed and not yet available for online purchase.",
   },
   {
-    question: "Do I need a subscription to use Securelyze?",
+    question: "How do I get started?",
     answer:
-      "No. There is no paid subscription required to use the Securelyze tools, and no paid subscription plans are currently offered.",
+      "Use the Website Security Checker to run a basic check. Demo scheduling and sales contact routes are not yet connected.",
   },
 ];
 
@@ -69,13 +69,13 @@ export default function PricingFaq() {
               Pricing questions, answered plainly.
             </h2>
             <p className="mt-5 max-w-[26rem] text-pretty text-[14px] leading-[1.7] text-[#526B7F]">
-              No subscriptions, no paid tiers, and no upgrade path to decode.
-              The short answers are below.
+              A quick look at how the Silver and Custom plans are presented,
+              including which details are still proposed.
             </p>
 
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D7E9B0] bg-[#F3FADE] px-3 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.13em] text-[#4D6D1A]">
-              <CheckIcon className="h-3 w-3 text-[#5C8414]" />
-              No paid plans currently offered
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#DCC98F] bg-[#FBF2D8] px-3 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.13em] text-[#7A5A12]">
+              <CheckIcon className="h-3 w-3 text-[#8A6A1F]" />
+              Silver is free · Custom is proposed
             </p>
           </div>
 

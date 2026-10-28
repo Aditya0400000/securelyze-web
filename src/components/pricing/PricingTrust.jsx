@@ -2,23 +2,23 @@ import { EyeIcon, LayersIcon, WalletOffIcon } from "./PricingIcons";
 
 const POINTS = [
   {
-    title: "No subscription fees",
+    title: "Silver is free",
     description:
-      "There is no recurring subscription charge for the tools currently offered.",
+      "The Silver plan is presented at $0/month for essential website security checks.",
     icon: WalletOffIcon,
-    iconClass: "border-[#D7E9B0] bg-[#F2FADF] text-[#5C8414]",
+    iconClass: "border-[#E3D1A1] bg-[#FBF3E0] text-[#8A6A1F]",
   },
   {
-    title: "No paid tiers currently offered",
+    title: "Custom is proposed",
     description:
-      "Securelyze does not currently offer paid plans or paid upgrades.",
+      "Custom pricing and advanced capabilities are shown for planning and are not yet available online.",
     icon: LayersIcon,
     iconClass: "border-[#BFDDF6] bg-[#EAF4FD] text-[#286B96]",
   },
   {
-    title: "Transparent access to the listed tools",
+    title: "Proposed details are labeled",
     description:
-      "The included capabilities are presented together, with no upgrade path to decode.",
+      "Check limits and custom features are marked as proposed and may change.",
     icon: EyeIcon,
     iconClass: "border-[#D8DCFF] bg-[#EEEFFF] text-[#5562B4]",
   },
@@ -60,11 +60,11 @@ export default function PricingTrust() {
                 id="pricing-trust-heading"
                 className="mt-4 max-w-[24rem] text-balance text-[1.7rem] font-bold leading-[1.12] tracking-[-0.045em] text-[#071D34] sm:text-[2rem] lg:text-[2.2rem]"
               >
-                Free, without the fine print.
+                Clear plans, without the fine print.
               </h2>
               <p className="mt-4 max-w-[25rem] text-pretty text-[13.5px] leading-[1.7] text-[#526B7F]">
-                One plan, one price, and a clear statement of what is currently
-                offered. No upgrade path to decode.
+                Silver is free for essential checks. Custom pricing is scoped to
+                your team, with advanced capabilities still proposed.
               </p>
             </div>
 

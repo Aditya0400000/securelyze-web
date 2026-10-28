@@ -1,4 +1,8 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
+import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ";
+import FeaturesSection from "@/components/FeaturesSection";
+import FooterSection from "@/components/FooterSection";
 import HeroSection from "@/components/HeroSection";
 import HomeAboutSection from "@/components/HomeAboutSection";
 import Navbar from "@/components/Navbar";
@@ -12,8 +16,12 @@ export default function Home() {
      <Navbar />
      <HeroSection />
      <SecurityMarquee />
+     <FeaturesSection />
+     <CTASection />
      <HomeAboutSection />
      <WhyChooseUs />
+     <FAQ />
+     <FooterSection />
    </main>
   );
 }

@@ -61,7 +61,7 @@ export default function PricingCta() {
             </div>
 
             <p className="mt-6 text-[9.5px] font-medium uppercase tracking-[0.16em] text-white/55">
-              Free to use. No subscription required.
+              Silver is free. No subscription required for the basic plan.
             </p>
           </div>
         </div>

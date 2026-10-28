@@ -117,89 +117,51 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-securelyze"
       aria-labelledby="why-choose-us-heading"
-      className="relative bg-white py-16 font-sans sm:py-20 lg:py-24"
+      className="relative scroll-mt-24 bg-[linear-gradient(180deg,#FCFDFE_0%,#F1F5F9_50%,#F4F8FB_64%,#F8FAFC_79%,#FCFDFE_92%,#FFFFFF_100%)] py-16 font-sans sm:py-20 lg:py-24"
     >
-      <style>{`
-        .why-choose-grid {
-          --why-divider: rgba(11, 43, 69, 0.16);
-        }
-
-        .why-choose-grid > article {
-          border-bottom: 1px dotted var(--why-divider);
-        }
-
-        .why-choose-grid > article:last-child {
-          border-bottom: 0;
-        }
-
-        @media (min-width: 640px) {
-          .why-choose-grid > article:nth-child(odd) {
-            border-right: 1px dotted var(--why-divider);
-          }
-
-          .why-choose-grid > article:nth-last-child(-n + 2) {
-            border-bottom: 0;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .why-choose-grid > article {
-            border-right: 1px dotted var(--why-divider);
-            border-bottom: 1px dotted var(--why-divider);
-          }
-
-          .why-choose-grid > article:nth-child(3n) {
-            border-right: 0;
-          }
-
-          .why-choose-grid > article:nth-last-child(-n + 3) {
-            border-bottom: 0;
-          }
-        }
-      `}</style>
-
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-5 text-center">
-          <div>
-            <span
-              aria-hidden="true"
-              className="mx-auto block h-[2px] w-10 rounded-full bg-[linear-gradient(90deg,#C6F36A_0%,#6F9E13_100%)]"
-            />
-            <h2
-              id="why-choose-us-heading"
-              className="mt-5 max-w-[43rem] text-balance font-sans text-[1.875rem] font-bold leading-[1.1] tracking-[-0.04em] text-[#071D34] sm:text-[2.25rem] lg:text-[2.5rem]"
-            >
-              Why Choose Securelyze?
-            </h2>
-          </div>
+        <div className="max-w-[42rem]">
+          <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#2E526F]">
+            <span aria-hidden="true" className="h-px w-8 bg-[#6F9E13]/50" />
+            Why Securelyze
+          </p>
 
-          <p className="max-w-[27rem] text-pretty text-center font-sans text-[15px] leading-[1.7] text-[#526B7F] sm:text-base">
-            One clear view of your security signals, public assets, and the next
-            steps that matter.
+          <h2
+            id="why-choose-us-heading"
+            className="mt-4 text-balance text-[2rem] font-bold leading-[1.06] tracking-[-0.045em] text-[#172554] sm:text-[2.25rem] lg:text-[2.75rem]"
+          >
+            Security That Starts With Clarity
+          </h2>
+
+          <p className="mt-5 max-w-[38rem] text-pretty text-[15px] leading-[1.75] text-[#475569] sm:mt-6 sm:text-base">
+            Understand your website&apos;s security posture with clear insights,
+            practical checks, and a simpler approach to security.
           </p>
         </div>
 
-        <div className="why-choose-grid mt-7 grid grid-cols-1 overflow-hidden rounded-2xl border border-[#DCE7F1] bg-white sm:mt-9 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-5">
           {FEATURES.map((feature) => {
             const Icon = feature.icon;
 
             return (
               <article
                 key={feature.title}
-                className="flex min-w-0 flex-col p-7 sm:p-8 lg:p-9"
+                className="group relative flex h-full min-h-[13rem] min-w-0 flex-col border border-[#D5E0E9] bg-white/90 p-5 transition-[translate,box-shadow] duration-200 ease-out hover:z-10 hover:shadow-[8px_8px_0_0_#050505] motion-safe:hover:-translate-y-1 motion-reduce:transition-none sm:p-6 lg:p-7"
               >
-                <div className="flex items-center gap-2.5 text-[#0B2B45]">
-                  <Icon className="h-[26px] w-[26px] shrink-0" />
+                <div className="flex items-center justify-between gap-4">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-[#D6E1EA] bg-white/85 text-[#0B2B45]">
+                    <Icon className="h-[18px] w-[18px]" />
+                  </span>
                   <span
                     aria-hidden="true"
-                    className="h-px w-5 bg-gradient-to-r from-[#6F9E13]/55 to-transparent"
+                    className="h-px w-5 bg-[#6F9E13]/45"
                   />
                 </div>
 
-                <h3 className="mt-6 text-pretty font-sans text-[17px] font-semibold leading-[1.35] tracking-[-0.02em] text-[#071D34] sm:text-[18px]">
+                <h3 className="mt-5 text-pretty font-sans text-[17px] font-semibold leading-[1.3] tracking-[-0.025em] text-[#172554] sm:text-[18px]">
                   {feature.title}
                 </h3>
-                <p className="mt-2.5 text-pretty font-sans text-[14.5px] leading-[1.7] text-[#526B7F] sm:text-[15px]">
+                <p className="mt-2.5 text-pretty font-sans text-[14.5px] leading-[1.7] text-[#475569]">
                   {feature.description}
                 </p>
               </article>
