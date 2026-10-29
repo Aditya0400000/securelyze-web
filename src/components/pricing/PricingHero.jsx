@@ -542,7 +542,7 @@ export default function PricingHero() {
 
               <div className="mt-auto pt-5">
                 <Link
-                  href="/#security-checker"
+                  href="/platform#website-security-check"
                   className="group/button inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[#C9A24E] px-4 text-[12.5px] font-semibold tracking-[-0.005em] text-[#211708] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_16px_30px_-20px_rgba(120,88,26,0.65)] transition-[background-color,translate] duration-200 ease-out hover:bg-[#BE9642] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A5A12] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FBF3E1] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
                 >
                   Get Started

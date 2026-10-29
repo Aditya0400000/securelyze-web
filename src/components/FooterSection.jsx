@@ -6,10 +6,11 @@ const FOOTER_COLUMNS = [
     items: [
       {
         label: "Website Security Checker",
-        href: "/#security-checker",
+        href: "/platform#website-security-check",
       },
       {
         label: "Asset Discovery",
+        href: "/platform#assets-discovery",
       },
     ],
   },

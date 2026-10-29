@@ -290,7 +290,7 @@ export default function AboutHero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
-              href="/#security-checker"
+              href="/platform#website-security-check"
               className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-[#C6F36A] px-5 text-[13.5px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(96,133,28,0.9)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-[#D2F77F] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_18px_36px_-18px_rgba(96,133,28,0.95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071D34] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
             >
               Explore the Security Checker

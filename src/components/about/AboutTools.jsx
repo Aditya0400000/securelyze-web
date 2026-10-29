@@ -108,7 +108,7 @@ export default function AboutTools() {
 
             <div className="relative mt-auto pt-8">
               <Link
-                href="/#security-checker"
+                href="/platform#website-security-check"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#071D34] px-4 text-[12px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(7,29,52,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#0B2B45] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F9E13] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
                 Open the Security Checker
@@ -224,7 +224,7 @@ export default function AboutTools() {
 
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link
-                href="/#security-checker"
+                href="/platform#website-security-check"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#C6F36A] px-4 text-[12px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(96,133,28,0.9)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#D2F77F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#071D34] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
                 Open the Security Checker

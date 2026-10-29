@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { AssetsIcon } from "./about/AboutIcons";
 
 export default function CTASection() {
@@ -56,15 +58,19 @@ export default function CTASection() {
                 yet.
               </p>
 
-              <button
-                type="button"
-                disabled
-                title="Asset Discovery is coming soon"
+              <Link
+                href="/platform#assets-discovery"
                 aria-describedby="asset-discovery-status"
-                className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-[3px] border border-[#071D34] bg-[#071D34] px-5 text-[12.5px] font-semibold tracking-[-0.005em] text-white disabled:cursor-not-allowed disabled:opacity-100"
+                className="group mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[3px] border border-[#071D34] bg-[#071D34] px-5 text-[12.5px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(7,29,52,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#0B2B45] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F9E13] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
                 Explore Asset Discovery
-              </button>
+                <span
+                  aria-hidden="true"
+                  className="text-[14px] transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
+                >
+                  →
+                </span>
+              </Link>
             </div>
           </div>
         </div>

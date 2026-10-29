@@ -5,13 +5,26 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const HOMEPAGE_LINKS = {
   platform: "/#platform",
-  checker: "/#security-checker",
-  assets: "/#assets-discovery",
   docs: "/#docs",
   mission: "/about#mission",
   pricing: "/pricing",
   pricingIncluded: "/pricing#plans-features",
   pricingFaq: "/pricing#faq",
+};
+
+const PLATFORM_LINKS = {
+  home: "/platform",
+  overview: "/platform#platform-overview",
+  checker: "/platform#website-security-check",
+  assets: "/platform#assets-discovery",
+  securityOverview: "/platform#security-overview",
+};
+
+const SOLUTIONS_LINKS = {
+  owners: "/solutions#website-owners",
+  smallBusinesses: "/solutions#small-businesses",
+  developers: "/solutions#developers",
+  securityTeams: "/solutions#security-teams",
 };
 
 const NAV_ITEMS = [
@@ -29,20 +42,20 @@ const NAV_ITEMS = [
         links: [
           {
             label: "Website Security Checker",
-            description: "SSL/TLS, DNS, and security-header checks.",
-            href: HOMEPAGE_LINKS.checker,
+            description: "SSL/TLS, DNS, headers, and HTTPS checks.",
+            href: PLATFORM_LINKS.checker,
             icon: "security",
           },
           {
             label: "Asset Discovery",
             description: "Domains, subdomains, IPs, and exposed assets.",
-            href: HOMEPAGE_LINKS.assets,
+            href: PLATFORM_LINKS.assets,
             icon: "assets",
           },
           {
             label: "Security Overview",
             description: "Findings and recommendations in one summary.",
-            href: HOMEPAGE_LINKS.platform,
+            href: PLATFORM_LINKS.securityOverview,
             icon: "overview",
           },
         ],
@@ -65,22 +78,22 @@ const NAV_ITEMS = [
           {
             label: "Website Owners",
             description: "See exposure clearly before it reaches customers.",
-            href: HOMEPAGE_LINKS.platform,
+            href: SOLUTIONS_LINKS.owners,
           },
           {
             label: "Developers",
             description: "Keep security checks close to your delivery workflow.",
-            href: HOMEPAGE_LINKS.platform,
+            href: SOLUTIONS_LINKS.developers,
           },
           {
             label: "Small Businesses",
             description: "Build a practical starting point without a large team.",
-            href: HOMEPAGE_LINKS.platform,
+            href: SOLUTIONS_LINKS.smallBusinesses,
           },
           {
             label: "Security Teams",
             description: "Keep assets, checks, and findings organized.",
-            href: HOMEPAGE_LINKS.platform,
+            href: SOLUTIONS_LINKS.securityTeams,
           },
         ],
       },
@@ -116,12 +129,6 @@ const NAV_ITEMS = [
         ],
       },
     ],
-  },
-  {
-    id: "included",
-    label: "What's Included",
-    href: HOMEPAGE_LINKS.pricingIncluded,
-    icon: "included",
   },
   {
     id: "resources",
@@ -333,12 +340,6 @@ const MENU_ICON_CONTENT = {
   overview: (
     <path d="M4.5 19.5V14m5 5.5V9.5m5 10V5.5m5 14V12" />
   ),
-  included: (
-    <>
-      <path d="M5 6.5h9M5 12h9M5 17.5h5" />
-      <path d="m15.5 16.5 1.8 1.8 3.2-3.6" />
-    </>
-  ),
   learn: (
     <path d="M9.2 18h5.6M10 21h4M8.3 14.3a6 6 0 1 1 7.4 0c-.8.6-1.2 1.3-1.2 2.2H9.5c0-.9-.4-1.6-1.2-2.2Z" />
   ),
@@ -467,7 +468,7 @@ function Logo({ onClick }) {
 function ExploreCta({ className = "", onClick }) {
   return (
     <Link
-      href="/#platform"
+      href={PLATFORM_LINKS.home}
       onClick={onClick}
       className={`group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#C6F36A] px-4 text-[13px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_7px_20px_-14px_rgba(96,133,28,0.85)] transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-[#D2F77F] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_10px_24px_-15px_rgba(96,133,28,0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A2138] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
     >

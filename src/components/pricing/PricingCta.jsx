@@ -45,14 +45,14 @@ export default function PricingCta() {
 
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <Link
-                href="/#security-checker"
+                href="/platform#website-security-check"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#C6F36A] px-5 text-[12.5px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(96,133,28,0.9)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#D2F77F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101335] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
                 Check Website Security
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
               <Link
-                href="/#assets-discovery"
+                href="/platform#assets-discovery"
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-5 text-[12.5px] font-semibold tracking-[-0.005em] text-white/80 transition-[border-color,background-color,color] duration-200 hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101335] motion-reduce:transition-none"
               >
                 Discover Assets
