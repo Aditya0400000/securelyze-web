@@ -66,7 +66,7 @@ const TEAM_BENEFITS = [
   },
   {
     title: "Posture context",
-    description: "Connect asset context with available checks.",
+    description: "Connect asset context with security checks.",
     icon: LayersIcon,
   },
   {

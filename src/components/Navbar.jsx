@@ -27,6 +27,21 @@ const SOLUTIONS_LINKS = {
   securityTeams: "/solutions#security-teams",
 };
 
+const RESOURCES_LINKS = {
+  home: "/resources",
+  securityGuides: "/resources#security-guides",
+  basics: "/resources#beginners-security-basics",
+  bestPractices: "/resources#best-practices",
+  blog: "/resources#securelyze-blog",
+  insights: "/resources#security-insights",
+  caseStudies: "/resources#case-studies",
+  faqs: "/resources#faqs",
+  tutorials: "/resources#tutorials",
+  updates: "/resources#product-updates",
+};
+
+const RESOURCES_ANCHOR_SCROLL_OFFSET = 128;
+
 const NAV_ITEMS = [
   {
     id: "platforms",
@@ -139,6 +154,8 @@ const NAV_ITEMS = [
     align: "center",
     width: "w-[50rem]",
     groupColumns: true,
+    viewAllHref: RESOURCES_LINKS.home,
+    viewAllLabel: "View all Resources",
     groups: [
       {
         title: "Learn",
@@ -146,18 +163,18 @@ const NAV_ITEMS = [
         links: [
           {
             label: "Security Guides",
-            description: "Practical guidance for common security work.",
-            href: HOMEPAGE_LINKS.docs,
+            description: "Fundamentals, certificates, DNS, headers, and email.",
+            href: RESOURCES_LINKS.securityGuides,
           },
           {
             label: "Beginner's Security Basics",
             description: "Plain-language explanations of core concepts.",
-            href: HOMEPAGE_LINKS.docs,
+            href: RESOURCES_LINKS.basics,
           },
           {
             label: "Best Practices",
             description: "Habits that reduce avoidable exposure.",
-            href: HOMEPAGE_LINKS.docs,
+            href: RESOURCES_LINKS.bestPractices,
           },
         ],
       },
@@ -167,18 +184,18 @@ const NAV_ITEMS = [
         links: [
           {
             label: "Securelyze Blog",
-            description: "Product notes and perspectives from the team.",
-            href: HOMEPAGE_LINKS.platform,
+            description: "Articles and insights are being prepared.",
+            href: RESOURCES_LINKS.blog,
           },
           {
             label: "Security Insights",
             description: "Short reads on relevant security topics.",
-            href: HOMEPAGE_LINKS.platform,
+            href: RESOURCES_LINKS.insights,
           },
           {
             label: "Case Studies",
             description: "How teams put visibility into practice.",
-            href: HOMEPAGE_LINKS.platform,
+            href: RESOURCES_LINKS.caseStudies,
           },
         ],
       },
@@ -189,17 +206,17 @@ const NAV_ITEMS = [
           {
             label: "FAQs",
             description: "Quick answers to common Securelyze questions.",
-            href: HOMEPAGE_LINKS.platform,
+            href: RESOURCES_LINKS.faqs,
           },
           {
             label: "Tutorials",
             description: "Guided walkthroughs for checks and workflows.",
-            href: HOMEPAGE_LINKS.docs,
+            href: RESOURCES_LINKS.tutorials,
           },
           {
             label: "Product Updates",
-            description: "Notable changes and improvements.",
-            href: HOMEPAGE_LINKS.platform,
+            description: "Release notes will appear here when ready.",
+            href: RESOURCES_LINKS.updates,
           },
         ],
       },
@@ -588,6 +605,25 @@ function DropdownContent({ item, onLinkClick }) {
           ))}
         </div>
       )}
+
+      {item.viewAllHref ? (
+        <div className="border-t border-[#EDF2F7] bg-[#FBFDFF] px-3 py-2.5">
+          <Link
+            href={item.viewAllHref}
+            onClick={onLinkClick}
+            className="group/view-all flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 text-[12px] font-semibold text-[#183044] transition-colors duration-150 hover:bg-[#F5FAEA] focus-visible:bg-[#F5FAEA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+          >
+            <span className="inline-flex items-center gap-2">
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-1.5 rounded-full bg-[#7BA92E]"
+              />
+              {item.viewAllLabel}
+            </span>
+            <ArrowRight className="h-3.5 w-3.5 text-[#5C8414] transition-transform duration-150 group-hover/view-all:translate-x-0.5 motion-reduce:transition-none" />
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -721,6 +757,11 @@ export default function Navbar() {
     setOpenMenu((current) => (current === menuId ? null : menuId));
   };
 
+  const handleSplitTriggerClick = (menuId) => {
+    hoverOpenedMenuRef.current = null;
+    setOpenMenu((current) => (current === menuId ? null : menuId));
+  };
+
   const handleHeaderClickCapture = (event) => {
     const link =
       event.target instanceof Element
@@ -755,6 +796,32 @@ export default function Navbar() {
     window.history.pushState(null, "", href);
 
     const scrollToTarget = () => {
+      const isResourcesPage =
+        window.location.pathname.replace(/\/$/, "") === "/resources";
+
+      if (isResourcesPage) {
+        const targetScrollMargin =
+          Number.parseFloat(
+            window.getComputedStyle(target).scrollMarginTop,
+          ) || 0;
+        const scrollOffset = Math.max(
+          targetScrollMargin,
+          RESOURCES_ANCHOR_SCROLL_OFFSET,
+        );
+        const top = Math.max(
+          0,
+          target.getBoundingClientRect().top +
+            window.scrollY -
+            scrollOffset,
+        );
+
+        window.scrollTo({
+          top,
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+        return;
+      }
+
       target.scrollIntoView({
         behavior: prefersReducedMotion ? "auto" : "smooth",
         block: "start",
@@ -788,7 +855,7 @@ export default function Navbar() {
 
         <div className="hidden h-full items-center gap-0.5 xl:flex">
             {NAV_ITEMS.map((item) => {
-              if (item.href) {
+              if (item.href && !item.groups) {
                 return (
                   <Link
                     key={item.id}
@@ -842,39 +909,91 @@ export default function Navbar() {
                     setOpenMenu(null);
                   }}
                 >
-                  <button
-                    ref={(node) => {
-                      triggerRefs.current[item.id] = node;
-                    }}
-                    id={`nav-trigger-${item.id}`}
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={`desktop-menu-${item.id}`}
-                    onClick={() => handleDesktopTriggerClick(item.id)}
-                    onKeyDown={(event) => handleTriggerKeyDown(event, item.id)}
-                    className={`group/nav relative flex h-11 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none ${
-                      isOpen
-                        ? "bg-[#F5F8FB] text-[#071D34]"
-                        : "text-[#2B4053] hover:bg-[#F8FAFC] hover:text-[#071D34]"
-                    }`}
-                  >
-                    <span className="relative">
-                      {item.label}
-                      <span
-                        aria-hidden="true"
-                        className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left rounded-full bg-[#86B435] transition-transform duration-300 ease-out motion-reduce:transition-none ${
+                  {item.href ? (
+                    <div
+                      className={`group/nav relative flex h-11 items-center rounded-lg transition-colors duration-150 ${
+                        isOpen
+                          ? "bg-[#F5F8FB]"
+                          : "hover:bg-[#F8FAFC]"
+                      }`}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={closeNavigation}
+                        className="relative flex h-full items-center whitespace-nowrap rounded-l-lg pl-3 pr-1 text-sm font-medium tracking-[-0.01em] text-[#2B4053] transition-colors duration-150 hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                      >
+                        <span className="relative">
+                          {item.label}
+                          <span
+                            aria-hidden="true"
+                            className="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 rounded-full bg-[#86B435] transition-transform duration-300 ease-out group-hover/nav:scale-x-100 group-focus-within/nav:scale-x-100 motion-reduce:transition-none"
+                          />
+                        </span>
+                      </Link>
+                      <button
+                        ref={(node) => {
+                          triggerRefs.current[item.id] = node;
+                        }}
+                        id={`nav-trigger-${item.id}`}
+                        type="button"
+                        aria-expanded={isOpen}
+                        aria-controls={`desktop-menu-${item.id}`}
+                        aria-label={`${isOpen ? "Close" : "Open"} ${item.label} menu`}
+                        aria-haspopup="true"
+                        onClick={() => handleSplitTriggerClick(item.id)}
+                        onKeyDown={(event) =>
+                          handleTriggerKeyDown(event, item.id)
+                        }
+                        className="flex h-full w-8 cursor-pointer items-center justify-center rounded-r-lg pr-2 text-[#7B8C9D] transition-colors duration-150 hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                      >
+                        <ChevronDown
+                          className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
+                            isOpen
+                              ? "rotate-180 text-[#071D34]"
+                              : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      ref={(node) => {
+                        triggerRefs.current[item.id] = node;
+                      }}
+                      id={`nav-trigger-${item.id}`}
+                      type="button"
+                      aria-expanded={isOpen}
+                      aria-controls={`desktop-menu-${item.id}`}
+                      onClick={() => handleDesktopTriggerClick(item.id)}
+                      onKeyDown={(event) =>
+                        handleTriggerKeyDown(event, item.id)
+                      }
+                      className={`group/nav relative flex h-11 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none ${
+                        isOpen
+                          ? "bg-[#F5F8FB] text-[#071D34]"
+                          : "text-[#2B4053] hover:bg-[#F8FAFC] hover:text-[#071D34]"
+                      }`}
+                    >
+                      <span className="relative">
+                        {item.label}
+                        <span
+                          aria-hidden="true"
+                          className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left rounded-full bg-[#86B435] transition-transform duration-300 ease-out motion-reduce:transition-none ${
+                            isOpen
+                              ? "scale-x-100"
+                              : "scale-x-0 group-hover/nav:scale-x-100 group-focus-visible/nav:scale-x-100"
+                          }`}
+                        />
+                      </span>
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
                           isOpen
-                            ? "scale-x-100"
-                            : "scale-x-0 group-hover/nav:scale-x-100 group-focus-visible/nav:scale-x-100"
+                            ? "rotate-180 text-[#071D34]"
+                            : "text-[#7B8C9D]"
                         }`}
                       />
-                    </span>
-                    <ChevronDown
-                      className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
-                        isOpen ? "rotate-180 text-[#071D34]" : "text-[#7B8C9D]"
-                      }`}
-                    />
-                  </button>
+                    </button>
+                  )}
 
                   <div
                     ref={(node) => {
@@ -947,7 +1066,7 @@ export default function Navbar() {
             <div className="mx-auto w-full max-w-7xl">
               <div className="divide-y divide-[#EEF3F7]">
                 {NAV_ITEMS.map((item) => {
-                  if (item.href) {
+                  if (item.href && !item.groups) {
                     return (
                       <Link
                         key={item.id}
@@ -973,42 +1092,91 @@ export default function Navbar() {
 
                   return (
                     <div key={item.id}>
-                      <button
-                        type="button"
-                        aria-expanded={isActive}
-                        aria-controls={`mobile-menu-${item.id}`}
-                        onClick={() => {
-                          setMobileSection((current) =>
-                            current === item.id ? null : item.id,
-                          );
-                        }}
-                        className={`my-0.5 flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3.5 text-left transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none ${
-                          isActive
-                            ? "bg-[#F4F8FB] text-[#071D34]"
-                            : "text-[#22394D] hover:bg-[#F8FAFC]"
-                        }`}
-                      >
-                        <span className="flex min-w-0 items-center gap-3">
-                          <span
-                            aria-hidden="true"
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors duration-150 motion-reduce:transition-none ${
-                              isActive
-                                ? "border-[#DCE8C9] bg-white text-[#5E8425]"
-                                : "border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
-                            }`}
-                          >
-                            <MenuIcon type={item.icon} className="h-4 w-4" />
-                          </span>
-                          <span className="truncate text-[14px] font-semibold tracking-[-0.005em]">
-                            {item.label}
-                          </span>
-                        </span>
-                        <ChevronDown
-                          className={`h-4 w-4 shrink-0 text-[#7E90A1] transition-transform duration-200 motion-reduce:transition-none ${
-                            isActive ? "rotate-180 text-[#17344E]" : ""
+                      {item.href ? (
+                        <div
+                          className={`my-0.5 flex items-center rounded-xl transition-colors duration-150 ${
+                            isActive
+                              ? "bg-[#F4F8FB]"
+                              : "hover:bg-[#F8FAFC]"
                           }`}
-                        />
-                      </button>
+                        >
+                          <Link
+                            href={item.href}
+                            onClick={closeNavigation}
+                            className="flex min-w-0 flex-1 items-center gap-3 rounded-l-xl px-3 py-3.5 text-[#22394D] transition-colors duration-150 hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors duration-150 motion-reduce:transition-none ${
+                                isActive
+                                  ? "border-[#DCE8C9] bg-white text-[#5E8425]"
+                                  : "border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
+                              }`}
+                            >
+                              <MenuIcon type={item.icon} className="h-4 w-4" />
+                            </span>
+                            <span className="min-w-0 flex-1 truncate text-[14px] font-semibold tracking-[-0.005em]">
+                              {item.label}
+                            </span>
+                          </Link>
+                          <button
+                            type="button"
+                            aria-expanded={isActive}
+                            aria-controls={`mobile-menu-${item.id}`}
+                            aria-haspopup="true"
+                            aria-label={`${isActive ? "Collapse" : "Expand"} ${item.label} menu`}
+                            onClick={() => {
+                              setMobileSection((current) =>
+                                current === item.id ? null : item.id,
+                              );
+                            }}
+                            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl text-[#7E90A1] transition-colors duration-150 hover:text-[#17344E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                          >
+                            <ChevronDown
+                              className={`h-4 w-4 transition-transform duration-200 motion-reduce:transition-none ${
+                                isActive ? "rotate-180 text-[#17344E]" : ""
+                              }`}
+                            />
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          type="button"
+                          aria-expanded={isActive}
+                          aria-controls={`mobile-menu-${item.id}`}
+                          onClick={() => {
+                            setMobileSection((current) =>
+                              current === item.id ? null : item.id,
+                            );
+                          }}
+                          className={`my-0.5 flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3.5 text-left transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none ${
+                            isActive
+                              ? "bg-[#F4F8FB] text-[#071D34]"
+                              : "text-[#22394D] hover:bg-[#F8FAFC]"
+                          }`}
+                        >
+                          <span className="flex min-w-0 items-center gap-3">
+                            <span
+                              aria-hidden="true"
+                              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors duration-150 motion-reduce:transition-none ${
+                                isActive
+                                  ? "border-[#DCE8C9] bg-white text-[#5E8425]"
+                                  : "border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
+                              }`}
+                            >
+                              <MenuIcon type={item.icon} className="h-4 w-4" />
+                            </span>
+                            <span className="truncate text-[14px] font-semibold tracking-[-0.005em]">
+                              {item.label}
+                            </span>
+                          </span>
+                          <ChevronDown
+                            className={`h-4 w-4 shrink-0 text-[#7E90A1] transition-transform duration-200 motion-reduce:transition-none ${
+                              isActive ? "rotate-180 text-[#17344E]" : ""
+                            }`}
+                          />
+                        </button>
+                      )}
 
                       <div
                         id={`mobile-menu-${item.id}`}
@@ -1025,6 +1193,25 @@ export default function Navbar() {
                             <p className="px-3 pb-1 pt-1 text-[12px] leading-[1.6] text-[#607386]">
                               {item.summary}
                             </p>
+
+                            {item.viewAllHref ? (
+                              <div className="mt-2 px-2">
+                                <Link
+                                  href={item.viewAllHref}
+                                  onClick={closeNavigation}
+                                  className="group/mobile-view-all flex items-center justify-between gap-3 rounded-lg border border-[#DDE8C7] bg-[#F7FCEB] px-3 py-2.5 transition-colors duration-150 hover:border-[#C9DFA4] hover:bg-[#F2FADF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                                >
+                                  <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-[#33521A]">
+                                    <span
+                                      aria-hidden="true"
+                                      className="h-1.5 w-1.5 rounded-full bg-[#7BA92E]"
+                                    />
+                                    {item.viewAllLabel}
+                                  </span>
+                                  <ArrowRight className="h-3.5 w-3.5 text-[#5C8414] transition-transform duration-150 group-hover/mobile-view-all:translate-x-0.5 motion-reduce:transition-none" />
+                                </Link>
+                              </div>
+                            ) : null}
 
                             <div className="ml-4 mt-1 border-l border-[#E3EBF2] pl-2.5">
                               {item.groups.map((group) => (
