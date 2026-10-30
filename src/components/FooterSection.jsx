@@ -49,6 +49,7 @@ const FOOTER_COLUMNS = [
     items: [
       {
         label: "Documentation",
+        href: "/docs",
       },
       {
         label: "FAQs",

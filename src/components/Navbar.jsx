@@ -5,11 +5,25 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const HOMEPAGE_LINKS = {
   platform: "/#platform",
-  docs: "/#docs",
   mission: "/about#mission",
   pricing: "/pricing",
   pricingIncluded: "/pricing#plans-features",
   pricingFaq: "/pricing#faq",
+};
+
+const DOCS_LINKS = {
+  home: "/docs",
+  overview: "/docs/overview",
+  gettingStarted: "/docs/getting-started",
+  dashboard: "/docs/dashboard",
+  assets: "/docs/assets-and-discovery",
+  findings: "/docs/findings",
+  attackSurface: "/docs/attack-surface",
+  aiAnalyst: "/docs/ai-security-analyst",
+  scanSettings: "/docs/scan-settings",
+  notifications: "/docs/notifications",
+  usersRoles: "/docs/users-roles",
+  troubleshooting: "/docs/troubleshooting",
 };
 
 const PLATFORM_LINKS = {
@@ -226,45 +240,97 @@ const NAV_ITEMS = [
     id: "docs",
     label: "Docs",
     summary:
-      "Setup guidance, product walkthroughs, and technical references in one place.",
+      "Product guides for setup, daily workflows, and administration.",
     icon: "docs",
-    align: "right",
-    width: "w-[38rem]",
-    groupColumns: 2,
-    scrollable: false,
+    align: "center",
+    width: "w-[54rem]",
+    groupColumns: true,
     groups: [
       {
         title: "Start here",
         icon: "learn",
         links: [
           {
+            label: "Documentation Overview",
+            description:
+              "What Securelyze is and the four core concepts behind it.",
+            href: DOCS_LINKS.overview,
+          },
+          {
             label: "Getting Started",
-            description: "Learn the basics and find the right starting point.",
-            href: HOMEPAGE_LINKS.docs,
+            description:
+              "Accounts, sign-in, the interface, and the first-run path.",
+            href: DOCS_LINKS.gettingStarted,
           },
         ],
       },
       {
-        title: "Guides & reference",
+        title: "Using Securelyze",
         links: [
           {
-            label: "Security Checker Guide",
-            description: "Understand checks, signals, and findings.",
-            href: HOMEPAGE_LINKS.docs,
+            label: "Dashboard",
+            description:
+              "Security posture, recent activity, and scan-run summaries.",
+            href: DOCS_LINKS.dashboard,
           },
           {
-            label: "Asset Discovery Guide",
-            description: "Understand domains, assets, and exposure.",
-            href: HOMEPAGE_LINKS.docs,
+            label: "Assets & Asset Discovery",
+            description:
+              "Manage your inventory and review newly discovered assets.",
+            href: DOCS_LINKS.assets,
           },
           {
-            label: "API Reference",
-            description: "Reference material for integrations and automation.",
-            href: HOMEPAGE_LINKS.docs,
+            label: "Security Findings",
+            description:
+              "Severity, details, status, and AI-assisted remediation.",
+            href: DOCS_LINKS.findings,
+          },
+          {
+            label: "Attack Surface",
+            description:
+              "Per-domain WHOIS, DNS, certificates, services, web, and email.",
+            href: DOCS_LINKS.attackSurface,
+          },
+          {
+            label: "AI Security Analyst",
+            description:
+              "Ask questions grounded in your assets, scans, and findings.",
+            href: DOCS_LINKS.aiAnalyst,
+          },
+        ],
+      },
+      {
+        title: "Manage & help",
+        links: [
+          {
+            label: "Scan Settings",
+            description:
+              "Launch scans, monitor runs, schedule work, and set collection toggles.",
+            href: DOCS_LINKS.scanSettings,
+          },
+          {
+            label: "Notifications",
+            description:
+              "Follow findings, scans, discovered assets, and team activity.",
+            href: DOCS_LINKS.notifications,
+          },
+          {
+            label: "Users & Roles",
+            description:
+              "Invite teammates and understand the four product roles.",
+            href: DOCS_LINKS.usersRoles,
+          },
+          {
+            label: "Tips & Troubleshooting",
+            description:
+              "Quick answers for empty states and common questions.",
+            href: DOCS_LINKS.troubleshooting,
           },
         ],
       },
     ],
+    viewAllHref: DOCS_LINKS.home,
+    viewAllLabel: "View all Docs",
   },
   {
     id: "about",
