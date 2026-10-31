@@ -27,23 +27,23 @@ export default function AboutTools() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_50%_0%,rgba(220,232,247,0.5),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_50%_0%,rgba(209,250,229,0.5),transparent_70%)]"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[44rem] text-center">
-          <p className="flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6F9E13]">
-            <span aria-hidden="true" className="h-px w-8 bg-[#6F9E13]/45" />
+          <p className="flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
+            <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
             The tools
-            <span aria-hidden="true" className="h-px w-8 bg-[#6F9E13]/45" />
+            <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
           </p>
           <h2
             id="tools-heading"
-            className="mt-4 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#071D34] sm:text-[2.35rem] lg:text-[2.7rem]"
+            className="mt-4 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
           >
             Two views of the same public picture.
           </h2>
-          <p className="mx-auto mt-5 max-w-[37rem] text-pretty text-[14.5px] leading-[1.7] text-[#526B7F] sm:text-[15px]">
+          <p className="mx-auto mt-5 max-w-[37rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px]">
             The Security Checker looks at how a website is configured. Asset
             Discovery widens the frame to the public assets connected to it.
             Each answers a different question; together they form a more useful
@@ -52,39 +52,39 @@ export default function AboutTools() {
         </div>
 
         <div className="mt-10 grid gap-4 lg:grid-cols-2 lg:gap-5">
-          <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-[#D7E4EF] bg-[#F6FAFD] p-6 shadow-[0_25px_65px_-48px_rgba(7,29,52,0.55)] sm:p-8 lg:p-9">
+          <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_25px_65px_-48px_rgba(16,26,24,0.55)] sm:p-8 lg:p-9">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full border border-[#C6F36A]/25"
+              className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full border border-[#10B981]/25"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-10 -top-14 h-40 w-40 rounded-full bg-[#C6F36A]/10 blur-2xl"
+              className="pointer-events-none absolute -right-10 -top-14 h-40 w-40 rounded-full bg-[#10B981]/10 blur-2xl"
             />
 
             <div className="relative flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#D7E9B0] bg-[#F2FADF] text-[#5C8414]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]">
                   <ShieldIcon className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#5D7487]">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
                     Configuration context
                   </p>
-                  <p className="mt-0.5 text-[11px] font-semibold text-[#0B2B45]">
+                  <p className="mt-0.5 text-[11px] font-semibold text-[#183B32]">
                     Security Checker
                   </p>
                 </div>
               </div>
-              <span className="hidden rounded-full border border-[#D7E4EF] bg-white/80 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-[#6D8393] sm:inline-flex">
+              <span className="hidden rounded-full border border-[#E2E8F0] bg-white/80 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-[#64748B] sm:inline-flex">
                 Public view
               </span>
             </div>
 
-            <h3 className="relative mt-8 max-w-[27rem] text-balance text-[1.3rem] font-bold leading-[1.2] tracking-[-0.035em] text-[#071D34] sm:text-[1.55rem]">
+            <h3 className="relative mt-8 max-w-[27rem] text-balance text-[1.3rem] font-bold leading-[1.2] tracking-[-0.035em] text-[#101A18] sm:text-[1.55rem]">
               Understand a website&rsquo;s public configuration.
             </h3>
-            <p className="relative mt-3 max-w-[29rem] text-pretty text-[13.5px] leading-[1.7] text-[#526B7F]">
+            <p className="relative mt-3 max-w-[29rem] text-pretty text-[13.5px] leading-[1.7] text-[#475569]">
               Review SSL/TLS certificate context, DNS records, and
               browser-facing security headers in one place, with enough context
               to decide what deserves a closer look.
@@ -97,9 +97,9 @@ export default function AboutTools() {
                 return (
                   <span
                     key={signal.label}
-                    className="inline-flex items-center gap-2 rounded-lg border border-[#D7E4EF] bg-white px-2.5 py-1.5 text-[10px] font-medium text-[#42647D]"
+                    className="inline-flex items-center gap-2 rounded-lg border border-[#E2E8F0] bg-white px-2.5 py-1.5 text-[10px] font-medium text-[#475569]"
                   >
-                    <Icon className="h-3.5 w-3.5 text-[#5C8414]" />
+                    <Icon className="h-3.5 w-3.5 text-[#047857]" />
                     {signal.label}
                   </span>
                 );
@@ -109,7 +109,7 @@ export default function AboutTools() {
             <div className="relative mt-auto pt-8">
               <Link
                 href="/platform#website-security-check"
-                className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#071D34] px-4 text-[12px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(7,29,52,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#0B2B45] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F9E13] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
+                className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#101A18] px-4 text-[12px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(16,26,24,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#183B32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#059669] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
                 Open the Security Checker
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
@@ -117,16 +117,16 @@ export default function AboutTools() {
             </div>
           </article>
 
-          <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-[#0B3150]/20 bg-[#071D34] p-6 text-white shadow-[0_25px_70px_-42px_rgba(7,29,52,0.85)] sm:p-8 lg:p-9">
+          <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-[#183B32]/20 bg-[#101A18] p-6 text-white shadow-[0_25px_70px_-42px_rgba(16,26,24,0.85)] sm:p-8 lg:p-9">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-              <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#2A7AB8]/20 blur-[80px]" />
-              <div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-[#C6F36A]/[0.06] blur-[80px]" />
+              <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#047857]/20 blur-[80px]" />
+              <div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-[#10B981]/[0.06] blur-[80px]" />
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.032)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_at_55%_35%,black,transparent_76%)]" />
             </div>
 
             <div className="relative flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#B9C3FF]/20 bg-[#B9C3FF]/10 text-[#DCE2FF]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]">
                   <RadarIcon className="h-5 w-5" />
                 </span>
                 <div>
@@ -161,7 +161,7 @@ export default function AboutTools() {
                   <div className="flex items-center gap-1.5">
                     <span
                       aria-hidden="true"
-                      className="h-1 w-1 rounded-full bg-[#B9C3FF]/75"
+                      className="h-1 w-1 rounded-full bg-[#10B981]/75"
                     />
                     <span className="text-[8.5px] font-semibold uppercase tracking-[0.13em] text-white/50">
                       {group}
@@ -178,7 +178,7 @@ export default function AboutTools() {
             <div className="relative mt-auto flex flex-wrap items-center justify-between gap-3 pt-8">
               <a
                 href="#ecosystem"
-                className="group inline-flex items-center gap-2 text-[11.5px] font-semibold text-[#C6F36A] transition-colors duration-200 hover:text-[#E5FFD0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6F36A] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071D34] motion-reduce:transition-none"
+                className="group inline-flex items-center gap-2 text-[11.5px] font-semibold text-[#10B981] transition-colors duration-200 hover:text-[#D1FAE5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-4 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"
               >
                 See how the view connects
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
@@ -191,10 +191,10 @@ export default function AboutTools() {
           </article>
         </div>
 
-        <div className="relative mt-14 overflow-hidden rounded-[2rem] border border-[#0B3150]/20 bg-[#071D34] p-7 shadow-[0_30px_80px_-50px_rgba(7,29,52,0.9)] sm:mt-16 sm:p-10 lg:p-12">
+        <div className="relative mt-14 overflow-hidden rounded-[2rem] border border-[#183B32]/20 bg-[#101A18] p-7 shadow-[0_30px_80px_-50px_rgba(16,26,24,0.9)] sm:mt-16 sm:p-10 lg:p-12">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#2A7AB8]/20 blur-[100px]" />
-            <div className="absolute -bottom-24 left-[30%] h-64 w-64 rounded-full bg-[#C6F36A]/[0.06] blur-[90px]" />
+            <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#047857]/20 blur-[100px]" />
+            <div className="absolute -bottom-24 left-[30%] h-64 w-64 rounded-full bg-[#10B981]/[0.06] blur-[90px]" />
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_at_60%_40%,black,transparent_78%)]" />
           </div>
 
@@ -205,10 +205,10 @@ export default function AboutTools() {
 
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
             <div>
-              <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C6F36A]">
+              <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#10B981]">
                 <span
                   aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-[#C6F36A]"
+                  className="h-1.5 w-1.5 rounded-full bg-[#10B981]"
                 />
                 Start with visibility
               </p>
@@ -225,14 +225,14 @@ export default function AboutTools() {
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link
                 href="/platform#website-security-check"
-                className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#C6F36A] px-4 text-[12px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(96,133,28,0.9)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#D2F77F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#071D34] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
+                className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#10B981] px-4 text-[12px] font-semibold tracking-[-0.005em] text-[#101A18] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(5,150,105,0.9)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#059669] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
                 Open the Security Checker
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
               <Link
                 href="/"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 text-[12px] font-semibold text-white/75 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#071D34] motion-reduce:transition-none"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 text-[12px] font-semibold text-white/75 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"
               >
                 Back to homepage
               </Link>

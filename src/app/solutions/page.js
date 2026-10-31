@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-white font-sans selection:bg-[#C6F36A] selection:text-[#071D34]">
+    <main className="min-h-screen bg-white font-sans selection:bg-[#10B981] selection:text-[#101A18]">
       <Navbar />
       <SolutionsHero />
       <WebsiteOwnersSection />

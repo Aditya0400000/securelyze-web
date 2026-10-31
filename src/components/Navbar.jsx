@@ -29,9 +29,15 @@ const DOCS_LINKS = {
 const PLATFORM_LINKS = {
   home: "/platform",
   overview: "/platform#platform-overview",
-  checker: "/platform#website-security-check",
-  assets: "/platform#assets-discovery",
-  securityOverview: "/platform#security-overview",
+  sslTls: "/platform/website-security-check/ssl-tls",
+  dnsSecurity: "/platform/website-security-check/dns-security",
+  securityHeaders: "/platform/website-security-check/security-headers",
+  emailSecurity: "/platform/website-security-check/email-security",
+  assets: "/platform/asset-discovery",
+  assetSubdomain: "/platform/asset-discovery/subdomain-discovery",
+  assetDomain: "/platform/asset-discovery/domain-discovery",
+  assetIpHost: "/platform/asset-discovery/ip-host-discovery",
+  assetPortService: "/platform/asset-discovery/port-service-discovery",
 };
 
 const SOLUTIONS_LINKS = {
@@ -58,34 +64,75 @@ const RESOURCES_ANCHOR_SCROLL_OFFSET = 128;
 
 const NAV_ITEMS = [
   {
-    id: "platforms",
-    label: "Platforms",
+    id: "platform",
+    label: "Platform",
     summary:
-      "A connected view of website exposure, discovered assets, and the next steps that matter.",
+      "Website security checks and asset discovery in one connected view.",
     icon: "platforms",
     align: "left",
-    width: "w-[38rem]",
+    menuPositionClass: "-left-[5.5rem]",
+    width: "w-[50rem]",
+    groupColumns: 2,
+    scrollable: true,
+    subtleScrollbar: true,
+    viewAllHref: PLATFORM_LINKS.overview,
+    viewAllLabel: "View Platform Overview",
     groups: [
       {
-        title: "Core platform",
+        title: "Website Security Check",
+        icon: "security",
         links: [
           {
-            label: "Website Security Checker",
-            description: "SSL/TLS, DNS, headers, and HTTPS checks.",
-            href: PLATFORM_LINKS.checker,
-            icon: "security",
+            label: "SSL/TLS Analysis",
+            description:
+              "Certificate, HTTPS, and TLS configuration context.",
+            href: PLATFORM_LINKS.sslTls,
           },
           {
-            label: "Asset Discovery",
-            description: "Domains, subdomains, IPs, and exposed assets.",
+            label: "DNS Security",
+            description: "DNS records and resolution context.",
+            href: PLATFORM_LINKS.dnsSecurity,
+          },
+          {
+            label: "Security Headers",
+            description: "Browser-facing HTTP security headers.",
+            href: PLATFORM_LINKS.securityHeaders,
+          },
+          {
+            label: "Email Security",
+            description: "SPF, DKIM, and DMARC sender signals.",
+            href: PLATFORM_LINKS.emailSecurity,
+          },
+        ],
+      },
+      {
+        title: "Asset Discovery",
+        icon: "assets",
+        links: [
+          {
+            label: "Asset Discovery Overview",
+            description: "The connected overview of the public footprint.",
             href: PLATFORM_LINKS.assets,
-            icon: "assets",
           },
           {
-            label: "Security Overview",
-            description: "Findings and recommendations in one summary.",
-            href: PLATFORM_LINKS.securityOverview,
-            icon: "overview",
+            label: "Subdomain Discovery",
+            description: "Publicly discoverable hostnames and hierarchy.",
+            href: PLATFORM_LINKS.assetSubdomain,
+          },
+          {
+            label: "Domain Discovery",
+            description: "Domains and related DNS context.",
+            href: PLATFORM_LINKS.assetDomain,
+          },
+          {
+            label: "IP & Host Discovery",
+            description: "Internet-facing hosts and IP context.",
+            href: PLATFORM_LINKS.assetIpHost,
+          },
+          {
+            label: "Port & Service Discovery",
+            description: "Exposed services and port context.",
+            href: PLATFORM_LINKS.assetPortService,
           },
         ],
       },
@@ -371,6 +418,9 @@ const ALIGNMENT_CLASSES = {
   right: "right-0",
 };
 
+const SUBTLE_SCROLLBAR_CLASSES =
+  " [scrollbar-width:thin] [scrollbar-color:var(--border)_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb:hover]:bg-text-muted/40";
+
 const MENU_ICON_CONTENT = {
   platforms: (
     <>
@@ -514,19 +564,19 @@ function ArrowUpRight({ className = "" }) {
 
 function BrandMark() {
   return (
-    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[11px] bg-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_5px_16px_-9px_rgba(7,29,52,0.8)]">
+    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[11px] bg-charcoal shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_5px_16px_-9px_rgba(16,26,24,0.8)]">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
         fill="none"
         className="h-[19px] w-[19px]"
-        stroke="#FFFFFF"
+        stroke="var(--white)"
         strokeWidth="1.65"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
         <path d="M12 3.5 5.5 6v5.1c0 4.05 2.72 7.65 6.5 8.9 3.78-1.25 6.5-4.85 6.5-8.9V6L12 3.5Z" />
-        <path d="m9.2 11.8 1.9 1.9 3.8-4.2" stroke="#C6F36A" />
+        <path d="m9.2 11.8 1.9 1.9 3.8-4.2" stroke="var(--emerald)" />
       </svg>
     </span>
   );
@@ -538,10 +588,10 @@ function Logo({ onClick }) {
       href="/"
       onClick={onClick}
       aria-label="Securelyze home"
-      className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-4 focus-visible:ring-offset-white"
+      className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark-green focus-visible:ring-offset-4 focus-visible:ring-offset-white"
     >
       <BrandMark />
-      <span className="text-[18px] font-semibold tracking-[-0.045em] text-[#071D34] sm:text-[19px]">
+      <span className="text-[18px] font-semibold tracking-[-0.045em] text-charcoal sm:text-[19px]">
         Securelyze
       </span>
     </Link>
@@ -553,12 +603,12 @@ function ExploreCta({ className = "", onClick }) {
     <Link
       href={PLATFORM_LINKS.home}
       onClick={onClick}
-      className={`group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#C6F36A] px-4 text-[13px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_7px_20px_-14px_rgba(96,133,28,0.85)] transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-[#D2F77F] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_10px_24px_-15px_rgba(96,133,28,0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A2138] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
+      className={`group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-emerald px-4 text-[13px] font-semibold tracking-[-0.005em] text-charcoal shadow-btn transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
     >
       <span>Explore Full Platform</span>
       <span
         aria-hidden="true"
-        className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[#0A2138] text-[#C6F36A] transition-transform duration-200 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none"
+        className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-dark-green text-emerald transition-transform duration-200 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none"
       >
         <ArrowUpRight className="h-3 w-3" />
       </span>
@@ -566,54 +616,125 @@ function ExploreCta({ className = "", onClick }) {
   );
 }
 
+const LINK_STATUS_TONES = {
+  Preview: {
+    badge: "border-emerald/20 bg-emerald/10 text-dark-green",
+    dot: "bg-emerald",
+  },
+  Planned: {
+    badge: "border-border bg-light text-text-muted",
+    dot: "bg-text-muted/60",
+  },
+};
+
 function DropdownLink({ link, onClick }) {
-  return (
-    <Link
-      href={link.href}
-      onClick={onClick}
-      className="group/link flex items-start gap-3 rounded-xl px-2.5 py-2.5 transition-colors duration-150 hover:bg-[#F5F9FC] focus-visible:bg-[#F5F9FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
-    >
+  const isDisabled = !link.href;
+  const status = link.status ?? "Preview";
+  const statusTone = LINK_STATUS_TONES[status] ?? LINK_STATUS_TONES.Preview;
+
+  const content = (
+    <>
       {link.icon ? (
         <span
           aria-hidden="true"
-          className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#E1EAF2] bg-[#FAFCFE] text-[#36536C] transition-colors duration-150 group-hover/link:border-[#D8E8C4] group-hover/link:bg-[#F5FAEA] group-hover/link:text-[#5E8425] group-focus-visible/link:border-[#D8E8C4] group-focus-visible/link:bg-[#F5FAEA] motion-reduce:transition-none"
+          className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors duration-150 motion-reduce:transition-none ${
+            isDisabled
+              ? "border-border bg-light text-text-muted"
+              : "border-border bg-white text-text-secondary group-hover/link:border-soft-green group-hover/link:bg-soft-green/20 group-hover/link:text-emerald-hover group-focus-visible/link:border-soft-green group-focus-visible/link:bg-soft-green/20"
+          }`}
         >
           <MenuIcon type={link.icon} className="h-4 w-4" />
         </span>
       ) : (
         <span
           aria-hidden="true"
-          className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#BAC8D5] transition-colors duration-150 group-hover/link:bg-[#7BA92E] group-focus-visible/link:bg-[#7BA92E] motion-reduce:transition-none"
+          className={`mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-150 motion-reduce:transition-none ${
+            isDisabled
+              ? "bg-border"
+              : "bg-border group-hover/link:bg-emerald-hover group-focus-visible/link:bg-emerald-hover"
+          }`}
         />
       )}
 
       <span className="min-w-0 flex-1">
-        <span className="block text-[13.5px] font-semibold leading-5 tracking-[-0.01em] text-[#10283E]">
+        <span
+          className={`block text-[13.5px] font-semibold leading-5 tracking-[-0.01em] ${
+            isDisabled ? "text-text-secondary" : "text-dark-green"
+          }`}
+        >
           {link.label}
         </span>
-        <span className="mt-0.5 block text-[12px] leading-[1.55] text-[#607386]">
+        <span className="mt-0.5 block text-[12px] leading-[1.55] text-text-muted">
           {link.description}
         </span>
       </span>
 
-      <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 -translate-x-0.5 text-[#8A9BAA] opacity-0 transition-[opacity,translate] duration-150 group-hover/link:translate-x-0 group-hover/link:opacity-100 group-focus-visible/link:translate-x-0 group-focus-visible/link:opacity-100 motion-reduce:transition-none" />
+      {isDisabled ? (
+        <span
+          className={`mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] ${statusTone.badge}`}
+        >
+          <span
+            aria-hidden="true"
+            className={`h-1 w-1 rounded-full ${statusTone.dot}`}
+          />
+          {status}
+        </span>
+      ) : (
+        <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 -translate-x-0.5 text-text-muted opacity-0 transition-[opacity,translate] duration-150 group-hover/link:translate-x-0 group-hover/link:opacity-100 group-focus-visible/link:translate-x-0 group-focus-visible/link:opacity-100 motion-reduce:transition-none" />
+      )}
+    </>
+  );
+
+  if (isDisabled) {
+    return (
+      <div
+        aria-disabled="true"
+        className="flex items-start gap-3 rounded-xl px-2.5 py-2.5"
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={link.href}
+      onClick={onClick}
+      className="group/link flex items-start gap-3 rounded-xl px-2.5 py-2.5 transition-colors duration-150 hover:bg-light focus-visible:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
+    >
+      {content}
     </Link>
   );
 }
 
 function DropdownGroup({ group, linkColumns = "grid-cols-1", onLinkClick, className = "" }) {
+  const heading = (
+    <>
+      {group.icon ? (
+        <span aria-hidden="true" className="text-text-muted">
+          <MenuIcon type={group.icon} className="h-3.5 w-3.5" />
+        </span>
+      ) : null}
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+        {group.title}
+      </p>
+    </>
+  );
+
   return (
     <div className={className}>
-      <div className="flex items-center gap-2 px-3 pb-2 pt-1">
-        {group.icon ? (
-          <span aria-hidden="true" className="text-[#7C91A3]">
-            <MenuIcon type={group.icon} className="h-3.5 w-3.5" />
-          </span>
-        ) : null}
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5F7284]">
-          {group.title}
-        </p>
-      </div>
+      {group.href ? (
+        <Link
+          href={group.href}
+          onClick={onLinkClick}
+          className="group/group flex items-center gap-2 rounded-lg px-3 pb-2 pt-1 transition-colors duration-150 hover:bg-light focus-visible:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
+        >
+          {heading}
+          <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-text-muted transition-transform duration-150 group-hover/group:translate-x-0.5 motion-reduce:transition-none" />
+        </Link>
+      ) : (
+        <div className="flex items-center gap-2 px-3 pb-2 pt-1">{heading}</div>
+      )}
 
       <div className={`grid ${linkColumns} gap-1`}>
         {group.links.map((link) => (
@@ -626,15 +747,15 @@ function DropdownGroup({ group, linkColumns = "grid-cols-1", onLinkClick, classN
 
 function DropdownHeader({ item }) {
   return (
-    <div className="flex items-start gap-3.5 rounded-t-[22px] border-b border-[#EDF2F7] bg-[linear-gradient(180deg,#FBFDFF_0%,#FFFFFF_100%)] px-5 py-4">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#E1EAF2] bg-white text-[#1C3A54] shadow-[inset_0_1px_0_#FFFFFF]">
+    <div className="flex items-start gap-3.5 rounded-t-2xl border-b border-border-subtle bg-[linear-gradient(180deg,var(--light)_0%,var(--white)_100%)] px-5 py-4">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-white text-dark-green shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
         <MenuIcon type={item.icon} />
       </span>
       <div className="min-w-0 pt-0.5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5F7284]">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">
           {item.label}
         </p>
-        <p className="mt-1.5 max-w-[36rem] text-[12.5px] leading-[1.6] text-[#5F7284]">
+        <p className="mt-1.5 max-w-[36rem] text-[12.5px] leading-[1.6] text-text-muted">
           {item.summary}
         </p>
       </div>
@@ -643,12 +764,19 @@ function DropdownHeader({ item }) {
 }
 
 function DropdownContent({ item, onLinkClick }) {
+  const scrollClasses =
+    item.scrollable === false
+      ? "overflow-hidden "
+      : `max-h-[calc(100dvh-10rem)] overflow-y-auto overscroll-contain ${
+          item.subtleScrollbar ? SUBTLE_SCROLLBAR_CLASSES : ""
+        } `;
+
   return (
-    <div className={`${item.scrollable === false ? "overflow-hidden " : "max-h-[calc(100dvh-10rem)] overflow-y-auto overscroll-contain "}rounded-[22px] border border-[#E1EAF2] bg-white shadow-[0_28px_80px_-40px_rgba(7,29,52,0.5),0_4px_14px_-8px_rgba(7,29,52,0.14)] ring-1 ring-[#0B2239]/[0.02]`}>
+    <div className={`${scrollClasses}rounded-2xl border border-border bg-white shadow-dropdown ring-1 ring-dark-green/[0.04]`}>
       <DropdownHeader item={item} />
 
       {item.groupColumns ? (
-        <div className={`grid ${item.groupColumns === 2 ? "grid-cols-2" : "grid-cols-3"} divide-x divide-[#EDF2F7] px-2 py-2`}>
+        <div className={`grid ${item.groupColumns === 2 ? "grid-cols-2" : "grid-cols-3"} divide-x divide-border-subtle px-2 py-2`}>
           {item.groups.map((group) => (
             <DropdownGroup
               key={group.title}
@@ -659,7 +787,7 @@ function DropdownContent({ item, onLinkClick }) {
           ))}
         </div>
       ) : (
-        <div className="divide-y divide-[#EDF2F7] px-2 py-1.5">
+        <div className="divide-y divide-border-subtle px-2 py-1.5">
           {item.groups.map((group) => (
             <DropdownGroup
               key={group.title}
@@ -673,20 +801,20 @@ function DropdownContent({ item, onLinkClick }) {
       )}
 
       {item.viewAllHref ? (
-        <div className="border-t border-[#EDF2F7] bg-[#FBFDFF] px-3 py-2.5">
+        <div className="border-t border-border-subtle bg-light px-3 py-2.5">
           <Link
             href={item.viewAllHref}
             onClick={onLinkClick}
-            className="group/view-all flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 text-[12px] font-semibold text-[#183044] transition-colors duration-150 hover:bg-[#F5FAEA] focus-visible:bg-[#F5FAEA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+            className="group/view-all flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 text-[12px] font-semibold text-dark-green transition-colors duration-150 hover:bg-soft-green/20 focus-visible:bg-soft-green/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
           >
             <span className="inline-flex items-center gap-2">
               <span
                 aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-[#7BA92E]"
+                className="h-1.5 w-1.5 rounded-full bg-emerald-hover"
               />
               {item.viewAllLabel}
             </span>
-            <ArrowRight className="h-3.5 w-3.5 text-[#5C8414] transition-transform duration-150 group-hover/view-all:translate-x-0.5 motion-reduce:transition-none" />
+            <ArrowRight className="h-3.5 w-3.5 text-emerald-hover transition-transform duration-150 group-hover/view-all:translate-x-0.5 motion-reduce:transition-none" />
           </Link>
         </div>
       ) : null}
@@ -906,11 +1034,11 @@ export default function Navbar() {
     <header
       ref={headerRef}
       onClickCapture={handleHeaderClickCapture}
-      className="sticky top-0 z-50 w-full border-b border-[#DCE5EF] bg-white/95 font-sans shadow-[inset_0_1px_0_rgba(255,255,255,0.96),inset_0_-1px_0_rgba(17,48,78,0.035),0_16px_38px_-34px_rgba(7,27,48,0.55)] backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-border bg-white/95 font-sans shadow-[inset_0_1px_0_rgba(255,255,255,0.96),inset_0_-1px_0_rgba(24,59,50,0.035),0_16px_38px_-34px_rgba(16,26,24,0.35)] backdrop-blur-md"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(244,249,253,0.72)_0%,rgba(255,255,255,0)_46%,rgba(246,250,253,0.3)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(248,250,252,0.72)_0%,rgba(255,255,255,0)_46%,rgba(248,250,252,0.3)_100%)]"
       />
 
       <nav
@@ -927,13 +1055,13 @@ export default function Navbar() {
                     key={item.id}
                     href={item.href}
                     onClick={closeNavigation}
-                    className="group/nav relative flex h-11 items-center whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] text-[#2B4053] transition-colors duration-150 hover:bg-[#F8FAFC] hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                    className="group/nav relative flex h-11 items-center whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] text-text-primary transition-colors duration-150 hover:bg-light hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
                   >
                     <span className="relative">
                       {item.label}
                       <span
                         aria-hidden="true"
-                        className="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 rounded-full bg-[#86B435] transition-transform duration-300 ease-out group-hover/nav:scale-x-100 group-focus-visible/nav:scale-x-100 motion-reduce:transition-none"
+                        className="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 rounded-full bg-emerald-hover transition-transform duration-300 ease-out group-hover/nav:scale-x-100 group-focus-visible/nav:scale-x-100 motion-reduce:transition-none"
                       />
                     </span>
                   </Link>
@@ -979,20 +1107,20 @@ export default function Navbar() {
                     <div
                       className={`group/nav relative flex h-11 items-center rounded-lg transition-colors duration-150 ${
                         isOpen
-                          ? "bg-[#F5F8FB]"
-                          : "hover:bg-[#F8FAFC]"
+                          ? "bg-light"
+                          : "hover:bg-light"
                       }`}
                     >
                       <Link
                         href={item.href}
                         onClick={closeNavigation}
-                        className="relative flex h-full items-center whitespace-nowrap rounded-l-lg pl-3 pr-1 text-sm font-medium tracking-[-0.01em] text-[#2B4053] transition-colors duration-150 hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                        className="relative flex h-full items-center whitespace-nowrap rounded-l-lg pl-3 pr-1 text-sm font-medium tracking-[-0.01em] text-text-primary transition-colors duration-150 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
                       >
                         <span className="relative">
                           {item.label}
                           <span
                             aria-hidden="true"
-                            className="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 rounded-full bg-[#86B435] transition-transform duration-300 ease-out group-hover/nav:scale-x-100 group-focus-within/nav:scale-x-100 motion-reduce:transition-none"
+                            className="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 rounded-full bg-emerald-hover transition-transform duration-300 ease-out group-hover/nav:scale-x-100 group-focus-within/nav:scale-x-100 motion-reduce:transition-none"
                           />
                         </span>
                       </Link>
@@ -1010,12 +1138,12 @@ export default function Navbar() {
                         onKeyDown={(event) =>
                           handleTriggerKeyDown(event, item.id)
                         }
-                        className="flex h-full w-8 cursor-pointer items-center justify-center rounded-r-lg pr-2 text-[#7B8C9D] transition-colors duration-150 hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                        className="flex h-full w-8 cursor-pointer items-center justify-center rounded-r-lg pr-2 text-text-muted transition-colors duration-150 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
                       >
                         <ChevronDown
                           className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
                             isOpen
-                              ? "rotate-180 text-[#071D34]"
+                              ? "rotate-180 text-charcoal"
                               : ""
                           }`}
                         />
@@ -1034,17 +1162,17 @@ export default function Navbar() {
                       onKeyDown={(event) =>
                         handleTriggerKeyDown(event, item.id)
                       }
-                      className={`group/nav relative flex h-11 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none ${
+                      className={`group/nav relative flex h-11 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none ${
                         isOpen
-                          ? "bg-[#F5F8FB] text-[#071D34]"
-                          : "text-[#2B4053] hover:bg-[#F8FAFC] hover:text-[#071D34]"
+                          ? "bg-light text-charcoal"
+                          : "text-text-primary hover:bg-light hover:text-charcoal"
                       }`}
                     >
                       <span className="relative">
                         {item.label}
                         <span
                           aria-hidden="true"
-                          className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left rounded-full bg-[#86B435] transition-transform duration-300 ease-out motion-reduce:transition-none ${
+                          className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left rounded-full bg-emerald-hover transition-transform duration-300 ease-out motion-reduce:transition-none ${
                             isOpen
                               ? "scale-x-100"
                               : "scale-x-0 group-hover/nav:scale-x-100 group-focus-visible/nav:scale-x-100"
@@ -1054,8 +1182,8 @@ export default function Navbar() {
                       <ChevronDown
                         className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
                           isOpen
-                            ? "rotate-180 text-[#071D34]"
-                            : "text-[#7B8C9D]"
+                            ? "rotate-180 text-charcoal"
+                            : "text-text-muted"
                         }`}
                       />
                     </button>
@@ -1072,7 +1200,7 @@ export default function Navbar() {
                     inert={isOpen ? undefined : true}
                     onKeyDown={(event) => handleMenuKeyDown(event, item.id)}
                     className={`absolute top-full z-40 max-w-[calc(100vw-2rem)] pt-3 transition-[opacity,translate] duration-200 ease-out motion-reduce:translate-y-0 motion-reduce:transition-none ${item.width} ${
-                      ALIGNMENT_CLASSES[item.align]
+                      item.menuPositionClass ?? ALIGNMENT_CLASSES[item.align]
                     } ${
                       isOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
@@ -1098,7 +1226,7 @@ export default function Navbar() {
             aria-controls="mobile-navigation"
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={handleMobileToggle}
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-[#DFE8F0] bg-white text-[#0A2138] shadow-[inset_0_1px_0_#FFFFFF,0_2px_8px_-6px_rgba(7,27,48,0.5)] transition-colors duration-200 hover:border-[#CCD9E5] hover:bg-[#F7FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none xl:hidden"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-border bg-white text-dark-green shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_2px_8px_-6px_rgba(16,26,24,0.5)] transition-colors duration-200 hover:border-border hover:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none xl:hidden"
           >
             <span aria-hidden="true" className="relative block h-4 w-5">
               <span
@@ -1128,9 +1256,9 @@ export default function Navbar() {
         }`}
       >
         <div className="min-h-0">
-          <div className="max-h-[calc(100dvh-8.5rem)] overflow-y-auto overscroll-contain border-t border-[#E9EFF5] bg-white px-4 pb-6 pt-2 sm:px-6">
+          <div className="max-h-[calc(100dvh-8.5rem)] overflow-y-auto overscroll-contain border-t border-border-subtle bg-white px-4 pb-6 pt-2 sm:px-6">
             <div className="mx-auto w-full max-w-7xl">
-              <div className="divide-y divide-[#EEF3F7]">
+              <div className="divide-y divide-border-subtle">
                 {NAV_ITEMS.map((item) => {
                   if (item.href && !item.groups) {
                     return (
@@ -1138,18 +1266,18 @@ export default function Navbar() {
                         key={item.id}
                         href={item.href}
                         onClick={closeNavigation}
-                        className="my-0.5 flex items-center gap-3 rounded-xl px-3 py-3.5 text-[#22394D] transition-colors duration-150 hover:bg-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                        className="my-0.5 flex items-center gap-3 rounded-xl px-3 py-3.5 text-dark-green transition-colors duration-150 hover:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
                       >
                         <span
                           aria-hidden="true"
-                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
+                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-light text-text-secondary"
                         >
                           <MenuIcon type={item.icon} className="h-4 w-4" />
                         </span>
                         <span className="min-w-0 flex-1 truncate text-[14px] font-semibold tracking-[-0.005em]">
                           {item.label}
                         </span>
-                        <ArrowRight className="h-4 w-4 shrink-0 text-[#7E90A1]" />
+                        <ArrowRight className="h-4 w-4 shrink-0 text-text-muted" />
                       </Link>
                     );
                   }
@@ -1162,21 +1290,21 @@ export default function Navbar() {
                         <div
                           className={`my-0.5 flex items-center rounded-xl transition-colors duration-150 ${
                             isActive
-                              ? "bg-[#F4F8FB]"
-                              : "hover:bg-[#F8FAFC]"
+                              ? "bg-light"
+                              : "hover:bg-light"
                           }`}
                         >
                           <Link
                             href={item.href}
                             onClick={closeNavigation}
-                            className="flex min-w-0 flex-1 items-center gap-3 rounded-l-xl px-3 py-3.5 text-[#22394D] transition-colors duration-150 hover:text-[#071D34] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                            className="flex min-w-0 flex-1 items-center gap-3 rounded-l-xl px-3 py-3.5 text-dark-green transition-colors duration-150 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
                           >
                             <span
                               aria-hidden="true"
                               className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors duration-150 motion-reduce:transition-none ${
                                 isActive
-                                  ? "border-[#DCE8C9] bg-white text-[#5E8425]"
-                                  : "border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
+                                  ? "border-soft-green bg-white text-emerald-hover"
+                                  : "border-border bg-light text-text-secondary"
                               }`}
                             >
                               <MenuIcon type={item.icon} className="h-4 w-4" />
@@ -1196,11 +1324,11 @@ export default function Navbar() {
                                 current === item.id ? null : item.id,
                               );
                             }}
-                            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl text-[#7E90A1] transition-colors duration-150 hover:text-[#17344E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl text-text-muted transition-colors duration-150 hover:text-dark-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
                           >
                             <ChevronDown
                               className={`h-4 w-4 transition-transform duration-200 motion-reduce:transition-none ${
-                                isActive ? "rotate-180 text-[#17344E]" : ""
+                                isActive ? "rotate-180 text-dark-green" : ""
                               }`}
                             />
                           </button>
@@ -1215,10 +1343,10 @@ export default function Navbar() {
                               current === item.id ? null : item.id,
                             );
                           }}
-                          className={`my-0.5 flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3.5 text-left transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none ${
+                          className={`my-0.5 flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3.5 text-left transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none ${
                             isActive
-                              ? "bg-[#F4F8FB] text-[#071D34]"
-                              : "text-[#22394D] hover:bg-[#F8FAFC]"
+                              ? "bg-light text-charcoal"
+                              : "text-dark-green hover:bg-light"
                           }`}
                         >
                           <span className="flex min-w-0 items-center gap-3">
@@ -1226,8 +1354,8 @@ export default function Navbar() {
                               aria-hidden="true"
                               className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors duration-150 motion-reduce:transition-none ${
                                 isActive
-                                  ? "border-[#DCE8C9] bg-white text-[#5E8425]"
-                                  : "border-[#E1EAF2] bg-[#FBFDFF] text-[#476176]"
+                                  ? "border-soft-green bg-white text-emerald-hover"
+                                  : "border-border bg-light text-text-secondary"
                               }`}
                             >
                               <MenuIcon type={item.icon} className="h-4 w-4" />
@@ -1237,8 +1365,8 @@ export default function Navbar() {
                             </span>
                           </span>
                           <ChevronDown
-                            className={`h-4 w-4 shrink-0 text-[#7E90A1] transition-transform duration-200 motion-reduce:transition-none ${
-                              isActive ? "rotate-180 text-[#17344E]" : ""
+                            className={`h-4 w-4 shrink-0 text-text-muted transition-transform duration-200 motion-reduce:transition-none ${
+                              isActive ? "rotate-180 text-dark-green" : ""
                             }`}
                           />
                         </button>
@@ -1256,7 +1384,7 @@ export default function Navbar() {
                       >
                         <div className="min-h-0 overflow-hidden">
                           <div className="pb-3 pl-1 pr-1">
-                            <p className="px-3 pb-1 pt-1 text-[12px] leading-[1.6] text-[#607386]">
+                            <p className="px-3 pb-1 pt-1 text-[12px] leading-[1.6] text-text-muted">
                               {item.summary}
                             </p>
 
@@ -1265,59 +1393,128 @@ export default function Navbar() {
                                 <Link
                                   href={item.viewAllHref}
                                   onClick={closeNavigation}
-                                  className="group/mobile-view-all flex items-center justify-between gap-3 rounded-lg border border-[#DDE8C7] bg-[#F7FCEB] px-3 py-2.5 transition-colors duration-150 hover:border-[#C9DFA4] hover:bg-[#F2FADF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                                  className="group/mobile-view-all flex items-center justify-between gap-3 rounded-lg border border-soft-green bg-soft-green/20 px-3 py-2.5 transition-colors duration-150 hover:border-soft-green hover:bg-soft-green/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
                                 >
-                                  <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-[#33521A]">
+                                  <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-dark-green">
                                     <span
                                       aria-hidden="true"
-                                      className="h-1.5 w-1.5 rounded-full bg-[#7BA92E]"
+                                      className="h-1.5 w-1.5 rounded-full bg-emerald-hover"
                                     />
                                     {item.viewAllLabel}
                                   </span>
-                                  <ArrowRight className="h-3.5 w-3.5 text-[#5C8414] transition-transform duration-150 group-hover/mobile-view-all:translate-x-0.5 motion-reduce:transition-none" />
+                                  <ArrowRight className="h-3.5 w-3.5 text-emerald-hover transition-transform duration-150 group-hover/mobile-view-all:translate-x-0.5 motion-reduce:transition-none" />
                                 </Link>
                               </div>
                             ) : null}
 
-                            <div className="ml-4 mt-1 border-l border-[#E3EBF2] pl-2.5">
+                            <div className="ml-4 mt-1 border-l border-border pl-2.5">
                               {item.groups.map((group) => (
                                 <div key={group.title} className="mt-2 first:mt-1">
-                                  <div className="flex items-center gap-1.5 px-3 pb-1 pt-1">
-                                    {group.icon ? (
-                                      <span aria-hidden="true" className="text-[#7C91A3]">
-                                        <MenuIcon
-                                          type={group.icon}
-                                          className="h-3.5 w-3.5"
-                                        />
-                                      </span>
-                                    ) : null}
-                                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#5F7284]">
-                                      {group.title}
-                                    </p>
-                                  </div>
-
-                                  {group.links.map((link) => (
+                                  {group.href ? (
                                     <Link
-                                      key={link.label}
-                                      href={link.href}
+                                      href={group.href}
                                       onClick={closeNavigation}
-                                      className="group/mobile-link flex items-start gap-2.5 rounded-lg px-3 py-2.5 transition-colors duration-150 hover:bg-[#F6F9FC] focus-visible:bg-[#F6F9FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                                      className="group/mobile-group flex items-center gap-1.5 rounded-lg px-3 pb-1 pt-1 transition-colors duration-150 hover:bg-light focus-visible:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
                                     >
-                                      <span
-                                        aria-hidden="true"
-                                        className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#BAC8D5] transition-colors duration-150 group-hover/mobile-link:bg-[#7BA92E] group-focus-visible/mobile-link:bg-[#7BA92E] motion-reduce:transition-none"
-                                      />
-                                      <span className="min-w-0 flex-1">
-                                        <span className="flex items-center gap-2 text-[13.5px] font-semibold leading-5 text-[#183044]">
-                                          {link.label}
-                                          <ArrowRight className="h-3.5 w-3.5 shrink-0 -translate-x-0.5 text-[#8A9BAA] opacity-0 transition-[opacity,translate] duration-150 group-hover/mobile-link:translate-x-0 group-hover/mobile-link:opacity-100 group-focus-visible/mobile-link:translate-x-0 group-focus-visible/mobile-link:opacity-100 motion-reduce:transition-none" />
+                                      {group.icon ? (
+                                        <span aria-hidden="true" className="text-text-muted">
+                                          <MenuIcon
+                                            type={group.icon}
+                                            className="h-3.5 w-3.5"
+                                          />
                                         </span>
-                                        <span className="mt-0.5 block text-[12px] leading-[1.55] text-[#607386]">
-                                          {link.description}
-                                        </span>
-                                      </span>
+                                      ) : null}
+                                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+                                        {group.title}
+                                      </p>
+                                      <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-text-muted transition-transform duration-150 group-hover/mobile-group:translate-x-0.5 motion-reduce:transition-none" />
                                     </Link>
-                                  ))}
+                                  ) : (
+                                    <div className="flex items-center gap-1.5 px-3 pb-1 pt-1">
+                                      {group.icon ? (
+                                        <span aria-hidden="true" className="text-text-muted">
+                                          <MenuIcon
+                                            type={group.icon}
+                                            className="h-3.5 w-3.5"
+                                          />
+                                        </span>
+                                      ) : null}
+                                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+                                        {group.title}
+                                      </p>
+                                    </div>
+                                  )}
+
+                                  {group.links.map((link) => {
+                                    const isDisabled = !link.href;
+                                    const status = link.status ?? "Preview";
+                                    const statusTone =
+                                      LINK_STATUS_TONES[status] ??
+                                      LINK_STATUS_TONES.Preview;
+                                    const content = (
+                                      <>
+                                        <span
+                                          aria-hidden="true"
+                                          className={`mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-150 motion-reduce:transition-none ${
+                                            isDisabled
+                                              ? "bg-border"
+                                              : "bg-border group-hover/mobile-link:bg-emerald-hover group-focus-visible/mobile-link:bg-emerald-hover"
+                                          }`}
+                                        />
+                                        <span className="min-w-0 flex-1">
+                                          <span
+                                            className={`flex items-center gap-2 text-[13.5px] font-semibold leading-5 ${
+                                              isDisabled
+                                                ? "text-text-secondary"
+                                                : "text-dark-green"
+                                            }`}
+                                          >
+                                            {link.label}
+                                            {isDisabled ? null : (
+                                              <ArrowRight className="h-3.5 w-3.5 shrink-0 -translate-x-0.5 text-text-muted opacity-0 transition-[opacity,translate] duration-150 group-hover/mobile-link:translate-x-0 group-hover/mobile-link:opacity-100 group-focus-visible/mobile-link:translate-x-0 group-focus-visible/mobile-link:opacity-100 motion-reduce:transition-none" />
+                                            )}
+                                          </span>
+                                          <span className="mt-0.5 block text-[12px] leading-[1.55] text-text-muted">
+                                            {link.description}
+                                          </span>
+                                        </span>
+                                        {isDisabled ? (
+                                          <span
+                                            className={`mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] ${statusTone.badge}`}
+                                          >
+                                            <span
+                                              aria-hidden="true"
+                                              className={`h-1 w-1 rounded-full ${statusTone.dot}`}
+                                            />
+                                            {status}
+                                          </span>
+                                        ) : null}
+                                      </>
+                                    );
+
+                                    if (isDisabled) {
+                                      return (
+                                        <div
+                                          key={link.label}
+                                          aria-disabled="true"
+                                          className="flex items-start gap-2.5 rounded-lg px-3 py-2.5"
+                                        >
+                                          {content}
+                                        </div>
+                                      );
+                                    }
+
+                                    return (
+                                      <Link
+                                        key={link.label}
+                                        href={link.href}
+                                        onClick={closeNavigation}
+                                        className="group/mobile-link flex items-start gap-2.5 rounded-lg px-3 py-2.5 transition-colors duration-150 hover:bg-light focus-visible:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
+                                      >
+                                        {content}
+                                      </Link>
+                                    );
+                                  })}
                                 </div>
                               ))}
                             </div>
@@ -1329,14 +1526,14 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="my-4 h-px bg-[#EBF1F6]" />
+              <div className="my-4 h-px bg-border-subtle" />
 
               <ExploreCta
                 onClick={closeNavigation}
                 className="w-full"
               />
 
-              <p className="mt-3 text-center text-[11px] leading-5 text-[#617487]">
+              <p className="mt-3 text-center text-[11px] leading-5 text-text-muted">
                 Clear visibility. Confident security.
               </p>
             </div>

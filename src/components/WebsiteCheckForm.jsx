@@ -76,8 +76,8 @@ function AlertIcon({ className = "" }) {
 }
 
 const HELPER_TONES = {
-  hero: "text-[#C4E7FF] lg:text-[#334155]",
-  light: "text-[#526B7F]",
+  hero: "text-[#D1FAE5] lg:text-[#1F2937]",
+  light: "text-[#475569]",
 };
 
 export default function WebsiteCheckForm({
@@ -133,10 +133,10 @@ export default function WebsiteCheckForm({
       className={className}
     >
       <div
-        className={`rounded-2xl border bg-white p-1.5 shadow-[0_18px_40px_-24px_rgba(15,23,42,0.35),0_2px_8px_-4px_rgba(15,23,42,0.08)] transition-[border-color,box-shadow] duration-200 ease-out motion-reduce:transition-none ${
+        className={`rounded-2xl border bg-white p-1.5 shadow-[0_18px_40px_-24px_rgba(16,26,24,0.35),0_2px_8px_-4px_rgba(16,26,24,0.08)] transition-[border-color,box-shadow] duration-200 ease-out motion-reduce:transition-none ${
           error
-            ? "border-[#F97316]/60 focus-within:ring-2 focus-within:ring-[#F97316]/20"
-            : "border-[#CBD5E1] hover:border-[#94A3B8] hover:shadow-[0_22px_46px_-25px_rgba(15,23,42,0.44),0_3px_10px_-4px_rgba(15,23,42,0.12)] focus-within:border-[#65A30D] focus-within:ring-2 focus-within:ring-[#C6F36A]/55 focus-within:hover:border-[#65A30D]"
+            ? "border-[#059669]/60 focus-within:ring-2 focus-within:ring-[#059669]/20"
+            : "border-[#E2E8F0] hover:border-[#94A3B8] hover:shadow-[0_22px_46px_-25px_rgba(16,26,24,0.44),0_3px_10px_-4px_rgba(16,26,24,0.12)] focus-within:border-[#059669] focus-within:ring-2 focus-within:ring-[#10B981]/55 focus-within:hover:border-[#059669]"
         }`}
       >
         <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
@@ -159,13 +159,13 @@ export default function WebsiteCheckForm({
               onChange={handleInputChange}
               aria-invalid={Boolean(error)}
               aria-describedby={error ? `${helperId} ${errorId}` : helperId}
-              className="h-[50px] w-full min-w-0 rounded-xl bg-transparent pl-10 pr-2.5 text-[15px] text-[#0F172A] caret-[#5E8425] placeholder:text-[#64748B] focus:outline-none sm:h-[54px] sm:pl-11 sm:pr-3 sm:text-base"
+              className="h-[50px] w-full min-w-0 rounded-xl bg-transparent pl-10 pr-2.5 text-[15px] text-[#101A18] caret-[#047857] placeholder:text-[#64748B] focus:outline-none sm:h-[54px] sm:pl-11 sm:pr-3 sm:text-base"
             />
           </div>
 
           <button
             type="submit"
-            className="group inline-flex h-[50px] w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#C6F36A] px-5 text-[14px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_12px_28px_-16px_rgba(198,243,106,0.9)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-[#D2F77F] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_16px_34px_-17px_rgba(198,243,106,0.95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071D34] focus-visible:ring-offset-2 focus-visible:ring-offset-white active:bg-[#BCE95E] motion-safe:hover:-translate-y-px motion-reduce:transition-none sm:h-[54px] sm:w-auto sm:px-5"
+            className="group inline-flex h-[50px] w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#10B981] px-5 text-[14px] font-semibold tracking-[-0.005em] text-[#101A18] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_12px_28px_-16px_rgba(16,185,129,0.9)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-[#059669] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_16px_34px_-17px_rgba(16,185,129,0.95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101A18] focus-visible:ring-offset-2 focus-visible:ring-offset-white active:bg-[#10B981] motion-safe:hover:-translate-y-px motion-reduce:transition-none sm:h-[54px] sm:w-auto sm:px-5"
           >
             <span>{buttonLabel}</span>{" "}
             <span
@@ -190,9 +190,9 @@ export default function WebsiteCheckForm({
           <p
             id={errorId}
             role="alert"
-            className="flex items-start gap-2 rounded-xl border border-[#FF8A3D]/35 bg-[#2A1B17]/95 px-3 py-2 text-[12px] font-medium leading-[1.55] text-[#FFE2D6] shadow-[0_12px_28px_-22px_rgba(0,0,0,0.9)]"
+            className="flex items-start gap-2 rounded-xl border border-[#10B981]/35 bg-[#101A18]/95 px-3 py-2 text-[12px] font-medium leading-[1.55] text-[#D1FAE5] shadow-[0_12px_28px_-22px_rgba(0,0,0,0.9)]"
           >
-            <AlertIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FFB27A]" />
+            <AlertIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#D1FAE5]" />
             {error}
           </p>
         ) : null}
@@ -200,11 +200,11 @@ export default function WebsiteCheckForm({
         {notice ? (
           <p
             role="status"
-            className="flex items-start gap-2 rounded-xl border border-[#C6F36A]/25 bg-[#071F33]/95 px-3 py-2 text-[12px] font-medium leading-[1.55] text-[#E6FFD0] shadow-[0_12px_28px_-22px_rgba(0,0,0,0.9)]"
+            className="flex items-start gap-2 rounded-xl border border-[#10B981]/25 bg-[#101A18]/95 px-3 py-2 text-[12px] font-medium leading-[1.55] text-[#D1FAE5] shadow-[0_12px_28px_-22px_rgba(0,0,0,0.9)]"
           >
             <span
               aria-hidden="true"
-              className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#C6F36A] shadow-[0_0_9px_rgba(198,243,106,0.8)]"
+              className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#10B981] shadow-[0_0_9px_rgba(16,185,129,0.8)]"
             />
             {notice}
           </p>

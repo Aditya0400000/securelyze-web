@@ -12,26 +12,26 @@ import SmoothAnchor from "./SmoothAnchor";
 
 const ACCENTS = {
   lime: {
-    icon: "border-[#D7E9B0] bg-[#F2FADF] text-[#5C8414]",
-    number: "border-[#DDE8C7] bg-white text-[#5C8414]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "border-[#D1FAE5] bg-white text-[#047857]",
   },
   teal: {
-    icon: "border-[#BFE9EC] bg-[#E9F8F9] text-[#2A7B83]",
-    number: "border-[#CBEFF1] bg-white text-[#2A7B83]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "border-[#D1FAE5] bg-white text-[#047857]",
   },
   amber: {
-    icon: "border-[#E3D1A1] bg-[#FBF3E0] text-[#8A6A1F]",
-    number: "border-[#EADCB8] bg-white text-[#8A6A1F]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "border-[#D1FAE5] bg-white text-[#047857]",
   },
   periwinkle: {
-    icon: "border-[#D8DCF7] bg-[#F0F1FD] text-[#5B5BB0]",
-    number: "border-[#DEE2FA] bg-white text-[#5B5BB0]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
+    number: "border-[#D1FAE5] bg-white text-[#059669]",
   },
 };
 
 const DIFFICULTY_CLASSES = {
-  Beginner: "border-[#DDE8C7] bg-[#F7FCEB] text-[#5C8414]",
-  Intermediate: "border-[#EADCB8] bg-[#FDF8EC] text-[#8A6A1F]",
+  Beginner: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+  Intermediate: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
 };
 
 const TUTORIALS = [
@@ -140,9 +140,9 @@ function TutorialItem({ tutorial, index }) {
     <details
       id={tutorial.id}
       open={index === 0}
-      className="group scroll-mt-28 overflow-hidden rounded-[1.5rem] border border-[#DCE7F1] bg-white shadow-[inset_0_1px_0_#FFFFFF,0_14px_34px_-34px_rgba(7,29,52,0.3)] transition-[border-color,box-shadow] duration-200 open:border-[#C9DFA4] open:shadow-[inset_0_1px_0_#FFFFFF,0_22px_46px_-34px_rgba(7,29,52,0.38)] motion-reduce:transition-none"
+      className="group scroll-mt-28 overflow-hidden rounded-[1.5rem] border border-[#E2E8F0] bg-white shadow-[inset_0_1px_0_#FFFFFF,0_14px_34px_-34px_rgba(16,26,24,0.3)] transition-[border-color,box-shadow] duration-200 open:border-[#D1FAE5] open:shadow-[inset_0_1px_0_#FFFFFF,0_22px_46px_-34px_rgba(16,26,24,0.38)] motion-reduce:transition-none"
     >
-      <summary className="flex cursor-pointer list-none flex-col gap-4 p-5 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] sm:p-6 [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none flex-col gap-4 p-5 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#475569] sm:p-6 [&::-webkit-details-marker]:hidden">
         <div className="flex items-start gap-3.5">
           <span
             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${accent.icon}`}
@@ -152,7 +152,7 @@ function TutorialItem({ tutorial, index }) {
 
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#6F9E13]">
+              <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#059669]">
                 Tutorial {tutorial.number}
               </span>
               <span
@@ -160,31 +160,31 @@ function TutorialItem({ tutorial, index }) {
               >
                 {tutorial.difficulty}
               </span>
-              <span className="inline-flex items-center gap-1 text-[9.5px] font-medium text-[#7A8FA0]">
+              <span className="inline-flex items-center gap-1 text-[9.5px] font-medium text-[#64748B]">
                 <ClockIcon className="h-3 w-3" />
                 {tutorial.time}
               </span>
             </div>
 
-            <h4 className="mt-2.5 text-[1rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#071D34]">
+            <h4 className="mt-2.5 text-[1rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#101A18]">
               {tutorial.title}
             </h4>
-            <p className="mt-1.5 text-[12px] leading-[1.6] text-[#607386]">
+            <p className="mt-1.5 text-[12px] leading-[1.6] text-[#64748B]">
               {tutorial.description}
             </p>
           </div>
 
           <span
             aria-hidden="true"
-            className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#E1EAF2] bg-[#FAFCFE] text-[#6C8194] transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
+            className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#E2E8F0] bg-[#FFFFFF] text-[#64748B] transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
           >
             <ChevronDownIcon className="h-3.5 w-3.5" />
           </span>
         </div>
       </summary>
 
-      <div className="border-t border-[#EDF2F7] bg-[#FBFDFF] px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
-        <p className="text-[8.5px] font-semibold uppercase tracking-[0.16em] text-[#6F9E13]">
+      <div className="border-t border-[#F1F5F9] bg-[#F8FAFC] px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
+        <p className="text-[8.5px] font-semibold uppercase tracking-[0.16em] text-[#059669]">
           What you will learn
         </p>
         <ol className="mt-3 grid gap-2.5">
@@ -195,18 +195,18 @@ function TutorialItem({ tutorial, index }) {
               >
                 {String(stepIndex + 1).padStart(2, "0")}
               </span>
-              <p className="text-[12px] leading-[1.65] text-[#526B7F]">
+              <p className="text-[12px] leading-[1.65] text-[#475569]">
                 {step}
               </p>
             </li>
           ))}
         </ol>
 
-        <div className="mt-4 rounded-xl border border-[#DDE8C7] bg-[#F7FCEB] px-3.5 py-3">
-          <p className="text-[8.5px] font-semibold uppercase tracking-[0.15em] text-[#5C8414]">
+        <div className="mt-4 rounded-xl border border-[#D1FAE5] bg-[#ECFDF5] px-3.5 py-3">
+          <p className="text-[8.5px] font-semibold uppercase tracking-[0.15em] text-[#047857]">
             Key takeaway
           </p>
-          <p className="mt-1.5 text-[11.5px] leading-[1.65] text-[#405A6E]">
+          <p className="mt-1.5 text-[11.5px] leading-[1.65] text-[#475569]">
             {tutorial.takeaway}
           </p>
         </div>
@@ -239,9 +239,9 @@ export default function ResourcesTutorials() {
           <SmoothAnchor
             key={tutorial.id}
             href={`#${tutorial.id}`}
-            className="group inline-flex items-center gap-2 rounded-full border border-[#DCE7F1] bg-white px-3 py-1.5 text-[10px] font-semibold text-[#526B7F] transition-colors duration-150 hover:border-[#C9DFA4] hover:bg-[#F7FCEB] hover:text-[#33521A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7FAFC] motion-reduce:transition-none"
+            className="group inline-flex items-center gap-2 rounded-full border border-[#E2E8F0] bg-white px-3 py-1.5 text-[10px] font-semibold text-[#475569] transition-colors duration-150 hover:border-[#D1FAE5] hover:bg-[#ECFDF5] hover:text-[#183B32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#183B32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8FAFC] motion-reduce:transition-none"
           >
-            <span className="font-mono text-[8.5px] font-semibold text-[#6F9E13]">
+            <span className="font-mono text-[8.5px] font-semibold text-[#059669]">
               {tutorial.number}
             </span>
             {tutorial.title}
@@ -255,7 +255,7 @@ export default function ResourcesTutorials() {
         ))}
       </div>
 
-      <p className="mt-5 max-w-[52rem] text-[10.5px] leading-[1.7] text-[#5F7284]">
+      <p className="mt-5 max-w-[52rem] text-[10.5px] leading-[1.7] text-[#64748B]">
         These walkthroughs use publicly available information and standard
         browser or DNS tools. They are educational and do not change your
         website&apos;s configuration.

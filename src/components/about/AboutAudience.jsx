@@ -13,7 +13,7 @@ const AUDIENCES = [
     description:
       "Understand what your website shares with the public and which configuration details may be worth reviewing, without needing to become a security specialist first.",
     icon: UserIcon,
-    iconClass: "border-[#D7E9B0] bg-[#F2FADF] text-[#5C8414]",
+    iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   {
     number: "02",
@@ -22,7 +22,7 @@ const AUDIENCES = [
     description:
       "Check certificate, DNS, and header context when you ship a change, debug an integration, or investigate unexpected behavior.",
     icon: DeveloperIcon,
-    iconClass: "border-[#BFDDF6] bg-[#EAF4FD] text-[#286B96]",
+    iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   {
     number: "03",
@@ -31,7 +31,7 @@ const AUDIENCES = [
     description:
       "Use visibility into public signals and related assets as a starting point for scoping, mapping, and the follow-up work that comes next.",
     icon: ShieldIcon,
-    iconClass: "border-[#D8DCFF] bg-[#EEEFFF] text-[#5562B4]",
+    iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
   },
 ];
 
@@ -43,58 +43,58 @@ export default function AboutAudience() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-28 top-24 hidden h-[26rem] w-[26rem] rounded-full border border-[#DCE7F1] lg:block"
+        className="pointer-events-none absolute -right-28 top-24 hidden h-[26rem] w-[26rem] rounded-full border border-[#E2E8F0] lg:block"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-36 hidden h-[20rem] w-[20rem] rounded-full border border-dashed border-[#DCE7F1]/80 lg:block"
+        className="pointer-events-none absolute -right-16 top-36 hidden h-[20rem] w-[20rem] rounded-full border border-dashed border-[#E2E8F0]/80 lg:block"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="min-w-0 lg:col-span-5">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6F9E13]">
-              <span aria-hidden="true" className="h-px w-8 bg-[#6F9E13]/45" />
+            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
+              <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
               Who it helps
             </p>
             <h2
               id="audience-heading"
-              className="mt-4 max-w-[32rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#071D34] sm:text-[2.35rem] lg:text-[2.7rem]"
+              className="mt-4 max-w-[32rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
             >
               Built for the people who keep the public web moving.
             </h2>
-            <p className="mt-5 max-w-[31rem] text-pretty text-[14.5px] leading-[1.7] text-[#526B7F] sm:text-[15px]">
+            <p className="mt-5 max-w-[31rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px]">
               Different roles ask different questions. Securelyze keeps the
               starting point shared: clear context about what a website exposes
               and where to look next.
             </p>
 
-            <div className="mt-8 hidden max-w-[27rem] items-center gap-3 rounded-2xl border border-[#DCE7F1] bg-[#F8FBFD] px-4 py-3.5 lg:flex">
+            <div className="mt-8 hidden max-w-[27rem] items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3.5 lg:flex">
               <div className="flex -space-x-1.5">
                 {[UserIcon, DeveloperIcon, ShieldIcon].map((Icon, index) => (
                   <span
                     key={index}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-white bg-[#EAF2F8] text-[#42647D] shadow-sm"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-white bg-[#F1F5F9] text-[#475569] shadow-sm"
                   >
                     <Icon className="h-3.5 w-3.5" />
                   </span>
                 ))}
               </div>
-              <p className="text-[11.5px] font-medium leading-[1.55] text-[#526B7F]">
+              <p className="text-[11.5px] font-medium leading-[1.55] text-[#475569]">
                 One connected view for owners, builders, and defenders.
               </p>
             </div>
           </div>
 
           <div className="min-w-0 lg:col-span-7">
-            <div className="border-y border-[#DCE7F1]">
+            <div className="border-y border-[#E2E8F0]">
               {AUDIENCES.map((audience) => {
                 const Icon = audience.icon;
 
                 return (
                   <article
                     key={audience.overline}
-                    className="grid gap-4 border-b border-[#DCE7F1] py-6 last:border-b-0 sm:grid-cols-[3rem_1fr] sm:gap-5 sm:py-7"
+                    className="grid gap-4 border-b border-[#E2E8F0] py-6 last:border-b-0 sm:grid-cols-[3rem_1fr] sm:gap-5 sm:py-7"
                   >
                     <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2">
                       <span
@@ -102,19 +102,19 @@ export default function AboutAudience() {
                       >
                         <Icon className="h-[21px] w-[21px]" />
                       </span>
-                      <span className="font-mono text-[9px] font-medium tracking-[0.08em] text-[#A2B3C0]">
+                      <span className="font-mono text-[9px] font-medium tracking-[0.08em] text-[#94A3B8]">
                         {audience.number}
                       </span>
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#5D7487]">
+                      <p className="text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
                         {audience.overline}
                       </p>
-                      <h3 className="mt-2 text-pretty text-[17px] font-semibold leading-[1.35] tracking-[-0.025em] text-[#071D34] sm:text-[18px]">
+                      <h3 className="mt-2 text-pretty text-[17px] font-semibold leading-[1.35] tracking-[-0.025em] text-[#101A18] sm:text-[18px]">
                         {audience.title}
                       </h3>
-                      <p className="mt-2 max-w-[38rem] text-pretty text-[13.5px] leading-[1.7] text-[#526B7F]">
+                      <p className="mt-2 max-w-[38rem] text-pretty text-[13.5px] leading-[1.7] text-[#475569]">
                         {audience.description}
                       </p>
                     </div>
@@ -128,50 +128,50 @@ export default function AboutAudience() {
         <div
           id="mission"
           aria-labelledby="mission-heading"
-          className="relative mt-14 scroll-mt-28 overflow-hidden rounded-[1.75rem] border border-[#D9E8B7] bg-[#F3FADE] p-6 shadow-[0_24px_60px_-48px_rgba(80,112,30,0.55)] sm:p-8 lg:mt-20 lg:p-10"
+          className="relative mt-14 scroll-mt-28 overflow-hidden rounded-[1.75rem] border border-[#D1FAE5] bg-[#ECFDF5] p-6 shadow-[0_24px_60px_-48px_rgba(5,150,105,0.55)] sm:p-8 lg:mt-20 lg:p-10"
         >
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full border border-[#C6F36A]/40"
+            className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full border border-[#10B981]/40"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-8 -top-16 h-56 w-56 rounded-full border border-dashed border-[#A5C862]/40"
+            className="pointer-events-none absolute -right-8 -top-16 h-56 w-56 rounded-full border border-dashed border-[#34D399]/40"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute right-8 top-8 h-20 w-20 rounded-full bg-[#C6F36A]/20 blur-2xl"
+            className="pointer-events-none absolute right-8 top-8 h-20 w-20 rounded-full bg-[#10B981]/20 blur-2xl"
           />
 
           <div className="relative grid gap-6 lg:grid-cols-12 lg:items-start lg:gap-10">
             <div className="lg:col-span-6">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-[#A5C862]/35 bg-white/65 text-[#5C8414]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-[#34D399]/35 bg-white/65 text-[#047857]">
                   <CompassIcon className="h-4 w-4" />
                 </span>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5C7C24]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#047857]">
                   Our mission
                 </p>
               </div>
               <h3
                 id="mission-heading"
-                className="mt-5 max-w-[35rem] text-balance text-[1.45rem] font-bold leading-[1.2] tracking-[-0.04em] text-[#071D34] sm:text-[1.8rem]"
+                className="mt-5 max-w-[35rem] text-balance text-[1.45rem] font-bold leading-[1.2] tracking-[-0.04em] text-[#101A18] sm:text-[1.8rem]"
               >
                 Make public security signals easier to see, connect, and act on.
               </h3>
             </div>
 
             <div className="lg:col-span-6">
-              <p className="max-w-[35rem] text-pretty text-[14px] leading-[1.7] text-[#4F6441] sm:text-[14.5px]">
+              <p className="max-w-[35rem] text-pretty text-[14px] leading-[1.7] text-[#183B32] sm:text-[14.5px]">
                 Security information is most useful when it is understandable
                 and connected. We build Securelyze to help people move from
                 scattered signals to a more useful starting point, without
                 adding more noise.
               </p>
-              <p className="mt-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.13em] text-[#5C7C24]">
+              <p className="mt-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.13em] text-[#047857]">
                 <span
                   aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-[#6F9E13]"
+                  className="h-1.5 w-1.5 rounded-full bg-[#059669]"
                 />
                 Clarity before assumption
               </p>

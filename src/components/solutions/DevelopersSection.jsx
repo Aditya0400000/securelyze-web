@@ -12,25 +12,25 @@ const LAYERS = [
     label: "TLS",
     detail: "Certificate context",
     icon: CertificateIcon,
-    iconTone: "border-[#C6F36A]/20 bg-[#C6F36A]/[0.07] text-[#D8FA93]",
+    iconTone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
   {
     label: "DNS",
     detail: "Record details",
     icon: NetworkIcon,
-    iconTone: "border-[#8FCCFF]/20 bg-[#8FCCFF]/[0.07] text-[#C4E7FF]",
+    iconTone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
   {
     label: "HTTPS",
     detail: "Connection behavior",
     icon: LockIcon,
-    iconTone: "border-[#B9C3FF]/20 bg-[#B9C3FF]/[0.07] text-[#DCE2FF]",
+    iconTone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
   {
     label: "Headers",
     detail: "Browser policy",
     icon: CodeIcon,
-    iconTone: "border-[#C6F36A]/20 bg-[#C6F36A]/[0.07] text-[#D8FA93]",
+    iconTone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
 ];
 
@@ -42,18 +42,18 @@ function DevelopersVisual() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-[radial-gradient(circle_at_60%_40%,rgba(143,204,255,0.14),transparent_68%)] blur-2xl"
+        className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-[radial-gradient(circle_at_60%_40%,rgba(16,185,129,0.14),transparent_68%)] blur-2xl"
       />
 
-      <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#081A31]/80 p-4 shadow-[0_35px_90px_-55px_rgba(0,0,0,0.9)] sm:p-5">
+      <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#183B32]/80 p-4 shadow-[0_35px_90px_-55px_rgba(0,0,0,0.9)] sm:p-5">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_0%,rgba(143,204,255,0.08),transparent_40%),radial-gradient(ellipse_at_100%_100%,rgba(185,195,255,0.06),transparent_42%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_0%,rgba(16,185,129,0.08),transparent_40%),radial-gradient(ellipse_at_100%_100%,rgba(16,185,129,0.06),transparent_42%)]"
         />
 
         <div className="relative flex items-center justify-between gap-3 border-b border-white/[0.08] pb-3">
           <div className="flex min-w-0 items-center gap-2.5">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#8FCCFF]/20 bg-[#8FCCFF]/10 text-[#C4E7FF]">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]">
               <DeveloperIcon className="h-4 w-4" />
             </span>
             <div className="min-w-0">
@@ -71,7 +71,7 @@ function DevelopersVisual() {
           </span>
         </div>
 
-        <div className="relative mt-3 overflow-hidden rounded-xl border border-white/10 bg-[#06172A] p-3.5">
+        <div className="relative mt-3 overflow-hidden rounded-xl border border-white/10 bg-[#183B32] p-3.5">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-3 -top-8 font-mono text-[6rem] font-bold leading-none text-white/[0.025]"
@@ -107,7 +107,7 @@ function DevelopersVisual() {
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] font-semibold text-[#D8FA93]">
+                      <span className="font-mono text-[10px] font-semibold text-[#D1FAE5]">
                         {layer.label}
                       </span>
                       <span
@@ -130,7 +130,7 @@ function DevelopersVisual() {
           <span className="inline-flex items-center gap-1.5">
             <span
               aria-hidden="true"
-              className="h-1 w-1 rounded-full bg-[#C6F36A]"
+              className="h-1 w-1 rounded-full bg-[#10B981]"
             />
             Technical context
           </span>
@@ -151,18 +151,18 @@ export default function DevelopersSection() {
     <section
       id="developers"
       aria-labelledby="developers-heading"
-      className="relative scroll-mt-24 overflow-hidden bg-[#07152B] py-16 font-sans text-white selection:bg-[#C6F36A] selection:text-[#071D34] sm:py-20 lg:py-24"
+      className="relative scroll-mt-24 overflow-hidden bg-[#101A18] py-16 font-sans text-white selection:bg-[#10B981] selection:text-[#101A18] sm:py-20 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-0 h-[30rem] w-[30rem] rounded-full bg-[#2A7AB8]/15 blur-[120px]" />
-        <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#C6F36A]/[0.05] blur-[110px]" />
+        <div className="absolute -left-24 top-0 h-[30rem] w-[30rem] rounded-full bg-[#047857]/15 blur-[120px]" />
+        <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#10B981]/[0.05] blur-[110px]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_55%_30%,black,transparent_75%)]" />
       </div>
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:px-8">
         <div className="min-w-0">
-          <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C6F36A]">
-            <span aria-hidden="true" className="h-px w-8 bg-[#C6F36A]/50" />
+          <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#10B981]">
+            <span aria-hidden="true" className="h-px w-8 bg-[#10B981]/50" />
             Developers
           </p>
 

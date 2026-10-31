@@ -20,17 +20,17 @@ export default function ResourcesSectionHeading({
       <p
         className={`flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] ${
           isCentered ? "justify-center" : ""
-        } ${isDark ? "text-[#C6F36A]" : "text-[#6F9E13]"}`}
+        } ${isDark ? "text-[#10B981]" : "text-[#059669]"}`}
       >
         <span
           aria-hidden="true"
-          className={`h-px w-8 ${isDark ? "bg-[#C6F36A]/45" : "bg-[#6F9E13]/45"}`}
+          className={`h-px w-8 ${isDark ? "bg-[#10B981]/45" : "bg-[#059669]/45"}`}
         />
         {eyebrow}
         {isCentered ? (
           <span
             aria-hidden="true"
-            className={`h-px w-8 ${isDark ? "bg-[#C6F36A]/45" : "bg-[#6F9E13]/45"}`}
+            className={`h-px w-8 ${isDark ? "bg-[#10B981]/45" : "bg-[#059669]/45"}`}
           />
         ) : null}
       </p>
@@ -41,7 +41,7 @@ export default function ResourcesSectionHeading({
           isLarge
             ? "text-[1.9rem] sm:text-[2.35rem] lg:text-[2.7rem]"
             : "text-[1.5rem] sm:text-[1.75rem]"
-        } ${isDark ? "text-white" : "text-[#071D34]"}`}
+        } ${isDark ? "text-white" : "text-[#101A18]"}`}
       >
         {title}
       </Heading>
@@ -50,7 +50,7 @@ export default function ResourcesSectionHeading({
         <p
           className={`mt-5 text-pretty text-[14.5px] leading-[1.7] sm:text-[15px] ${
             isCentered ? "mx-auto max-w-[39rem]" : "max-w-[39rem]"
-          } ${isDark ? "text-white/65" : "text-[#526B7F]"}`}
+          } ${isDark ? "text-white/65" : "text-[#475569]"}`}
         >
           {description}
         </p>

@@ -11,24 +11,24 @@ import SmoothAnchor from "./SmoothAnchor";
 
 const ACCENTS = {
   lime: {
-    icon: "border-[#D7E9B0] bg-[#F2FADF] text-[#5C8414]",
-    number: "border-[#DDE8C7] bg-[#F7FCEB] text-[#5C8414]",
-    line: "bg-[#8ED13C]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    line: "bg-[#34D399]",
   },
   teal: {
-    icon: "border-[#BFE9EC] bg-[#E9F8F9] text-[#2A7B83]",
-    number: "border-[#CBEFF1] bg-[#F2FBFC] text-[#2A7B83]",
-    line: "bg-[#7DD3D8]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    line: "bg-[#10B981]",
   },
   amber: {
-    icon: "border-[#E3D1A1] bg-[#FBF3E0] text-[#8A6A1F]",
-    number: "border-[#EADCB8] bg-[#FDF8EC] text-[#8A6A1F]",
-    line: "bg-[#F2C94C]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    line: "bg-[#10B981]",
   },
   periwinkle: {
-    icon: "border-[#D8DCF7] bg-[#F0F1FD] text-[#5B5BB0]",
-    number: "border-[#DEE2FA] bg-[#F7F7FE] text-[#5B5BB0]",
-    line: "bg-[#B9C3FF]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
+    number: "border-[#D1FAE5] bg-[#F8FAFC] text-[#059669]",
+    line: "bg-[#10B981]",
   },
 };
 
@@ -102,7 +102,7 @@ function BasicArticle({ basic }) {
   return (
     <article
       id={basic.id}
-      className="scroll-mt-28 rounded-[1.5rem] border border-[#DCE7F1] bg-white p-5 shadow-[inset_0_1px_0_#FFFFFF,0_14px_34px_-32px_rgba(7,29,52,0.32)] sm:p-6"
+      className="scroll-mt-28 rounded-[1.5rem] border border-[#E2E8F0] bg-white p-5 shadow-[inset_0_1px_0_#FFFFFF,0_14px_34px_-32px_rgba(16,26,24,0.32)] sm:p-6"
     >
       <div className="flex items-start gap-3.5">
         <span
@@ -116,7 +116,7 @@ function BasicArticle({ basic }) {
           >
             {basic.number}
           </span>
-          <h4 className="mt-2 text-[1.02rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#071D34]">
+          <h4 className="mt-2 text-[1.02rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#101A18]">
             {basic.title}
           </h4>
         </div>
@@ -126,20 +126,20 @@ function BasicArticle({ basic }) {
         {basic.paragraphs.map((paragraph) => (
           <p
             key={paragraph}
-            className="text-[12.5px] leading-[1.72] text-[#526B7F]"
+            className="text-[12.5px] leading-[1.72] text-[#475569]"
           >
             {paragraph}
           </p>
         ))}
       </div>
 
-      <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-[#E8EFF5] bg-[#F8FAFC] px-3.5 py-3">
+      <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-[#F1F5F9] bg-[#F8FAFC] px-3.5 py-3">
         <span
           aria-hidden="true"
           className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${accent.line}`}
         />
-        <p className="text-[11.5px] leading-[1.65] text-[#405A6E]">
-          <span className="font-semibold text-[#183044]">Why it matters: </span>
+        <p className="text-[11.5px] leading-[1.65] text-[#475569]">
+          <span className="font-semibold text-[#183B32]">Why it matters: </span>
           {basic.why}
         </p>
       </div>
@@ -152,11 +152,11 @@ export default function SecurityBasicsContent() {
     <section
       id="beginners-security-basics"
       aria-labelledby="beginners-security-basics-heading"
-      className="relative scroll-mt-28 overflow-hidden border-y border-[#E7EEF5] bg-[#F7FAFC] py-14 sm:py-16 lg:py-20"
+      className="relative scroll-mt-28 overflow-hidden border-y border-[#F1F5F9] bg-[#F8FAFC] py-14 sm:py-16 lg:py-20"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(7,29,52,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(7,29,52,0.025)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.025)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_70%)]"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -171,17 +171,17 @@ export default function SecurityBasicsContent() {
 
         <div className="mt-9 grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-8">
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-[1.5rem] border border-[#DDE8C7] bg-[linear-gradient(180deg,#FFFFFF_0%,#F7FCEB_100%)] p-5 shadow-[inset_0_1px_0_#FFFFFF,0_18px_44px_-38px_rgba(7,29,52,0.4)] sm:p-6">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#D7E9B0] bg-white text-[#5C8414]">
+            <div className="rounded-[1.5rem] border border-[#D1FAE5] bg-[linear-gradient(180deg,#FFFFFF_0%,#F7FCEB_100%)] p-5 shadow-[inset_0_1px_0_#FFFFFF,0_18px_44px_-38px_rgba(16,26,24,0.4)] sm:p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#D1FAE5] bg-white text-[#047857]">
                 <BookOpenIcon className="h-[18px] w-[18px]" />
               </span>
-              <p className="mt-4 text-[9px] font-semibold uppercase tracking-[0.17em] text-[#6F9E13]">
+              <p className="mt-4 text-[9px] font-semibold uppercase tracking-[0.17em] text-[#059669]">
                 A beginner-friendly path
               </p>
-              <h4 className="mt-2 text-[1.1rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#071D34]">
+              <h4 className="mt-2 text-[1.1rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#101A18]">
                 No prior security background needed.
               </h4>
-              <p className="mt-2 text-[12px] leading-[1.65] text-[#607386]">
+              <p className="mt-2 text-[12px] leading-[1.65] text-[#64748B]">
                 Read the five sections in order, or jump straight to the
                 question you have.
               </p>
@@ -192,15 +192,15 @@ export default function SecurityBasicsContent() {
                     <li key={basic.id}>
                       <SmoothAnchor
                         href={`#${basic.id}`}
-                        className="group flex items-center gap-2.5 rounded-lg px-2 py-2 transition-colors duration-150 hover:bg-white focus-visible:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#36536C] motion-reduce:transition-none"
+                        className="group flex items-center gap-2.5 rounded-lg px-2 py-2 transition-colors duration-150 hover:bg-white focus-visible:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#475569] motion-reduce:transition-none"
                       >
-                        <span className="w-5 shrink-0 font-mono text-[9px] font-semibold text-[#7A8FA0]">
+                        <span className="w-5 shrink-0 font-mono text-[9px] font-semibold text-[#64748B]">
                           {basic.number}
                         </span>
-                        <span className="min-w-0 flex-1 text-[11.5px] font-medium leading-[1.45] text-[#405A6E]">
+                        <span className="min-w-0 flex-1 text-[11.5px] font-medium leading-[1.45] text-[#475569]">
                           {basic.title}
                         </span>
-                        <ArrowRightIcon className="h-3 w-3 shrink-0 text-[#9AAAB7] transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />
+                        <ArrowRightIcon className="h-3 w-3 shrink-0 text-[#94A3B8] transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />
                       </SmoothAnchor>
                     </li>
                   ))}

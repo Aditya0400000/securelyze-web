@@ -10,7 +10,7 @@ function TopicCard({ topic, tone, wide = false }) {
   return (
     <Link
       href={`/docs/${topic.slug}`}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#DCE7F1] bg-white p-5 shadow-[0_18px_45px_-38px_rgba(7,29,52,0.45),inset_0_1px_0_#FFFFFF] transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[#C9DFA4] hover:shadow-[0_24px_55px_-34px_rgba(7,29,52,0.4),inset_0_1px_0_#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17344E] focus-visible:ring-offset-2 motion-reduce:transition-none ${
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#E2E8F0] bg-white p-5 shadow-[0_18px_45px_-38px_rgba(16,26,24,0.45),inset_0_1px_0_#FFFFFF] transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[#D1FAE5] hover:shadow-[0_24px_55px_-34px_rgba(16,26,24,0.4),inset_0_1px_0_#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#183B32] focus-visible:ring-offset-2 motion-reduce:transition-none ${
         wide ? "sm:max-w-[34rem]" : ""
       }`}
     >
@@ -25,21 +25,21 @@ function TopicCard({ topic, tone, wide = false }) {
         >
           <DocsIcon type={topic.icon} className="h-[18px] w-[18px]" />
         </span>
-        <span className="mt-0.5 rounded-full border border-[#E7EEF5] bg-[#FBFDFF] px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.14em] text-[#7A8FA0]">
+        <span className="mt-0.5 rounded-full border border-[#F1F5F9] bg-[#F8FAFC] px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.14em] text-[#64748B]">
           Guide
         </span>
       </div>
 
-      <h4 className="mt-4 text-[1.02rem] font-semibold tracking-[-0.025em] text-[#10283E]">
+      <h4 className="mt-4 text-[1.02rem] font-semibold tracking-[-0.025em] text-[#183B32]">
         {topic.title}
       </h4>
-      <p className="mt-2 text-[12.5px] leading-[1.65] text-[#5F7284]">
+      <p className="mt-2 text-[12.5px] leading-[1.65] text-[#64748B]">
         {topic.summary}
       </p>
 
-      <span className="mt-auto flex items-center justify-between gap-3 border-t border-[#EDF2F7] pt-4 text-[11px] font-semibold text-[#36536C]">
+      <span className="mt-auto flex items-center justify-between gap-3 border-t border-[#F1F5F9] pt-4 text-[11px] font-semibold text-[#475569]">
         Read guide
-        <ArrowRightIcon className="h-3.5 w-3.5 shrink-0 text-[#7A8FA0] transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />
+        <ArrowRightIcon className="h-3.5 w-3.5 shrink-0 text-[#64748B] transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />
       </span>
     </Link>
   );
@@ -74,7 +74,7 @@ export default function DocsCategories() {
             return (
               <div
                 key={category.id}
-                className="border-t border-[#E7EEF5] pt-8 first:border-t-0 first:pt-0 lg:pt-10"
+                className="border-t border-[#F1F5F9] pt-8 first:border-t-0 first:pt-0 lg:pt-10"
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex items-start gap-3.5">
@@ -84,13 +84,13 @@ export default function DocsCategories() {
                       <DocsIcon type={category.icon} className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#7A8FA0]">
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#64748B]">
                         {category.eyebrow}
                       </p>
-                      <h3 className="mt-1.5 text-[1.45rem] font-semibold tracking-[-0.035em] text-[#10283E]">
+                      <h3 className="mt-1.5 text-[1.45rem] font-semibold tracking-[-0.035em] text-[#183B32]">
                         {category.title}
                       </h3>
-                      <p className="mt-1 max-w-[40rem] text-[12.5px] leading-[1.65] text-[#5F7284]">
+                      <p className="mt-1 max-w-[40rem] text-[12.5px] leading-[1.65] text-[#64748B]">
                         {category.description}
                       </p>
                     </div>

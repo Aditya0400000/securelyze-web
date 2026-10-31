@@ -21,19 +21,19 @@ const HERO_SIGNALS = [
     label: "SSL / TLS",
     detail: "Certificate context",
     icon: CertificateIcon,
-    accent: "border-[#C6F36A]/20 bg-[#C6F36A]/10 text-[#D8FA93]",
+    accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
   {
     label: "DNS",
     detail: "Routing records",
     icon: NetworkIcon,
-    accent: "border-[#8FCCFF]/20 bg-[#8FCCFF]/10 text-[#C4E7FF]",
+    accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
   {
     label: "Headers",
     detail: "Browser policy",
     icon: CodeIcon,
-    accent: "border-[#B9C3FF]/20 bg-[#B9C3FF]/10 text-[#DCE2FF]",
+    accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
 ];
 
@@ -44,20 +44,20 @@ function HeroVisual() {
     <figure className="relative mx-auto w-full max-w-[34rem] lg:max-w-[36rem]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(circle_at_55%_45%,rgba(92,155,211,0.18),transparent_68%)] blur-2xl"
+        className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(circle_at_55%_45%,rgba(16,185,129,0.18),transparent_68%)] blur-2xl"
       />
 
-      <div className="relative overflow-hidden rounded-[2rem] border border-[#0A2A46]/20 bg-[#071D34] p-1.5 shadow-[0_45px_110px_-48px_rgba(1,18,38,0.8),inset_0_1px_0_rgba(255,255,255,0.12)]">
-        <div className="relative overflow-hidden rounded-[1.65rem] border border-white/10 bg-[#081F36]">
+      <div className="relative overflow-hidden rounded-[2rem] border border-[#183B32]/20 bg-[#101A18] p-1.5 shadow-[0_45px_110px_-48px_rgba(16,26,24,0.8),inset_0_1px_0_rgba(255,255,255,0.12)]">
+        <div className="relative overflow-hidden rounded-[1.65rem] border border-white/10 bg-[#183B32]">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_6%,rgba(143,204,255,0.16),transparent_38%),radial-gradient(circle_at_12%_100%,rgba(198,243,106,0.08),transparent_36%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_6%,rgba(16,185,129,0.16),transparent_38%),radial-gradient(circle_at_12%_100%,rgba(16,185,129,0.08),transparent_36%)]"
           />
 
           <div className="relative flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
             <div className="flex items-center gap-1.5" aria-hidden="true">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A3D]/80" />
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8FCCFF]/45" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]/80" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]/45" />
               <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
             </div>
             <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/55">
@@ -69,12 +69,12 @@ function HeroVisual() {
             <div className="relative overflow-hidden rounded-[1.2rem] border border-white/10 bg-white/[0.035] p-4">
               <span
                 aria-hidden="true"
-                className="about-hero-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C6F36A]/80 to-transparent shadow-[0_0_18px_rgba(198,243,106,0.55)]"
+                className="about-hero-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#10B981]/80 to-transparent shadow-[0_0_18px_rgba(16,185,129,0.55)]"
               />
 
               <div className="relative flex items-start justify-between gap-4">
                 <div className="flex min-w-0 items-center gap-3">
-                  <span className="about-hero-pulse relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-[#C6F36A]/25 bg-[#0B2E4D] text-[#C6F36A]">
+                  <span className="about-hero-pulse relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-[#10B981]/25 bg-[#183B32] text-[#10B981]">
                     <GlobeIcon className="h-[21px] w-[21px]" />
                   </span>
                   <div className="min-w-0">
@@ -96,7 +96,7 @@ function HeroVisual() {
                   (height, index) => (
                     <span
                       key={`${height}-${index}`}
-                      className="block flex-1 rounded-full bg-[#8FCCFF]/25"
+                      className="block flex-1 rounded-full bg-[#10B981]/25"
                       style={{ height: `${height / 4}px` }}
                     />
                   ),
@@ -105,8 +105,8 @@ function HeroVisual() {
 
               <div className="mt-2.5 flex items-center justify-between gap-3 text-[9px]">
                 <span className="font-medium text-white/55">Connection context</span>
-                <span className="inline-flex items-center gap-1.5 font-semibold uppercase tracking-[0.13em] text-[#C6F36A]/80">
-                  <span className="h-1 w-1 rounded-full bg-[#C6F36A]" />
+                <span className="inline-flex items-center gap-1.5 font-semibold uppercase tracking-[0.13em] text-[#10B981]/80">
+                  <span className="h-1 w-1 rounded-full bg-[#10B981]" />
                   HTTPS
                 </span>
               </div>
@@ -142,7 +142,7 @@ function HeroVisual() {
             <div className="mt-2.5 rounded-[1.05rem] border border-white/[0.08] bg-white/[0.03] p-3.5">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md border border-[#B9C3FF]/20 bg-[#B9C3FF]/10 text-[#DCE2FF]">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md border border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]">
                     <RadarIcon className="h-3.5 w-3.5" />
                   </span>
                   <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/60">
@@ -158,9 +158,9 @@ function HeroVisual() {
                 {ASSET_CHIPS.map((asset) => (
                   <span
                     key={asset}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-[#0B2744]/80 px-2.5 py-1 font-mono text-[9.5px] text-white/60"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-[#183B32]/80 px-2.5 py-1 font-mono text-[9.5px] text-white/60"
                   >
-                    <span className="h-1 w-1 rounded-full bg-[#B9C3FF]/75" />
+                    <span className="h-1 w-1 rounded-full bg-[#10B981]/75" />
                     {asset}
                   </span>
                 ))}
@@ -178,7 +178,7 @@ function HeroVisual() {
         </div>
       </div>
 
-      <figcaption className="mt-4 px-3 text-center text-[11px] leading-[1.6] text-[#647C8D]">
+      <figcaption className="mt-4 px-3 text-center text-[11px] leading-[1.6] text-[#64748B]">
         Illustrative view. Public signals and discovered assets depend on the
         website and its configuration.
       </figcaption>
@@ -191,7 +191,7 @@ export default function AboutHero() {
     <section
       id="about"
       aria-labelledby="about-hero-heading"
-      className="relative isolate scroll-mt-24 overflow-hidden border-b border-[#DCE7F1] bg-[linear-gradient(180deg,#F7FAFC_0%,#FBFDFF_58%,#FFFFFF_100%)] font-sans selection:bg-[#C6F36A] selection:text-[#071D34]"
+      className="relative isolate scroll-mt-24 overflow-hidden border-b border-[#E2E8F0] bg-[linear-gradient(180deg,#F7FAFC_0%,#FBFDFF_58%,#FFFFFF_100%)] font-sans selection:bg-[#10B981] selection:text-[#101A18]"
     >
       <style>{`
         .about-hero-scan {
@@ -252,24 +252,24 @@ export default function AboutHero() {
       `}</style>
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-28 top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-[#DCE8F7]/65 blur-3xl" />
-        <div className="absolute right-[-8rem] top-[-4rem] h-[26rem] w-[26rem] rounded-full bg-[#C6F36A]/10 blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(7,29,52,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(7,29,52,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_34%_0%,black,transparent_72%)]" />
+        <div className="absolute -left-28 top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-[#D1FAE5]/65 blur-3xl" />
+        <div className="absolute right-[-8rem] top-[-4rem] h-[26rem] w-[26rem] rounded-full bg-[#10B981]/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_34%_0%,black,transparent_72%)]" />
       </div>
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-14 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-12 lg:px-8 lg:pb-24 lg:pt-20">
         <div className="min-w-0">
-          <p className="inline-flex items-center gap-2 rounded-full border border-[#0B2B45]/10 bg-white/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#4A6477] shadow-[0_8px_24px_-18px_rgba(7,29,52,0.35)] backdrop-blur-sm">
+          <p className="inline-flex items-center gap-2 rounded-full border border-[#183B32]/10 bg-white/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#475569] shadow-[0_8px_24px_-18px_rgba(16,26,24,0.35)] backdrop-blur-sm">
             <span
               aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#6F9E13]"
+              className="h-1.5 w-1.5 rounded-full bg-[#059669]"
             />
             The platform
           </p>
 
           <h1
             id="about-hero-heading"
-            className="mt-6 max-w-[43rem] text-balance text-[2.65rem] font-semibold leading-[1.01] tracking-[-0.055em] text-[#071D34] sm:text-[3.4rem] lg:text-[3.75rem]"
+            className="mt-6 max-w-[43rem] text-balance text-[2.65rem] font-semibold leading-[1.01] tracking-[-0.055em] text-[#101A18] sm:text-[3.4rem] lg:text-[3.75rem]"
           >
             About{" "}
             <span className="relative inline-block">
@@ -281,7 +281,7 @@ export default function AboutHero() {
             </span>
           </h1>
 
-          <p className="mt-7 max-w-[38rem] text-pretty text-[15.5px] leading-[1.72] text-[#526B7F] sm:text-[16.5px]">
+          <p className="mt-7 max-w-[38rem] text-pretty text-[15.5px] leading-[1.72] text-[#475569] sm:text-[16.5px]">
             Securelyze is a free web security analysis and asset discovery
             platform. We give website owners, developers, and security
             professionals a connected view of the public signals that shape a
@@ -291,7 +291,7 @@ export default function AboutHero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/platform#website-security-check"
-              className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-[#C6F36A] px-5 text-[13.5px] font-semibold tracking-[-0.005em] text-[#071D34] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(96,133,28,0.9)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-[#D2F77F] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_18px_36px_-18px_rgba(96,133,28,0.95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071D34] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
+              className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-[#10B981] px-5 text-[13.5px] font-semibold tracking-[-0.005em] text-[#101A18] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(5,150,105,0.9)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-[#059669] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_18px_36px_-18px_rgba(5,150,105,0.95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101A18] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
             >
               Explore the Security Checker
               <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
@@ -299,21 +299,21 @@ export default function AboutHero() {
 
             <a
               href="#ecosystem"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#0B2B45]/15 bg-white/70 px-5 text-[13.5px] font-semibold tracking-[-0.005em] text-[#0B2B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-sm transition-colors duration-200 hover:border-[#0B2B45]/25 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071D34] focus-visible:ring-offset-2 motion-reduce:transition-none"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#183B32]/15 bg-white/70 px-5 text-[13.5px] font-semibold tracking-[-0.005em] text-[#183B32] shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-sm transition-colors duration-200 hover:border-[#183B32]/25 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101A18] focus-visible:ring-offset-2 motion-reduce:transition-none"
             >
               See how it connects
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2.5 border-t border-[#DCE7F1] pt-5">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2.5 border-t border-[#E2E8F0] pt-5">
             {SIGNAL_LABELS.map((label) => (
               <li
                 key={label}
-                className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[#526B7F]"
+                className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[#475569]"
               >
                 <span
                   aria-hidden="true"
-                  className="h-1 w-1 rounded-full bg-[#6F9E13]/70"
+                  className="h-1 w-1 rounded-full bg-[#059669]/70"
                 />
                 {label}
               </li>

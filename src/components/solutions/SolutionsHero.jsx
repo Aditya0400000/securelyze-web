@@ -42,25 +42,25 @@ const CAPABILITIES = [
     label: "Website checks",
     detail: "SSL/TLS, DNS, HTTPS, and headers",
     icon: ShieldIcon,
-    tone: "border-[#C6F36A]/20 bg-[#C6F36A]/[0.07] text-[#D8FA93]",
+    tone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
   {
     label: "Asset discovery",
     detail: "Domains, subdomains, and services",
     icon: RadarIcon,
-    tone: "border-[#8FCCFF]/20 bg-[#8FCCFF]/[0.07] text-[#C4E7FF]",
+    tone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
   {
     label: "Developer context",
     detail: "Technical configuration details",
     icon: CodeIcon,
-    tone: "border-[#B9C3FF]/20 bg-[#B9C3FF]/[0.07] text-[#DCE2FF]",
+    tone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
   {
     label: "Team clarity",
     detail: "One shared security view",
     icon: LayersIcon,
-    tone: "border-[#C6F36A]/20 bg-[#C6F36A]/[0.07] text-[#D8FA93]",
+    tone: "border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#D1FAE5]",
   },
 ];
 
@@ -68,22 +68,22 @@ const ORBIT_ICONS = [
   {
     icon: CertificateIcon,
     position: "left-[5%] top-[14%]",
-    tone: "border-[#C6F36A]/20 bg-[#0B2744]/90 text-[#D8FA93]",
+    tone: "border-[#10B981]/20 bg-[#183B32]/90 text-[#D1FAE5]",
   },
   {
     icon: GlobeIcon,
     position: "right-[5%] top-[14%]",
-    tone: "border-[#8FCCFF]/20 bg-[#0B2744]/90 text-[#C4E7FF]",
+    tone: "border-[#10B981]/20 bg-[#183B32]/90 text-[#D1FAE5]",
   },
   {
     icon: NetworkIcon,
     position: "left-[5%] bottom-[14%]",
-    tone: "border-[#B9C3FF]/20 bg-[#0B2744]/90 text-[#DCE2FF]",
+    tone: "border-[#10B981]/20 bg-[#183B32]/90 text-[#D1FAE5]",
   },
   {
     icon: CodeIcon,
     position: "right-[5%] bottom-[14%]",
-    tone: "border-[#C6F36A]/20 bg-[#0B2744]/90 text-[#D8FA93]",
+    tone: "border-[#10B981]/20 bg-[#183B32]/90 text-[#D1FAE5]",
   },
 ];
 
@@ -95,20 +95,20 @@ function HeroVisual() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(circle_at_55%_45%,rgba(92,155,211,0.18),transparent_68%)] blur-2xl"
+        className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(circle_at_55%_45%,rgba(16,185,129,0.18),transparent_68%)] blur-2xl"
       />
 
-      <div className="relative overflow-hidden rounded-[2rem] border border-[#0A2A46]/20 bg-[#071D34] p-1.5 shadow-[0_45px_110px_-48px_rgba(1,18,38,0.8),inset_0_1px_0_rgba(255,255,255,0.12)]">
-        <div className="relative overflow-hidden rounded-[1.65rem] border border-white/10 bg-[#081F36]">
+      <div className="relative overflow-hidden rounded-[2rem] border border-[#183B32]/20 bg-[#101A18] p-1.5 shadow-[0_45px_110px_-48px_rgba(16,26,24,0.8),inset_0_1px_0_rgba(255,255,255,0.12)]">
+        <div className="relative overflow-hidden rounded-[1.65rem] border border-white/10 bg-[#183B32]">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_6%,rgba(143,204,255,0.16),transparent_38%),radial-gradient(circle_at_12%_100%,rgba(198,243,106,0.08),transparent_36%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_6%,rgba(16,185,129,0.16),transparent_38%),radial-gradient(circle_at_12%_100%,rgba(16,185,129,0.08),transparent_36%)]"
           />
 
           <div className="relative flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
             <div className="flex items-center gap-1.5" aria-hidden="true">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A3D]/80" />
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8FCCFF]/45" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]/80" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]/45" />
               <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
             </div>
             <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/50">
@@ -120,7 +120,7 @@ function HeroVisual() {
             <div className="relative overflow-hidden rounded-[1.2rem] border border-white/10 bg-white/[0.03] px-4 pb-4 pt-5 sm:px-5">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(198,243,106,0.09),transparent_44%)]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(16,185,129,0.09),transparent_44%)]"
               />
 
               <div className="relative mx-auto flex h-52 w-full items-center justify-center sm:h-60">
@@ -130,14 +130,14 @@ function HeroVisual() {
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute h-28 w-28 rounded-full border border-[#C6F36A]/15 sm:h-32 sm:w-32"
+                  className="absolute h-28 w-28 rounded-full border border-[#10B981]/15 sm:h-32 sm:w-32"
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute h-16 w-16 rounded-full bg-[#C6F36A]/10 blur-xl"
+                  className="absolute h-16 w-16 rounded-full bg-[#10B981]/10 blur-xl"
                 />
 
-                <span className="solutions-hero-pulse relative flex h-20 w-20 items-center justify-center rounded-[1.4rem] border border-[#C6F36A]/25 bg-[#0B2E4D] text-[#C6F36A] shadow-[0_20px_50px_-24px_rgba(198,243,106,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] sm:h-24 sm:w-24">
+                <span className="solutions-hero-pulse relative flex h-20 w-20 items-center justify-center rounded-[1.4rem] border border-[#10B981]/25 bg-[#183B32] text-[#10B981] shadow-[0_20px_50px_-24px_rgba(16,185,129,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] sm:h-24 sm:w-24">
                   <ShieldIcon className="h-9 w-9 sm:h-10 sm:w-10" />
                 </span>
 
@@ -182,7 +182,7 @@ function HeroVisual() {
               <span className="inline-flex items-center gap-1.5">
                 <span
                   aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-[#C6F36A]"
+                  className="h-1.5 w-1.5 rounded-full bg-[#10B981]"
                 />
                 One connected experience
               </span>
@@ -213,7 +213,7 @@ export default function SolutionsHero() {
     <section
       id="solutions"
       aria-labelledby="solutions-hero-heading"
-      className="relative isolate scroll-mt-24 overflow-hidden border-b border-[#DCE7F1] bg-[linear-gradient(180deg,#F7FAFC_0%,#FBFDFF_58%,#FFFFFF_100%)] font-sans selection:bg-[#C6F36A] selection:text-[#071D34]"
+      className="relative isolate scroll-mt-24 overflow-hidden border-b border-[#E2E8F0] bg-[linear-gradient(180deg,#F7FAFC_0%,#FBFDFF_58%,#FFFFFF_100%)] font-sans selection:bg-[#10B981] selection:text-[#101A18]"
     >
       <style>{`
         .solutions-hero-orbit {
@@ -263,24 +263,24 @@ export default function SolutionsHero() {
       `}</style>
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-28 top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-[#DCE8F7]/65 blur-3xl" />
-        <div className="absolute right-[-8rem] top-[-4rem] h-[26rem] w-[26rem] rounded-full bg-[#C6F36A]/10 blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(7,29,52,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(7,29,52,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_34%_0%,black,transparent_72%)]" />
+        <div className="absolute -left-28 top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-[#D1FAE5]/65 blur-3xl" />
+        <div className="absolute right-[-8rem] top-[-4rem] h-[26rem] w-[26rem] rounded-full bg-[#10B981]/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_34%_0%,black,transparent_72%)]" />
       </div>
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-12 lg:px-8 lg:pb-24 lg:pt-20">
         <div className="min-w-0">
-          <p className="inline-flex items-center gap-2 rounded-full border border-[#0B2B45]/10 bg-white/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#4A6477] shadow-[0_8px_24px_-18px_rgba(7,29,52,0.35)] backdrop-blur-sm">
+          <p className="inline-flex items-center gap-2 rounded-full border border-[#183B32]/10 bg-white/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#475569] shadow-[0_8px_24px_-18px_rgba(16,26,24,0.35)] backdrop-blur-sm">
             <span
               aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#6F9E13]"
+              className="h-1.5 w-1.5 rounded-full bg-[#059669]"
             />
             Solutions
           </p>
 
           <h1
             id="solutions-hero-heading"
-            className="mt-6 max-w-[43rem] text-balance text-[2.65rem] font-semibold leading-[1.01] tracking-[-0.055em] text-[#071D34] sm:text-[3.4rem] lg:text-[3.75rem]"
+            className="mt-6 max-w-[43rem] text-balance text-[2.65rem] font-semibold leading-[1.01] tracking-[-0.055em] text-[#101A18] sm:text-[3.4rem] lg:text-[3.75rem]"
           >
             Security Solutions for{" "}
             <span className="relative inline-block">
@@ -292,7 +292,7 @@ export default function SolutionsHero() {
             </span>
           </h1>
 
-          <p className="mt-7 max-w-[38rem] text-pretty text-[15.5px] leading-[1.72] text-[#526B7F] sm:text-[16.5px]">
+          <p className="mt-7 max-w-[38rem] text-pretty text-[15.5px] leading-[1.72] text-[#475569] sm:text-[16.5px]">
             A connected view of website security for the people who build, run,
             and protect the web. From everyday checks to a clearer view of your
             external footprint.
@@ -314,8 +314,8 @@ export default function SolutionsHero() {
             </SolutionsCta>
           </div>
 
-          <div className="mt-8 border-t border-[#DCE7F1] pt-5">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#5D7487]">
+          <div className="mt-8 border-t border-[#E2E8F0] pt-5">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
               Explore solutions for
             </p>
 
@@ -327,9 +327,9 @@ export default function SolutionsHero() {
                   <Link
                     key={audience.label}
                     href={audience.href}
-                    className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#DCE7F1] bg-white/70 px-3 py-2 text-[10.5px] font-semibold text-[#33521A] shadow-[0_10px_24px_-22px_rgba(7,29,52,0.35)] transition duration-200 hover:border-[#C6F36A] hover:bg-[#F7FCEB] hover:text-[#3E5E12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071D34] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-0.5 sm:justify-start"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#E2E8F0] bg-white/70 px-3 py-2 text-[10.5px] font-semibold text-[#183B32] shadow-[0_10px_24px_-22px_rgba(16,26,24,0.35)] transition duration-200 hover:border-[#10B981] hover:bg-[#ECFDF5] hover:text-[#183B32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101A18] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-0.5 sm:justify-start"
                   >
-                    <Icon className="h-3.5 w-3.5 text-[#6F9E13]" />
+                    <Icon className="h-3.5 w-3.5 text-[#059669]" />
                     {audience.label}
                   </Link>
                 );

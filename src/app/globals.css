@@ -1,26 +1,575 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   SECURELYZE CENTRALIZED GLOBAL DESIGN SYSTEM
+   All core design values, colors, typography, surfaces, buttons, forms,
+   and elevations are controlled centrally through this file.
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* ==========================================================================
+     1. Approved Global Colour Palette (Foundation)
+     ========================================================================== */
+  --charcoal: #101A18;
+  --dark-green: #183B32;
+  --emerald: #10B981;
+  --emerald-hover: #059669;
+  --emerald-light: #34D399;
+  --soft-green: #D1FAE5;
+  --soft-green-hover: #BBF7D0;
+  --light: #F8FAFC;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --text-primary: #1F2937;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
 
-@theme inline {
+  /* ==========================================================================
+     2. Semantic Colour Tokens
+     ========================================================================== */
+  /* Brand / Action */
+  --primary: var(--emerald);
+  --primary-hover: var(--emerald-hover);
+  --secondary: var(--dark-green);
+  --secondary-hover: #132A24;
+  --accent: var(--emerald);
+  --accent-soft: var(--soft-green);
+  --accent-mint: var(--emerald-light);
+
+  /* Backgrounds */
+  --background: var(--white);
+  --background-light: var(--light);
+  --background-dark: var(--charcoal);
+  --background-dark-green: var(--dark-green);
+
+  /* Surfaces */
+  --surface: var(--white);
+  --surface-subtle: var(--light);
+  --surface-dark: var(--dark-green);
+  --surface-input: var(--white);
+
+  /* Typography / Text */
+  --text-inverse: var(--white);
+  --text-inverse-muted: var(--soft-green);
+
+  /* Borders */
+  --border-default: var(--border);
+  --border-dark: rgba(255, 255, 255, 0.12);
+
+  /* Focus & Interactive */
+  --focus-ring: var(--emerald);
+
+  /* Hero Gradient & Glow Tokens */
+  --gradient-hero: linear-gradient(180deg, var(--charcoal) 0%, #132923 60%, var(--dark-green) 100%);
+  --glow-emerald: rgba(16, 185, 129, 0.15);
+
+  /* Backward-compatible aliases for --color-* references */
+  --color-charcoal: var(--charcoal);
+  --color-dark-green: var(--dark-green);
+  --color-emerald: var(--emerald);
+  --color-emerald-hover: var(--emerald-hover);
+  --color-emerald-light: var(--emerald-light);
+  --color-soft-green: var(--soft-green);
+  --color-light: var(--light);
+  --color-white: var(--white);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-inverse-muted: var(--text-inverse-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-highlight: var(--emerald);
+  --color-bg-white: var(--white);
+  --color-bg-light: var(--light);
+  --color-bg-charcoal: var(--charcoal);
+  --color-bg-dark-green: var(--dark-green);
+  --color-border-default: var(--border-default);
+  --color-border-dark: var(--border-dark);
+  --color-surface: var(--surface);
+  --color-surface-card: var(--surface);
+  --color-surface-card-subtle: var(--surface-subtle);
+  --color-surface-card-dark: var(--surface-dark);
+  --color-surface-input: var(--surface-input);
+  --color-focus-ring: var(--focus-ring);
+
+  /* ==========================================================================
+     3. Border Radius Tokens
+     ========================================================================== */
+  --radius-sm: 0.375rem;    /* 6px  - Badges, small tags */
+  --radius-md: 0.5rem;      /* 8px  - Compact items */
+  --radius-lg: 0.75rem;     /* 12px - Buttons, standard inputs */
+  --radius-xl: 1rem;        /* 16px - Medium cards, dialogs */
+  --radius-2xl: 1.25rem;    /* 20px - Standard modern card surfaces */
+  --radius-3xl: 1.5rem;     /* 24px - Large containers */
+  --radius-full: 9999px;    /* Pills, round avatars */
+
+  /* Component radius aliases */
+  --radius-card: var(--radius-2xl);
+  --radius-btn: var(--radius-lg);
+  --radius-input: var(--radius-lg);
+
+  /* ==========================================================================
+     4. Elevation & Shadow Tokens
+     ========================================================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(16, 26, 24, 0.05);
+  --shadow-card: 0 16px 36px -20px rgba(16, 26, 24, 0.12), 0 2px 8px -4px rgba(16, 26, 24, 0.05);
+  --shadow-card-hover: 0 24px 48px -20px rgba(16, 26, 24, 0.18), 0 4px 12px -4px rgba(16, 26, 24, 0.08);
+  --shadow-card-dark: 0 30px 60px -25px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --shadow-dropdown: 0 24px 60px -20px rgba(16, 26, 24, 0.22), 0 4px 16px -6px rgba(16, 26, 24, 0.08);
+  --shadow-btn-primary: 0 10px 24px -10px rgba(16, 185, 129, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  --shadow-btn-primary-hover: 0 14px 28px -10px rgba(5, 150, 105, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --shadow-btn-dark: 0 12px 28px -18px rgba(16, 26, 24, 0.75);
+
+  /* ==========================================================================
+     5. Component Sizing & Layout Metrics
+     ========================================================================== */
+  --btn-height: 2.75rem;     /* 44px standard accessible height */
+  --btn-padding-x: 1.25rem;  /* 20px */
+  --btn-font-size: 0.875rem; /* 14px */
+  --btn-font-weight: 600;
+  --card-padding: 1.5rem;    /* 24px */
+  --input-height: 2.875rem;  /* 46px */
+  --input-padding-x: 1rem;   /* 16px */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ==========================================================================
+   Tailwind CSS v4 Theme Registration
+   Exposes the centralized design tokens to Tailwind utility classes.
+   Non-circular references mapping back to foundational root variables.
+   ========================================================================== */
+@theme inline {
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Palette Utilities */
+  --color-charcoal: var(--charcoal);
+  --color-dark-green: var(--dark-green);
+  --color-emerald: var(--emerald);
+  --color-emerald-hover: var(--emerald-hover);
+  --color-emerald-light: var(--emerald-light);
+  --color-soft-green: var(--soft-green);
+  --color-light: var(--light);
+  --color-white: var(--white);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* Semantic Utilities */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-card: var(--surface);
+  --color-surface-input: var(--surface-input);
+  --color-accent-soft: var(--accent-soft);
+  --color-focus-ring: var(--focus-ring);
+
+  /* Radius Utilities */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+  --radius-card: var(--radius-card);
+  --radius-btn: var(--radius-btn);
+  --radius-input: var(--radius-input);
+
+  /* Shadow Utilities */
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-dropdown: var(--shadow-dropdown);
+  --shadow-btn: var(--shadow-btn-primary);
+}
+
+/* ==========================================================================
+   Base Styles: Font assignment & default document rendering
+   ========================================================================== */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Typography Primitives
+   Centrally adjustable heading, subheading, body, and label classes.
+   ========================================================================== */
+.heading-display {
+  font-size: clamp(2.25rem, 3.5vw + 1rem, 3.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  color: var(--charcoal);
+}
+
+.heading-1 {
+  font-size: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--charcoal);
+}
+
+.heading-2 {
+  font-size: clamp(1.35rem, 1.4vw + 0.8rem, 1.875rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--charcoal);
+}
+
+.heading-3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+
+.subheading {
+  font-size: clamp(0.95rem, 0.4vw + 0.8rem, 1.125rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.body-base {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.body-small {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.label-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Reusable Button Classes
+   Shared base for layout, transitions, focus, active, and disabled states.
+   ========================================================================== */
+.btn-base,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-dark,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: var(--btn-height);
+  padding-inline: var(--btn-padding-x);
+  border-radius: var(--radius-btn);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-base:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-outline:focus-visible,
+.btn-dark:focus-visible,
+.btn-ghost:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--focus-ring);
+}
+
+.btn-base:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active,
+.btn-dark:active,
+.btn-ghost:active {
+  transform: translateY(0);
+}
+
+.btn-base:disabled,
+.btn-base[aria-disabled="true"],
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"],
+.btn-secondary:disabled,
+.btn-secondary[aria-disabled="true"],
+.btn-outline:disabled,
+.btn-outline[aria-disabled="true"],
+.btn-dark:disabled,
+.btn-dark[aria-disabled="true"],
+.btn-ghost:disabled,
+.btn-ghost[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn-base:hover:not(:disabled):not([aria-disabled="true"]),
+  .btn-primary:hover:not(:disabled):not([aria-disabled="true"]),
+  .btn-secondary:hover:not(:disabled):not([aria-disabled="true"]),
+  .btn-outline:hover:not(:disabled):not([aria-disabled="true"]),
+  .btn-dark:hover:not(:disabled):not([aria-disabled="true"]),
+  .btn-ghost:hover:not(:disabled):not([aria-disabled="true"]) {
+    transform: translateY(-1px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Primary Button (Emerald) */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--charcoal);
+  box-shadow: var(--shadow-btn-primary);
+}
+
+.btn-primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-btn-primary-hover);
+}
+
+/* Secondary Button (Soft Green Surface) */
+.btn-secondary {
+  border-color: rgba(16, 185, 129, 0.25);
+  background-color: var(--accent-soft);
+  color: var(--dark-green);
+}
+
+.btn-secondary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--soft-green-hover);
+  border-color: var(--emerald);
+  color: var(--charcoal);
+}
+
+/* Outline Button */
+.btn-outline {
+  border-color: var(--border);
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.btn-outline:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--light);
+  border-color: var(--charcoal);
+  color: var(--charcoal);
+}
+
+/* Dark Button (Charcoal) */
+.btn-dark {
+  border-color: var(--charcoal);
+  background-color: var(--charcoal);
+  color: var(--white);
+  box-shadow: var(--shadow-btn-dark);
+}
+
+.btn-dark:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+  color: var(--white);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-primary);
+  padding-inline: 0.875rem;
+}
+
+.btn-ghost:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--light);
+  color: var(--charcoal);
+}
+
+/* ==========================================================================
+   Reusable Card Styles
+   Standardized modern, clean, premium card surfaces.
+   ========================================================================== */
+.card,
+.card-surface {
+  position: relative;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-interactive:hover,
+.card-surface:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: var(--shadow-card-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-interactive:hover,
+  .card-surface:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.card-dark {
+  position: relative;
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-card);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-card-dark);
+  color: var(--text-inverse);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-dark:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+/* ==========================================================================
+   Reusable Form and Input Styles
+   Shared base for form controls, focus rings, placeholders, and disabled states.
+   ========================================================================== */
+.input-field,
+.textarea-field,
+.select-field {
+  display: block;
+  width: 100%;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: var(--charcoal);
+  background-color: var(--surface-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field:focus,
+.textarea-field:focus,
+.select-field:focus {
+  outline: none;
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.input-field:disabled,
+.textarea-field:disabled,
+.select-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--light);
+}
+
+/* Specific form field variants */
+.input-field {
+  height: var(--input-height);
+  padding: 0.625rem var(--input-padding-x);
+}
+
+.textarea-field {
+  min-height: 6.5rem;
+  padding: 0.75rem var(--input-padding-x);
+  resize: vertical;
+}
+
+.select-field {
+  height: var(--input-height);
+  padding: 0.625rem 2.5rem 0.625rem var(--input-padding-x);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2364748B' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Background & Section Utilities
+   Modular section containers for mixed light-and-dark architecture.
+   ========================================================================== */
+.section-light {
+  background-color: var(--light);
+  color: var(--text-primary);
+}
+
+.section-white {
+  background-color: var(--white);
+  color: var(--text-primary);
+}
+
+.section-charcoal {
+  background-color: var(--charcoal);
+  color: var(--text-inverse);
+}
+
+.section-dark-green {
+  background-color: var(--dark-green);
+  color: var(--text-inverse);
+}
+
+/* Highlight badge / pill */
+.highlight-emerald {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background-color: var(--accent-soft);
+  color: var(--dark-green);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Controlled Gradients (Centralized Token References) */
+.bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+
+.bg-gradient-subtle {
+  background-image: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
+}
+
+.bg-gradient-section {
+  background-image: linear-gradient(180deg, var(--white) 0%, var(--light) 50%, var(--white) 100%);
+}
+
+.bg-gradient-dark {
+  background-image: linear-gradient(180deg, var(--charcoal) 0%, var(--dark-green) 100%);
+}
+
+.bg-gradient-glow {
+  background-image: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.14) 0%, transparent 68%);
 }

@@ -45,11 +45,11 @@ export default function DocsConcepts() {
     <section
       id="core-concepts"
       aria-labelledby="core-concepts-heading"
-      className="relative overflow-hidden bg-[#050B18] py-16 font-sans selection:bg-[#C6F36A] selection:text-[#071D34] sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-[#101A18] py-16 font-sans selection:bg-[#10B981] selection:text-[#101A18] sm:py-20 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[-14rem] h-[36rem] w-[52rem] -translate-x-1/2 rounded-full bg-[#7DD3D8]/[0.08] blur-[130px]" />
-        <div className="absolute bottom-[-16rem] left-[-10rem] h-[30rem] w-[30rem] rounded-full bg-[#C6F36A]/[0.06] blur-[120px]" />
+        <div className="absolute left-1/2 top-[-14rem] h-[36rem] w-[52rem] -translate-x-1/2 rounded-full bg-[#10B981]/[0.08] blur-[130px]" />
+        <div className="absolute bottom-[-16rem] left-[-10rem] h-[30rem] w-[30rem] rounded-full bg-[#10B981]/[0.06] blur-[120px]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_20%,black,transparent_72%)]" />
       </div>
 
@@ -65,7 +65,7 @@ export default function DocsConcepts() {
 
           <Link
             href="/docs/overview"
-            className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-[12px] font-semibold text-white/80 transition-colors duration-150 hover:border-[#C6F36A]/35 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6F36A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050B18] motion-reduce:transition-none"
+            className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-[12px] font-semibold text-white/80 transition-colors duration-150 hover:border-[#10B981]/35 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"
           >
             Read the overview
             <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />

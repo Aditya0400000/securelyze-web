@@ -46,12 +46,12 @@ const DASHBOARD_SIGNALS = [
 
 const STATUS_TONES = {
   lime: {
-    badge: "border-[#C6F36A]/20 bg-[#C6F36A]/[0.08] text-[#D8FA93]",
-    dot: "bg-[#C6F36A]",
+    badge: "border-[#10B981]/20 bg-[#10B981]/[0.08] text-[#D1FAE5]",
+    dot: "bg-[#10B981]",
   },
   amber: {
-    badge: "border-[#FFB27A]/20 bg-[#FFB27A]/[0.08] text-[#FFD8BF]",
-    dot: "bg-[#FFB27A]",
+    badge: "border-[#D1FAE5]/20 bg-[#D1FAE5]/[0.08] text-[#D1FAE5]",
+    dot: "bg-[#D1FAE5]",
   },
   slate: {
     badge: "border-white/10 bg-white/[0.04] text-white/45",
@@ -66,7 +66,7 @@ function StatusRow({ signal }) {
   return (
     <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-white/[0.07] bg-white/[0.025] px-3 py-2.5">
       <div className="flex min-w-0 items-center gap-2.5">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-[#8FCCFF]/15 bg-[#8FCCFF]/[0.07] text-[#C4E7FF]">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-[#10B981]/15 bg-[#10B981]/[0.07] text-[#D1FAE5]">
           <Icon className="h-3.5 w-3.5" />
         </span>
         <div className="min-w-0">
@@ -98,16 +98,16 @@ export default function SecurityOverviewDashboard() {
       aria-labelledby="security-overview-caption"
       className="mx-auto w-full min-w-0 max-w-[64rem]"
     >
-      <div className="rounded-[1.75rem] border border-[#D3DEE9] bg-[#071D34] p-1.5 shadow-[0_35px_90px_-55px_rgba(7,29,52,0.65)] sm:p-2">
-        <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#0A223B]">
+      <div className="rounded-[1.75rem] border border-[#E2E8F0] bg-[#101A18] p-1.5 shadow-[0_35px_90px_-55px_rgba(16,26,24,0.65)] sm:p-2">
+        <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#183B32]">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_18%,rgba(198,243,106,0.06),transparent_38%),radial-gradient(ellipse_at_85%_0%,rgba(143,204,255,0.08),transparent_42%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_18%,rgba(16,185,129,0.06),transparent_38%),radial-gradient(ellipse_at_85%_0%,rgba(16,185,129,0.08),transparent_42%)]"
           />
 
           <div className="relative flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
             <div className="flex min-w-0 items-center gap-2.5">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-[#C6F36A]/20 bg-[#C6F36A]/[0.07] text-[#C6F36A]">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-[#10B981]/20 bg-[#10B981]/[0.07] text-[#10B981]">
                 <ShieldIcon className="h-3.5 w-3.5" />
               </span>
               <span className="truncate text-[10px] font-semibold tracking-[-0.01em] text-white/80">
@@ -118,7 +118,7 @@ export default function SecurityOverviewDashboard() {
             <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-white/60">
               <span
                 aria-hidden="true"
-                className="h-1 w-1 rounded-full bg-[#C6F36A]"
+                className="h-1 w-1 rounded-full bg-[#10B981]"
               />
               Illustrative
             </span>
@@ -140,7 +140,7 @@ export default function SecurityOverviewDashboard() {
                     </p>
                   </div>
 
-                  <span className="shrink-0 rounded-full border border-[#8FCCFF]/20 bg-[#8FCCFF]/[0.08] px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-[#C4E7FF] lg:mt-3 lg:inline-flex">
+                  <span className="shrink-0 rounded-full border border-[#10B981]/20 bg-[#10B981]/[0.08] px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-[#D1FAE5] lg:mt-3 lg:inline-flex">
                     Sample site
                   </span>
                 </div>
@@ -165,7 +165,7 @@ export default function SecurityOverviewDashboard() {
                         cy="60"
                         r="50"
                         fill="none"
-                        stroke="#C6F36A"
+                        stroke="#10B981"
                         strokeWidth="8"
                         strokeLinecap="round"
                         strokeDasharray="314.159"
@@ -211,10 +211,10 @@ export default function SecurityOverviewDashboard() {
                   ))}
                 </div>
 
-                <div className="mt-3 flex items-start gap-2 rounded-xl border border-[#C6F36A]/15 bg-[#C6F36A]/[0.035] px-3 py-2.5">
+                <div className="mt-3 flex items-start gap-2 rounded-xl border border-[#10B981]/15 bg-[#10B981]/[0.035] px-3 py-2.5">
                   <span
                     aria-hidden="true"
-                    className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#C6F36A]"
+                    className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#10B981]"
                   />
                   <p className="text-[9px] leading-[1.55] text-white/55 sm:text-[9.5px]">
                     Illustrative preview only. Sample indicators are not

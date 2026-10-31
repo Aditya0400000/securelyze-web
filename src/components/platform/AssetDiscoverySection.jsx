@@ -1,6 +1,33 @@
+import Link from "next/link";
+
 import { ArrowRightIcon, RadarIcon } from "../about/AboutIcons";
 
-const PLANNED_GROUPS = ["Domains", "Subdomains", "Endpoints"];
+const ASSET_DISCOVERY_ROUTE = "/platform/asset-discovery";
+
+const DISCOVERY_CAPABILITIES = [
+  {
+    title: "Subdomain Discovery",
+    description: "Find publicly discoverable subdomains tied to a domain.",
+    href: "/platform/asset-discovery/subdomain-discovery",
+  },
+  {
+    title: "Domain Discovery",
+    description: "Review domains and related DNS context.",
+    href: "/platform/asset-discovery/domain-discovery",
+  },
+  {
+    title: "IP & Host Discovery",
+    description: "Map internet-facing hosts and IP context.",
+    href: "/platform/asset-discovery/ip-host-discovery",
+  },
+  {
+    title: "Port & Service Discovery",
+    description: "Review exposed services and port context.",
+    href: "/platform/asset-discovery/port-service-discovery",
+  },
+];
+
+const DISCOVERY_SCOPE = ["Subdomains", "Domains", "Hosts", "Services"];
 
 function AssetFootprintPreview() {
   return (
@@ -8,19 +35,23 @@ function AssetFootprintPreview() {
       aria-labelledby="asset-footprint-caption"
       className="mx-auto w-full min-w-0 max-w-[44rem]"
     >
-      <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#081A31]/80 p-4 shadow-[0_35px_90px_-55px_rgba(0,0,0,0.9)] sm:p-5 lg:p-6">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-dark-green/80 p-4 shadow-[var(--shadow-card-dark)] transition-colors duration-300 hover:border-emerald/25 sm:p-5 lg:p-6">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(143,204,255,0.08),transparent_40%),radial-gradient(ellipse_at_100%_100%,rgba(185,195,255,0.06),transparent_42%)]"
+          className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-emerald/10 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-emerald/5 blur-3xl"
         />
 
-        <div className="relative flex items-center justify-between gap-3 border-b border-white/[0.08] pb-3">
+        <div className="relative flex items-center justify-between gap-3 border-b border-white/10 pb-3">
           <div className="flex min-w-0 items-center gap-2.5">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#B9C3FF]/20 bg-[#B9C3FF]/10 text-[#DCE2FF]">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-emerald/20 bg-emerald/10 text-soft-green">
               <RadarIcon className="h-4 w-4" />
             </span>
             <div className="min-w-0">
-              <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-white/45">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-white/60">
                 Public footprint view
               </p>
               <p className="mt-0.5 truncate text-[11px] font-medium text-white/80">
@@ -29,7 +60,7 @@ function AssetFootprintPreview() {
             </div>
           </div>
 
-          <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-white/50">
+          <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-white/65">
             Illustrative
           </span>
         </div>
@@ -45,42 +76,48 @@ function AssetFootprintPreview() {
             cx="220"
             cy="140"
             r="112"
-            stroke="rgba(255,255,255,0.055)"
+            stroke="var(--white)"
+            strokeOpacity="0.055"
           />
           <circle
             cx="220"
             cy="140"
             r="76"
-            stroke="rgba(255,255,255,0.05)"
+            stroke="var(--white)"
+            strokeOpacity="0.05"
             strokeDasharray="4 7"
           />
           <circle
             cx="220"
             cy="140"
             r="42"
-            fill="rgba(198,243,106,0.045)"
-            stroke="rgba(198,243,106,0.16)"
+            fill="var(--emerald)"
+            fillOpacity="0.045"
+            stroke="var(--emerald)"
+            strokeOpacity="0.16"
           />
 
           <path
             d="M220 140 80 70M220 140 360 70M220 140 72 220M220 140 368 220M220 140 220 30M220 140 220 250"
-            stroke="rgba(185,195,255,0.22)"
+            stroke="var(--emerald)"
+            strokeOpacity="0.22"
           />
           <path
             d="M80 70 42 42M360 70 398 42M72 220 36 248M368 220 404 248"
-            stroke="rgba(143,204,255,0.12)"
+            stroke="var(--emerald)"
+            strokeOpacity="0.12"
           />
 
-          <circle cx="150" cy="105" r="2.5" fill="#8FCCFF" fillOpacity="0.6" />
-          <circle cx="290" cy="105" r="2.5" fill="#B9C3FF" fillOpacity="0.55" />
-          <circle cx="146" cy="180" r="2.2" fill="#8FCCFF" fillOpacity="0.45" />
-          <circle cx="294" cy="180" r="2.2" fill="#B9C3FF" fillOpacity="0.45" />
-          <circle cx="220" cy="30" r="3" fill="#C6F36A" fillOpacity="0.7" />
-          <circle cx="220" cy="250" r="3" fill="#8FCCFF" fillOpacity="0.5" />
-          <circle cx="42" cy="42" r="2" fill="#8FCCFF" fillOpacity="0.4" />
-          <circle cx="398" cy="42" r="2" fill="#B9C3FF" fillOpacity="0.4" />
-          <circle cx="36" cy="248" r="2" fill="#8FCCFF" fillOpacity="0.35" />
-          <circle cx="404" cy="248" r="2" fill="#B9C3FF" fillOpacity="0.35" />
+          <circle cx="150" cy="105" r="2.5" fill="var(--emerald)" fillOpacity="0.6" />
+          <circle cx="290" cy="105" r="2.5" fill="var(--emerald)" fillOpacity="0.55" />
+          <circle cx="146" cy="180" r="2.2" fill="var(--emerald)" fillOpacity="0.45" />
+          <circle cx="294" cy="180" r="2.2" fill="var(--emerald)" fillOpacity="0.45" />
+          <circle cx="220" cy="30" r="3" fill="var(--emerald)" fillOpacity="0.7" />
+          <circle cx="220" cy="250" r="3" fill="var(--emerald)" fillOpacity="0.5" />
+          <circle cx="42" cy="42" r="2" fill="var(--emerald)" fillOpacity="0.4" />
+          <circle cx="398" cy="42" r="2" fill="var(--emerald)" fillOpacity="0.4" />
+          <circle cx="36" cy="248" r="2" fill="var(--emerald)" fillOpacity="0.35" />
+          <circle cx="404" cy="248" r="2" fill="var(--emerald)" fillOpacity="0.35" />
 
           <rect
             x="165"
@@ -88,13 +125,13 @@ function AssetFootprintPreview() {
             width="110"
             height="32"
             rx="9"
-            fill="#C6F36A"
+            fill="var(--emerald)"
           />
           <text
             x="220"
             y="145"
             textAnchor="middle"
-            fill="#071D34"
+            fill="var(--charcoal)"
             fontSize="13"
             fontWeight="600"
           >
@@ -107,14 +144,16 @@ function AssetFootprintPreview() {
             width="82"
             height="26"
             rx="7"
-            fill="#0B223B"
-            stroke="rgba(255,255,255,0.1)"
+            fill="var(--dark-green)"
+            stroke="var(--white)"
+            strokeOpacity="0.1"
           />
           <text
             x="80"
             y="74"
             textAnchor="middle"
-            fill="rgba(255,255,255,0.75)"
+            fill="var(--white)"
+            fillOpacity="0.75"
             fontSize="12"
             fontWeight="500"
           >
@@ -127,14 +166,16 @@ function AssetFootprintPreview() {
             width="82"
             height="26"
             rx="7"
-            fill="#0B223B"
-            stroke="rgba(255,255,255,0.1)"
+            fill="var(--dark-green)"
+            stroke="var(--white)"
+            strokeOpacity="0.1"
           />
           <text
             x="360"
             y="74"
             textAnchor="middle"
-            fill="rgba(255,255,255,0.75)"
+            fill="var(--white)"
+            fillOpacity="0.75"
             fontSize="12"
             fontWeight="500"
           >
@@ -147,14 +188,16 @@ function AssetFootprintPreview() {
             width="82"
             height="26"
             rx="7"
-            fill="#0B223B"
-            stroke="rgba(255,255,255,0.1)"
+            fill="var(--dark-green)"
+            stroke="var(--white)"
+            strokeOpacity="0.1"
           />
           <text
             x="72"
             y="224"
             textAnchor="middle"
-            fill="rgba(255,255,255,0.75)"
+            fill="var(--white)"
+            fillOpacity="0.75"
             fontSize="12"
             fontWeight="500"
           >
@@ -167,14 +210,16 @@ function AssetFootprintPreview() {
             width="82"
             height="26"
             rx="7"
-            fill="#0B223B"
-            stroke="rgba(255,255,255,0.1)"
+            fill="var(--dark-green)"
+            stroke="var(--white)"
+            strokeOpacity="0.1"
           />
           <text
             x="368"
             y="224"
             textAnchor="middle"
-            fill="rgba(255,255,255,0.75)"
+            fill="var(--white)"
+            fillOpacity="0.75"
             fontSize="12"
             fontWeight="500"
           >
@@ -182,21 +227,21 @@ function AssetFootprintPreview() {
           </text>
         </svg>
 
-        <div className="relative mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-white/[0.08] pt-3 text-[8.5px] font-medium tracking-[0.02em] text-white/40">
-          <span>Sample nodes · Not a live scan</span>
+        <div className="relative mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3 text-[8.5px] font-medium tracking-[0.02em] text-white/55">
+          <span>Illustrative asset relationships</span>
           <span className="inline-flex items-center gap-1.5">
             <span
               aria-hidden="true"
-              className="h-1 w-1 rounded-full bg-[#C6F36A]"
+              className="h-1 w-1 rounded-full bg-emerald"
             />
-            Preview only
+            Subdomains · Hosts · Services
           </span>
         </div>
       </div>
 
       <figcaption id="asset-footprint-caption" className="sr-only">
         Illustrative asset map for example.com showing sample subdomains www,
-        api, cdn, and mail. This is not a live scan.
+        api, cdn, and mail. All values are illustrative.
       </figcaption>
     </figure>
   );
@@ -207,19 +252,18 @@ export default function AssetDiscoverySection() {
     <section
       id="assets-discovery"
       aria-labelledby="asset-discovery-heading"
-      className="relative scroll-mt-24 overflow-hidden bg-[#07152B] py-16 font-sans text-white sm:py-20 lg:py-24"
+      className="relative scroll-mt-24 overflow-hidden bg-charcoal py-16 font-sans text-white sm:py-20 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-0 h-[30rem] w-[30rem] rounded-full bg-[#2A7AB8]/15 blur-[120px]" />
-        <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#C6F36A]/[0.05] blur-[110px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_55%_30%,black,transparent_75%)]" />
+        <div className="absolute -left-24 top-0 h-[30rem] w-[30rem] rounded-full bg-emerald-hover/15 blur-[120px]" />
+        <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-emerald/5 blur-[110px]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-14 xl:gap-20">
           <div className="min-w-0 lg:col-span-5">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C6F36A]">
-              <span aria-hidden="true" className="h-px w-8 bg-[#C6F36A]/50" />
+            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald">
+              <span aria-hidden="true" className="h-px w-8 bg-emerald/50" />
               Asset Discovery
             </p>
 
@@ -230,74 +274,72 @@ export default function AssetDiscoverySection() {
               Know What&rsquo;s Exposed on the Internet
             </h2>
 
-            <p className="mt-5 max-w-[34rem] text-pretty text-[14.5px] leading-[1.75] text-white/65 sm:text-[15px]">
-              Explore publicly discoverable subdomains, DNS information, and
-              internet-facing assets to better understand your external attack
-              surface.
+            <p className="mt-5 max-w-[34rem] text-pretty text-[14.5px] leading-[1.75] text-white/75 sm:text-[15px]">
+              Asset Discovery brings publicly discoverable subdomains, domains,
+              hosts, and internet-facing services into one connected view, so
+              you can understand the shape of your external footprint.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              {PLANNED_GROUPS.map((group) => (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {DISCOVERY_SCOPE.map((item) => (
                 <span
-                  key={group}
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 text-[10px] font-medium text-white/65"
+                  key={item}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.12em] text-white/70"
                 >
                   <span
                     aria-hidden="true"
-                    className="h-1 w-1 rounded-full bg-[#8FCCFF]/80"
+                    className="h-1 w-1 rounded-full bg-emerald"
                   />
-                  {group}
+                  {item}
                 </span>
               ))}
             </div>
 
-            <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#8FCCFF]/25 bg-[#8FCCFF]/[0.08] px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-[#C4E7FF]">
-                  <span
-                    aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-[#8FCCFF]"
-                  />
-                  In development
-                </span>
-                <span className="text-[11px] font-medium text-white/50">
-                  No live scans yet
-                </span>
-              </div>
-
-              <p
-                id="asset-discovery-status"
-                className="mt-3 max-w-[26rem] text-[12px] leading-[1.65] text-white/55"
+            <div className="mt-7">
+              <Link
+                href={ASSET_DISCOVERY_ROUTE}
+                className="btn-primary group w-full sm:w-auto"
               >
-                Asset discovery is in development. No live scans are available
-                yet.
+                Explore Asset Discovery
+                <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
+              </Link>
+              <p className="mt-3 max-w-[30rem] text-[11px] leading-[1.6] text-white/60">
+                A connected view of the public assets and services that shape
+                your external footprint.
               </p>
-
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <button
-                  type="button"
-                  disabled
-                  title="Asset Discovery is coming soon"
-                  aria-describedby="asset-discovery-status"
-                  className="inline-flex h-11 w-full items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-5 text-[12px] font-semibold text-white/45 disabled:cursor-not-allowed sm:w-auto"
-                >
-                  Explore Asset Discovery
-                </button>
-
-                <a
-                  href="#website-security-check"
-                  className="group inline-flex items-center justify-center gap-2 text-[11.5px] font-semibold text-[#C6F36A] transition-colors duration-200 hover:text-[#E5FFD0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6F36A] focus-visible:ring-offset-4 focus-visible:ring-offset-[#07152B] motion-reduce:transition-none"
-                >
-                  Preview the security checker
-                  <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
-                </a>
-              </div>
             </div>
           </div>
 
           <div className="min-w-0 lg:col-span-7">
             <AssetFootprintPreview />
           </div>
+        </div>
+
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
+          {DISCOVERY_CAPABILITIES.map((capability) => (
+            <Link
+              key={capability.title}
+              href={capability.href}
+              className="group flex h-full min-w-0 flex-col rounded-2xl border border-white/10 bg-white/5 p-4 transition-colors duration-200 hover:border-emerald/25 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald focus-visible:ring-offset-4 focus-visible:ring-offset-charcoal motion-reduce:transition-none"
+            >
+              <div className="flex items-start gap-2.5">
+                <span
+                  aria-hidden="true"
+                  className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald"
+                />
+                <h3 className="text-pretty text-[13px] font-semibold leading-[1.4] text-white">
+                  {capability.title}
+                </h3>
+              </div>
+              <p className="mt-2 pl-4 text-pretty text-[11.5px] leading-[1.6] text-white/70">
+                {capability.description}
+              </p>
+              <span className="mt-auto flex items-center justify-between gap-3 border-t border-white/10 pt-3 pl-4 text-[8.5px] font-semibold uppercase tracking-[0.12em] text-white/45 transition-colors duration-200 group-hover:text-soft-green motion-reduce:transition-none">
+                Open capability
+                <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

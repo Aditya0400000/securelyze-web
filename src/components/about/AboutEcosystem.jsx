@@ -14,19 +14,19 @@ const CHECKS = [
     label: "SSL / TLS",
     detail: "Certificate context",
     icon: CertificateIcon,
-    accent: "border-[#C6F36A]/20 bg-[#C6F36A]/10 text-[#D8FA93]",
+    accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
   {
     label: "DNS",
     detail: "Routing records",
     icon: NetworkIcon,
-    accent: "border-[#8FCCFF]/20 bg-[#8FCCFF]/10 text-[#C4E7FF]",
+    accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
   {
     label: "HTTP headers",
     detail: "Browser policy",
     icon: CodeIcon,
-    accent: "border-[#B9C3FF]/20 bg-[#B9C3FF]/10 text-[#DCE2FF]",
+    accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
 ];
 
@@ -43,9 +43,9 @@ function HorizontalConnector() {
       aria-hidden="true"
       className="hidden items-center justify-center lg:flex"
     >
-      <span className="relative block h-px w-full bg-[linear-gradient(90deg,rgba(198,243,106,0.16),rgba(143,204,255,0.55),rgba(143,204,255,0.12))]">
-        <span className="about-eco-travel-dot absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#C6F36A] shadow-[0_0_12px_rgba(198,243,106,0.8)]" />
-        <span className="absolute right-0 top-1/2 h-1 w-1 -translate-y-1/2 rotate-45 border-r border-t border-[#8FCCFF]/50" />
+      <span className="relative block h-px w-full bg-[linear-gradient(90deg,rgba(16,185,129,0.16),rgba(16,185,129,0.55),rgba(16,185,129,0.12))]">
+        <span className="about-eco-travel-dot absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#10B981] shadow-[0_0_12px_rgba(16,185,129,0.8)]" />
+        <span className="absolute right-0 top-1/2 h-1 w-1 -translate-y-1/2 rotate-45 border-r border-t border-[#10B981]/50" />
       </span>
     </div>
   );
@@ -57,8 +57,8 @@ function VerticalConnector() {
       aria-hidden="true"
       className="flex h-7 items-center justify-center lg:hidden"
     >
-      <span className="relative block h-full w-px bg-[linear-gradient(180deg,rgba(198,243,106,0.16),rgba(143,204,255,0.5),rgba(143,204,255,0.12))]">
-        <span className="about-eco-travel-dot-vertical absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#C6F36A] shadow-[0_0_12px_rgba(198,243,106,0.8)]" />
+      <span className="relative block h-full w-px bg-[linear-gradient(180deg,rgba(16,185,129,0.16),rgba(16,185,129,0.5),rgba(16,185,129,0.12))]">
+        <span className="about-eco-travel-dot-vertical absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#10B981] shadow-[0_0_12px_rgba(16,185,129,0.8)]" />
       </span>
     </div>
   );
@@ -68,10 +68,10 @@ function WebsiteCard() {
   return (
     <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#C6F36A]/75">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#10B981]/75">
           01 / Start
         </p>
-        <span className="flex h-8 w-8 items-center justify-center rounded-[10px] border border-white/10 bg-white/[0.04] text-[#C4E7FF]">
+        <span className="flex h-8 w-8 items-center justify-center rounded-[10px] border border-white/10 bg-white/[0.04] text-[#D1FAE5]">
           <WebsiteIcon className="h-4 w-4" />
         </span>
       </div>
@@ -84,10 +84,10 @@ function WebsiteCard() {
       </p>
 
       <div className="mt-auto pt-4">
-        <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#061A2F]">
+        <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#101A18]">
           <div className="flex items-center gap-1.5 border-b border-white/[0.08] px-3 py-2.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A3D]/75" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#8FCCFF]/35" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]/75" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]/35" />
             <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
             <span className="ml-1 truncate font-mono text-[9px] text-white/40">
               example.com
@@ -97,10 +97,10 @@ function WebsiteCard() {
           <div className="relative h-[5.6rem] overflow-hidden p-3">
             <span
               aria-hidden="true"
-              className="about-eco-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C6F36A]/65 to-transparent"
+              className="about-eco-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#10B981]/65 to-transparent"
             />
             <div className="flex items-center gap-2.5 rounded-lg border border-white/[0.07] bg-white/[0.025] p-2.5">
-              <span className="about-eco-pulse relative flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#C6F36A]/20 bg-[#C6F36A]/10 text-[#C6F36A]">
+              <span className="about-eco-pulse relative flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#10B981]/20 bg-[#10B981]/10 text-[#10B981]">
                 <GlobeIcon className="h-4 w-4" />
               </span>
               <div className="min-w-0 flex-1">
@@ -122,12 +122,12 @@ function WebsiteCard() {
 
 function ChecksCard() {
   return (
-    <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#8FCCFF]/15 bg-[#0A2744]/80 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:p-5">
+    <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#10B981]/15 bg-[#183B32]/80 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:p-5">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#8FCCFF]/75">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#10B981]/75">
           02 / Review
         </p>
-        <span className="flex h-8 w-8 items-center justify-center rounded-[10px] border border-[#8FCCFF]/15 bg-[#8FCCFF]/10 text-[#C4E7FF]">
+        <span className="flex h-8 w-8 items-center justify-center rounded-[10px] border border-[#10B981]/15 bg-[#10B981]/10 text-[#D1FAE5]">
           <ShieldIcon className="h-4 w-4" />
         </span>
       </div>
@@ -165,7 +165,7 @@ function ChecksCard() {
               </div>
               <span
                 aria-hidden="true"
-                className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#8FCCFF]/70 shadow-[0_0_9px_rgba(143,204,255,0.6)]"
+                className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#10B981]/70 shadow-[0_0_9px_rgba(16,185,129,0.6)]"
               />
             </li>
           );
@@ -173,7 +173,7 @@ function ChecksCard() {
       </ul>
 
       <p className="mt-auto flex items-center gap-1.5 pt-4 text-[9px] font-medium uppercase tracking-[0.13em] text-white/50">
-        <span className="h-1 w-1 rounded-full bg-[#C6F36A]/70" />
+        <span className="h-1 w-1 rounded-full bg-[#10B981]/70" />
         Context, not a verdict
       </p>
     </article>
@@ -184,10 +184,10 @@ function AssetsCard() {
   return (
     <article className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#B9C3FF]/75">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#10B981]/75">
           03 / Discover
         </p>
-        <span className="flex h-8 w-8 items-center justify-center rounded-[10px] border border-[#B9C3FF]/15 bg-[#B9C3FF]/10 text-[#DCE2FF]">
+        <span className="flex h-8 w-8 items-center justify-center rounded-[10px] border border-[#10B981]/15 bg-[#10B981]/10 text-[#D1FAE5]">
           <RadarIcon className="h-4 w-4" />
         </span>
       </div>
@@ -199,10 +199,10 @@ function AssetsCard() {
         Related public-facing domains, subdomains, and endpoints.
       </p>
 
-      <div className="relative mt-auto h-[9.2rem] overflow-hidden rounded-xl border border-white/[0.08] bg-[#061A2F]">
+      <div className="relative mt-auto h-[9.2rem] overflow-hidden rounded-xl border border-white/[0.08] bg-[#101A18]">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(185,195,255,0.08),transparent_62%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.08),transparent_62%)]"
         />
         <svg
           aria-hidden="true"
@@ -213,26 +213,26 @@ function AssetsCard() {
         >
           <path
             d="M130 74 45 36M130 74 215 35M130 74 45 112M130 74 215 113"
-            stroke="rgba(185,195,255,0.25)"
+            stroke="rgba(16,185,129,0.25)"
             strokeWidth="1"
             strokeDasharray="3 4"
             className="about-eco-dash"
           />
-          <circle cx="130" cy="74" r="21" stroke="rgba(198,243,106,0.16)" strokeWidth="1" />
-          <circle cx="130" cy="74" r="31" stroke="rgba(143,204,255,0.1)" strokeWidth="1" strokeDasharray="2 5" />
+          <circle cx="130" cy="74" r="21" stroke="rgba(16,185,129,0.16)" strokeWidth="1" />
+          <circle cx="130" cy="74" r="31" stroke="rgba(16,185,129,0.1)" strokeWidth="1" strokeDasharray="2 5" />
         </svg>
 
-        <span className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full border border-[#C6F36A]/20 bg-[#0B2E4D] px-2.5 py-1 font-mono text-[9px] text-[#E5FFD0] shadow-[0_0_18px_rgba(198,243,106,0.12)]">
-          <span className="h-1 w-1 rounded-full bg-[#C6F36A]" />
+        <span className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full border border-[#10B981]/20 bg-[#183B32] px-2.5 py-1 font-mono text-[9px] text-[#D1FAE5] shadow-[0_0_18px_rgba(16,185,129,0.12)]">
+          <span className="h-1 w-1 rounded-full bg-[#10B981]" />
           example.com
         </span>
 
         {ASSET_NODES.map((node) => (
           <span
             key={node.label}
-            className={`about-eco-node absolute ${node.position} inline-flex items-center gap-1 rounded-full border border-white/10 bg-[#0B2744]/90 px-2 py-1 font-mono text-[8.5px] text-white/60`}
+            className={`about-eco-node absolute ${node.position} inline-flex items-center gap-1 rounded-full border border-white/10 bg-[#183B32]/90 px-2 py-1 font-mono text-[8.5px] text-white/60`}
           >
-            <span className="h-1 w-1 rounded-full bg-[#B9C3FF]/75" />
+            <span className="h-1 w-1 rounded-full bg-[#10B981]/75" />
             {node.label}
           </span>
         ))}
@@ -256,25 +256,25 @@ export default function AboutEcosystem() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(220,232,247,0.45),transparent_68%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(209,250,229,0.45),transparent_68%)]"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-12 lg:items-end lg:gap-10">
           <div className="lg:col-span-7">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6F9E13]">
-              <span aria-hidden="true" className="h-px w-8 bg-[#6F9E13]/45" />
+            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
+              <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
               How it fits together
             </p>
             <h2
               id="ecosystem-heading"
-              className="mt-4 max-w-[42rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#071D34] sm:text-[2.35rem] lg:text-[2.7rem]"
+              className="mt-4 max-w-[42rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
             >
               From one website to a wider external picture.
             </h2>
           </div>
 
-          <p className="max-w-[34rem] text-pretty text-[14.5px] leading-[1.7] text-[#526B7F] sm:text-[15px] lg:col-span-5 lg:justify-self-end">
+          <p className="max-w-[34rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px] lg:col-span-5 lg:justify-self-end">
             Securelyze connects the public view of a site with the configuration
             signals around it and the assets that may sit beyond the home page.
             Together, they make the external picture easier to understand.
@@ -413,10 +413,10 @@ export default function AboutEcosystem() {
           }
         `}</style>
 
-        <div className="relative mt-10 overflow-hidden rounded-[2rem] border border-[#0B3150]/20 bg-[#071D34] shadow-[0_35px_90px_-50px_rgba(7,29,52,0.85),inset_0_1px_0_rgba(255,255,255,0.08)] sm:mt-12">
+        <div className="relative mt-10 overflow-hidden rounded-[2rem] border border-[#183B32]/20 bg-[#101A18] shadow-[0_35px_90px_-50px_rgba(16,26,24,0.85),inset_0_1px_0_rgba(255,255,255,0.08)] sm:mt-12">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="absolute -left-24 top-[-8rem] h-72 w-72 rounded-full bg-[#2A7AB8]/20 blur-[90px]" />
-            <div className="absolute -right-16 bottom-[-8rem] h-72 w-72 rounded-full bg-[#C6F36A]/[0.06] blur-[90px]" />
+            <div className="absolute -left-24 top-[-8rem] h-72 w-72 rounded-full bg-[#047857]/20 blur-[90px]" />
+            <div className="absolute -right-16 bottom-[-8rem] h-72 w-72 rounded-full bg-[#10B981]/[0.06] blur-[90px]" />
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.032)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_50%_45%,black,transparent_75%)]" />
           </div>
 
@@ -425,7 +425,7 @@ export default function AboutEcosystem() {
               <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/50">
                 <span
                   aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-[#C6F36A]/80 shadow-[0_0_9px_rgba(198,243,106,0.6)]"
+                  className="h-1.5 w-1.5 rounded-full bg-[#10B981]/80 shadow-[0_0_9px_rgba(16,185,129,0.6)]"
                 />
                 Connected external view
               </p>
@@ -446,7 +446,7 @@ export default function AboutEcosystem() {
 
             <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4 text-[10px] leading-[1.6] text-white/50 sm:flex-row sm:items-center sm:justify-between">
               <p className="flex items-center gap-2">
-                <AssetsIcon className="h-3.5 w-3.5 shrink-0 text-[#8FCCFF]/60" />
+                <AssetsIcon className="h-3.5 w-3.5 shrink-0 text-[#10B981]/60" />
                 Public entry point, configuration context, and related assets.
               </p>
               <p>Actual results depend on the domain and its configuration.</p>

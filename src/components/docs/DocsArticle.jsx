@@ -2,7 +2,7 @@ import { CALLOUT_TONES } from "./docsStyles";
 
 function Paragraph({ text }) {
   return (
-    <p className="text-[14px] leading-[1.8] text-[#526B7F] sm:text-[14.5px]">
+    <p className="text-[14px] leading-[1.8] text-[#475569] sm:text-[14.5px]">
       {text}
     </p>
   );
@@ -17,16 +17,16 @@ function List({ items }) {
         return (
           <li
             key={`${isObject ? item.label : item}-${index}`}
-            className="flex gap-3 text-[14px] leading-[1.75] text-[#526B7F] sm:text-[14.5px]"
+            className="flex gap-3 text-[14px] leading-[1.75] text-[#475569] sm:text-[14.5px]"
           >
             <span
               aria-hidden="true"
-              className="mt-[0.62rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#8ED13C]"
+              className="mt-[0.62rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#34D399]"
             />
             <span className="min-w-0">
               {isObject ? (
                 <>
-                  <strong className="font-semibold text-[#183044]">
+                  <strong className="font-semibold text-[#183B32]">
                     {item.label}
                   </strong>
                   {item.text ? ` — ${item.text}` : null}
@@ -48,17 +48,17 @@ function Steps({ items }) {
       {items.map((step, index) => (
         <li
           key={`${step.title}-${index}`}
-          className="flex gap-3 rounded-xl border border-[#E7EEF5] bg-[#FBFDFF] p-3.5"
+          className="flex gap-3 rounded-xl border border-[#F1F5F9] bg-[#F8FAFC] p-3.5"
         >
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#D7E9B0] bg-[#F4FBE5] text-[9px] font-bold tabular-nums text-[#4F7410]">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#D1FAE5] bg-[#ECFDF5] text-[9px] font-bold tabular-nums text-[#047857]">
             {String(index + 1).padStart(2, "0")}
           </span>
           <div className="min-w-0">
-            <p className="text-[13px] font-semibold text-[#183044]">
+            <p className="text-[13px] font-semibold text-[#183B32]">
               {step.title}
             </p>
             {step.description ? (
-              <p className="mt-1 text-[13px] leading-[1.7] text-[#5F7284]">
+              <p className="mt-1 text-[13px] leading-[1.7] text-[#64748B]">
                 {step.description}
               </p>
             ) : null}
@@ -71,15 +71,15 @@ function Steps({ items }) {
 
 function Table({ headers, rows }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-[#DCE7F1]">
+    <div className="overflow-x-auto rounded-xl border border-[#E2E8F0]">
       <table className="w-full min-w-[32rem] border-collapse text-left text-[13px]">
         <thead>
-          <tr className="bg-[#F7FAFC]">
+          <tr className="bg-[#F8FAFC]">
             {headers.map((header) => (
               <th
                 key={header}
                 scope="col"
-                className="border-b border-[#DCE7F1] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#5F7284]"
+                className="border-b border-[#E2E8F0] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#64748B]"
               >
                 {header}
               </th>
@@ -90,15 +90,15 @@ function Table({ headers, rows }) {
           {rows.map((row, rowIndex) => (
             <tr
               key={`${row[0]}-${rowIndex}`}
-              className="border-b border-[#EDF2F7] last:border-b-0"
+              className="border-b border-[#F1F5F9] last:border-b-0"
             >
               {row.map((cell, cellIndex) => (
                 <td
                   key={`${cell}-${cellIndex}`}
                   className={`px-4 py-3.5 align-top leading-[1.65] ${
                     cellIndex === 0
-                      ? "font-semibold text-[#183044]"
-                      : "text-[#5F7284]"
+                      ? "font-semibold text-[#183B32]"
+                      : "text-[#64748B]"
                   }`}
                 >
                   {cell}
@@ -143,20 +143,20 @@ function Faq({ items }) {
       {items.map((item, index) => (
         <details
           key={`${item.question}-${index}`}
-          className="group rounded-xl border border-[#DCE7F1] bg-white open:border-[#C9DFA4]"
+          className="group rounded-xl border border-[#E2E8F0] bg-white open:border-[#D1FAE5]"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3.5 [&::-webkit-details-marker]:hidden">
-            <span className="text-[13px] font-semibold text-[#183044]">
+            <span className="text-[13px] font-semibold text-[#183B32]">
               {item.question}
             </span>
             <span
               aria-hidden="true"
-              className="shrink-0 text-[17px] font-light leading-none text-[#7A8FA0] transition-transform duration-150 group-open:rotate-45 motion-reduce:transition-none"
+              className="shrink-0 text-[17px] font-light leading-none text-[#64748B] transition-transform duration-150 group-open:rotate-45 motion-reduce:transition-none"
             >
               +
             </span>
           </summary>
-          <p className="border-t border-[#EDF2F7] px-4 py-3.5 text-[13px] leading-[1.75] text-[#5F7284]">
+          <p className="border-t border-[#F1F5F9] px-4 py-3.5 text-[13px] leading-[1.75] text-[#64748B]">
             {item.answer}
           </p>
         </details>
@@ -196,13 +196,13 @@ export default function DocsArticle({ topic }) {
           className={`scroll-mt-32 ${
             index === 0
               ? ""
-              : "mt-10 border-t border-[#EDF2F7] pt-9 sm:mt-12 sm:pt-10"
+              : "mt-10 border-t border-[#F1F5F9] pt-9 sm:mt-12 sm:pt-10"
           }`}
         >
-          <h2 className="flex items-start gap-3 text-[1.35rem] font-semibold tracking-[-0.035em] text-[#10283E] sm:text-[1.5rem]">
+          <h2 className="flex items-start gap-3 text-[1.35rem] font-semibold tracking-[-0.035em] text-[#183B32] sm:text-[1.5rem]">
             <span
               aria-hidden="true"
-              className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#8ED13C]"
+              className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#34D399]"
             />
             <span>{section.title}</span>
           </h2>

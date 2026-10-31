@@ -1,26 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useId } from "react";
-
-import WebsiteCheckForm from "./WebsiteCheckForm";
 
 const CARD_ACCENTS = {
   lime: {
-    icon: "border-[#C6F36A]/20 bg-[#C6F36A]/10 text-[#D8FA93]",
-    dot: "bg-[#C6F36A]",
+    icon: "border-emerald/20 bg-emerald/10 text-soft-green",
+    dot: "bg-emerald",
   },
   sky: {
-    icon: "border-[#8FCCFF]/20 bg-[#8FCCFF]/10 text-[#C4E7FF]",
-    dot: "bg-[#8FCCFF]",
+    icon: "border-emerald/20 bg-emerald/10 text-soft-green",
+    dot: "bg-emerald",
   },
   cyan: {
-    icon: "border-[#8DE0E8]/20 bg-[#8DE0E8]/10 text-[#C9F6FA]",
-    dot: "bg-[#8DE0E8]",
+    icon: "border-emerald-light/20 bg-emerald-light/10 text-soft-green",
+    dot: "bg-emerald-light",
   },
   periwinkle: {
-    icon: "border-[#B9C3FF]/20 bg-[#B9C3FF]/10 text-[#DCE2FF]",
-    dot: "bg-[#B9C3FF]",
+    icon: "border-emerald/20 bg-emerald/10 text-soft-green",
+    dot: "bg-emerald",
   },
 };
 
@@ -157,7 +154,7 @@ function DashboardPreview() {
     >
       <div
         aria-hidden="true"
-        className="absolute -inset-10 -z-10 rounded-full bg-[radial-gradient(circle_at_55%_42%,rgba(78,167,255,0.24),transparent_62%)] blur-2xl"
+        className="absolute -inset-10 -z-10 rounded-full bg-[radial-gradient(circle_at_55%_42%,rgba(16,185,129,0.24),transparent_62%)] blur-2xl"
       />
       <div
         aria-hidden="true"
@@ -165,23 +162,23 @@ function DashboardPreview() {
       />
       <div
         aria-hidden="true"
-        className="absolute -left-10 bottom-6 -z-10 h-32 w-32 rounded-full border border-[#C6F36A]/10"
+        className="absolute -left-10 bottom-6 -z-10 h-32 w-32 rounded-full border border-emerald/10"
       />
 
-      <div className="relative rounded-[1.9rem] border border-white/[0.14] bg-white/[0.065] p-1.5 shadow-[0_45px_120px_-50px_rgba(1,15,34,0.95),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl">
-        <div className="relative overflow-hidden rounded-[1.55rem] border border-white/[0.1] bg-[#071E36]/95 p-3.5 sm:p-5">
+      <div className="relative rounded-[1.9rem] border border-white/[0.14] bg-white/[0.065] p-1.5 shadow-[0_45px_120px_-50px_rgba(16,26,24,0.95),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl">
+        <div className="relative overflow-hidden rounded-[1.55rem] border border-white/[0.1] bg-dark-green/95 p-3.5 sm:p-5">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:26px_26px] [mask-image:radial-gradient(ellipse_at_50%_15%,black,transparent_76%)]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-16 -top-24 h-60 w-60 rounded-full bg-[#5AAEFF]/10 blur-3xl"
+            className="pointer-events-none absolute -right-16 -top-24 h-60 w-60 rounded-full bg-emerald/10 blur-3xl"
           />
 
           <div className="relative flex items-center justify-between gap-3 border-b border-white/[0.07] pb-3.5">
             <div className="flex min-w-0 items-center gap-2.5">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] border border-[#C6F36A]/25 bg-[#C6F36A]/10 text-[#C6F36A]">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] border border-emerald/25 bg-emerald/10 text-emerald">
                 <ShieldIcon className="h-[17px] w-[17px]" />
               </span>
               <div className="min-w-0">
@@ -195,15 +192,15 @@ function DashboardPreview() {
             </div>
 
             <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.045] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/50">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8FCCFF]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald" />
               Preview
             </span>
           </div>
 
-          <div className="relative mt-3.5 overflow-hidden rounded-[1.2rem] border border-white/[0.08] bg-[linear-gradient(135deg,rgba(28,82,128,0.32),rgba(7,29,52,0.3))] px-4 py-4">
+          <div className="relative mt-3.5 overflow-hidden rounded-[1.2rem] border border-white/[0.08] bg-[linear-gradient(135deg,rgba(24,59,50,0.32),rgba(16,26,24,0.3))] px-4 py-4">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_50%,rgba(198,243,106,0.1),transparent_34%)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_50%,rgba(16,185,129,0.1),transparent_34%)]"
             />
 
             <div className="relative flex items-center gap-4">
@@ -218,13 +215,13 @@ function DashboardPreview() {
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute right-1 top-3 h-1.5 w-1.5 rounded-full bg-[#8FCCFF] shadow-[0_0_12px_rgba(143,204,255,0.9)]"
+                  className="absolute right-1 top-3 h-1.5 w-1.5 rounded-full bg-emerald shadow-[0_0_12px_var(--emerald)]"
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute bottom-3 left-1.5 h-1 w-1 rounded-full bg-[#C6F36A]/80"
+                  className="absolute bottom-3 left-1.5 h-1 w-1 rounded-full bg-emerald/80"
                 />
-                <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#C6F36A]/25 bg-[#0B2E4D] text-[#C6F36A] shadow-[0_0_34px_-6px_rgba(198,243,106,0.5)]">
+                <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald/25 bg-dark-green text-emerald shadow-[0_0_34px_-6px_var(--glow-emerald)]">
                   <ShieldIcon className="h-6 w-6" />
                 </span>
               </div>
@@ -251,9 +248,9 @@ function DashboardPreview() {
               icon={<CertificateIcon className="h-[17px] w-[17px]" />}
             >
               <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#C6F36A]/80" />
-                <span className="h-px flex-1 bg-gradient-to-r from-[#C6F36A]/45 to-[#C6F36A]/10" />
-                <span className="h-1.5 w-1.5 rounded-full border border-[#C6F36A]/50" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald/80" />
+                <span className="h-px flex-1 bg-gradient-to-r from-emerald/45 to-emerald/10" />
+                <span className="h-1.5 w-1.5 rounded-full border border-emerald/50" />
                 <span className="h-px w-5 bg-white/10" />
                 <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
               </div>
@@ -266,8 +263,8 @@ function DashboardPreview() {
               icon={<HeadersIcon className="h-[17px] w-[17px]" />}
             >
               <div className="space-y-1.5">
-                <span className="block h-1 w-full rounded-full bg-[#8FCCFF]/25" />
-                <span className="block h-1 w-4/5 rounded-full bg-[#8FCCFF]/15" />
+                <span className="block h-1 w-full rounded-full bg-emerald/25" />
+                <span className="block h-1 w-4/5 rounded-full bg-emerald/15" />
                 <span className="block h-1 w-3/5 rounded-full bg-white/10" />
               </div>
             </PreviewCard>
@@ -286,15 +283,15 @@ function DashboardPreview() {
               >
                 <path
                   d="M6 17 27 8l22 10 23-12 32 9"
-                  stroke="rgba(141,224,232,0.35)"
+                  stroke="rgba(52,211,153,0.35)"
                   strokeWidth="1"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <circle cx="6" cy="17" r="2" fill="#8DE0E8" fillOpacity="0.75" />
-                <circle cx="49" cy="18" r="1.6" fill="#8DE0E8" fillOpacity="0.45" />
-                <circle cx="72" cy="6" r="2" fill="#8DE0E8" fillOpacity="0.75" />
-                <circle cx="104" cy="15" r="1.4" fill="#FFFFFF" fillOpacity="0.35" />
+                <circle cx="6" cy="17" r="2" fill="var(--emerald-light)" fillOpacity="0.75" />
+                <circle cx="49" cy="18" r="1.6" fill="var(--emerald-light)" fillOpacity="0.45" />
+                <circle cx="72" cy="6" r="2" fill="var(--emerald-light)" fillOpacity="0.75" />
+                <circle cx="104" cy="15" r="1.4" fill="var(--white)" fillOpacity="0.35" />
               </svg>
             </PreviewCard>
 
@@ -312,14 +309,14 @@ function DashboardPreview() {
               >
                 <path
                   d="M13 15 37 8l23 9 20-11 17 8"
-                  stroke="rgba(185,195,255,0.28)"
+                  stroke="rgba(16,185,129,0.28)"
                   strokeWidth="1"
                   strokeLinecap="round"
                 />
-                <circle cx="13" cy="15" r="2.2" fill="#B9C3FF" fillOpacity="0.8" />
-                <circle cx="60" cy="17" r="1.8" fill="#B9C3FF" fillOpacity="0.55" />
-                <circle cx="80" cy="6" r="2.2" fill="#B9C3FF" fillOpacity="0.8" />
-                <circle cx="97" cy="14" r="1.4" fill="#FFFFFF" fillOpacity="0.35" />
+                <circle cx="13" cy="15" r="2.2" fill="var(--emerald)" fillOpacity="0.8" />
+                <circle cx="60" cy="17" r="1.8" fill="var(--emerald)" fillOpacity="0.55" />
+                <circle cx="80" cy="6" r="2.2" fill="var(--emerald)" fillOpacity="0.8" />
+                <circle cx="97" cy="14" r="1.4" fill="var(--white)" fillOpacity="0.35" />
               </svg>
             </PreviewCard>
           </div>
@@ -345,28 +342,26 @@ function DashboardPreview() {
 }
 
 export default function HeroSection() {
-  const assetNoteId = useId();
-
   return (
     <section
       id="security-checker"
       aria-labelledby="hero-heading"
-      className="relative isolate scroll-mt-24 overflow-hidden bg-[linear-gradient(180deg,#0B1738_0%,#183B72_35%,#DCE8F7_75%,#FFFFFF_100%)] font-sans text-white selection:bg-[#C6F36A] selection:text-[#071D34]"
+      className="relative isolate scroll-mt-24 overflow-hidden bg-gradient-hero font-sans text-white selection:bg-emerald selection:text-charcoal"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-[12%] top-[4%] h-[34rem] w-[34rem] rounded-full bg-[#2A7AB8]/20 blur-[140px]" />
-        <div className="absolute right-[-10%] top-[-6%] h-[42rem] w-[42rem] rounded-full bg-[#4A9DDD]/15 blur-[150px]" />
-        <div className="absolute bottom-[10%] left-[34%] h-[26rem] w-[26rem] rounded-full bg-[#C6F36A]/[0.045] blur-[120px]" />
+        <div className="absolute -left-[12%] top-[4%] h-[34rem] w-[34rem] rounded-full bg-emerald-hover/15 blur-[140px]" />
+        <div className="absolute right-[-10%] top-[-6%] h-[42rem] w-[42rem] rounded-full bg-emerald/12 blur-[150px]" />
+        <div className="absolute bottom-[10%] left-[34%] h-[26rem] w-[26rem] rounded-full bg-emerald/[0.04] blur-[120px]" />
         <div className="absolute inset-x-0 top-0 h-[64%] bg-[linear-gradient(rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.032)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_72%)]" />
       </div>
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-14 px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-12 lg:items-center lg:gap-8 lg:px-8 lg:pb-24 lg:pt-24 xl:gap-14">
         <div className="lg:col-span-7">
-          <div className="inline-flex rounded-full bg-[linear-gradient(120deg,#FF8A3D_0%,#FFB27A_45%,#FF6B1A_100%)] p-px shadow-[0_0_34px_-12px_rgba(255,138,61,0.65)]">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#071F39]/95 px-3.5 py-1.5 text-[11.5px] font-semibold tracking-[-0.005em] text-white/90 backdrop-blur-sm">
+          <div className="inline-flex rounded-full bg-[linear-gradient(120deg,var(--emerald)_0%,var(--soft-green)_50%,var(--emerald-hover)_100%)] p-px shadow-[0_0_34px_-12px_var(--glow-emerald)]">
+            <span className="inline-flex items-center gap-2 rounded-full bg-dark-green/95 px-3.5 py-1.5 text-[11.5px] font-semibold tracking-[-0.005em] text-white/90 backdrop-blur-sm">
               <span
                 aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-[#FFB27A] shadow-[0_0_9px_rgba(255,178,122,0.8)]"
+                className="h-1.5 w-1.5 rounded-full bg-soft-green shadow-[0_0_9px_var(--soft-green)]"
               />
               Your Website. Our Priority.
             </span>
@@ -378,49 +373,51 @@ export default function HeroSection() {
           >
             <span className="sm:block">
               Free{" "}
-              <span className="text-[#C6F36A] drop-shadow-[0_0_20px_rgba(198,243,106,0.16)]">
+              <span className="text-emerald drop-shadow-[0_0_20px_var(--glow-emerald)]">
                 Website Security
               </span>
             </span>{" "}
             <span className="sm:block">
-              Checker &amp; <span className="text-[#C6F36A]">Asset</span>
+              Checker &amp; <span className="text-emerald">Asset</span>
             </span>{" "}
             <span className="sm:block">
-              <span className="text-[#C6F36A]">Discovery</span> Tools
+              <span className="text-emerald">Discovery</span> Tools
             </span>
           </h1>
 
-          <p className="mt-5 max-w-[36rem] text-pretty text-[15px] leading-[1.7] text-white sm:text-base lg:text-[#172554]">
+          <p className="mt-5 max-w-[36rem] text-pretty text-[15px] leading-[1.7] text-white/85 sm:text-base">
             Check your website’s security configuration, review SSL/TLS
             certificates and DNS records, identify missing security headers, and
             discover internet-facing digital assets—all from one simple
             platform.
           </p>
 
-          <div className="mt-8 max-w-[37rem]">
-            <WebsiteCheckForm />
-
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <Link
-                href="/platform#assets-discovery"
-                aria-describedby={assetNoteId}
-                className="group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-[#071D34] bg-[#071D34] px-4 text-[13px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(7,29,52,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#0B2B45] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071D34] focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none"
-              >
-                <span>Discover Assets</span>{" "}
-                <span
-                  aria-hidden="true"
-                  className="text-[14px] text-white transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
-                >
-                  →
-                </span>
-              </Link>
+          <div className="mt-8 flex max-w-[37rem] flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Link
+              href="/platform#website-security-check"
+              className="btn-primary group w-full sm:w-auto"
+            >
+              Security Check
               <span
-                id={assetNoteId}
-                className="whitespace-nowrap rounded-full border border-[#8FCCFF]/60 bg-[#EAF4FD] px-2.5 py-1 text-[11.5px] font-semibold text-[#071D34] shadow-[0_4px_12px_-8px_rgba(15,23,42,0.3)]"
+                aria-hidden="true"
+                className="text-[14px] transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
               >
-                Preview coming soon
+                →
               </span>
-            </div>
+            </Link>
+
+            <Link
+              href="/platform#assets-discovery"
+              className="group inline-flex h-11 w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-soft-green/25 bg-white/5 px-5 text-sm font-semibold tracking-[-0.01em] text-soft-green transition duration-200 ease-out hover:border-emerald/50 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-safe:hover:-translate-y-px motion-reduce:transition-none sm:w-auto"
+            >
+              Asset Discovery
+              <span
+                aria-hidden="true"
+                className="text-[14px] text-soft-green transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white motion-reduce:transition-none"
+              >
+                →
+              </span>
+            </Link>
           </div>
         </div>
 

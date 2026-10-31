@@ -9,28 +9,28 @@ import ResourcesSectionHeading from "./ResourcesSectionHeading";
 
 const ACCENTS = {
   lime: {
-    card: "hover:border-[#C9DFA4]",
-    icon: "border-[#D7E9B0] bg-[#F2FADF] text-[#5C8414]",
-    number: "text-[#6F9E13]",
-    check: "border-[#DDE8C7] bg-[#F7FCEB] text-[#5C8414]",
+    card: "hover:border-[#D1FAE5]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "text-[#059669]",
+    check: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   teal: {
-    card: "hover:border-[#A9DDE1]",
-    icon: "border-[#BFE9EC] bg-[#E9F8F9] text-[#2A7B83]",
-    number: "text-[#2A7B83]",
-    check: "border-[#CBEFF1] bg-[#F2FBFC] text-[#2A7B83]",
+    card: "hover:border-[#D1FAE5]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "text-[#047857]",
+    check: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   amber: {
-    card: "hover:border-[#DFC98C]",
-    icon: "border-[#E3D1A1] bg-[#FBF3E0] text-[#8A6A1F]",
-    number: "text-[#8A6A1F]",
-    check: "border-[#EADCB8] bg-[#FDF8EC] text-[#8A6A1F]",
+    card: "hover:border-[#D1FAE5]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
+    number: "text-[#047857]",
+    check: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   periwinkle: {
-    card: "hover:border-[#C9CDF0]",
-    icon: "border-[#D8DCF7] bg-[#F0F1FD] text-[#5B5BB0]",
-    number: "text-[#5B5BB0]",
-    check: "border-[#DEE2FA] bg-[#F7F7FE] text-[#5B5BB0]",
+    card: "hover:border-[#D1FAE5]",
+    icon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
+    number: "text-[#059669]",
+    check: "border-[#D1FAE5] bg-[#F8FAFC] text-[#059669]",
   },
 };
 
@@ -149,7 +149,7 @@ function PracticeCard({ practice }) {
   return (
     <article
       id={practice.id}
-      className={`group flex h-full scroll-mt-28 flex-col rounded-[1.5rem] border border-[#DCE7F1] bg-white p-5 shadow-[inset_0_1px_0_#FFFFFF,0_14px_34px_-32px_rgba(7,29,52,0.32)] transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[inset_0_1px_0_#FFFFFF,0_20px_42px_-32px_rgba(7,29,52,0.38)] motion-reduce:transition-none sm:p-6 ${accent.card}`}
+      className={`group flex h-full scroll-mt-28 flex-col rounded-[1.5rem] border border-[#E2E8F0] bg-white p-5 shadow-[inset_0_1px_0_#FFFFFF,0_14px_34px_-32px_rgba(16,26,24,0.32)] transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[inset_0_1px_0_#FFFFFF,0_20px_42px_-32px_rgba(16,26,24,0.38)] motion-reduce:transition-none sm:p-6 ${accent.card}`}
     >
       <div className="flex items-start justify-between gap-3">
         <span
@@ -164,15 +164,15 @@ function PracticeCard({ practice }) {
         </span>
       </div>
 
-      <h4 className="mt-5 text-[1.02rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#071D34]">
+      <h4 className="mt-5 text-[1.02rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#101A18]">
         {practice.title}
       </h4>
-      <p className="mt-2.5 text-[12.5px] leading-[1.7] text-[#526B7F]">
+      <p className="mt-2.5 text-[12.5px] leading-[1.7] text-[#475569]">
         {practice.description}
       </p>
 
-      <div className="mt-4 border-t border-[#EDF2F7] pt-4">
-        <p className="text-[8.5px] font-semibold uppercase tracking-[0.16em] text-[#7A8FA0]">
+      <div className="mt-4 border-t border-[#F1F5F9] pt-4">
+        <p className="text-[8.5px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
           Do this
         </p>
         <ul className="mt-2.5 space-y-2">
@@ -183,7 +183,7 @@ function PracticeCard({ practice }) {
               >
                 <CheckIcon className="h-2.5 w-2.5" />
               </span>
-              <span className="text-[11.5px] leading-[1.55] text-[#526B7F]">
+              <span className="text-[11.5px] leading-[1.55] text-[#475569]">
                 {item}
               </span>
             </li>
@@ -199,7 +199,7 @@ export default function SecurityBestPracticesContent() {
     <section
       id="best-practices"
       aria-labelledby="best-practices-heading"
-      className="relative scroll-mt-28 border-t border-[#E7EEF5] bg-white py-14 sm:py-16 lg:py-20"
+      className="relative scroll-mt-28 border-t border-[#F1F5F9] bg-white py-14 sm:py-16 lg:py-20"
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <ResourcesSectionHeading
@@ -217,15 +217,15 @@ export default function SecurityBestPracticesContent() {
           ))}
         </div>
 
-        <div className="mt-5 grid gap-5 rounded-[1.5rem] border border-[#DCE7F1] bg-[#F7FAFC] p-5 sm:p-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div className="mt-5 grid gap-5 rounded-[1.5rem] border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-[9px] font-semibold uppercase tracking-[0.17em] text-[#6F9E13]">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.17em] text-[#059669]">
               A practical review rhythm
             </p>
-            <h4 className="mt-2 text-[1.1rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#071D34]">
+            <h4 className="mt-2 text-[1.1rem] font-semibold leading-[1.3] tracking-[-0.025em] text-[#101A18]">
               Make the checks part of the work.
             </h4>
-            <p className="mt-2 max-w-[30rem] text-[12px] leading-[1.65] text-[#607386]">
+            <p className="mt-2 max-w-[30rem] text-[12px] leading-[1.65] text-[#64748B]">
               Security posture drifts when reviews only happen once. A simple
               rhythm is easier to sustain than a large annual cleanup.
             </p>
@@ -235,12 +235,12 @@ export default function SecurityBestPracticesContent() {
             {REVIEW_RHYTHM.map((item) => (
               <div
                 key={item.label}
-                className="rounded-xl border border-[#E1EAF2] bg-white px-3.5 py-3"
+                className="rounded-xl border border-[#E2E8F0] bg-white px-3.5 py-3"
               >
-                <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#6F9E13]">
+                <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#059669]">
                   {item.label}
                 </p>
-                <p className="mt-1.5 text-[11px] leading-[1.55] text-[#526B7F]">
+                <p className="mt-1.5 text-[11px] leading-[1.55] text-[#475569]">
                   {item.description}
                 </p>
               </div>
@@ -248,7 +248,7 @@ export default function SecurityBestPracticesContent() {
           </div>
         </div>
 
-        <p className="mt-5 max-w-[52rem] text-[11px] leading-[1.7] text-[#5F7284]">
+        <p className="mt-5 max-w-[52rem] text-[11px] leading-[1.7] text-[#64748B]">
           These practices are general guidance. Securelyze helps you review
           public website signals; it does not automatically apply changes, fix
           findings, or guarantee security.

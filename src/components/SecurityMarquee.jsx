@@ -148,16 +148,16 @@ function MarqueeItem({ item }) {
       <span className="flex items-center gap-2.5 whitespace-nowrap px-5 py-2.5 sm:px-7 sm:py-3">
         <ToolIcon
           name={item.icon}
-          className="h-[18px] w-[18px] shrink-0 text-[#4F7A0A]"
+          className="h-[18px] w-[18px] shrink-0 text-[#047857]"
         />
-        <span className="text-[13px] font-semibold tracking-[-0.015em] text-[#0B2B45] sm:text-[14px]">
+        <span className="text-[13px] font-semibold tracking-[-0.015em] text-[#183B32] sm:text-[14px]">
           {item.label}
         </span>
       </span>
 
       <span
         aria-hidden="true"
-        className="h-4 w-px shrink-0 bg-[#0B2B45]/12"
+        className="h-4 w-px shrink-0 bg-[#183B32]/12"
       />
     </li>
   );
@@ -313,17 +313,17 @@ export default function SecurityMarquee() {
         <div className="mb-5 flex items-center justify-center gap-3 sm:mb-6">
           <span
             aria-hidden="true"
-            className="h-px w-5 bg-gradient-to-r from-transparent to-[#4F7A0A]/45 sm:w-7"
+            className="h-px w-5 bg-gradient-to-r from-transparent to-[#047857]/45 sm:w-7"
           />
           <h3
             id="security-marquee-heading"
-            className="text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-[#34566F] sm:text-[10.5px]"
+            className="text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-[#475569] sm:text-[10.5px]"
           >
             Planned security coverage
           </h3>
           <span
             aria-hidden="true"
-            className="h-px w-5 bg-gradient-to-l from-transparent to-[#4F7A0A]/45 sm:w-7"
+            className="h-px w-5 bg-gradient-to-l from-transparent to-[#047857]/45 sm:w-7"
           />
         </div>
 
