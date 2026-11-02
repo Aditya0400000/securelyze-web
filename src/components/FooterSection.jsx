@@ -49,7 +49,7 @@ const FOOTER_COLUMNS = [
     items: [
       {
         label: "Documentation",
-        href: "/docs",
+        href: "https://docs.securelyze.in/",
       },
       {
         label: "FAQs",

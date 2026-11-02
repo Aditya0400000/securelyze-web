@@ -11,21 +11,6 @@ const HOMEPAGE_LINKS = {
   pricingFaq: "/pricing#faq",
 };
 
-const DOCS_LINKS = {
-  home: "/docs",
-  overview: "/docs/overview",
-  gettingStarted: "/docs/getting-started",
-  dashboard: "/docs/dashboard",
-  assets: "/docs/assets-and-discovery",
-  findings: "/docs/findings",
-  attackSurface: "/docs/attack-surface",
-  aiAnalyst: "/docs/ai-security-analyst",
-  scanSettings: "/docs/scan-settings",
-  notifications: "/docs/notifications",
-  usersRoles: "/docs/users-roles",
-  troubleshooting: "/docs/troubleshooting",
-};
-
 const PLATFORM_LINKS = {
   home: "/platform",
   overview: "/platform#platform-overview",
@@ -41,10 +26,11 @@ const PLATFORM_LINKS = {
 };
 
 const SOLUTIONS_LINKS = {
-  owners: "/solutions#website-owners",
-  smallBusinesses: "/solutions#small-businesses",
-  developers: "/solutions#developers",
-  securityTeams: "/solutions#security-teams",
+  home: "/solutions",
+  owners: "/solutions/website-owners",
+  smallBusinesses: "/solutions/small-businesses",
+  developers: "/solutions/developers",
+  securityTeams: "/solutions/security-teams",
 };
 
 const RESOURCES_LINKS = {
@@ -147,6 +133,9 @@ const NAV_ITEMS = [
     align: "center",
     width: "w-[38rem]",
     linkColumns: "grid-cols-2",
+    viewAllHref: SOLUTIONS_LINKS.home,
+    viewAllLabel: "Explore Full Solutions",
+    viewAllPosition: "bottom",
     groups: [
       {
         title: "Built for your team",
@@ -286,98 +275,8 @@ const NAV_ITEMS = [
   {
     id: "docs",
     label: "Docs",
-    summary:
-      "Product guides for setup, daily workflows, and administration.",
+    href: "https://docs.securelyze.in/",
     icon: "docs",
-    align: "center",
-    width: "w-[54rem]",
-    groupColumns: true,
-    groups: [
-      {
-        title: "Start here",
-        icon: "learn",
-        links: [
-          {
-            label: "Documentation Overview",
-            description:
-              "What Securelyze is and the four core concepts behind it.",
-            href: DOCS_LINKS.overview,
-          },
-          {
-            label: "Getting Started",
-            description:
-              "Accounts, sign-in, the interface, and the first-run path.",
-            href: DOCS_LINKS.gettingStarted,
-          },
-        ],
-      },
-      {
-        title: "Using Securelyze",
-        links: [
-          {
-            label: "Dashboard",
-            description:
-              "Security posture, recent activity, and scan-run summaries.",
-            href: DOCS_LINKS.dashboard,
-          },
-          {
-            label: "Assets & Asset Discovery",
-            description:
-              "Manage your inventory and review newly discovered assets.",
-            href: DOCS_LINKS.assets,
-          },
-          {
-            label: "Security Findings",
-            description:
-              "Severity, details, status, and AI-assisted remediation.",
-            href: DOCS_LINKS.findings,
-          },
-          {
-            label: "Attack Surface",
-            description:
-              "Per-domain WHOIS, DNS, certificates, services, web, and email.",
-            href: DOCS_LINKS.attackSurface,
-          },
-          {
-            label: "AI Security Analyst",
-            description:
-              "Ask questions grounded in your assets, scans, and findings.",
-            href: DOCS_LINKS.aiAnalyst,
-          },
-        ],
-      },
-      {
-        title: "Manage & help",
-        links: [
-          {
-            label: "Scan Settings",
-            description:
-              "Launch scans, monitor runs, schedule work, and set collection toggles.",
-            href: DOCS_LINKS.scanSettings,
-          },
-          {
-            label: "Notifications",
-            description:
-              "Follow findings, scans, discovered assets, and team activity.",
-            href: DOCS_LINKS.notifications,
-          },
-          {
-            label: "Users & Roles",
-            description:
-              "Invite teammates and understand the four product roles.",
-            href: DOCS_LINKS.usersRoles,
-          },
-          {
-            label: "Tips & Troubleshooting",
-            description:
-              "Quick answers for empty states and common questions.",
-            href: DOCS_LINKS.troubleshooting,
-          },
-        ],
-      },
-    ],
-    viewAllHref: DOCS_LINKS.home,
-    viewAllLabel: "View all Docs",
   },
   {
     id: "about",
@@ -1283,6 +1182,30 @@ export default function Navbar() {
                   }
 
                   const isActive = mobileSection === item.id;
+                  const viewAllLink = item.viewAllHref ? (
+                    <div
+                      className={
+                        item.viewAllPosition === "bottom"
+                          ? "mt-3 border-t border-border-subtle px-2 pb-1 pt-3"
+                          : "mt-2 px-2"
+                      }
+                    >
+                      <Link
+                        href={item.viewAllHref}
+                        onClick={closeNavigation}
+                        className="group/mobile-view-all flex items-center justify-between gap-3 rounded-lg border border-soft-green bg-soft-green/20 px-3 py-2.5 transition-colors duration-150 hover:border-soft-green hover:bg-soft-green/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
+                      >
+                        <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-dark-green">
+                          <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-emerald-hover"
+                          />
+                          {item.viewAllLabel}
+                        </span>
+                        <ArrowRight className="h-3.5 w-3.5 text-emerald-hover transition-transform duration-150 group-hover/mobile-view-all:translate-x-0.5 motion-reduce:transition-none" />
+                      </Link>
+                    </div>
+                  ) : null;
 
                   return (
                     <div key={item.id}>
@@ -1388,24 +1311,9 @@ export default function Navbar() {
                               {item.summary}
                             </p>
 
-                            {item.viewAllHref ? (
-                              <div className="mt-2 px-2">
-                                <Link
-                                  href={item.viewAllHref}
-                                  onClick={closeNavigation}
-                                  className="group/mobile-view-all flex items-center justify-between gap-3 rounded-lg border border-soft-green bg-soft-green/20 px-3 py-2.5 transition-colors duration-150 hover:border-soft-green hover:bg-soft-green/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:transition-none"
-                                >
-                                  <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-dark-green">
-                                    <span
-                                      aria-hidden="true"
-                                      className="h-1.5 w-1.5 rounded-full bg-emerald-hover"
-                                    />
-                                    {item.viewAllLabel}
-                                  </span>
-                                  <ArrowRight className="h-3.5 w-3.5 text-emerald-hover transition-transform duration-150 group-hover/mobile-view-all:translate-x-0.5 motion-reduce:transition-none" />
-                                </Link>
-                              </div>
-                            ) : null}
+                            {item.viewAllPosition === "bottom"
+                              ? null
+                              : viewAllLink}
 
                             <div className="ml-4 mt-1 border-l border-border pl-2.5">
                               {item.groups.map((group) => (
@@ -1518,6 +1426,10 @@ export default function Navbar() {
                                 </div>
                               ))}
                             </div>
+
+                            {item.viewAllPosition === "bottom"
+                              ? viewAllLink
+                              : null}
                           </div>
                         </div>
                       </div>

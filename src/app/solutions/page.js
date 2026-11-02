@@ -1,27 +1,17 @@
 import Navbar from "@/components/Navbar";
-import DevelopersSection from "@/components/solutions/DevelopersSection";
-import SecurityTeamsSection from "@/components/solutions/SecurityTeamsSection";
-import SmallBusinessesSection from "@/components/solutions/SmallBusinessesSection";
-import SolutionsClosingCta from "@/components/solutions/SolutionsClosingCta";
-import SolutionsHero from "@/components/solutions/SolutionsHero";
-import WebsiteOwnersSection from "@/components/solutions/WebsiteOwnersSection";
+import SolutionsOverviewPage from "@/components/solutions/SolutionsOverviewPage";
 
 export const metadata = {
   title: "Solutions | Securelyze",
   description:
-    "Explore Securelyze solutions for website owners, small businesses, developers, and security teams.",
+    "Explore Securelyze solutions for website owners, developers, small businesses, and security teams.",
 };
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-white font-sans selection:bg-[#10B981] selection:text-[#101A18]">
+    <>
       <Navbar />
-      <SolutionsHero />
-      <WebsiteOwnersSection />
-      <SmallBusinessesSection />
-      <DevelopersSection />
-      <SecurityTeamsSection />
-      <SolutionsClosingCta />
-    </main>
+      <SolutionsOverviewPage />
+    </>
   );
 }
