@@ -11,8 +11,9 @@ const HOMEPAGE_LINKS = {
   pricingFaq: "/pricing#faq",
 };
 
+const PLATFORM_LOGIN_URL = "https://platform.securelyze.in/login";
+
 const PLATFORM_LINKS = {
-  home: "/platform",
   overview: "/platform#platform-overview",
   sslTls: "/platform/website-security-check/ssl-tls",
   dnsSecurity: "/platform/website-security-check/dns-security",
@@ -500,7 +501,7 @@ function Logo({ onClick }) {
 function ExploreCta({ className = "", onClick }) {
   return (
     <Link
-      href={PLATFORM_LINKS.home}
+      href={PLATFORM_LOGIN_URL}
       onClick={onClick}
       className={`group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-emerald px-4 text-[13px] font-semibold tracking-[-0.005em] text-charcoal shadow-btn transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
     >
