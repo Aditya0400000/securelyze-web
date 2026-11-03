@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import PricingComparison from "@/components/pricing/PricingComparison";
 import PricingCta from "@/components/pricing/PricingCta";
@@ -22,6 +23,7 @@ export default function PricingPage() {
       <PricingTrust />
       <PricingFaq />
       <PricingCta />
+      <FooterSection/>
     </main>
   );
 }

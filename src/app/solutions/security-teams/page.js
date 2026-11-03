@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import SecurityTeamsPage from "@/components/solutions/SecurityTeamsPage";
 
@@ -12,6 +13,7 @@ export default function SecurityTeamsRoute() {
     <>
       <Navbar />
       <SecurityTeamsPage />
+      <FooterSection/>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import AboutAudience from "@/components/about/AboutAudience";
 import AboutEcosystem from "@/components/about/AboutEcosystem";
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <AboutSignals />
       <AboutAudience />
       <AboutTools />
+      <FooterSection/>
     </main>
   );
 }

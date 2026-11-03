@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import SmallBusinessesPage from "@/components/solutions/SmallBusinessesPage";
 
@@ -12,6 +13,7 @@ export default function SmallBusinessesRoute() {
     <>
       <Navbar />
       <SmallBusinessesPage />
+      <FooterSection/>
     </>
   );
 }

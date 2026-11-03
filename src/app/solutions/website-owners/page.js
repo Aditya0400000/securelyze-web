@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import WebsiteOwnersPage from "@/components/solutions/WebsiteOwnersPage";
-
+import FooterSection from "@/components/FooterSection";
 export const metadata = {
   title: "Website Owners | Solutions | Securelyze",
   description:
@@ -12,6 +12,7 @@ export default function WebsiteOwnersRoute() {
     <>
       <Navbar />
       <WebsiteOwnersPage />
+      <FooterSection/>
     </>
   );
 }

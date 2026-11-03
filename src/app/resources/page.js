@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import ResourcesCta from "@/components/resources/ResourcesCta";
 import ResourcesExplore from "@/components/resources/ResourcesExplore";
@@ -34,6 +35,7 @@ export default function ResourcesPage() {
         }}
         note="Educational guidance only — not a substitute for a full security assessment."
       />
+      <FooterSection/>
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import DevelopersPage from "@/components/solutions/DevelopersPage";
 
@@ -12,6 +13,7 @@ export default function DevelopersRoute() {
     <>
       <Navbar />
       <DevelopersPage />
+      <FooterSection/>
     </>
   );
 }

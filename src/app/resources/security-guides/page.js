@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import ResourcesCta from "@/components/resources/ResourcesCta";
 import SecurityGuidesGrid from "@/components/resources/SecurityGuidesGrid";
@@ -29,6 +30,7 @@ export default function SecurityGuidesPage() {
           href: "/resources",
         }}
       />
+      <FooterSection/>
     </main>
   );
 }

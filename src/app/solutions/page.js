@@ -1,3 +1,4 @@
+import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import SolutionsOverviewPage from "@/components/solutions/SolutionsOverviewPage";
 
@@ -12,6 +13,7 @@ export default function SolutionsPage() {
     <>
       <Navbar />
       <SolutionsOverviewPage />
+      <FooterSection/>
     </>
   );
 }
