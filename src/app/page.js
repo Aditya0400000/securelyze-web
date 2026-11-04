@@ -1,13 +1,14 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
-import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
-import FeaturesSection from "@/components/FeaturesSection";
 import FooterSection from "@/components/FooterSection";
 import HeroSection from "@/components/HeroSection";
-import HomeAboutSection from "@/components/HomeAboutSection";
 import Navbar from "@/components/Navbar";
-import SecurityMarquee from "@/components/SecurityMarquee";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import ProcessMarquee from "@/components/ProcessMarquee";
+import AnimatedSecurityOffice from "@/components/home/AnimatedSecurityOffice";
+import HomeFinalCta from "@/components/home/HomeFinalCta";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
+import ProductOverviewSection from "@/components/home/ProductOverviewSection";
+import WhoItsFor from "@/components/home/WhoItsFor";
 
 export default function Home() {
   return (
@@ -15,12 +16,13 @@ export default function Home() {
      <AnnouncementBar />
      <Navbar />
      <HeroSection />
-     <SecurityMarquee />
-     <FeaturesSection />
-     <CTASection />
-     <HomeAboutSection />
-     <WhyChooseUs />
+     <ProcessMarquee />
+     <ProductOverviewSection />
+     <AnimatedSecurityOffice />
+     <HowItWorksSection />
+     <WhoItsFor />
      <FAQ />
+     <HomeFinalCta />
      <FooterSection />
    </main>
   );

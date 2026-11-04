@@ -4,44 +4,34 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    question: "What is a website security checker?",
+    question: "What is Securelyze?",
     answer:
-      "A website security checker reviews publicly available configuration details—such as certificate, DNS, and browser security header information—and presents them in a clear summary. Securelyze currently offers a preview of this experience; live checks are not yet available.",
+      "Securelyze reviews your website’s public security setup, including SSL/TLS, DNS, security headers and email authentication, and discovers the domains, subdomains, hosts and services exposed to the internet.",
   },
   {
-    question: "How does SSL certificate analysis work?",
+    question: "How do I sign in?",
     answer:
-      "SSL certificate analysis reviews the certificate and TLS configuration details a website presents publicly, helping you understand certificate context and connection settings. In the current Securelyze preview, this analysis is illustrative and does not run a live certificate scan.",
-  },
-  {
-    question: "What is asset discovery?",
-    answer:
-      "Asset discovery maps publicly discoverable internet-facing assets, such as domains, subdomains, and related endpoints, to help clarify an organization’s external attack surface. Asset Discovery is still in development at Securelyze and is not available for live scans yet.",
+      "Enter your email and we send you a one-time code. There is no password to create.",
   },
   {
     question: "Is Securelyze free to use?",
     answer:
-      "Yes. The current Securelyze preview is free to use, with no credit card or paid subscription required. There are no paid plans at this time.",
+      "Yes, you can start for free. No credit card is needed to begin.",
   },
   {
-    question: "What security headers does the checker analyze?",
+    question: "What does the website security check review?",
     answer:
-      "Securelyze is designed to review HTTP response headers that influence browser security policy and help identify missing or weak header configuration. The current preview does not yet run live header checks, so it does not confirm specific headers for a domain.",
+      "SSL/TLS certificates and configuration, DNS records, HTTP security headers, HTTPS status, and SPF, DKIM and DMARC email security.",
   },
   {
-    question: "How accurate is the security score?",
+    question: "What does asset discovery find?",
     answer:
-      "Securelyze does not currently provide a live security score. The preview uses illustrative sample data rather than a real assessment, so there is no accuracy rating to report yet. Any future score should be treated as guidance, not a guarantee of security.",
+      "Subdomains, related domains, IP addresses and hosts, and open ports and services that are visible from the internet.",
   },
   {
-    question: "Can I check multiple domains?",
+    question: "Do I need to install anything?",
     answer:
-      "The current preview accepts one website URL at a time. Multi-domain scanning is not available yet.",
-  },
-  {
-    question: "What information is included in the security report?",
-    answer:
-      "The intended report summarizes public configuration signals such as SSL/TLS certificate context, DNS records, and security headers, with clear observations. The current preview does not generate a live or downloadable report; the final report contents will be documented when scanning is available.",
+      "No. Securelyze runs in your browser on the Securelyze platform.",
   },
 ];
 

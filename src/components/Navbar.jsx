@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { PLATFORM_LOGIN_URL } from "@/lib/siteLinks";
+
 const HOMEPAGE_LINKS = {
   platform: "/#platform",
   mission: "/about#mission",
@@ -11,10 +13,9 @@ const HOMEPAGE_LINKS = {
   pricingFaq: "/pricing#faq",
 };
 
-const PLATFORM_LOGIN_URL = "https://platform.securelyze.in/login";
-
 const PLATFORM_LINKS = {
   overview: "/platform#platform-overview",
+  websiteSecurityCheck: "/platform#website-security-check",
   sslTls: "/platform/website-security-check/ssl-tls",
   dnsSecurity: "/platform/website-security-check/dns-security",
   securityHeaders: "/platform/website-security-check/security-headers",
@@ -67,6 +68,7 @@ const NAV_ITEMS = [
     groups: [
       {
         title: "Website Security Check",
+        href: PLATFORM_LINKS.websiteSecurityCheck,
         icon: "security",
         links: [
           {
@@ -445,40 +447,29 @@ function ArrowRight({ className = "" }) {
   );
 }
 
-function ArrowUpRight({ className = "" }) {
+function BrandMark() {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 20 20"
+      viewBox="0 0 26 26"
       fill="none"
-      className={className}
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      className="h-7 w-7 shrink-0"
     >
-      <path d="M6.5 13.5 13.5 6.5M7.5 6.5h6v6" />
-    </svg>
-  );
-}
-
-function BrandMark() {
-  return (
-    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[11px] bg-charcoal shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_5px_16px_-9px_rgba(16,26,24,0.8)]">
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
+      <polygon
+        points="13,2 23,7.5 23,18.5 13,24 3,18.5 3,7.5"
+        fill="var(--charcoal)"
+        stroke="var(--emerald)"
+        strokeWidth="1.8"
+      />
+      <path
+        d="m8.5 13.2 3 3 6-6.4"
         fill="none"
-        className="h-[19px] w-[19px]"
-        stroke="var(--white)"
-        strokeWidth="1.65"
+        stroke="var(--emerald-light)"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-      >
-        <path d="M12 3.5 5.5 6v5.1c0 4.05 2.72 7.65 6.5 8.9 3.78-1.25 6.5-4.85 6.5-8.9V6L12 3.5Z" />
-        <path d="m9.2 11.8 1.9 1.9 3.8-4.2" stroke="var(--emerald)" />
-      </svg>
-    </span>
+      />
+    </svg>
   );
 }
 
@@ -503,15 +494,13 @@ function ExploreCta({ className = "", onClick }) {
     <Link
       href={PLATFORM_LOGIN_URL}
       onClick={onClick}
-      className={`group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-emerald px-4 text-[13px] font-semibold tracking-[-0.005em] text-charcoal shadow-btn transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
+      className={`group inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-emerald px-4 text-[13px] font-semibold tracking-[-0.005em] text-charcoal shadow-[0_6px_18px_-12px_rgba(16,185,129,0.6)] transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-[0_10px_24px_-14px_rgba(5,150,105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
     >
       <span>Explore Full Platform</span>
-      <span
+      <ArrowRight
         aria-hidden="true"
-        className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-dark-green text-emerald transition-transform duration-200 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none"
-      >
-        <ArrowUpRight className="h-3 w-3" />
-      </span>
+        className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
+      />
     </Link>
   );
 }
@@ -934,16 +923,11 @@ export default function Navbar() {
     <header
       ref={headerRef}
       onClickCapture={handleHeaderClickCapture}
-      className="sticky top-0 z-50 w-full border-b border-border bg-white/95 font-sans shadow-[inset_0_1px_0_rgba(255,255,255,0.96),inset_0_-1px_0_rgba(24,59,50,0.035),0_16px_38px_-34px_rgba(16,26,24,0.35)] backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-border bg-white/95 font-sans shadow-[0_1px_2px_rgba(16,26,24,0.035)] backdrop-blur-md"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(248,250,252,0.72)_0%,rgba(255,255,255,0)_46%,rgba(248,250,252,0.3)_100%)]"
-      />
-
       <nav
         aria-label="Primary"
-        className="relative z-10 mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 xl:h-[82px] xl:px-8"
+        className="relative z-10 mx-auto flex h-[68px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:h-[72px] sm:px-6 xl:h-[80px] xl:px-8"
       >
         <Logo onClick={closeNavigation} />
 
@@ -955,7 +939,7 @@ export default function Navbar() {
                     key={item.id}
                     href={item.href}
                     onClick={closeNavigation}
-                    className="group/nav relative flex h-11 items-center whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] text-text-primary transition-colors duration-150 hover:bg-light hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                    className="group/nav relative flex h-11 items-center whitespace-nowrap rounded-lg px-3 text-[13.5px] font-medium tracking-[-0.01em] text-text-secondary transition-colors duration-150 hover:bg-light hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
                   >
                     <span className="relative">
                       {item.label}
@@ -1014,7 +998,7 @@ export default function Navbar() {
                       <Link
                         href={item.href}
                         onClick={closeNavigation}
-                        className="relative flex h-full items-center whitespace-nowrap rounded-l-lg pl-3 pr-1 text-sm font-medium tracking-[-0.01em] text-text-primary transition-colors duration-150 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
+                        className="relative flex h-full items-center whitespace-nowrap rounded-l-lg pl-3 pr-1 text-[13.5px] font-medium tracking-[-0.01em] text-text-secondary transition-colors duration-150 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none"
                       >
                         <span className="relative">
                           {item.label}
@@ -1062,10 +1046,10 @@ export default function Navbar() {
                       onKeyDown={(event) =>
                         handleTriggerKeyDown(event, item.id)
                       }
-                      className={`group/nav relative flex h-11 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 text-sm font-medium tracking-[-0.01em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none ${
+                      className={`group/nav relative flex h-11 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none ${
                         isOpen
                           ? "bg-light text-charcoal"
-                          : "text-text-primary hover:bg-light hover:text-charcoal"
+                          : "text-text-secondary hover:bg-light hover:text-charcoal"
                       }`}
                     >
                       <span className="relative">
