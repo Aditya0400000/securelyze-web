@@ -17,9 +17,9 @@ const FAQS = [
       "Start with Learn for the fundamentals, then use the tutorials in Explore to inspect the signals yourself.",
   },
   {
-    question: "Why are some areas marked Coming Soon?",
+    question: "Are articles and product updates available?",
     answer:
-      "We only publish content when it is ready. The Read and Product Updates areas will expand as verified articles and release notes become available.",
+      "No articles or product updates have been published yet.",
   },
 ];
 

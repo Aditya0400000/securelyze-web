@@ -1,0 +1,31 @@
+#contact-content .contact-form-control {
+  border-radius: var(--radius-lg);
+}
+
+#contact-content input.contact-form-control,
+#contact-content select.contact-form-control {
+  height: 3rem;
+}
+
+#contact-content textarea.contact-form-control {
+  min-height: 11rem;
+}
+
+#contact-content .contact-form-control:hover:not(:focus):not([aria-invalid="true"]):not(:disabled) {
+  border-color: color-mix(in srgb, var(--text-muted) 45%, var(--border));
+}
+
+#contact-content .contact-form-control:focus {
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 3px var(--glow-emerald);
+}
+
+#contact-content .contact-form-control[aria-invalid="true"] {
+  border-color: var(--status-high-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #contact-content .contact-form-control {
+    transition: none;
+  }
+}

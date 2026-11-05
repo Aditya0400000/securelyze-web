@@ -10,7 +10,7 @@ import { DNS_SECURITY_CONTENT } from "@/components/platform/securityCheckContent
 export const metadata = {
   title: "DNS Security | Website Security Check | Securelyze",
   description:
-    "Explore an illustrative preview of DNS record coverage, nameserver context, mail-related records, and resolution details within the Securelyze Website Security Check.",
+    "Explore DNS record coverage, nameserver context, mail-related records, and resolution details within the Securelyze Website Security Check.",
 };
 
 export default function DnsSecurityRoute() {

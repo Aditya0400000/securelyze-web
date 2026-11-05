@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { PLATFORM_LOGIN_URL } from "@/lib/siteLinks";
+import { CONTACT_URL, PLATFORM_LOGIN_URL } from "@/lib/siteLinks";
 
 const HOMEPAGE_LINKS = {
   platform: "/#platform",
@@ -306,7 +306,7 @@ const NAV_ITEMS = [
           {
             label: "Contact Us",
             description: "Reach the team with questions or feedback.",
-            href: HOMEPAGE_LINKS.platform,
+            href: CONTACT_URL,
           },
         ],
       },

@@ -86,7 +86,7 @@ export default function ResourcesRead() {
           tone="dark"
           eyebrow="02 / Read"
           title="Perspectives for the questions behind the checks."
-          description="Articles, insights, and case studies are being prepared. This is where we will share practical context for the people who own, build, and defend websites."
+          description="Practical context for the people who own, build, and defend websites."
         />
 
         <div className="mt-9 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
@@ -109,23 +109,15 @@ export default function ResourcesRead() {
                   <ArticleIcon className="h-3.5 w-3.5" />
                   The journal
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D1FAE5] bg-[#ECFDF5] px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.15em] text-[#047857]">
-                  <span
-                    aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-[#10B981]"
-                  />
-                  Coming soon
-                </span>
               </div>
 
               <h3 className="mt-6 max-w-[34rem] text-balance text-[1.7rem] font-semibold leading-[1.1] tracking-[-0.045em] sm:text-[2.05rem]">
-                The Securelyze journal is taking shape.
+                The Securelyze journal.
               </h3>
               <p className="mt-4 max-w-[34rem] text-[13px] leading-[1.7] text-[#475569] sm:text-[13.5px]">
-                We are preparing articles and insights that explain the
-                reasoning behind the signals, not just the checklist. There are
-                no published posts yet. When the first pieces are ready, they
-                will appear here.
+                Articles and insights that explain the reasoning behind the
+                signals, not just the checklist. There are no published posts
+                yet.
               </p>
 
               <ul className="mt-6 grid gap-2 sm:grid-cols-3">
@@ -144,8 +136,7 @@ export default function ResourcesRead() {
               </ul>
 
               <p className="mt-6 border-t border-[#E2E8F0] pt-4 text-[10px] leading-[1.6] text-[#64748B]">
-                No publication dates have been announced. This area will stay
-                honest about what is actually available.
+                No publication dates have been announced.
               </p>
             </div>
           </div>
@@ -216,23 +207,12 @@ export default function ResourcesRead() {
                 <p className="mt-1.5 text-[11px] leading-[1.6] text-white/60">
                   {category.description}
                 </p>
-                <p className="mt-4 inline-flex items-center gap-1.5 text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-                  <span
-                    aria-hidden="true"
-                    className={`h-1.5 w-1.5 rounded-full ${accent.dot}`}
-                  />
-                  Articles in preparation
-                </p>
               </div>
             );
           })}
         </div>
 
         <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[10px] leading-[1.6] text-white/55">
-            No articles have been published yet. This section will expand when
-            the first pieces are ready.
-          </p>
           <SmoothAnchor
             href="#explore"
             className="group inline-flex items-center gap-2 text-[11px] font-semibold text-[#D1FAE5] transition-colors duration-150 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"

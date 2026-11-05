@@ -711,6 +711,7 @@ export default function SecurityTeamsPage() {
       <FaqSection />
 
       <SolutionClosingCta
+        layout="split"
         id="security-teams-cta"
         title="Get a Clearer View of Your External Attack Surface"
         description="Explore your digital assets and review available website security information with Securelyze."

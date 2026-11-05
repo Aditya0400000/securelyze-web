@@ -12,7 +12,7 @@ const SECTION_LINKS = [
   { id: "why-it-matters", label: "Why it matters" },
   { id: "what-is-reviewed", label: "What can be reviewed" },
   { id: "how-it-works", label: "How the analysis works" },
-  { id: "illustrative-results", label: "Illustrative example" },
+  { id: "illustrative-results", label: "Example result" },
   { id: "faqs", label: "FAQs" },
   { id: "related-tools", label: "Related tools" },
 ];
@@ -171,10 +171,6 @@ function RelatedToolCard({ tool }) {
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border bg-light text-charcoal transition-colors duration-200 group-hover:border-emerald/30 group-hover:bg-soft-green/30 group-hover:text-emerald motion-reduce:transition-none">
           <Icon className="h-4 w-4" />
         </span>
-        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald/20 bg-emerald/10 px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-dark-green">
-          <span aria-hidden="true" className="h-1 w-1 rounded-full bg-emerald" />
-          Preview
-        </span>
       </div>
 
       <h3 className="mt-4 text-[13px] font-semibold tracking-[-0.02em] text-charcoal">
@@ -216,12 +212,6 @@ function OnThisPage() {
         ))}
       </ul>
       <div className="mt-4 border-t border-border pt-4">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-text-muted">
-          Preview status
-        </p>
-        <p className="mt-1.5 text-[10.5px] leading-[1.6] text-text-secondary">
-          Illustrative content. Live checks are not available yet.
-        </p>
         <Link
           href="/platform#website-security-check"
           className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-semibold text-dark-green transition-colors duration-150 hover:text-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 motion-reduce:transition-none"
@@ -298,9 +288,6 @@ function SecurityTopicHero({ topic, heroVisual }) {
             <p className="mt-5 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
               {topic.heroDescription}
             </p>
-            <p className="mt-3 max-w-[44rem] text-pretty text-[13px] leading-[1.7] text-text-muted">
-              {topic.heroNote}
-            </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <a
@@ -317,19 +304,6 @@ function SecurityTopicHero({ topic, heroVisual }) {
                 Back to Security Check
                 <ArrowRightIcon className="h-3.5 w-3.5" />
               </Link>
-            </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald/20 bg-emerald/10 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-dark-green">
-                <span
-                  aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-emerald"
-                />
-                Preview only
-              </span>
-              <span className="text-[11.5px] leading-[1.6] text-text-muted">
-                Sample values are used for illustration.
-              </span>
             </div>
 
             <div className="mt-6 rounded-2xl border border-border bg-white/70 p-4 shadow-card backdrop-blur-sm">
@@ -362,9 +336,6 @@ function SecurityTopicHero({ topic, heroVisual }) {
                 ))}
               </ul>
 
-              <p className="mt-3 rounded-xl border border-border bg-light px-3 py-2 text-[10px] leading-[1.6] text-text-muted">
-                Illustrative preview. Sample values are used.
-              </p>
             </div>
           </Reveal>
 
@@ -467,7 +438,6 @@ export default function WebsiteSecurityTopicPage({
                       <StepCard key={step.title} step={step} index={index} />
                     ))}
                   </ol>
-                  <Callout>{topic.how.callout}</Callout>
                 </div>
               </Reveal>
 
@@ -478,7 +448,7 @@ export default function WebsiteSecurityTopicPage({
                 className="mt-10 scroll-mt-28 border-t border-border pt-9 sm:mt-12 sm:pt-10"
               >
                 <SectionHeading id="illustrative-results-heading">
-                  Illustrative example results
+                  Example result
                 </SectionHeading>
                 <p className={`mt-4 max-w-[48rem] sm:mt-5 ${BODY_TEXT}`}>
                   {topic.example.intro}
@@ -527,8 +497,7 @@ export default function WebsiteSecurityTopicPage({
                       Explore all four dedicated tools
                     </p>
                     <p className="mt-1 text-[11.5px] leading-[1.6] text-text-secondary">
-                      See the other security check pages and their illustrative
-                      examples in one place.
+                      See the other security check pages in one place.
                     </p>
                   </div>
                   <Link

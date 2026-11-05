@@ -5,7 +5,7 @@ import SslTlsAnalysisPage from "@/components/platform/SslTlsAnalysisPage";
 export const metadata = {
   title: "SSL/TLS Analysis | Website Security Check | Securelyze",
   description:
-    "Explore an illustrative preview of SSL/TLS certificate information, validity, issuer details, HTTPS status, and TLS configuration within the Securelyze Website Security Check.",
+    "Explore SSL/TLS certificate information, validity, issuer details, HTTPS status, and TLS configuration within the Securelyze Website Security Check.",
 };
 
 export default function SslTlsAnalysisRoute() {

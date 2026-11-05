@@ -249,12 +249,6 @@ function OnThisPage({ sectionLinks, topic }) {
         ))}
       </ul>
       <div className="mt-4 border-t border-border pt-4">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-text-muted">
-          About the examples
-        </p>
-        <p className="mt-1.5 text-[10.5px] leading-[1.6] text-text-secondary">
-          Illustrative content. Sample values are used; no live scan is run.
-        </p>
         <Link
           href={backHref}
           className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-semibold text-dark-green transition-colors duration-150 hover:text-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 motion-reduce:transition-none"
@@ -335,9 +329,6 @@ function AssetTopicHero({ topic, heroVisual }) {
             <p className="mt-5 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
               {topic.heroDescription}
             </p>
-            <p className="mt-3 max-w-[44rem] text-pretty text-[13px] leading-[1.7] text-text-muted">
-              {topic.heroNote}
-            </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <a
@@ -354,19 +345,6 @@ function AssetTopicHero({ topic, heroVisual }) {
                 {backLabel}
                 <ArrowRightIcon className="h-3.5 w-3.5" />
               </Link>
-            </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald/20 bg-emerald/10 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-dark-green">
-                <span
-                  aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-emerald"
-                />
-                Illustrative
-              </span>
-              <span className="text-[11.5px] leading-[1.6] text-text-muted">
-                Sample values are used for illustration.
-              </span>
             </div>
 
             <div className="mt-6 rounded-2xl border border-border bg-white/70 p-4 shadow-card backdrop-blur-sm">
@@ -398,10 +376,6 @@ function AssetTopicHero({ topic, heroVisual }) {
                   </li>
                 ))}
               </ul>
-
-              <p className="mt-3 rounded-xl border border-border bg-light px-3 py-2 text-[10px] leading-[1.6] text-text-muted">
-                Illustrative examples. Sample values are used.
-              </p>
             </div>
           </Reveal>
 
@@ -423,7 +397,7 @@ export default function AssetDiscoveryTopicPage({
     { id: "why-it-matters", label: "Why it matters" },
     { id: "what-is-discovered", label: topic.review.navLabel },
     { id: "how-it-works", label: "How it works" },
-    { id: "illustrative-results", label: "Illustrative example" },
+    { id: "illustrative-results", label: "Example results" },
     { id: "faqs", label: "FAQs" },
     { id: "related-tools", label: "Related pages" },
   ];
@@ -491,9 +465,11 @@ export default function AssetDiscoveryTopicPage({
                       <ReviewCard key={item.title} item={item} />
                     ))}
                   </div>
-                  <p className="text-[11.5px] leading-[1.65] text-text-muted">
-                    {topic.review.note}
-                  </p>
+                  {topic.review.note ? (
+                    <p className="text-[11.5px] leading-[1.65] text-text-muted">
+                      {topic.review.note}
+                    </p>
+                  ) : null}
                 </div>
               </Reveal>
 
@@ -515,7 +491,6 @@ export default function AssetDiscoveryTopicPage({
                       <StepCard key={step.title} step={step} index={index} />
                     ))}
                   </ol>
-                  <Callout>{topic.how.callout}</Callout>
                 </div>
               </Reveal>
 
@@ -526,7 +501,7 @@ export default function AssetDiscoveryTopicPage({
                 className="mt-10 scroll-mt-28 border-t border-border pt-9 sm:mt-12 sm:pt-10"
               >
                 <SectionHeading id="illustrative-results-heading">
-                  Illustrative example results
+                  Example results
                 </SectionHeading>
                 <p className={`mt-4 max-w-[48rem] sm:mt-5 ${BODY_TEXT}`}>
                   {topic.example.intro}

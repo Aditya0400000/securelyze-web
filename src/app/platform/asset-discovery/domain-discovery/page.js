@@ -10,7 +10,7 @@ import { DOMAIN_DISCOVERY_CONTENT } from "@/components/platform/assetDiscoveryCo
 export const metadata = {
   title: "Domain Discovery | Asset Discovery | Securelyze",
   description:
-    "Understand how Domain Discovery presents domains, DNS records, nameservers, and related domain context with clearly labelled illustrative examples.",
+    "Understand how Domain Discovery presents domains, DNS records, nameservers, and related domain context.",
 };
 
 export default function DomainDiscoveryRoute() {

@@ -10,7 +10,7 @@ import { EMAIL_SECURITY_CONTENT } from "@/components/platform/securityCheckConte
 export const metadata = {
   title: "Email Security | Website Security Check | Securelyze",
   description:
-    "Explore an illustrative preview of SPF, DKIM, and DMARC authentication context, alignment, and sender policy within the Securelyze Website Security Check.",
+    "Explore SPF, DKIM, and DMARC authentication context, alignment, and sender policy within the Securelyze Website Security Check.",
 };
 
 export default function EmailSecurityRoute() {

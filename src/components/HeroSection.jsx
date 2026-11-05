@@ -33,7 +33,7 @@ export default function HeroSection() {
             className="mt-5 max-w-[44rem] text-balance text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.055em] text-white sm:mt-6 sm:text-[3.4rem] lg:text-[3rem] xl:text-[3.75rem]"
           >
             See your website the way an{" "}
-            <span className="whitespace-nowrap text-emerald-light">attacker&apos;s eye</span> does
+            <span className="whitespace-nowrap text-emerald-light">attacker&apos;</span> does
           </h1>
 
           <p className="mt-5 max-w-[36rem] text-pretty text-[15px] leading-[1.75] text-soft-green/75 sm:mt-6 sm:text-base">

@@ -703,6 +703,7 @@ export default function DevelopersPage() {
       <FaqSection />
 
       <SolutionClosingCta
+        layout="split"
         id="developers-cta"
         title="Build With Better Security Visibility"
         description="Explore your website configuration and external-facing digital assets."

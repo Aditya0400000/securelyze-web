@@ -702,6 +702,7 @@ export default function WebsiteOwnersPage() {
       <FaqSection />
 
       <SolutionClosingCta
+        layout="split"
         id="website-owners-cta"
         title="Take a Clearer Look at Your Website Security"
         description="Start with the Website Security Check overview, then explore the checks and asset context that are most relevant to your site."

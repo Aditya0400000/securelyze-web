@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Securelyze Website",
-  description: "Website Security checker and Asset discovery tools",
+  title: "Website Security Checker and Asset Discovery | Securelyze",
+  description: "Check your website's SSL/TLS, DNS, security headers and email security, and discover exposed subdomains, hosts and services with Securelyze.",
 };
 
 export default function RootLayout({ children }) {

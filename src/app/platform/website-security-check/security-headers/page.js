@@ -10,7 +10,7 @@ import { SECURITY_HEADERS_CONTENT } from "@/components/platform/securityCheckCon
 export const metadata = {
   title: "Security Headers | Website Security Check | Securelyze",
   description:
-    "Explore an illustrative preview of browser-facing HTTP security headers, coverage, and policy context within the Securelyze Website Security Check.",
+    "Explore browser-facing HTTP security headers, coverage, and policy context within the Securelyze Website Security Check.",
 };
 
 export default function SecurityHeadersRoute() {

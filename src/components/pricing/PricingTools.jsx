@@ -99,9 +99,6 @@ export default function PricingTools() {
                 <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
                   Public configuration view
                 </span>
-                <span className="text-[8px] font-medium uppercase tracking-[0.13em] text-[#64748B]">
-                  Illustrative
-                </span>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-3">
                 {CHECKER_SIGNALS.map((signal) => {
@@ -173,9 +170,6 @@ export default function PricingTools() {
               <div className="flex items-center justify-between gap-3 border-b border-white/[0.07] pb-2.5">
                 <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-white/50">
                   Public footprint view
-                </span>
-                <span className="text-[8px] font-medium uppercase tracking-[0.13em] text-white/50">
-                  Illustrative
                 </span>
               </div>
 

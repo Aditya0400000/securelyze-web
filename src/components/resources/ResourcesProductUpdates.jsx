@@ -35,16 +35,8 @@ export default function ResourcesProductUpdates() {
           as="h3"
           size="md"
           eyebrow="Explore / Product Updates"
-          title="Release notes, when they are ready."
-          description="Verified product updates and release notes will live here. We will publish them only when there is something real to share."
+          title="Release notes."
         />
-        <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-[#D1FAE5] bg-[#ECFDF5] px-3 py-1.5 text-[8.5px] font-semibold uppercase tracking-[0.15em] text-[#047857]">
-          <span
-            aria-hidden="true"
-            className="h-1.5 w-1.5 rounded-full bg-[#10B981]"
-          />
-          Coming soon
-        </span>
       </div>
 
       <div className="mt-7 overflow-hidden rounded-[1.75rem] border border-[#183B32]/20 bg-[#101A18] text-white shadow-[0_34px_90px_-58px_rgba(16,26,24,0.85),inset_0_1px_0_rgba(255,255,255,0.08)]">
@@ -56,13 +48,8 @@ export default function ResourcesProductUpdates() {
             <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#10B981]">
               Changelog
             </p>
-            <h4 className="mt-2 text-balance text-[1.45rem] font-semibold leading-[1.2] tracking-[-0.035em] text-white sm:text-[1.65rem]">
-              Verified updates will appear here.
-            </h4>
             <p className="mt-3 text-[12.5px] leading-[1.7] text-white/60">
-              There are no published product updates yet. When there are
-              verified release notes to share, they will appear here with clear
-              dates and details.
+              There are no published product updates yet.
             </p>
 
             <SmoothAnchor
@@ -92,9 +79,6 @@ export default function ResourcesProductUpdates() {
                     {item.description}
                   </p>
                 </div>
-                <span className="shrink-0 text-[8px] font-medium uppercase tracking-[0.1em] text-white/50">
-                  Not yet
-                </span>
               </div>
             ))}
           </div>

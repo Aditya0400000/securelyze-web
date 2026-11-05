@@ -705,6 +705,7 @@ export default function SmallBusinessesPage() {
       <FaqSection />
 
       <SolutionClosingCta
+        layout="split"
         id="small-businesses-cta"
         title="Make Your Business Website Security Easier to Understand"
         description="Explore your website configuration and digital assets with Securelyze."

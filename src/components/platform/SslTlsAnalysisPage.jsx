@@ -13,7 +13,7 @@ const SECTION_LINKS = [
   { id: "why-ssl-tls-matters", label: "Why SSL/TLS matters" },
   { id: "what-can-be-reviewed", label: "What can be reviewed" },
   { id: "how-it-works", label: "How it works" },
-  { id: "illustrative-results", label: "Illustrative example" },
+  { id: "illustrative-results", label: "Example result" },
   { id: "faqs", label: "FAQs" },
   { id: "related-tools", label: "Related tools" },
 ];
@@ -72,37 +72,37 @@ const SAMPLE_RESULTS = [
   {
     label: "HTTPS",
     value: "Enabled",
-    detail: "Sample connection status",
+    detail: "Connection status",
   },
   {
     label: "Certificate",
     value: "Present",
-    detail: "Sample served certificate",
+    detail: "Served certificate",
   },
   {
     label: "Issuer",
     value: "Example CA",
-    detail: "Sample certificate authority",
+    detail: "Certificate authority",
   },
   {
     label: "Common name",
     value: "example.com",
-    detail: "Sample subject",
+    detail: "Subject",
   },
   {
     label: "Subject alternative names",
     value: "example.com · www.example.com",
-    detail: "Sample hostname coverage",
+    detail: "Hostname coverage",
   },
   {
     label: "Validity window",
     value: "01 Jan 2026 – 31 Dec 2026",
-    detail: "Sample valid-from and valid-to dates",
+    detail: "Valid-from and valid-to dates",
   },
   {
     label: "Expiration",
     value: "31 Dec 2026",
-    detail: "Sample expiry date",
+    detail: "Expiry date",
   },
   {
     label: "TLS configuration",
@@ -115,12 +115,12 @@ const FAQ_ITEMS = [
   {
     question: "Does this page run a live SSL/TLS check?",
     answer:
-      "No. The certificate and HTTPS values on this page are illustrative sample data. The current Website Security Check experience is a preview, and live checks are not available yet.",
+      "No. This page explains the capability.",
   },
   {
     question: "What certificate details can be reviewed?",
     answer:
-      "The preview is designed to show certificate presence, common name, subject alternative names, issuer, validity window, expiration, serial, and algorithm context when those details are available.",
+      "The review is designed to show certificate presence, common name, subject alternative names, issuer, validity window, expiration, serial, and algorithm context when those details are available.",
   },
   {
     question: "Why does certificate expiration matter?",
@@ -130,7 +130,7 @@ const FAQ_ITEMS = [
   {
     question: "Is TLS configuration part of the review?",
     answer:
-      "The preview includes certificate chain and algorithm context. It does not perform a live configuration audit or guarantee that every TLS setting is covered.",
+      "The review is designed to include certificate chain and algorithm context. It does not perform a live configuration audit or guarantee that every TLS setting is covered.",
   },
   {
     question: "Does SSL/TLS Analysis replace a full security assessment?",
@@ -145,21 +145,18 @@ const RELATED_TOOLS = [
     description: "Review DNS records, nameservers, and resolution context.",
     icon: NetworkIcon,
     href: "/platform/website-security-check/dns-security",
-    status: "Preview",
   },
   {
     title: "Security Headers",
     description: "Check browser-facing HTTP security headers and policy.",
     icon: CodeIcon,
     href: "/platform/website-security-check/security-headers",
-    status: "Preview",
   },
   {
     title: "Email Security",
     description: "Review SPF, DKIM, and DMARC authentication signals.",
     icon: MailIcon,
     href: "/platform/website-security-check/email-security",
-    status: "Preview",
   },
 ];
 
@@ -291,7 +288,7 @@ function SampleResultsPanel() {
   return (
     <div
       role="group"
-      aria-label="Illustrative SSL/TLS example results"
+      aria-label="SSL/TLS example results"
       className="mt-5 overflow-hidden rounded-3xl border border-white/10 bg-charcoal text-white shadow-card"
     >
       <div
@@ -304,9 +301,6 @@ function SampleResultsPanel() {
             <LockIcon className="h-5 w-5" />
           </span>
           <div className="min-w-0">
-            <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-white/45">
-              Illustrative example
-            </p>
             <p className="mt-0.5 text-[13px] font-semibold text-white">
               example.com
             </p>
@@ -314,7 +308,7 @@ function SampleResultsPanel() {
         </div>
         <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald/25 bg-emerald/10 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-soft-green">
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald" />
-          Sample data only
+          Sample data
         </span>
       </div>
 
@@ -337,12 +331,6 @@ function SampleResultsPanel() {
         ))}
       </div>
 
-      <div className="border-t border-white/10 px-5 py-3">
-        <p className="text-[10px] leading-[1.6] text-white/50">
-          Sample values for layout preview only. No live certificate or TLS scan
-          was performed.
-        </p>
-      </div>
     </div>
   );
 }
@@ -394,21 +382,6 @@ function RelatedToolCard({ tool }) {
         >
           <Icon className="h-4 w-4" />
         </span>
-        <span
-          className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] ${
-            tool.status === "Planned"
-              ? "border-border bg-light text-text-muted"
-              : "border-emerald/20 bg-emerald/10 text-dark-green"
-          }`}
-        >
-          <span
-            aria-hidden="true"
-            className={`h-1 w-1 rounded-full ${
-              tool.status === "Planned" ? "bg-text-muted/60" : "bg-emerald"
-            }`}
-          />
-          {tool.status}
-        </span>
       </div>
 
       <h3 className="mt-4 text-[13px] font-semibold tracking-[-0.02em] text-charcoal">
@@ -458,12 +431,6 @@ function OnThisPage() {
         ))}
       </ul>
       <div className="mt-4 border-t border-border pt-4">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-text-muted">
-          Preview status
-        </p>
-        <p className="mt-1.5 text-[10.5px] leading-[1.6] text-text-secondary">
-          Illustrative content. Live checks are not available yet.
-        </p>
         <Link
           href="/platform#website-security-check"
           className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-semibold text-dark-green transition-colors duration-150 hover:text-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 motion-reduce:transition-none"
@@ -540,10 +507,6 @@ function SslTlsHero() {
               website&apos;s HTTPS posture, from issuer and validity to HTTPS
               status and TLS configuration context.
             </p>
-            <p className="mt-3 max-w-[44rem] text-pretty text-[13px] leading-[1.7] text-text-muted">
-              This page is an illustrative preview of the analysis experience.
-              It does not run a live scan.
-            </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <a
@@ -562,15 +525,6 @@ function SslTlsHero() {
               </Link>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald/20 bg-emerald/10 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-dark-green">
-                <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald" />
-                Preview only
-              </span>
-              <span className="text-[11.5px] leading-[1.6] text-text-muted">
-                Sample values are used for illustration.
-              </span>
-            </div>
           </Reveal>
 
           <Reveal
@@ -612,9 +566,6 @@ function SslTlsHero() {
               ))}
             </ul>
 
-            <p className="mt-4 rounded-xl border border-border bg-light px-3 py-2 text-[10.5px] leading-[1.6] text-text-muted">
-              Illustrative preview. No live certificate or TLS scan is run.
-            </p>
           </Reveal>
         </div>
       </div>
@@ -682,10 +633,8 @@ export default function SslTlsAnalysisPage() {
                 </SectionHeading>
                 <div className="mt-4 space-y-5 sm:mt-5">
                   <p className={`max-w-[48rem] ${BODY_TEXT}`}>
-                    The Website Security Check preview is designed to present
-                    the certificate and HTTPS context available from a scan. The
-                    areas below describe the intended review; the sample results
-                    later on this page are illustrative.
+                    Website Security Check is designed to present the
+                    certificate and HTTPS context available from a scan.
                   </p>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {REVIEW_ITEMS.map((item) => (
@@ -718,10 +667,6 @@ export default function SslTlsAnalysisPage() {
                       <StepCard key={step.title} step={step} index={index} />
                     ))}
                   </ol>
-                  <Callout>
-                    This page illustrates the flow. It does not accept a domain
-                    or run a live analysis.
-                  </Callout>
                 </div>
               </section>
 
@@ -731,12 +676,11 @@ export default function SslTlsAnalysisPage() {
                 className="mt-10 scroll-mt-28 border-t border-border pt-9 sm:mt-12 sm:pt-10"
               >
                 <SectionHeading id="illustrative-results-heading">
-                  Illustrative example results
+                  Example result
                 </SectionHeading>
                 <p className={`mt-4 max-w-[48rem] sm:mt-5 ${BODY_TEXT}`}>
                   The panel below shows the kind of certificate and HTTPS
-                  context the analysis is designed to present. Every value is
-                  sample data.
+                  context the analysis is designed to present.
                 </p>
                 <SampleResultsPanel />
               </section>
@@ -764,8 +708,7 @@ export default function SslTlsAnalysisPage() {
                 </SectionHeading>
                 <p className={`mt-4 max-w-[48rem] sm:mt-5 ${BODY_TEXT}`}>
                   Continue with the other dedicated Website Security Check
-                  pages. Each page explains its checks and includes clearly
-                  labelled illustrative examples.
+                  pages. Each page explains its checks.
                 </p>
                 <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {RELATED_TOOLS.map((tool) => (
@@ -782,8 +725,7 @@ export default function SslTlsAnalysisPage() {
                       Explore all four dedicated tools
                     </p>
                     <p className="mt-1 text-[11.5px] leading-[1.6] text-text-secondary">
-                      See the other security check pages and their illustrative
-                      examples in one place.
+                      See the other security check pages in one place.
                     </p>
                   </div>
                   <Link

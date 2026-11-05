@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
+import { CONTACT_URL } from "@/lib/siteLinks";
+
 const FOOTER_COLUMNS = [
   {
     title: "Services",
@@ -55,7 +57,7 @@ const FOOTER_COLUMNS = [
       },
       {
         label: "Contact Us",
-        href: "mailto:support@securelyze.in",
+        href: CONTACT_URL,
       },
     ],
   },

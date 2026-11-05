@@ -430,7 +430,7 @@ export default function AboutEcosystem() {
                 Connected external view
               </p>
               <span className="rounded-full border border-white/10 bg-white/[0.035] px-2.5 py-1 text-[8.5px] font-medium uppercase tracking-[0.14em] text-white/50">
-                Illustrative view
+                Sample data
               </span>
             </div>
 

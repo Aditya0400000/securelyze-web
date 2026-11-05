@@ -42,8 +42,6 @@ export const DNS_SECURITY_CONTENT = {
   icon: NetworkIcon,
   heroDescription:
     "Review the DNS records and resolution context that help browsers, mail systems, and other services find and trust your domain.",
-  heroNote:
-    "This page is an illustrative preview of the DNS Security experience. It does not run a live DNS lookup.",
   heroChecklist: [
     "A, AAAA, CNAME, MX, TXT, and NS records",
     "Resolution path and nameserver context",
@@ -68,7 +66,7 @@ export const DNS_SECURITY_CONTENT = {
   },
   review: {
     intro:
-      "The DNS Security preview is designed to present the records and resolution context available for a domain. The areas below describe the intended review; the sample results later on this page are illustrative.",
+      "DNS Security is designed to present the records and resolution context available for a domain.",
     items: [
       {
         title: "A & AAAA records",
@@ -120,26 +118,24 @@ export const DNS_SECURITY_CONTENT = {
       {
         title: "Results",
         description:
-          "See record coverage, sample values, and the resolution path in one summary.",
+          "See record coverage, record values, and the resolution path in one summary.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a domain or run a live DNS lookup.",
   },
   example: {
     intro:
-      "The panel below shows the kind of DNS record context the analysis is designed to present. Every value is sample data.",
+      "The panel below shows the kind of DNS record context the analysis is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live DNS lookup?",
       answer:
-        "No. The records and resolution values on this page are illustrative sample data. The current Website Security Check experience is a preview, and live DNS lookups are not available yet.",
+        "No. This page explains the capability.",
     },
     {
       question: "Which DNS records can be reviewed?",
       answer:
-        "The preview is designed to show common record types such as A, AAAA, CNAME, MX, TXT, and NS when those records are available.",
+        "The review is designed to show common record types such as A, AAAA, CNAME, MX, TXT, and NS when those records are available.",
     },
     {
       question: "Why do MX and TXT records matter?",
@@ -167,8 +163,6 @@ export const SECURITY_HEADERS_CONTENT = {
   icon: CodeIcon,
   heroDescription:
     "Review the HTTP response headers that tell browsers how to handle content, connections, and sensitive features.",
-  heroNote:
-    "This page is an illustrative preview of the Security Headers experience. It does not run a live header check.",
   heroChecklist: [
     "Content and framing policy",
     "HTTPS enforcement with HSTS",
@@ -193,7 +187,7 @@ export const SECURITY_HEADERS_CONTENT = {
   },
   review: {
     intro:
-      "The Security Headers preview is designed to present the browser-facing headers returned for a domain. The areas below describe the intended review; the sample results later on this page are illustrative.",
+      "Security Headers is designed to present the browser-facing headers returned for a domain.",
     items: [
       {
         title: "Content-Security-Policy",
@@ -245,26 +239,24 @@ export const SECURITY_HEADERS_CONTENT = {
       {
         title: "Results",
         description:
-          "See header coverage, sample values, and configuration context in one summary.",
+          "See header coverage, header values, and configuration context in one summary.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a domain or run a live header check.",
   },
   example: {
     intro:
-      "The panel below shows the kind of response-header context the analysis is designed to present. Every value is sample data.",
+      "The panel below shows the kind of response-header context the analysis is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live header check?",
       answer:
-        "No. The header values on this page are illustrative sample data. The current Website Security Check experience is a preview, and live header checks are not available yet.",
+        "No. This page explains the capability.",
     },
     {
       question: "Which security headers can be reviewed?",
       answer:
-        "The preview is designed to show common headers such as Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, and frame-protection headers.",
+        "The review is designed to show common headers such as Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, and frame-protection headers.",
     },
     {
       question: "Does a present header guarantee protection?",
@@ -292,8 +284,6 @@ export const EMAIL_SECURITY_CONTENT = {
   icon: MailIcon,
   heroDescription:
     "Review the SPF, DKIM, and DMARC records that help receiving mail systems verify senders and reduce spoofing risk.",
-  heroNote:
-    "This page is an illustrative preview of the Email Security experience. It does not run a live email authentication check.",
   heroChecklist: [
     "SPF sender policy",
     "DKIM signing context",
@@ -318,7 +308,7 @@ export const EMAIL_SECURITY_CONTENT = {
   },
   review: {
     intro:
-      "The Email Security preview is designed to present the public authentication records and sender context available for a domain. The areas below describe the intended review; the sample results later on this page are illustrative.",
+      "Email Security is designed to present the public authentication records and sender context available for a domain.",
     items: [
       {
         title: "SPF record",
@@ -370,21 +360,19 @@ export const EMAIL_SECURITY_CONTENT = {
       {
         title: "Results",
         description:
-          "See sample authentication results, alignment, and policy context in one summary.",
+          "See authentication results, alignment, and policy context in one summary.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a domain or run a live email authentication check.",
   },
   example: {
     intro:
-      "The panel below shows the kind of authentication context the analysis is designed to present. Every value is sample data.",
+      "The panel below shows the kind of authentication context the analysis is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live email authentication check?",
       answer:
-        "No. The SPF, DKIM, and DMARC values on this page are illustrative sample data. The current Website Security Check experience is a preview, and live email authentication checks are not available yet.",
+        "No. This page explains the capability.",
     },
     {
       question: "What is the difference between SPF, DKIM, and DMARC?",

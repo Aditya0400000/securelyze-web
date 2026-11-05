@@ -10,7 +10,7 @@ import { IP_HOST_DISCOVERY_CONTENT } from "@/components/platform/assetDiscoveryC
 export const metadata = {
   title: "IP & Host Discovery | Asset Discovery | Securelyze",
   description:
-    "Understand how IP & Host Discovery connects public hostnames to IPv4 and IPv6 addresses and shared infrastructure with clearly labelled illustrative examples.",
+    "Understand how IP & Host Discovery connects public hostnames to IPv4 and IPv6 addresses and shared infrastructure.",
 };
 
 export default function IpHostDiscoveryRoute() {

@@ -9,8 +9,7 @@ import { LayersIcon, RecordIcon } from "../pricing/PricingIcons";
 
 function AssetVisualShell({
   label,
-  badge = "Illustrative",
-  footer,
+  badge = "Sample data",
   srDescription,
   children,
 }) {
@@ -40,12 +39,6 @@ function AssetVisualShell({
         </div>
 
         <div className="relative mt-3">{children}</div>
-
-        {footer ? (
-          <p className="relative mt-3 border-t border-white/10 pt-3 text-[9px] leading-[1.6] text-white/60">
-            {footer}
-          </p>
-        ) : null}
       </div>
 
       {srDescription ? (
@@ -85,7 +78,7 @@ function SampleRowHeader({ icon: Icon, title, badge }) {
       </span>
       <div className="min-w-0">
         <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-          Sample domain
+          Domain
         </p>
         <p className="mt-0.5 text-[12.5px] font-semibold text-white">
           {title}
@@ -125,8 +118,7 @@ export function AssetDiscoveryHeroVisual() {
   return (
     <AssetVisualShell
       label="Public footprint map"
-      footer="Sample relationships only. No live discovery scan is run."
-      srDescription="Illustrative asset map for example.com showing sample public hosts www, api, cdn, and mail."
+      srDescription="Asset map for example.com showing public hosts www, api, cdn, and mail."
     >
       <div className="relative rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-2.5">
@@ -135,7 +127,7 @@ export function AssetDiscoveryHeroVisual() {
           </span>
           <div className="min-w-0">
             <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-              Sample apex domain
+              Apex domain
             </p>
             <p className="mt-0.5 truncate font-mono text-[11px] font-medium text-white/90">
               example.com
@@ -194,8 +186,7 @@ export function SubdomainDiscoveryHeroVisual() {
   return (
     <AssetVisualShell
       label="Subdomain hierarchy"
-      footer="Sample hostnames only. No live enumeration is run."
-      srDescription="Illustrative subdomain tree for example.com showing sample hosts www, api, app, cdn, and mail."
+      srDescription="Subdomain tree for example.com showing hosts www, api, app, cdn, and mail."
     >
       <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-2.5">
@@ -211,7 +202,7 @@ export function SubdomainDiscoveryHeroVisual() {
             </p>
           </div>
           <span className="ml-auto">
-            <SamplePill>5 sample hosts</SamplePill>
+            <SamplePill>5 hosts</SamplePill>
           </span>
         </div>
 
@@ -253,8 +244,7 @@ export function DomainDiscoveryHeroVisual() {
   return (
     <AssetVisualShell
       label="Domain relationship view"
-      footer="Sample domains and DNS values only. No live lookup is run."
-      srDescription="Illustrative domain relationships for example.com showing sample records and related names."
+      srDescription="Domain relationships for example.com showing records and related names."
     >
       <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-2.5">
@@ -263,7 +253,7 @@ export function DomainDiscoveryHeroVisual() {
           </span>
           <div className="min-w-0">
             <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-              Sample apex domain
+              Apex domain
             </p>
             <p className="mt-0.5 truncate font-mono text-[11px] font-medium text-white/90">
               example.com
@@ -317,8 +307,7 @@ export function IpHostDiscoveryHeroVisual() {
   return (
     <AssetVisualShell
       label="Host-to-IP relationship"
-      footer="Sample addresses only. No live host or IP lookup is run."
-      srDescription="Illustrative host-to-IP map for example.com showing sample IPv4 and IPv6 addresses."
+      srDescription="Host-to-IP map for example.com showing IPv4 and IPv6 addresses."
     >
       <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-2.5">
@@ -327,14 +316,14 @@ export function IpHostDiscoveryHeroVisual() {
           </span>
           <div className="min-w-0">
             <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-              Sample host group
+              Host group
             </p>
             <p className="mt-0.5 truncate font-mono text-[11px] font-medium text-white/90">
               example.com
             </p>
           </div>
           <span className="ml-auto">
-            <SamplePill>4 sample hosts</SamplePill>
+            <SamplePill>4 hosts</SamplePill>
           </span>
         </div>
 
@@ -365,7 +354,7 @@ export function IpHostDiscoveryHeroVisual() {
             className="h-1.5 w-1.5 rounded-full bg-emerald"
           />
           <p className="text-[8.5px] leading-[1.5] text-white/70">
-            www and the apex share the same sample address.
+            www and the apex share the same address.
           </p>
         </div>
       </div>
@@ -384,8 +373,7 @@ export function PortServiceDiscoveryHeroVisual() {
   return (
     <AssetVisualShell
       label="Port and service view"
-      footer="Sample ports only. No live port scan is run."
-      srDescription="Illustrative port and service snapshot for api.example.com showing sample ports 443, 80, 22, and 8080."
+      srDescription="Port and service snapshot for api.example.com showing ports 443, 80, 22, and 8080."
     >
       <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-2.5">
@@ -394,14 +382,14 @@ export function PortServiceDiscoveryHeroVisual() {
           </span>
           <div className="min-w-0">
             <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-              Sample public host
+              Public host
             </p>
             <p className="mt-0.5 truncate font-mono text-[11px] font-medium text-white/90">
               api.example.com
             </p>
           </div>
           <span className="ml-auto">
-            <SamplePill>4 sample ports</SamplePill>
+            <SamplePill>4 ports</SamplePill>
           </span>
         </div>
 
@@ -424,7 +412,7 @@ export function PortServiceDiscoveryHeroVisual() {
 
         <div className="mt-3 rounded-xl border border-white/10 bg-white/5 p-3">
           <div className="flex items-center justify-between gap-3 text-[8.5px] font-semibold uppercase tracking-[0.12em] text-white/60">
-            <span>Sample service coverage</span>
+            <span>Service coverage</span>
             <span className="text-soft-green">3 observed</span>
           </div>
           <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -441,57 +429,55 @@ const OVERVIEW_SAMPLE_ASSETS = [
     name: "example.com",
     type: "Domain",
     address: "203.0.113.10",
-    note: "Sample apex domain",
+    note: "Apex domain",
   },
   {
     name: "www.example.com",
     type: "Subdomain",
     address: "203.0.113.10",
-    note: "Sample CNAME to apex",
+    note: "CNAME to apex",
   },
   {
     name: "api.example.com",
     type: "Subdomain",
     address: "203.0.113.20",
-    note: "Sample A record",
+    note: "A record",
   },
   {
     name: "cdn.example.com",
     type: "Subdomain",
     address: "203.0.113.30",
-    note: "Sample CNAME to edge",
+    note: "CNAME to edge",
   },
   {
     name: "mail.example.com",
     type: "Host",
     address: "203.0.113.40",
-    note: "Sample MX target",
+    note: "MX target",
   },
   {
     name: "api.example.com:443",
     type: "Service",
     address: "HTTPS",
-    note: "Sample public service",
+    note: "Public service",
   },
 ];
 
 export function AssetDiscoveryExamplePanel() {
   return (
     <AssetVisualShell
-      label="Illustrative asset inventory"
-      badge="Sample data only"
-      footer="Sample asset values only. No live discovery scan is run."
-      srDescription="Illustrative asset inventory for example.com with sample domains, subdomains, hosts, and a service."
+      label="Asset inventory"
+      srDescription="Asset inventory for example.com with domains, subdomains, hosts, and a service."
     >
       <SampleRowHeader
         icon={AssetsIcon}
         title="example.com"
-        badge="6 sample assets"
+        badge="6 assets"
       />
 
       <div
         role="group"
-        aria-label="Illustrative asset inventory for example.com"
+        aria-label="Asset inventory for example.com"
         className="mt-2 space-y-2"
       >
         {OVERVIEW_SAMPLE_ASSETS.map((asset) => (
@@ -525,31 +511,31 @@ const SUBDOMAIN_SAMPLE_HOSTS = [
     host: "www.example.com",
     record: "CNAME",
     target: "example.com",
-    note: "Sample web alias",
+    note: "Web alias",
   },
   {
     host: "api.example.com",
     record: "A",
     target: "203.0.113.20",
-    note: "Sample API host",
+    note: "API host",
   },
   {
     host: "app.example.com",
     record: "CNAME",
     target: "app.example.net",
-    note: "Sample application host",
+    note: "Application host",
   },
   {
     host: "cdn.example.com",
     record: "CNAME",
     target: "edge.example.net",
-    note: "Sample CDN edge",
+    note: "CDN edge",
   },
   {
     host: "mail.example.com",
     record: "A",
     target: "203.0.113.40",
-    note: "Sample mail host",
+    note: "Mail host",
   },
   {
     host: "staging.example.com",
@@ -562,20 +548,18 @@ const SUBDOMAIN_SAMPLE_HOSTS = [
 export function SubdomainDiscoveryExamplePanel() {
   return (
     <AssetVisualShell
-      label="Illustrative subdomain snapshot"
-      badge="Sample data only"
-      footer="Sample hostnames only. No live subdomain enumeration is run."
-      srDescription="Illustrative subdomain list for example.com with sample hostnames, record types, and targets."
+      label="Subdomain snapshot"
+      srDescription="Subdomain list for example.com with hostnames, record types, and targets."
     >
       <SampleRowHeader
         icon={NetworkIcon}
         title="example.com"
-        badge="6 sample hostnames"
+        badge="6 hostnames"
       />
 
       <div
         role="group"
-        aria-label="Illustrative subdomains for example.com"
+        aria-label="Subdomains for example.com"
         className="mt-2 space-y-2"
       >
         {SUBDOMAIN_SAMPLE_HOSTS.map((host) => (
@@ -609,51 +593,49 @@ const DOMAIN_SAMPLE_RECORDS = [
     name: "example.com",
     type: "Apex",
     value: "A · 203.0.113.10",
-    note: "Sample primary domain",
+    note: "Primary domain",
   },
   {
     name: "www.example.com",
     type: "Hostname",
     value: "CNAME · example.com",
-    note: "Sample web alias",
+    note: "Web alias",
   },
   {
     name: "api.example.com",
     type: "Hostname",
     value: "A · 203.0.113.20",
-    note: "Sample API host",
+    note: "API host",
   },
   {
     name: "mail.example.com",
     type: "Hostname",
     value: "MX · mail.example.net",
-    note: "Sample mail exchanger",
+    note: "Mail exchanger",
   },
   {
     name: "example.net",
     type: "Related",
     value: "NS · ns1.example.net",
-    note: "Sample related domain",
+    note: "Related domain",
   },
 ];
 
 export function DomainDiscoveryExamplePanel() {
   return (
     <AssetVisualShell
-      label="Illustrative domain snapshot"
-      badge="Sample data only"
-      footer="Sample domains and DNS values only. No live lookup is run."
-      srDescription="Illustrative domain and DNS snapshot with sample apex, hostname, mail, and related domain values."
+      label="Domain snapshot"
+      srDescription="Domain and DNS snapshot with apex, hostname, mail, and related domain values."
     >
       <SampleRowHeader
         icon={GlobeIcon}
         title="example.com"
-        badge="5 sample domains"
+        badge="5 domains"
       />
 
       <div
         role="group"
-        aria-label="Illustrative domain context for example.com"
+        aria-label="Domain context for example.com"
         className="mt-2 space-y-2"
       >
         {DOMAIN_SAMPLE_RECORDS.map((record) => (
@@ -687,45 +669,43 @@ const IP_SAMPLE_HOSTS = [
     host: "www.example.com",
     ipv4: "203.0.113.10",
     ipv6: "2001:db8::10",
-    note: "Shared edge sample",
+    note: "Shared edge",
   },
   {
     host: "api.example.com",
     ipv4: "203.0.113.20",
     ipv6: "2001:db8::20",
-    note: "Application host sample",
+    note: "Application host",
   },
   {
     host: "cdn.example.com",
     ipv4: "203.0.113.30",
     ipv6: "2001:db8::30",
-    note: "CDN edge sample",
+    note: "CDN edge",
   },
   {
     host: "mail.example.com",
     ipv4: "203.0.113.40",
     ipv6: "Not observed",
-    note: "Mail host sample",
+    note: "Mail host",
   },
 ];
 
 export function IpHostDiscoveryExamplePanel() {
   return (
     <AssetVisualShell
-      label="Illustrative host and IP snapshot"
-      badge="Sample data only"
-      footer="Sample addresses only. No live host or IP lookup is run."
-      srDescription="Illustrative host and IP inventory with sample IPv4 and IPv6 addresses."
+      label="Host and IP snapshot"
+      srDescription="Host and IP inventory with IPv4 and IPv6 addresses."
     >
       <SampleRowHeader
         icon={LayersIcon}
         title="example.com"
-        badge="4 sample hosts"
+        badge="4 hosts"
       />
 
       <div
         role="group"
-        aria-label="Illustrative host and IP relationships for example.com"
+        aria-label="Host and IP relationships for example.com"
         className="mt-2 space-y-2"
       >
         {IP_SAMPLE_HOSTS.map((host) => (
@@ -737,7 +717,7 @@ export function IpHostDiscoveryExamplePanel() {
               <p className="min-w-0 flex-1 break-words font-mono text-[10px] leading-[1.5] text-white/90">
                 {host.host}
               </p>
-              <SamplePill tone="neutral">Sample host</SamplePill>
+              <SamplePill tone="neutral">Host</SamplePill>
             </div>
             <div className="mt-1 flex flex-wrap gap-1.5">
               <span className="rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[8.5px] text-white/75">
@@ -763,21 +743,21 @@ const PORT_SAMPLE_SERVICES = [
     service: "HTTPS",
     protocol: "TCP",
     state: "Public",
-    note: "Sample web service",
+    note: "Web service",
   },
   {
     port: "80",
     service: "HTTP",
     protocol: "TCP",
     state: "Redirect",
-    note: "Sample redirect to HTTPS",
+    note: "Redirect to HTTPS",
   },
   {
     port: "22",
     service: "SSH",
     protocol: "TCP",
     state: "Restricted",
-    note: "Sample administrative service",
+    note: "Administrative service",
   },
   {
     port: "8080",
@@ -791,20 +771,18 @@ const PORT_SAMPLE_SERVICES = [
 export function PortServiceDiscoveryExamplePanel() {
   return (
     <AssetVisualShell
-      label="Illustrative port and service snapshot"
-      badge="Sample data only"
-      footer="Sample ports only. No live port scan is run."
-      srDescription="Illustrative port and service snapshot for api.example.com with sample ports, services, and states."
+      label="Port and service snapshot"
+      srDescription="Port and service snapshot for api.example.com with ports, services, and states."
     >
       <SampleRowHeader
         icon={CodeIcon}
         title="api.example.com"
-        badge="4 sample ports"
+        badge="4 ports"
       />
 
       <div
         role="group"
-        aria-label="Illustrative ports and services for api.example.com"
+        aria-label="Ports and services for api.example.com"
         className="mt-2 space-y-2"
       >
         {PORT_SAMPLE_SERVICES.map((item) => (

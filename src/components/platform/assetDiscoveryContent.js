@@ -57,8 +57,6 @@ export const ASSET_DISCOVERY_OVERVIEW_CONTENT = {
   overview: true,
   heroDescription:
     "Build a clearer picture of the subdomains, domains, hosts, and internet-facing services that make up your public footprint.",
-  heroNote:
-    "This overview explains the discovery capabilities and uses clearly labelled illustrative examples. It does not run a live scan.",
   heroChecklist: [
     "Public subdomains and hostnames",
     "Domains, DNS records, and IP context",
@@ -86,7 +84,7 @@ export const ASSET_DISCOVERY_OVERVIEW_CONTENT = {
     heading: "Discovery capabilities",
     navLabel: "Discovery capabilities",
     intro:
-      "The overview connects four capability areas. Each dedicated page explains what the capability is designed to show and includes an illustrative example.",
+      "The overview connects four capability areas. Each dedicated page explains what the capability is designed to show.",
     items: [
       {
         title: "Subdomain Discovery",
@@ -121,7 +119,6 @@ export const ASSET_DISCOVERY_OVERVIEW_CONTENT = {
         cta: "Open capability",
       },
     ],
-    note: "The capability pages are explanatory overviews. They use sample data and do not run live discovery scans.",
   },
   how: {
     intro:
@@ -148,18 +145,16 @@ export const ASSET_DISCOVERY_OVERVIEW_CONTENT = {
           "Use the connected view to decide which assets need a closer security review.",
       },
     ],
-    callout:
-      "This page illustrates the discovery model. It does not accept a domain or run a live scan.",
   },
   example: {
     intro:
-      "The panel below shows the kind of connected asset view the discovery experience is designed to present. Every value is sample data.",
+      "The panel below shows the kind of connected asset view the discovery experience is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live asset discovery scan?",
       answer:
-        "No. The asset relationships and service values on this page are illustrative sample data. The page explains the capability rather than acting as a working scanner.",
+        "No. This page explains the capability.",
     },
     {
       question: "What counts as an external asset?",
@@ -199,8 +194,6 @@ export const SUBDOMAIN_DISCOVERY_CONTENT = {
   icon: NetworkIcon,
   heroDescription:
     "Find publicly discoverable hostnames that sit beneath a domain and see how they relate to the parent domain.",
-  heroNote:
-    "This page explains the capability with illustrative sample data. It does not run a live subdomain enumeration.",
   heroChecklist: [
     "Parent domain and public hostnames",
     "DNS record types and values",
@@ -248,7 +241,7 @@ export const SUBDOMAIN_DISCOVERY_CONTENT = {
       {
         title: "Response context",
         description:
-          "Whether a sample hostname responds, redirects, or has no observed response.",
+          "Whether a hostname responds, redirects, or has no observed response.",
       },
       {
         title: "Shared targets",
@@ -288,18 +281,16 @@ export const SUBDOMAIN_DISCOVERY_CONTENT = {
           "Look for forgotten, unexpected, or service-specific hostnames that need follow-up.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a domain or run a live enumeration.",
   },
   example: {
     intro:
-      "The panel below shows the kind of subdomain hierarchy the discovery experience is designed to present. Every hostname and response is sample data.",
+      "The panel below shows the kind of subdomain hierarchy the discovery experience is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live subdomain enumeration?",
       answer:
-        "No. The hostnames and response values on this page are illustrative sample data. The page explains the capability rather than acting as a working scanner.",
+        "No. This page explains the capability.",
     },
     {
       question: "What is a subdomain?",
@@ -339,8 +330,6 @@ export const DOMAIN_DISCOVERY_CONTENT = {
   icon: GlobeIcon,
   heroDescription:
     "Review the domains and related DNS context that shape how your public footprint is organized.",
-  heroNote:
-    "This page explains the capability with illustrative sample data. It does not run a live domain lookup.",
   heroChecklist: [
     "Apex domains and related hostnames",
     "A, AAAA, CNAME, MX, and NS context",
@@ -428,18 +417,16 @@ export const DOMAIN_DISCOVERY_CONTENT = {
           "Look for legacy names, unexpected redirects, and relationships that need follow-up.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a domain or run a live lookup.",
   },
   example: {
     intro:
-      "The panel below shows the kind of domain and DNS context the discovery experience is designed to present. Every value is sample data.",
+      "The panel below shows the kind of domain and DNS context the discovery experience is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live domain lookup?",
       answer:
-        "No. The domain and DNS values on this page are illustrative sample data. The page explains the capability rather than acting as a working scanner.",
+        "No. This page explains the capability.",
     },
     {
       question: "What is an apex domain?",
@@ -479,8 +466,6 @@ export const IP_HOST_DISCOVERY_CONTENT = {
   icon: LayersIcon,
   heroDescription:
     "Map public hostnames to IP addresses and see where infrastructure is shared across your external footprint.",
-  heroNote:
-    "This page explains the capability with illustrative sample data. It does not run a live host or IP lookup.",
   heroChecklist: [
     "Public hostnames and address records",
     "IPv4 and IPv6 relationships",
@@ -568,18 +553,16 @@ export const IP_HOST_DISCOVERY_CONTENT = {
           "Use the grouped view to spot shared infrastructure and changes that need follow-up.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a hostname or run a live lookup.",
   },
   example: {
     intro:
-      "The panel below shows the kind of host-to-IP view the discovery experience is designed to present. Every address and hostname is sample data.",
+      "The panel below shows the kind of host-to-IP view the discovery experience is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live host or IP lookup?",
       answer:
-        "No. The hostnames, IP addresses, and hosting values on this page are illustrative sample data. The page explains the capability rather than acting as a working scanner.",
+        "No. This page explains the capability.",
     },
     {
       question: "What is the difference between a host and an IP address?",
@@ -619,8 +602,6 @@ export const PORT_SERVICE_DISCOVERY_CONTENT = {
   icon: CodeIcon,
   heroDescription:
     "Review the internet-facing ports and services associated with public hosts and understand where exposure needs a closer look.",
-  heroNote:
-    "This page explains the capability with illustrative sample data. It does not run a live port scan.",
   heroChecklist: [
     "Common internet-facing ports",
     "Service labels and protocol context",
@@ -673,7 +654,7 @@ export const PORT_SERVICE_DISCOVERY_CONTENT = {
       {
         title: "Exposure state",
         description:
-          "Whether a sample service appears public, restricted, or unobserved.",
+          "Whether a service appears public, restricted, or unobserved.",
       },
       {
         title: "Change cues",
@@ -708,18 +689,16 @@ export const PORT_SERVICE_DISCOVERY_CONTENT = {
           "Decide which services are expected and which need authorized follow-up.",
       },
     ],
-    callout:
-      "This page illustrates the flow. It does not accept a hostname or run a live port scan.",
   },
   example: {
     intro:
-      "The panel below shows the kind of port and service view the discovery experience is designed to present. Every value is sample data.",
+      "The panel below shows the kind of port and service view the discovery experience is designed to present.",
   },
   faqs: [
     {
       question: "Does this page run a live port scan?",
       answer:
-        "No. The ports, services, and states on this page are illustrative sample data. The page explains the capability rather than acting as a working scanner.",
+        "No. This page explains the capability.",
     },
     {
       question: "What is a port?",

@@ -6,7 +6,7 @@ import {
 } from "../about/AboutIcons";
 import { CheckIcon, LockIcon, MailIcon } from "../pricing/PricingIcons";
 
-function VisualShell({ label, badge = "Illustrative", children }) {
+function VisualShell({ label, badge = "Sample data", children }) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-dark-green/80 p-4 shadow-[var(--shadow-card-dark)] sm:p-5">
       <div
@@ -115,9 +115,6 @@ export function DnsHeroVisual() {
         ))}
       </div>
 
-      <p className="mt-2.5 text-[8.5px] leading-[1.5] text-white/55">
-        Sample values only. No live DNS lookup is run.
-      </p>
     </VisualShell>
   );
 }
@@ -126,44 +123,44 @@ const DNS_SAMPLE_RECORDS = [
   {
     type: "A",
     value: "203.0.113.10",
-    note: "Sample IPv4 address for the apex domain.",
+    note: "IPv4 address for the apex domain.",
   },
   {
     type: "AAAA",
     value: "2001:db8::10",
-    note: "Sample IPv6 address using documentation ranges.",
+    note: "IPv6 address using documentation ranges.",
   },
   {
     type: "CNAME",
     value: "www → example.com",
-    note: "Sample alias for the www hostname.",
+    note: "Alias for the www hostname.",
   },
   {
     type: "MX",
     value: "mail.example.com · priority 10",
-    note: "Sample mail exchanger for the domain.",
+    note: "Mail exchanger for the domain.",
   },
   {
     type: "TXT",
     value: "v=spf1 include:example.net -all",
-    note: "Sample sender-policy record.",
+    note: "Sender-policy record.",
   },
   {
     type: "NS",
     value: "ns1.example.net · ns2.example.net",
-    note: "Sample authoritative nameservers.",
+    note: "Authoritative nameservers.",
   },
 ];
 
 export function DnsExamplePanel() {
   return (
     <VisualShell
-      label="Illustrative DNS snapshot"
-      badge="Sample data only"
+      label="DNS snapshot"
+      badge="Sample data"
     >
       <div
         role="group"
-        aria-label="Illustrative DNS records for example.com"
+        aria-label="DNS records for example.com"
         className="space-y-2"
       >
         <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -172,7 +169,7 @@ export function DnsExamplePanel() {
           </span>
           <div className="min-w-0">
             <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-              Sample domain
+              Domain
             </p>
             <p className="mt-0.5 text-[12.5px] font-semibold text-white">
               example.com
@@ -203,9 +200,6 @@ export function DnsExamplePanel() {
         ))}
       </div>
 
-      <p className="mt-3 border-t border-white/10 pt-3 text-[9px] leading-[1.6] text-white/60">
-        Sample values for layout preview only. No live DNS lookup was performed.
-      </p>
     </VisualShell>
   );
 }
@@ -267,7 +261,7 @@ export function SecurityHeadersHeroVisual() {
 
       <div className="mt-3 rounded-xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center justify-between gap-3 text-[8.5px] font-semibold uppercase tracking-[0.12em] text-white/60">
-          <span>Sample coverage</span>
+          <span>Coverage</span>
           <span className="text-soft-green">5 of 6 headers</span>
         </div>
         <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -275,9 +269,6 @@ export function SecurityHeadersHeroVisual() {
         </div>
       </div>
 
-      <p className="mt-2.5 text-[8.5px] leading-[1.5] text-white/55">
-        Sample values only. No live header check is run.
-      </p>
     </VisualShell>
   );
 }
@@ -318,8 +309,8 @@ const SAMPLE_HEADERS = [
 export function SecurityHeadersExamplePanel() {
   return (
     <VisualShell
-      label="Illustrative header snapshot"
-      badge="Sample data only"
+      label="Header snapshot"
+      badge="Sample data"
     >
       <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-3">
@@ -328,7 +319,7 @@ export function SecurityHeadersExamplePanel() {
           </span>
           <div className="min-w-0">
             <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-              Sample response
+              Response
             </p>
             <p className="mt-0.5 text-[12.5px] font-semibold text-white">
               example.com
@@ -346,7 +337,7 @@ export function SecurityHeadersExamplePanel() {
 
       <div
         role="group"
-        aria-label="Illustrative HTTP response headers for example.com"
+        aria-label="HTTP response headers for example.com"
         className="mt-2 space-y-2"
       >
         {SAMPLE_HEADERS.map((header) => (
@@ -382,7 +373,7 @@ export function SecurityHeadersExamplePanel() {
       </div>
 
       <p className="mt-3 border-t border-white/10 pt-3 text-[9px] leading-[1.6] text-white/60">
-        Sample values for layout preview only. A present header does not
+        A present header does not
         guarantee a secure configuration.
       </p>
     </VisualShell>
@@ -482,9 +473,6 @@ export function EmailSecurityHeroVisual() {
         ))}
       </div>
 
-      <p className="mt-2.5 text-[8.5px] leading-[1.5] text-white/55">
-        Sample values only. No live authentication check is run.
-      </p>
     </VisualShell>
   );
 }
@@ -493,17 +481,17 @@ const EMAIL_SAMPLE_RESULTS = [
   {
     label: "SPF",
     value: "Pass",
-    description: "Sample sender authorized by SPF.",
+    description: "Sender authorized by SPF.",
   },
   {
     label: "DKIM",
     value: "Pass",
-    description: "Sample signature validates with selector1.",
+    description: "Signature validates with selector1.",
   },
   {
     label: "DMARC",
     value: "Pass",
-    description: "Sample result is aligned with the From domain.",
+    description: "Result is aligned with the From domain.",
   },
 ];
 
@@ -525,8 +513,8 @@ const EMAIL_SAMPLE_RECORDS = [
 export function EmailSecurityExamplePanel() {
   return (
     <VisualShell
-      label="Illustrative authentication snapshot"
-      badge="Sample data only"
+      label="Authentication snapshot"
+      badge="Sample data"
     >
       <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-emerald/20 bg-emerald/10 text-soft-green">
@@ -534,20 +522,20 @@ export function EmailSecurityExamplePanel() {
         </span>
         <div className="min-w-0">
           <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/55">
-            Sample domain
+            Domain
           </p>
           <p className="mt-0.5 text-[12.5px] font-semibold text-white">
             example.com
           </p>
         </div>
         <span className="ml-auto shrink-0 rounded-full border border-emerald/25 bg-emerald/10 px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-soft-green">
-          3 of 3 sample checks
+          3 of 3 checks
         </span>
       </div>
 
       <div
         role="group"
-        aria-label="Illustrative email authentication results for example.com"
+        aria-label="Email authentication results for example.com"
         className="mt-2 grid gap-2 sm:grid-cols-3"
       >
         {EMAIL_SAMPLE_RESULTS.map((result) => (
@@ -610,10 +598,6 @@ export function EmailSecurityExamplePanel() {
         ))}
       </div>
 
-      <p className="mt-3 border-t border-white/10 pt-3 text-[9px] leading-[1.6] text-white/60">
-        Sample values for layout preview only. No live email authentication
-        check was performed.
-      </p>
     </VisualShell>
   );
 }
