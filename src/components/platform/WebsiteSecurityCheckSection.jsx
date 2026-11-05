@@ -135,7 +135,7 @@ export default function WebsiteSecurityCheckSection() {
             aria-hidden="true"
             className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald"
           />
-          Each tool opens a dedicated page with clearly labelled illustrative
+          Each tool opens a dedicated page with clearly labeled illustrative
           examples.
         </p>
       </div>

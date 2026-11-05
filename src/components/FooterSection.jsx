@@ -81,10 +81,10 @@ const FOOTER_COLUMNS = [
 ];
 
 const FOOTER_LINK_CLASSES =
-  "inline-flex min-h-9 items-center rounded-lg text-[15px] font-medium leading-[1.5] text-white/85 transition-colors duration-200 hover:text-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-reduce:transition-none";
+  "inline-flex min-h-9 items-center rounded-lg font-sans text-[15px] font-medium leading-[1.5] tracking-normal text-white/85 transition-colors duration-200 hover:text-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-reduce:transition-none";
 
 const FOOTER_STATIC_CLASSES =
-  "inline-flex min-h-9 items-center text-[15px] leading-[1.5] text-white/50";
+  "inline-flex min-h-9 items-center font-sans text-[15px] font-medium leading-[1.5] tracking-normal text-white/50";
 
 function FooterItem({ item }) {
   if (item.href) {

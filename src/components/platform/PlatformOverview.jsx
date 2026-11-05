@@ -135,7 +135,7 @@ export default function PlatformOverview() {
             </span>
             <span className="text-[11.5px] leading-[1.6] text-text-muted">
               Website Security Check and Asset Discovery pages use clearly
-              labelled sample data.
+              labeled sample data.
             </span>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function PlatformOverview() {
             aria-hidden="true"
             className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald"
           />
-          Website Security Check and Asset Discovery pages use clearly labelled
+          Website Security Check and Asset Discovery pages use clearly labeled
           sample data, including illustrative asset relationships and service
           snapshots.
         </p>

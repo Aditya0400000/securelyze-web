@@ -16,10 +16,10 @@ import {
 } from "../pricing/PricingIcons";
 
 const INFORMATIONAL_NOTE =
-  "The current pages are informational and use clearly labelled illustrative examples. They do not run a live scan or display real scan results.";
+  "The current pages are informational and use clearly labeled illustrative examples. They do not run a live scan or display real scan results.";
 
 const HERO_CARD_FOOTER =
-  "Informational pages with clearly labelled sample data.";
+  "Informational pages with clearly labeled sample data.";
 
 export const SOLUTION_AUDIENCE_CONTENT = {
   developers: {

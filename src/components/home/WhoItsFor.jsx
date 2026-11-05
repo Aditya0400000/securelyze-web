@@ -21,7 +21,7 @@ const AUDIENCES = [
   },
   {
     title: "Security teams",
-    description: "Keep assets, checks and findings organised.",
+    description: "Keep assets, checks and findings organized.",
     icon: "shield-lock",
     href: "/solutions/security-teams",
   },

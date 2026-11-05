@@ -60,7 +60,7 @@ export default function SolutionAudiencePage({ solution }) {
 
           <p className="mt-6 max-w-[44rem] text-[11.5px] leading-[1.65] text-text-muted">
             Each page explains what the check covers. The current experience
-            uses clearly labelled illustrative sample data.
+            uses clearly labeled illustrative sample data.
           </p>
         </div>
       </section>

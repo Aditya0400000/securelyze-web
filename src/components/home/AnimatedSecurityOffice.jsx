@@ -17,7 +17,7 @@ export default function AnimatedSecurityOffice() {
           <OfficeScene />
           <OfficeScene mobile />
           <figcaption className="mt-3 text-xs leading-relaxed text-[var(--office-text-muted)]">
-            Illustration of how the work is organised. Results shown are examples.
+            Illustration of how the work is organized. Results shown are examples.
           </figcaption>
         </figure>
       </div>
