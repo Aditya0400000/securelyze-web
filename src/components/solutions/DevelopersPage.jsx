@@ -23,87 +23,87 @@ import SolutionHeroCard from "./SolutionHeroCard";
 import SolutionSectionHeading from "./SolutionSectionHeading";
 
 const HERO_CARD_FOOTER =
-  "A connected view of the public surface.";
+  "Review what your deployment makes public.";
 
 const HERO_ITEMS = [
   {
     icon: CertificateIcon,
     title: "TLS & HTTPS",
-    detail: "Certificate and connection context.",
+    detail: "Validity, hostname coverage, and HTTPS.",
   },
   {
     icon: NetworkIcon,
     title: "DNS records",
-    detail: "Routing and domain configuration.",
+    detail: "Published records and service targets.",
   },
   {
     icon: CodeIcon,
     title: "HTTP headers",
-    detail: "Browser-facing security policy.",
+    detail: "Policies returned in HTTP responses.",
   },
   {
     icon: RadarIcon,
-    title: "Asset context",
+    title: "Application assets",
     detail: "Domains, subdomains, hosts, and services.",
   },
 ];
 
 const CHALLENGES = [
   {
-    title: "SSL/TLS configuration after deployment",
+    title: "Certificates after deployment",
     description:
-      "Certificates, hostnames, and TLS settings can differ between local, staging, and production environments. A deployment can surface a mismatch that was not visible during development.",
+      "A certificate valid for one hostname may not cover another. Review certificate coverage and HTTPS settings for each public deployment.",
   },
   {
-    title: "DNS changes and domain configuration",
+    title: "DNS after routing changes",
     description:
-      "Record updates, provider changes, and routing adjustments can alter how a domain resolves. The public result may differ from the configuration you expected.",
+      "A new record or provider can change where application traffic goes. Review the published DNS values alongside your intended configuration.",
   },
   {
-    title: "Missing or incorrectly configured security headers",
+    title: "Headers at the public endpoint",
     description:
-      "Headers such as HSTS and CSP need deliberate configuration. Missing or inconsistent values can be easy to overlook when shipping a change.",
+      "A reverse proxy or hosting layer may add, remove, or override headers. Review the policies returned to browsers, not just the values in your application.",
   },
   {
-    title: "Subdomains and hosts that may be overlooked",
+    title: "Staging and legacy hostnames",
     description:
-      "Preview environments, legacy hosts, and new subdomains expand the public surface. Without a clear inventory, they can fall outside a routine review.",
+      "Application subdomains may remain public after a release or migration. Public hostname information can help you identify entries to review with the team.",
   },
   {
-    title: "Exposed ports and services",
+    title: "Services beyond the application",
     description:
-      "Internet-facing ports and services may exist alongside the application you intended to expose. Understanding the public footprint helps you see what is reachable.",
+      "Public hosts may expose services beyond the expected web endpoint. Available port and service information helps you ask whether each exposure is intentional.",
   },
   {
-    title: "Security checks being separated from regular development work",
+    title: "Configuration review between releases",
     description:
-      "When review lives in a separate process or tool, configuration details can drift from the work that created them. A connected view makes the context easier to revisit.",
+      "Deployment work spans DNS, hosting, certificates, and application settings. A defined review checklist helps keep those responsibilities clear.",
   },
 ];
 
 const CHECKS = [
   {
     title: "SSL/TLS Analysis",
-    description: "Understand certificate and HTTPS configuration.",
+    description: "Review certificate validity, hostname coverage, and HTTPS behavior for application endpoints.",
     href: "/platform/website-security-check/ssl-tls",
     icon: CertificateIcon,
   },
   {
     title: "DNS Security",
-    description: "Review DNS records and domain configuration.",
+    description: "Understand A, AAAA, CNAME, and other records involved in application routing.",
     href: "/platform/website-security-check/dns-security",
     icon: NetworkIcon,
   },
   {
     title: "Security Headers",
     description:
-      "Understand browser-facing security header configuration.",
+      "Examine HTTP security policies and whether their values suit the application.",
     href: "/platform/website-security-check/security-headers",
     icon: CodeIcon,
   },
   {
     title: "Email Security",
-    description: "Review domain email authentication configuration.",
+    description: "Understand SPF, DKIM, and DMARC when your application sends mail using a domain.",
     href: "/platform/website-security-check/email-security",
     icon: MailIcon,
   },
@@ -113,28 +113,28 @@ const ASSET_CATEGORIES = [
   {
     title: "Subdomain Discovery",
     description:
-      "Review public subdomains and the hostnames connected to a domain.",
+      "Explore publicly visible application, staging, and service hostnames beneath a domain.",
     href: "/platform/asset-discovery/subdomain-discovery",
     icon: RadarIcon,
   },
   {
     title: "Domain Discovery",
     description:
-      "Understand the primary domains that make up the public surface.",
+      "Review domain and DNS information, including related domains where supported.",
     href: "/platform/asset-discovery/domain-discovery",
     icon: GlobeIcon,
   },
   {
     title: "IP & Host Discovery",
     description:
-      "Explore IP addresses and hosts associated with the environment.",
+      "Review hostname-to-address relationships and shared public IP addresses.",
     href: "/platform/asset-discovery/ip-host-discovery",
     icon: AssetsIcon,
   },
   {
     title: "Port & Service Discovery",
     description:
-      "Review internet-facing ports and services in the asset view.",
+      "Review available port and service information for public hosts, where supported.",
     href: "/platform/asset-discovery/port-service-discovery",
     icon: LayersIcon,
   },
@@ -142,106 +142,106 @@ const ASSET_CATEGORIES = [
 
 const WORKFLOW_STEPS = [
   {
-    title: "Identify",
-    description: "Start with a domain or explore available digital assets.",
+    title: "Choose an environment",
+    description: "Identify the public domain or hostname for the application you want to review.",
   },
   {
-    title: "Review",
+    title: "Review the public settings",
     description:
-      "Explore relevant website security checks and configuration information.",
+      "Use the configuration guides and discovery categories to understand the endpoint and its related assets.",
   },
   {
-    title: "Understand",
+    title: "Plan the follow-up",
     description:
-      "Review the available information to identify areas that may need attention.",
+      "Compare the available information with your intended setup and decide what to validate or change.",
   },
 ];
 
 const USE_CASES = [
   {
-    title: "Before or after a website deployment.",
+    title: "Around a deployment",
     label: "Deployment",
     description:
-      "Review the public configuration context around a release and compare what the environment exposes.",
+      "Include certificate coverage, HTTPS behavior, and response headers in the release review.",
   },
   {
-    title: "After changing DNS or hosting configuration.",
+    title: "After a routing change",
     label: "DNS or hosting",
     description:
-      "Revisit domain and host context when routing or hosting changes affect how the site is delivered.",
+      "Review DNS targets and hostname-to-address relationships after changing providers or routing.",
   },
   {
-    title: "When adding a new domain or subdomain.",
+    title: "When adding an endpoint",
     label: "New domain",
     description:
-      "Check the public surface connected to a new domain or subdomain as it joins the environment.",
+      "Review the hostname, its certificate coverage, and the public services associated with it.",
   },
   {
-    title: "During website maintenance.",
+    title: "During application maintenance",
     label: "Maintenance",
     description:
-      "Use a consistent review path when revisiting certificates, headers, or domain records.",
+      "Revisit browser security policies and domain settings as application requirements change.",
   },
   {
-    title: "When reviewing exposed services.",
+    title: "When reviewing service exposure",
     label: "Exposed services",
     description:
-      "Explore the hosts, ports, and services that make up the external-facing environment.",
+      "Check whether available port and service information matches the public endpoints you expect.",
   },
 ];
 
 const BENEFITS = [
   {
-    title: "Better visibility into external-facing assets.",
+    title: "Connect names to infrastructure",
     description:
-      "See the domains, subdomains, hosts, ports, and services that make up the public surface.",
+      "Understand how application hostnames relate to public addresses and services.",
     icon: EyeIcon,
   },
   {
-    title: "Easier access to website security checks.",
+    title: "Review configuration by layer",
     description:
-      "Move from a domain to SSL/TLS, DNS, security header, and email security context in one place.",
+      "Work through DNS, certificates, HTTPS, headers, and email authentication as separate review areas.",
     icon: ShieldIcon,
   },
   {
-    title: "More clarity around domain configuration.",
+    title: "Investigate routing questions",
     description:
-      "Review the records and configuration details that shape how a domain resolves and behaves.",
+      "Use published domain records to understand where application traffic is directed.",
     icon: NetworkIcon,
   },
   {
-    title: "A practical way to review security-related information.",
+    title: "Make follow-up specific",
     description:
-      "Use a consistent review path to organize the configuration details you want to inspect.",
+      "Turn a configuration concern into a setting or endpoint the responsible team can validate.",
     icon: CompassIcon,
   },
 ];
 
 const FAQS = [
   {
-    question: "What can developers check with Securelyze?",
+    question: "What can I review for an application?",
     answer:
-      "You can explore SSL/TLS, DNS, security headers, email security, and Asset Discovery. Asset Discovery covers domains, subdomains, IP addresses and hosts, and ports and services.",
+      "The capability pages cover DNS, certificates, HTTPS, HTTP security headers, and domain email authentication. Asset Discovery adds public domains, subdomains, host-to-address relationships, and available port and service information.",
   },
   {
-    question: "Can I review SSL/TLS and DNS configuration?",
+    question: "Why review both DNS and HTTPS?",
     answer:
-      "Yes. SSL/TLS Analysis and DNS Security explain certificate, HTTPS, DNS record, and domain configuration context.",
+      "DNS records determine where a hostname points. Certificates and HTTPS settings affect how clients connect to it. Reviewing both helps you distinguish routing questions from certificate or connection issues.",
   },
   {
-    question: "Can Securelyze help identify subdomains?",
+    question: "Can I explore application subdomains?",
     answer:
-      "The Asset Discovery section includes Subdomain Discovery, which explains how public subdomains fit into the external-facing environment.",
+      "Subdomain Discovery covers publicly visible hostnames beneath a domain and their DNS relationships. Public sources may not reveal every subdomain, and a listed name does not prove ownership or a vulnerability.",
   },
   {
-    question: "Does Securelyze integrate with CI/CD pipelines?",
+    question: "Does this replace code review or penetration testing?",
     answer:
-      "No. Securelyze does not currently provide CI/CD integration, automated pipeline checks, or continuous monitoring. Developers can use the available security checks and Asset Discovery pages to review configuration context.",
+      "No. Public configuration and asset information do not show how application code behaves. Use code review and authorized security testing for issues beyond these configuration and discovery topics.",
   },
   {
-    question: "Does Securelyze automatically fix security issues?",
+    question: "Will these pages run checks or change my configuration?",
     answer:
-      "No. Securelyze does not automatically remediate or change website, DNS, certificate, header, or email configuration. The available checks provide context to help you decide what to review or change in your own workflow.",
+      "No. These are informational pages, and capability examples use sample data. They do not run live checks, integrate with your deployment pipeline, or modify your environment.",
   },
 ];
 
@@ -280,19 +280,19 @@ function DevelopersHero() {
 
             <p className="mt-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
               <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-              SOLUTIONS FOR DEVELOPERS
+              FOR DEVELOPERS
             </p>
 
             <h1
               id="developers-heading"
               className="mt-4 max-w-[48rem] text-balance text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-[3.25rem] lg:text-[3.45rem] xl:text-[3.6rem]"
             >
-              Keep Security Closer to Your Development Workflow
+              Review Security Across Your Applications
             </h1>
 
             <p className="mt-6 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
-              Understand your domains, website configurations, and exposed
-              digital assets while building and maintaining web applications.
+              Check security configurations and explore internet-facing services
+              connected to your applications.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -300,7 +300,7 @@ function DevelopersHero() {
                 href="/platform#website-security-check"
                 className="btn-primary group w-full sm:w-auto"
               >
-                Explore Security Tools
+                Review Security Configuration
                 <ArrowRightIcon className="h-4 w-4" />
               </Link>
               <Link
@@ -340,14 +340,14 @@ function ChallengesSection() {
           <div>
             <SolutionSectionHeading
               id="developer-challenges-heading"
-              eyebrow="Where configuration drifts"
-              title="Security Challenges Developers Face"
-              description="Configuration issues often appear at the edges of a deployment: a certificate, a DNS record, a header, or a host that was not part of the last review."
+              eyebrow="Deployment challenges"
+              title="What can change after deployment"
+              description="The public endpoint can differ from a local setup. Review the settings supplied by your application, DNS provider, hosting platform, and proxy."
             />
 
             <p className="mt-6 max-w-[34rem] border-l-2 border-emerald/30 pl-4 text-[12.5px] leading-[1.75] text-text-muted">
-              A configuration can be correct in code and still surface
-              differently once it is deployed.
+              Review what clients can reach, alongside the configuration you
+              intended to publish.
             </p>
           </div>
 
@@ -390,13 +390,12 @@ function ChecksSection() {
             <SolutionSectionHeading
               id="developer-security-checks-heading"
               eyebrow="Security checks"
-              title="Security Checks Developers Can Explore"
-              description="Review the public configuration details behind the applications you build, debug, and maintain."
+              title="Review the configuration you publish"
+              description="Use each capability guide to understand a different part of application delivery, from DNS routing to browser security policies."
             />
 
             <p className="mt-5 max-w-[38rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Explore each check to understand the configuration context it
-              covers.
+              Start with the layer involved in your deployment or debugging question.
             </p>
           </div>
 
@@ -448,19 +447,18 @@ function AssetsSection() {
             <SolutionSectionHeading
               id="developer-asset-discovery-heading"
               eyebrow="Asset discovery"
-              title="Understand Your Exposed Assets"
-              description="Asset Discovery brings public domains, subdomains, hosts, ports, and services into a connected view. For developers, it is a way to see the external-facing environment around an application."
+              title="Find the assets around an application"
+              description="Explore public subdomains, domain information, hosts, and services associated with your targets. Use those relationships to understand which parts of an application environment may be visible."
             />
 
             <p className="mt-5 max-w-[42rem] text-[13px] leading-[1.75] text-text-secondary">
-              Visibility into these assets helps you understand what is
-              publicly reachable and how the pieces relate to the environments
-              you maintain.
+              A public asset is not automatically a vulnerability. Confirm its
+              purpose and ownership before deciding on follow-up.
             </p>
 
             <p className="mt-4 max-w-[42rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Use these categories together to understand the public surface
-              around your applications.
+              Follow the relationships from application names to hosts and
+              available service information.
             </p>
           </div>
 
@@ -525,8 +523,8 @@ function WorkflowSection() {
         <SolutionSectionHeading
           id="developer-workflow-heading"
           eyebrow="A practical workflow"
-          title="A Practical Developer Workflow"
-          description="Use a structured review path to move from a domain or asset to the configuration context that may need attention."
+          title="A review path for deployments"
+          description="Start with a public endpoint, understand its configuration, and decide what needs validation in your own environment."
           tone="dark"
         />
 
@@ -574,8 +572,8 @@ function UseCasesSection() {
         <SolutionSectionHeading
           id="developer-use-cases-heading"
           eyebrow="When to use it"
-          title="When Developers Can Use Securelyze"
-          description="Use the platform as a review aid at moments when the public configuration is changing."
+          title="Fit review into development work"
+          description="Revisit public settings when a release, routing change, or new endpoint affects how users reach an application."
         />
 
         <ul className="mt-10 grid gap-0 sm:grid-cols-2">
@@ -626,8 +624,8 @@ function BenefitsSection() {
         <SolutionSectionHeading
           id="developer-benefits-heading"
           eyebrow="Benefits"
-          title="Benefits for Developers"
-          description="A clearer view of the public configuration around the applications you build."
+          title="Make configuration reviews more useful"
+          description="Bring a specific domain, setting, or service into the discussion before deciding on a change."
           align="center"
         />
 
@@ -675,8 +673,8 @@ function FaqSection() {
         <SolutionSectionHeading
           id="developer-faqs-heading"
           eyebrow="FAQs"
-          title="Questions Developers Ask"
-          description="Short answers about security checks, asset discovery, and developer workflows."
+          title="Developer questions"
+          description="Scope, limitations, and how configuration review fits with other security work."
           align="center"
         />
 
@@ -705,10 +703,10 @@ export default function DevelopersPage() {
       <SolutionClosingCta
         layout="split"
         id="developers-cta"
-        title="Build With Better Security Visibility"
-        description="Explore your website configuration and external-facing digital assets."
+        title="Review your next deployment"
+        description="Start with the configuration guides, then explore the public assets associated with your application."
         primary={{
-          label: "Explore Securelyze Tools",
+          label: "Review Security Configuration",
           href: "/platform#website-security-check",
         }}
       />

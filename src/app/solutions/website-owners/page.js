@@ -4,7 +4,7 @@ import FooterSection from "@/components/FooterSection";
 export const metadata = {
   title: "Website Owners | Solutions | Securelyze",
   description:
-    "Understand website security and public asset exposure with plain-language guidance for website owners from Securelyze.",
+    "Review website security settings and related public assets with Securelyze. Understand domain records, HTTPS, email authentication, and HTTP security headers.",
 };
 
 export default function WebsiteOwnersRoute() {

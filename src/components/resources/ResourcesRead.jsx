@@ -34,28 +34,28 @@ const READ_CATEGORIES = [
   {
     title: "Website Security",
     description:
-      "HTTPS, headers, DNS, and the configuration details that shape a site's public posture.",
+      "Domain records, HTTPS settings, and HTTP policies that help explain how a website is configured.",
     icon: GlobeIcon,
     accent: "lime",
   },
   {
     title: "Cybersecurity Basics",
     description:
-      "Approachable explanations for people building their first security foundation.",
+      "Plain-language explanations of domains, encrypted connections, and public assets.",
     icon: BookOpenIcon,
     accent: "amber",
   },
   {
     title: "Developer Security",
     description:
-      "Practical notes for teams shipping, maintaining, and reviewing web applications.",
+      "DNS, certificates, and HTTP policies relevant to deployments and application maintenance.",
     icon: DeveloperIcon,
     accent: "periwinkle",
   },
   {
     title: "Email Security",
     description:
-      "SPF, DKIM, DMARC, and the records that protect a domain's email identity.",
+      "SPF, DKIM, and DMARC: how they support authentication for email sent using a domain.",
     icon: MailIcon,
     accent: "teal",
   },
@@ -84,9 +84,9 @@ export default function ResourcesRead() {
         <ResourcesSectionHeading
           id="read-heading"
           tone="dark"
-          eyebrow="02 / Read"
-          title="Perspectives for the questions behind the checks."
-          description="Practical context for the people who own, build, and defend websites."
+          eyebrow="READ"
+          title="Practical Guides to Internet-Facing Security"
+          description="Read clear explanations and practical guidance on website security configurations, asset discovery, and publicly visible infrastructure."
         />
 
         <div className="mt-9 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
@@ -115,9 +115,9 @@ export default function ResourcesRead() {
                 The Securelyze journal.
               </h3>
               <p className="mt-4 max-w-[34rem] text-[13px] leading-[1.7] text-[#475569] sm:text-[13.5px]">
-                Articles and insights that explain the reasoning behind the
-                signals, not just the checklist. There are no published posts
-                yet.
+                No journal articles are published here. You can read the
+                existing concept guides in Learn and the walkthroughs in
+                Explore. The categories below outline the journal topics.
               </p>
 
               <ul className="mt-6 grid gap-2 sm:grid-cols-3">
@@ -158,8 +158,8 @@ export default function ResourcesRead() {
                 </span>
               </div>
               <p className="mt-2 text-[11.5px] leading-[1.65] text-white/60">
-                Short reads that connect public security signals to the
-                decisions they inform.
+                Public configuration and asset information, and how to
+                interpret observations that need further review.
               </p>
             </div>
 
@@ -179,8 +179,8 @@ export default function ResourcesRead() {
                 </span>
               </div>
               <p className="mt-2 text-[11.5px] leading-[1.65] text-white/60">
-                How teams use visibility to organize follow-up work and make
-                security decisions with more context.
+                Intended for examples of asset and configuration reviews. No
+                case studies are published here.
               </p>
             </div>
           </div>
@@ -217,7 +217,7 @@ export default function ResourcesRead() {
             href="#explore"
             className="group inline-flex items-center gap-2 text-[11px] font-semibold text-[#D1FAE5] transition-colors duration-150 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"
           >
-            Explore the tutorials while you wait
+            Read the walkthroughs
             <span
               aria-hidden="true"
               className="transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none"

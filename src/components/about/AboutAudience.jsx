@@ -9,27 +9,27 @@ const AUDIENCES = [
   {
     number: "01",
     overline: "Website owners",
-    title: "See the public side of your site.",
+    title: "Understand your website and its assets.",
     description:
-      "Understand what your website shares with the public and which configuration details may be worth reviewing, without needing to become a security specialist first.",
+      "Understand your website's security settings and explore publicly visible assets connected to your domain.",
     icon: UserIcon,
     iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   {
     number: "02",
     overline: "Developers",
-    title: "Keep security context close to the work.",
+    title: "Review what your applications expose.",
     description:
-      "Check certificate, DNS, and header context when you ship a change, debug an integration, or investigate unexpected behavior.",
+      "Review application-related security configurations and discover internet-facing hosts and services.",
     icon: DeveloperIcon,
     iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   {
     number: "03",
-    overline: "Security professionals",
-    title: "Start with a connected external view.",
+    overline: "Security teams",
+    title: "Support your next investigation.",
     description:
-      "Use visibility into public signals and related assets as a starting point for scoping, mapping, and the follow-up work that comes next.",
+      "Explore publicly visible infrastructure and review security-related information that may support further investigation.",
     icon: ShieldIcon,
     iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
   },
@@ -61,12 +61,12 @@ export default function AboutAudience() {
               id="audience-heading"
               className="mt-4 max-w-[32rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
             >
-              Built for the people who keep the public web moving.
+              Built for People Who Manage Online Assets
             </h2>
             <p className="mt-5 max-w-[31rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px]">
-              Different roles ask different questions. Securelyze keeps the
-              starting point shared: clear context about what a website exposes
-              and where to look next.
+              Whether you manage a website, build applications, run a small
+              business, or work in security, Securelyze provides tools to help
+              you review your internet-facing environment.
             </p>
 
             <div className="mt-8 hidden max-w-[27rem] items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3.5 lg:flex">
@@ -81,7 +81,7 @@ export default function AboutAudience() {
                 ))}
               </div>
               <p className="text-[11.5px] font-medium leading-[1.55] text-[#475569]">
-                One connected view for owners, builders, and defenders.
+                Useful context for the people responsible for online assets.
               </p>
             </div>
           </div>
@@ -157,23 +157,23 @@ export default function AboutAudience() {
                 id="mission-heading"
                 className="mt-5 max-w-[35rem] text-balance text-[1.45rem] font-bold leading-[1.2] tracking-[-0.04em] text-[#101A18] sm:text-[1.8rem]"
               >
-                Make public security signals easier to see, connect, and act on.
+                Making Security Information Easier to Understand
               </h3>
             </div>
 
             <div className="lg:col-span-6">
               <p className="max-w-[35rem] text-pretty text-[14px] leading-[1.7] text-[#183B32] sm:text-[14.5px]">
-                Security information is most useful when it is understandable
-                and connected. We build Securelyze to help people move from
-                scattered signals to a more useful starting point, without
-                adding more noise.
+                Security information can be spread across different records,
+                configurations, and services. Securelyze aims to make that
+                information easier to explore and understand, helping users
+                make more informed decisions about what to review next.
               </p>
               <p className="mt-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.13em] text-[#047857]">
                 <span
                   aria-hidden="true"
                   className="h-1.5 w-1.5 rounded-full bg-[#059669]"
                 />
-                Clarity before assumption
+                Understand before acting
               </p>
             </div>
           </div>

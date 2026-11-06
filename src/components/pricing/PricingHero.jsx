@@ -458,22 +458,22 @@ export default function PricingHero() {
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full bg-[#10B981] shadow-[0_0_10px_rgba(16,185,129,0.55)]"
             />
-            Plans &amp; pricing
+            SIMPLE PRICING
           </p>
 
           <h1
             id="pricing-plans-heading"
             className="mt-6 text-balance text-[2.2rem] font-bold leading-[1.02] tracking-[-0.06em] text-[#101A18] min-[390px]:text-[2.7rem] sm:text-[3.3rem] lg:text-[4rem]"
           >
-            Simple Plans for Stronger Security
+            Simple Pricing. Clear Security Insights.
           </h1>
 
           <p
             id="pricing-plans-description"
             className="mx-auto mt-5 max-w-[42rem] text-pretty text-[14.5px] leading-[1.72] text-[#475569] sm:text-[15.5px]"
           >
-            Start with the essential security checks you need today, or choose a
-            custom solution shaped around your team and infrastructure.
+            Explore Securelyze&apos;s available security checks and asset discovery
+            tools with a simple, free plan.
           </p>
         </div>
 

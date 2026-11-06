@@ -10,7 +10,7 @@ import { ASSET_DISCOVERY_OVERVIEW_CONTENT } from "@/components/platform/assetDis
 export const metadata = {
   title: "Asset Discovery | Securelyze",
   description:
-    "Explore the Securelyze Asset Discovery overview, including subdomain, domain, IP and host, and port and service discovery.",
+    "Understand what is exposed on the internet. Review publicly visible domains, subdomains, IP addresses, hosts, ports, and services with Securelyze Asset Discovery.",
 };
 
 export default function AssetDiscoveryOverviewRoute() {

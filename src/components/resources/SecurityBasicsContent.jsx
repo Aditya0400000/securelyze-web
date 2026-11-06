@@ -53,7 +53,7 @@ const BASICS = [
     accent: "amber",
     paragraphs: [
       "Common risks include outdated software, weak or reused passwords, misconfigured servers, exposed administrative pages, insecure forms, and phishing that targets account access.",
-      "Many incidents start with a preventable gap rather than a sophisticated attack.",
+      "An exposed hostname or service is worth reviewing, but public visibility does not automatically mean it is vulnerable.",
     ],
     why: "Knowing the common failure points helps you prioritize basic protections.",
   },
@@ -64,8 +64,8 @@ const BASICS = [
     icon: LockIcon,
     accent: "teal",
     paragraphs: [
-      "HTTPS is the secure version of HTTP. It uses TLS, often still called SSL, to encrypt traffic between a visitor's browser and your website.",
-      "A certificate helps the browser verify that it is connecting to the domain it requested and that the connection is encrypted.",
+      "HTTPS uses TLS to encrypt data exchanged between a visitor's browser and a website.",
+      "A certificate helps the browser verify that it is connecting to the domain it requested.",
     ],
     why: "HTTPS protects data in transit, but it does not automatically make a website trustworthy or secure.",
   },
@@ -79,7 +79,7 @@ const BASICS = [
       "DNS is the system that maps a domain name to the servers and services that handle it. Records can point web traffic, route email, verify domain ownership, and more.",
       "If DNS is changed incorrectly or an account is compromised, visitors and email can be redirected without a visible change to the website.",
     ],
-    why: "DNS is part of your security perimeter, not just a technical setting.",
+    why: "Changes to domain records can affect both website access and email delivery.",
   },
   {
     id: "why-updates-and-authentication-matter",
@@ -91,7 +91,7 @@ const BASICS = [
       "Updates fix known bugs and security flaws. Strong, unique passwords and multi-factor authentication make it harder for someone to take over an account even if a password is exposed.",
       "Administrative accounts, email, and DNS access deserve the strongest protections because they can affect the whole site.",
     ],
-    why: "Updates and authentication close two of the most common paths to a serious incident.",
+    why: "Updates address known software flaws; strong authentication helps limit unauthorized account access.",
   },
 ];
 

@@ -5,7 +5,7 @@ import DevelopersPage from "@/components/solutions/DevelopersPage";
 export const metadata = {
   title: "Developers | Solutions | Securelyze",
   description:
-    "Keep security closer to your development workflow with Securelyze website security checks and asset discovery context for domains, configurations, and exposed assets.",
+    "Review application security configurations and related internet-facing assets with Securelyze. Explore DNS, HTTPS, headers, subdomains, hosts, and available service information.",
 };
 
 export default function DevelopersRoute() {

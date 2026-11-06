@@ -8,10 +8,12 @@ export default function AnimatedSecurityOffice() {
           Inside Securelyze
         </p>
         <h2 id="security-office-heading" className="mt-3 max-w-3xl text-balance text-[28px] font-medium leading-[1.15] tracking-[-0.03em] sm:text-4xl lg:text-[40px]">
-          Meet the team behind every scan
+          A Closer Look at Your Security
         </h2>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--office-text-secondary)] sm:text-base">
-          Every check has its own specialist. Watch how results travel through the office to the report desk.
+          From domain settings to internet-facing services, Securelyze brings
+          useful security information together so you can see what deserves
+          attention.
         </p>
         <figure className="mt-6">
           <OfficeScene />

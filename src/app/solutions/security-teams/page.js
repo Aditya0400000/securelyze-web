@@ -5,7 +5,7 @@ import SecurityTeamsPage from "@/components/solutions/SecurityTeamsPage";
 export const metadata = {
   title: "Security Teams | Solutions | Securelyze",
   description:
-    "Understand external-facing assets and review website security configuration with Securelyze.",
+    "Explore internet-facing domains, subdomains, hosts, exposed services, and security configurations with Securelyze to support scoping and further investigation.",
 };
 
 export default function SecurityTeamsRoute() {

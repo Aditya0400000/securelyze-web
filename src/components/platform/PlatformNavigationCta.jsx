@@ -10,23 +10,25 @@ import { LayersIcon } from "../pricing/PricingIcons";
 const NAV_LINKS = [
   {
     title: "Platform Overview",
-    description: "Return to the top-level view of both platform pillars.",
+    description: "Return to the top-level view of the platform.",
     href: "/platform#platform-overview",
     icon: LayersIcon,
   },
   {
     title: "Website Security Check",
-    description: "Explore the four dedicated security check pages.",
+    description:
+      "Review DNS records, SSL/TLS certificates, email authentication, and HTTP security headers.",
     href: "/platform#website-security-check",
     icon: WebsiteIcon,
+    ctaLabel: "Start Security Check",
   },
   {
     title: "Asset Discovery",
     description:
-      "Explore the dedicated overview and capability pages for the public footprint.",
+      "Explore publicly visible subdomains, IP addresses, open ports, and network services.",
     href: "/platform/asset-discovery",
     icon: AssetsIcon,
-    ctaLabel: "Open overview",
+    ctaLabel: "Explore Asset Discovery",
   },
 ];
 
@@ -55,11 +57,11 @@ export default function PlatformNavigationCta() {
                 id="platform-navigation-heading"
                 className="mt-4 text-balance text-[1.8rem] font-bold leading-[1.08] tracking-[-0.04em] text-white sm:text-[2.15rem]"
               >
-                Move through the platform with context.
+                Start Reviewing Your Security
               </h2>
               <p className="mt-4 max-w-[30rem] text-pretty text-[13.5px] leading-[1.75] text-white/60">
-                Jump between the overview, Website Security Check, and Asset
-                Discovery without losing your place.
+                Choose a tool to check your security configurations or explore
+                your internet-facing assets.
               </p>
             </div>
 

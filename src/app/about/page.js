@@ -7,9 +7,9 @@ import AboutSignals from "@/components/about/AboutSignals";
 import AboutTools from "@/components/about/AboutTools";
 
 export const metadata = {
-  title: "About Securelyze | Web Security Analysis & Asset Discovery",
+  title: "About Securelyze | Internet-Facing Security Analysis & Asset Discovery",
   description:
-    "Learn how Securelyze brings public website security signals and internet-facing assets into a clearer, more connected view.",
+    "Learn about Securelyze, an internet-facing security analysis and Asset Discovery platform for security configurations, public domains, hosts, and services.",
 };
 
 export default function AboutPage() {

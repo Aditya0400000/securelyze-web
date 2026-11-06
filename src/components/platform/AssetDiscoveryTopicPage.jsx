@@ -323,7 +323,7 @@ function AssetTopicHero({ topic, heroVisual }) {
               id="asset-topic-heading"
               className="mt-4 max-w-[46rem] text-balance text-[2.4rem] font-semibold leading-[1.03] tracking-[-0.055em] text-charcoal sm:text-[3rem] lg:text-[3.35rem]"
             >
-              {topic.title}
+              {topic.heroTitle ?? topic.title}
             </h1>
 
             <p className="mt-5 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">

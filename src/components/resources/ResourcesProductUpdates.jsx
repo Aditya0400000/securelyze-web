@@ -56,7 +56,7 @@ export default function ResourcesProductUpdates() {
               href="#tutorials"
               className="group mt-6 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-3.5 py-2.5 text-[11px] font-semibold text-white/80 transition-[border-color,background-color,color] duration-150 hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"
             >
-              Explore tutorials while you wait
+              Read the tutorials
               <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />
             </SmoothAnchor>
           </div>

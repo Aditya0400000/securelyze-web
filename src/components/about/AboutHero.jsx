@@ -4,8 +4,8 @@ import { ArrowRightIcon } from "./AboutIcons";
 import AboutBotVisual from "./AboutBotVisual";
 
 const SIGNAL_LABELS = [
-  "SSL / TLS",
-  "DNS",
+  "SSL/TLS",
+  "DNS & email",
   "Security headers",
   "Public assets",
 ];
@@ -30,14 +30,14 @@ export default function AboutHero() {
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full bg-[#059669]"
             />
-            The platform
+            ABOUT SECURELYZE
           </p>
 
           <h1
             id="about-hero-heading"
             className="mt-6 max-w-[43rem] text-balance text-[2.65rem] font-semibold leading-[1.01] tracking-[-0.055em] text-[#101A18] sm:text-[3.4rem] lg:text-[3.75rem]"
           >
-            About{" "}
+            Get to Know{" "}
             <span className="relative inline-block">
               Securelyze
               <span
@@ -48,10 +48,9 @@ export default function AboutHero() {
           </h1>
 
           <p className="mt-7 max-w-[38rem] text-pretty text-[15.5px] leading-[1.72] text-[#475569] sm:text-[16.5px]">
-            Securelyze is a free web security analysis and asset discovery
-            platform. We give website owners, developers, and security
-            professionals a connected view of the public signals that shape a
-            website&rsquo;s security picture.
+            Securelyze helps you understand your internet-facing environment by
+            bringing security configuration checks and asset discovery tools
+            together in one place.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -59,7 +58,7 @@ export default function AboutHero() {
               href="/platform#website-security-check"
               className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-[#10B981] px-5 text-[13.5px] font-semibold tracking-[-0.005em] text-[#101A18] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(5,150,105,0.9)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-[#059669] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_18px_36px_-18px_rgba(5,150,105,0.95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101A18] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
             >
-              Explore the Security Checker
+              Explore Security Checks
               <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
             </Link>
 

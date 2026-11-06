@@ -57,12 +57,16 @@ export default function ProductOverviewSection() {
           id="product-overview-heading"
           className="mt-3 max-w-4xl text-balance text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-charcoal sm:text-[36px] lg:text-[44px]"
         >
-          Two tools. One clear picture of your exposure.
+          Check Security Settings. Discover Exposed Assets.
         </h2>
+        <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-text-secondary sm:text-base">
+          Review important security configurations and explore the assets and
+          services visible on the internet.
+        </p>
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-10">
           <ProductCard
             title="Website Security Check"
-            description="Review the settings that protect every visitor to your site."
+            description="Review DNS records, SSL/TLS certificates, email authentication, HTTP security headers, and other supported security configurations."
             icon={<ProductIcon name="shield" className="size-[19px]" />}
             learnMoreHref="/platform#website-security-check"
             previewClassName="flex flex-1"
@@ -71,7 +75,7 @@ export default function ProductOverviewSection() {
           </ProductCard>
           <ProductCard
             title="Asset Discovery"
-            description="Find what is exposed before someone else does."
+            description="Discover subdomains, IP addresses, open ports, and exposed services to better understand your internet-facing assets."
             icon={<RadarIcon className="size-[19px]" />}
             learnMoreHref="/platform/asset-discovery"
           >

@@ -5,7 +5,7 @@ import SmoothAnchor from "./SmoothAnchor";
 const RESOURCE_PATHS = [
   {
     label: "Learn",
-    detail: "Guides & basics",
+    detail: "Concepts & guides",
     href: "#learn",
     icon: BookOpenIcon,
     lightIcon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
@@ -14,7 +14,7 @@ const RESOURCE_PATHS = [
   },
   {
     label: "Read",
-    detail: "Articles & insights",
+    detail: "Journal topics",
     href: "#read",
     icon: ArticleIcon,
     lightIcon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
@@ -23,7 +23,7 @@ const RESOURCE_PATHS = [
   },
   {
     label: "Explore",
-    detail: "Tutorials & updates",
+    detail: "Walkthroughs & answers",
     href: "#explore",
     icon: CompassIcon,
     lightIcon: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
@@ -132,8 +132,8 @@ function HeroVisual() {
       </div>
 
       <figcaption className="mt-4 px-3 text-center text-[11px] leading-[1.6] text-[#64748B]">
-        A connected library of guidance, perspectives, and answers for the
-        public side of your website.
+        Guides, walkthroughs, and answers about security settings and
+        internet-facing assets.
       </figcaption>
     </figure>
   );
@@ -177,9 +177,10 @@ export default function ResourcesHero() {
           </h1>
 
           <p className="mt-7 max-w-[38rem] text-pretty text-[15.5px] leading-[1.72] text-[#475569] sm:text-[16.5px]">
-            A complete resource center for understanding website security, from
-            the fundamentals to hands-on checks. Learn at your own pace, read
-            what is coming next, and explore the signals that matter.
+            Understand security concepts, read the existing guides, and explore
+            practical walkthroughs. Learn how domain settings, encrypted
+            connections, and public assets relate to your internet-facing
+            environment.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

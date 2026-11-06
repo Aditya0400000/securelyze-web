@@ -23,28 +23,28 @@ import SolutionHeroCard from "./SolutionHeroCard";
 import SolutionSectionHeading from "./SolutionSectionHeading";
 
 const HERO_CARD_FOOTER =
-  "A clearer view of your public footprint.";
+  "Know which settings and public assets to review.";
 
 const HERO_ITEMS = [
   {
     icon: CertificateIcon,
     title: "SSL/TLS",
-    detail: "Certificate and HTTPS context.",
+    detail: "Certificate validity and HTTPS settings.",
   },
   {
     icon: NetworkIcon,
     title: "DNS",
-    detail: "Records that route your domain.",
+    detail: "Records for your website and email.",
   },
   {
     icon: CodeIcon,
     title: "Security headers",
-    detail: "Browser protections and policy.",
+    detail: "Security rules sent to browsers.",
   },
   {
     icon: MailIcon,
     title: "Email security",
-    detail: "SPF, DKIM, and DMARC context.",
+    detail: "Domain email authentication settings.",
   },
   {
     icon: RadarIcon,
@@ -55,29 +55,29 @@ const HERO_ITEMS = [
 
 const CONCERNS = [
   {
-    title: "SSL/TLS configuration",
+    title: "Certificate and HTTPS issues",
     description:
-      "Certificates and TLS settings influence how browsers establish a secure connection. Expired certificates, hostname mismatches, or incomplete configuration can interrupt access and weaken trust.",
+      "A certificate helps browsers verify your site's identity and establish an encrypted connection. Expiration or a hostname mismatch can trigger warnings for visitors.",
   },
   {
-    title: "DNS configuration",
+    title: "Domain records that need review",
     description:
-      "DNS records route traffic and support services such as email. Missing, conflicting, or unintended records can create security and deliverability gaps.",
+      "DNS records tell other systems where to find your website and email services. Old or incorrect records can send traffic to the wrong place.",
   },
   {
     title: "Security headers",
     description:
-      "Headers such as HSTS, CSP, and X-Frame-Options help browsers apply protections. Missing or weak values can leave avoidable exposure.",
+      "HTTP security headers tell browsers how to handle your site's content and connections. Their values need to match how your website works.",
   },
   {
     title: "Email security",
     description:
-      "SPF, DKIM, and DMARC help receiving mail servers verify who sent a message. Misconfiguration can affect deliverability and make impersonation easier.",
+      "SPF, DKIM, and DMARC help receiving mail systems check whether messages are authorized to use your domain. Review them when setting up or changing email providers.",
   },
   {
-    title: "Exposed digital assets",
+    title: "Public assets you may have missed",
     description:
-      "Public hostnames and internet-facing services expand your external footprint. A clear inventory helps you identify assets that may need review.",
+      "Subdomains and services can remain public after a project ends. Understanding what is visible helps you decide which assets still belong in your inventory.",
   },
 ];
 
@@ -85,28 +85,28 @@ const CHECKS = [
   {
     title: "SSL/TLS Analysis",
     description:
-      "Review certificate, HTTPS, and TLS configuration context in one place.",
+      "Learn what certificate validity, hostname coverage, and HTTPS settings mean for visitors.",
     href: "/platform/website-security-check/ssl-tls",
     icon: CertificateIcon,
   },
   {
     title: "DNS Security",
     description:
-      "Understand DNS records, resolution context, and the signals that support a healthy domain.",
+      "Understand the records that connect your domain to its website, email, and other services.",
     href: "/platform/website-security-check/dns-security",
     icon: NetworkIcon,
   },
   {
     title: "Security Headers",
     description:
-      "Understand the browser-facing HTTP headers that help protect a site and the context around them.",
+      "Review browser security rules and understand why a missing or unsuitable value may need attention.",
     href: "/platform/website-security-check/security-headers",
     icon: CodeIcon,
   },
   {
     title: "Email Security",
     description:
-      "Review SPF, DKIM, and DMARC context for the domain used to send email.",
+      "Understand the domain settings used to authenticate email sent on your behalf.",
     href: "/platform/website-security-check/email-security",
     icon: MailIcon,
   },
@@ -116,28 +116,28 @@ const ASSET_CATEGORIES = [
   {
     title: "Domain Discovery",
     description:
-      "See the primary domains that make up your public website footprint.",
+      "Review domain information and related domains where supported.",
     href: "/platform/asset-discovery/domain-discovery",
     icon: GlobeIcon,
   },
   {
     title: "Subdomain Discovery",
     description:
-      "Understand public subdomains that may sit alongside your main site.",
+      "Find publicly visible names for applications, websites, or other services under your domain.",
     href: "/platform/asset-discovery/subdomain-discovery",
     icon: RadarIcon,
   },
   {
     title: "IP & Host Discovery",
     description:
-      "Review the IP addresses and hosts connected to your public environment.",
+      "Understand which public addresses your hostnames point to and where addresses are shared.",
     href: "/platform/asset-discovery/ip-host-discovery",
     icon: AssetsIcon,
   },
   {
     title: "Port & Service Discovery",
     description:
-      "Explore internet-facing ports and services that may need review.",
+      "Review available information about reachable services. An open port alone is not a vulnerability.",
     href: "/platform/asset-discovery/port-service-discovery",
     icon: LayersIcon,
   },
@@ -145,101 +145,101 @@ const ASSET_CATEGORIES = [
 
 const WORKFLOW_STEPS = [
   {
-    title: "Identify your domain",
+    title: "Choose a domain to review",
     description:
-      "Choose the domain you want to understand. It gives the review a clear starting point.",
+      "Start with your main website domain or a public hostname you manage.",
   },
   {
-    title: "Explore available security checks",
+    title: "Understand the settings",
     description:
-      "Explore the security-check pages and the Asset Discovery overview in one connected structure.",
+      "Read the relevant configuration guides, then explore related domains, hosts, and services.",
   },
   {
-    title: "Understand the available findings",
+    title: "Decide what needs follow-up",
     description:
-      "Use plain-language explanations and context to decide what to review, change, or ask your provider about.",
+      "Use the explanations to prepare questions for your developer, hosting provider, or email provider.",
   },
 ];
 
 const USE_CASES = [
   {
-    title: "Before launching a website.",
+    title: "Before a launch",
     label: "Launch",
     description:
-      "Review the public security signals and asset context you plan to launch with.",
+      "Include certificates, domain records, and browser security settings in your launch review.",
   },
   {
-    title: "After domain or hosting changes.",
+    title: "After a hosting change",
     label: "Domain or hosting",
     description:
-      "Check whether a change has altered the context you expect to see for your domain, including migrations to a new provider.",
+      "Review where your domain points and whether its certificate still covers the names visitors use.",
   },
   {
-    title: "During regular website reviews.",
+    title: "During routine maintenance",
     label: "Regular review",
     description:
-      "Use a consistent structure to revisit certificates, DNS, headers, email settings, and public assets.",
+      "Revisit email settings and public subdomains as providers, projects, and website needs change.",
   },
   {
-    title: "When checking a new website.",
+    title: "When taking over a site",
     label: "New website",
     description:
-      "Use the same review path when you take on a new site or want a clearer view of one you already own.",
+      "Learn which services support the site and what to ask the previous owner or development team.",
   },
 ];
 
 const BENEFITS = [
   {
-    title: "Better visibility into your website security.",
+    title: "Know what to review",
     description:
-      "See how certificates, DNS, headers, email settings, and public assets fit together.",
+      "Connect website settings with the domains and services they support.",
     icon: EyeIcon,
   },
   {
-    title: "Clearer security information.",
+    title: "Understand the terminology",
     description:
-      "Use plain-language explanations and context instead of sorting through technical output alone.",
+      "Learn what certificates, DNS records, and email policies mean without starting from raw technical output.",
     icon: ShieldIcon,
   },
   {
-    title: "Awareness of configuration areas that may need attention.",
+    title: "Recognize configuration gaps",
     description:
-      "Spot missing or inconsistent details that may deserve a closer look.",
+      "Understand why an expired certificate or an unexpected record deserves follow-up.",
     icon: CodeIcon,
   },
   {
-    title: "More informed security decisions.",
+    title: "Ask more useful questions",
     description:
-      "Use the available context to decide what to review, change, or ask your provider about.",
+      "Discuss specific settings and public assets with the people who manage your website.",
     icon: CompassIcon,
   },
 ];
 
 const FAQS = [
   {
-    question: "Why should website owners check website security?",
+    question: "Why should I review my website's settings?",
     answer:
-      "Website security depends on many configuration details. Reviewing them helps you spot expired certificates, incomplete DNS records, weak headers, email configuration gaps, and public assets that may need attention.",
+      "Your website depends on domain records, certificates, browser security rules, and email settings. Reviewing them helps you understand how the site is configured and which details deserve attention.",
   },
   {
     question: "What can Securelyze help me review?",
     answer:
-      "Securelyze brings together website security check pages for SSL/TLS, DNS, security headers, and email security, plus an Asset Discovery overview for public domains, subdomains, hosts, and services.",
+      "Securelyze brings internet-facing security analysis and Asset Discovery together. Its capability pages explain SSL/TLS, DNS, HTTP headers, and email authentication, alongside public domains, subdomains, hosts, ports, and services.",
   },
   {
     question: "Do I need technical knowledge to use Securelyze?",
     answer:
-      "The pages are written to explain technical topics in plain language. You can start with the overview and follow the checks that are relevant to your site, then share the context with a developer or hosting provider if needed.",
+      "You can start with the explanations on these pages. If a setting needs changing, a developer or service provider can help you confirm the right value for your site.",
   },
   {
-    question: "Does Securelyze perform live security scans?",
+    question: "Can I run a security scan on this page?",
     answer:
-      "No. Securelyze does not currently perform live security scans or automated monitoring. You can use the available security checks and Asset Discovery pages to review configuration context and your public footprint.",
+      "No. This page explains the capabilities and links to their overviews. Example panels on the capability pages use sample data, not live results. These pages do not change or repair your website.",
   },
   {
-    question: "How often should I review my website security?",
+    question: "When should I revisit these settings?",
     answer:
-      "Review security context before major changes and periodically afterward. Common times include launches, DNS or hosting changes, and migrations. The right cadence depends on how often your site changes.",
+      "Review them around launches, hosting migrations, domain changes, and email provider changes. Include them in regular maintenance based on how often your website and services change.",
   },
 ];
 
@@ -278,21 +278,20 @@ function WebsiteOwnersHero() {
 
             <p className="mt-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
               <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-              SOLUTIONS FOR WEBSITE OWNERS
+              FOR WEBSITE OWNERS
             </p>
 
             <h1
               id="website-owners-heading"
               className="mt-4 max-w-[48rem] text-balance text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-[3.25rem] lg:text-[3.45rem] xl:text-[3.6rem]"
             >
-              Website Security, Made Clear for Website Owners
+              Understand Your Website&apos;s Security Settings
             </h1>
 
             <p className="mt-6 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
-              Securelyze helps website owners understand the security signals
-              and public assets that shape their website’s exposure. Explore the
-              checks that matter, see how they connect, and use plain-language
-              context to decide what to review next.
+              Review your domain, HTTPS, email security, and other important
+              configurations. Understand what&apos;s publicly visible and what may
+              need a closer look.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -316,7 +315,7 @@ function WebsiteOwnersHero() {
           <div className="min-w-0">
             <SolutionHeroCard
               eyebrow="Website owner view"
-              title="A practical review path"
+              title="Settings worth understanding"
               icon={UserIcon}
               items={HERO_ITEMS}
               footer={HERO_CARD_FOOTER}
@@ -341,13 +340,13 @@ function CommonConcernsSection() {
             <SolutionSectionHeading
               id="common-concerns-heading"
               eyebrow="Common concerns"
-              title="Common Security Concerns for Website Owners"
-              description="Most website security issues are not dramatic. They often show up as configuration details that are easy to overlook until something breaks or a review brings them into focus."
+              title="Settings worth a closer look"
+              description="Your site relies on settings managed across hosting, domain, and email providers. Knowing what each setting does makes it easier to spot questions worth asking."
             />
 
             <p className="mt-6 max-w-[34rem] border-l-2 border-emerald/30 pl-4 text-[12.5px] leading-[1.75] text-text-muted">
-              A clear review starts with the details that are easiest to
-              overlook.
+              A configuration question is easier to resolve when you know which
+              setting to discuss.
             </p>
           </div>
 
@@ -390,12 +389,12 @@ function WebsiteSecurityChecksSection() {
             <SolutionSectionHeading
               id="what-you-can-check-heading"
               eyebrow="What you can check"
-              title="Website Security Checks"
-              description="Explore the security checks available through Securelyze and see how each area fits into a broader website security view."
+              title="Understand your security settings"
+              description="Learn how your domain, certificate, browser security rules, and email authentication affect the website you manage."
             />
 
             <p className="mt-5 max-w-[38rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Explore each check to understand the security context it covers.
+              Each guide explains what the settings mean and where their limits are.
             </p>
           </div>
 
@@ -447,19 +446,18 @@ function ExposureSection() {
             <SolutionSectionHeading
               id="website-exposure-heading"
               eyebrow="Asset discovery"
-              title="Understand Your Website's Exposure"
-              description="Asset Discovery brings your public domains, subdomains, hosts, and internet-facing services into one connected view. It helps you see the external footprint around your website."
+              title="Look beyond your main website"
+              description="Your main website may be only one public asset. Asset Discovery explains how related domain names, hosts, and services fit together, using available public information."
             />
 
             <p className="mt-5 max-w-[42rem] text-[13px] leading-[1.75] text-text-secondary">
-              Visibility into these assets helps you understand what is
-              publicly reachable and how the pieces relate to the website you
-              own.
+              Use public asset information as a starting point. It does not confirm
+              ownership, complete coverage, or a security weakness.
             </p>
 
             <p className="mt-4 max-w-[42rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Use these categories together to understand the public surface
-              around your website.
+              Follow the category that matches the name, host, or service you want
+              to understand.
             </p>
           </div>
 
@@ -524,8 +522,8 @@ function HowSecurelyzeHelpsSection() {
         <SolutionSectionHeading
           id="how-securelyze-helps-heading"
           eyebrow="How it works"
-          title="How Securelyze Helps"
-          description="A simple structure helps you move from a domain to a clearer view of the security details and public assets that may need attention."
+          title="From a question to a next step"
+          description="Choose the area you want to understand, learn what the settings mean, and decide who can help with the next step."
           tone="dark"
         />
 
@@ -573,8 +571,8 @@ function UseCasesSection() {
         <SolutionSectionHeading
           id="use-cases-heading"
           eyebrow="When to use it"
-          title="When Website Owners Can Use Securelyze"
-          description="Use Securelyze as a starting point at the moments when a clearer view of website security and public assets is most useful."
+          title="Useful times to review your site"
+          description="A launch or provider change is a good reason to revisit the settings and public assets behind your website."
         />
 
         <ul className="mt-10 grid gap-0 lg:grid-cols-3">
@@ -625,8 +623,8 @@ function BenefitsSection() {
         <SolutionSectionHeading
           id="website-owners-benefits-heading"
           eyebrow="Benefits"
-          title="Benefits for Website Owners"
-          description="Securelyze is designed to make website security information easier to approach, understand, and act on."
+          title="Make informed website decisions"
+          description="Understand the details behind a concern before deciding what to change or who to ask for help."
           align="center"
         />
 
@@ -674,8 +672,8 @@ function FaqSection() {
         <SolutionSectionHeading
           id="faqs-heading"
           eyebrow="FAQs"
-          title="Questions Website Owners Ask"
-          description="Short answers to the questions that come up most often when starting a website security review."
+          title="Website owner questions"
+          description="What these pages cover, how to use them, and where further help may be needed."
           align="center"
         />
 
@@ -704,10 +702,10 @@ export default function WebsiteOwnersPage() {
       <SolutionClosingCta
         layout="split"
         id="website-owners-cta"
-        title="Take a Clearer Look at Your Website Security"
-        description="Start with the Website Security Check overview, then explore the checks and asset context that are most relevant to your site."
+        title="Start with the settings you want to understand"
+        description="Explore the configuration guides, then review how related public assets connect to your website."
         primary={{
-          label: "Explore Website Security Tools",
+          label: "Review Security Settings",
           href: "/platform#website-security-check",
         }}
         secondary={{

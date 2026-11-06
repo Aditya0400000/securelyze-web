@@ -9,7 +9,7 @@ import ResourcesRead from "@/components/resources/ResourcesRead";
 export const metadata = {
   title: "Resources | Securelyze",
   description:
-    "Learn website security fundamentals, read upcoming articles and insights, and explore practical tutorials and product updates from Securelyze.",
+    "Learn security concepts, read existing guides, and explore configuration walkthroughs and tool overviews for Securelyze's internet-facing security analysis and Asset Discovery platform.",
 };
 
 export default function ResourcesPage() {
@@ -23,10 +23,10 @@ export default function ResourcesPage() {
       <ResourcesCta
         id="resources-closing-cta"
         eyebrow="Keep learning"
-        heading="A clearer security picture starts with one good question."
-        description="Use the resources above to understand the signals, then review your own website's public configuration when you are ready."
+        heading="Explore the settings and assets behind your domain."
+        description="Use the platform overview to explore supported security checks and Asset Discovery, or revisit the checklist for a practical review."
         primary={{
-          label: "Explore the Security Checker",
+          label: "Explore Platform Tools",
           href: "/platform#website-security-check",
         }}
         secondary={{

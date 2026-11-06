@@ -275,14 +275,14 @@ function SecurityTopicHero({ topic, heroVisual }) {
           <Reveal className="min-w-0">
             <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
               <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-              Website Security Check
+              {topic.eyebrow ?? "Website Security Check"}
             </p>
 
             <h1
               id="security-topic-heading"
               className="mt-4 max-w-[46rem] text-balance text-[2.4rem] font-semibold leading-[1.03] tracking-[-0.055em] text-charcoal sm:text-[3rem] lg:text-[3.35rem]"
             >
-              {topic.title}
+              {topic.heroTitle ?? topic.title}
             </h1>
 
             <p className="mt-5 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
@@ -378,7 +378,7 @@ export default function WebsiteSecurityTopicPage({
                 className="scroll-mt-28"
               >
                 <SectionHeading id="why-it-matters-heading">
-                  Why {topic.title} matters
+                  {topic.why.heading ?? `Why ${topic.title} matters`}
                 </SectionHeading>
                 <div className="mt-4 space-y-4 sm:mt-5">
                   {topic.why.paragraphs.map((paragraph) => (
@@ -504,7 +504,7 @@ export default function WebsiteSecurityTopicPage({
                     href="/platform#website-security-check"
                     className="btn-primary group w-full shrink-0 sm:w-auto"
                   >
-                    Open Security Check
+                    Explore Security Checks
                     <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
                   </Link>
                 </div>

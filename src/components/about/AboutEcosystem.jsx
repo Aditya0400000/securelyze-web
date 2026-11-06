@@ -11,14 +11,14 @@ import {
 
 const CHECKS = [
   {
-    label: "SSL / TLS",
-    detail: "Certificate context",
+    label: "SSL/TLS",
+    detail: "Certificate details",
     icon: CertificateIcon,
     accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
   {
-    label: "DNS",
-    detail: "Routing records",
+    label: "DNS & email",
+    detail: "Domain & email records",
     icon: NetworkIcon,
     accent: "border-[#10B981]/20 bg-[#10B981]/10 text-[#D1FAE5]",
   },
@@ -77,10 +77,10 @@ function WebsiteCard() {
       </div>
 
       <h3 className="mt-6 text-[15px] font-semibold tracking-[-0.02em] text-white">
-        Your website
+        Your domain
       </h3>
       <p className="mt-2 text-[12px] leading-[1.65] text-white/60">
-        The public domain people visit and the configuration in front of it.
+        Start with a domain you own or are authorized to assess.
       </p>
 
       <div className="mt-auto pt-4">
@@ -133,10 +133,11 @@ function ChecksCard() {
       </div>
 
       <h3 className="mt-6 text-[15px] font-semibold tracking-[-0.02em] text-white">
-        Security checks
+        Website Security Check
       </h3>
       <p className="mt-2 text-[12px] leading-[1.65] text-white/60">
-        Public configuration signals that add context to the website.
+        Review DNS records, SSL/TLS certificates, email authentication, and HTTP
+        security headers.
       </p>
 
       <ul className="mt-4 space-y-1.5">
@@ -174,7 +175,7 @@ function ChecksCard() {
 
       <p className="mt-auto flex items-center gap-1.5 pt-4 text-[9px] font-medium uppercase tracking-[0.13em] text-white/50">
         <span className="h-1 w-1 rounded-full bg-[#10B981]/70" />
-        Context, not a verdict
+        Configuration, not a verdict
       </p>
     </article>
   );
@@ -193,10 +194,11 @@ function AssetsCard() {
       </div>
 
       <h3 className="mt-6 text-[15px] font-semibold tracking-[-0.02em] text-white">
-        Discovered assets
+        Asset Discovery
       </h3>
       <p className="mt-2 text-[12px] leading-[1.65] text-white/60">
-        Related public-facing domains, subdomains, and endpoints.
+        Explore publicly visible domains, subdomains, IP addresses, open ports,
+        and network services.
       </p>
 
       <div className="relative mt-auto h-[9.2rem] overflow-hidden rounded-xl border border-white/[0.08] bg-[#101A18]">
@@ -270,14 +272,14 @@ export default function AboutEcosystem() {
               id="ecosystem-heading"
               className="mt-4 max-w-[42rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
             >
-              From one website to a wider external picture.
+              More Than Just a Website Check
             </h2>
           </div>
 
           <p className="max-w-[34rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px] lg:col-span-5 lg:justify-self-end">
-            Securelyze connects the public view of a site with the configuration
-            signals around it and the assets that may sit beyond the home page.
-            Together, they make the external picture easier to understand.
+            Securelyze brings together website security checks and asset
+            discovery tools to help you review different parts of your
+            internet-facing environment.
           </p>
         </div>
 
@@ -447,9 +449,9 @@ export default function AboutEcosystem() {
             <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4 text-[10px] leading-[1.6] text-white/50 sm:flex-row sm:items-center sm:justify-between">
               <p className="flex items-center gap-2">
                 <AssetsIcon className="h-3.5 w-3.5 shrink-0 text-[#10B981]/60" />
-                Public entry point, configuration context, and related assets.
+                Use available findings to decide what needs a closer look.
               </p>
-              <p>Actual results depend on the domain and its configuration.</p>
+              <p>Public exposure alone is not a confirmed vulnerability.</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,113 @@
+.footer-night-city {
+  --city-sky-top: color-mix(in srgb, var(--office-bg) 85%, black);
+  --city-sky-bottom: color-mix(in srgb, var(--dark-green) 55%, var(--office-bg));
+  --city-far-fill: color-mix(in srgb, var(--office-bg) 70%, var(--charcoal));
+  --city-far-line: color-mix(in srgb, var(--dark-green) 45%, var(--office-bg));
+  --city-mint: color-mix(in srgb, var(--emerald-light) 26%, var(--soft-green));
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(70rem 26rem at 50% 108%, color-mix(in srgb, var(--emerald) 22%, transparent), transparent 65%),
+    linear-gradient(180deg, var(--city-sky-top), var(--office-bg) 48%, var(--city-sky-bottom));
+}
+
+.footer-night-city__scene {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: min(100%, 640px);
+}
+
+.footer-night-city__scene svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.footer-night-city__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--city-sky-top) 86%, transparent),
+    color-mix(in srgb, var(--city-sky-top) 62%, transparent) 42%,
+    transparent 74%);
+}
+
+.footer-night-city__spacer {
+  position: relative;
+  width: 100%;
+  height: 7rem;
+  pointer-events: none;
+}
+
+.footer-night-city__window-pulse { animation: footer-night-city-window-pulse 4s ease-in-out infinite; }
+.footer-night-city__amber-pulse { animation: footer-night-city-amber-pulse 1.8s ease-in-out infinite; }
+.footer-night-city__twinkle { animation: footer-night-city-twinkle 5s ease-in-out infinite; }
+.footer-night-city__beacon { animation: footer-night-city-amber-pulse 1.4s ease-in-out infinite; }
+
+.footer-night-city__beam {
+  transform-box: view-box;
+  transform-origin: 720px 228px;
+  animation: footer-night-city-searchlight 11s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.footer-night-city__ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: footer-night-city-scan-ring 3.2s ease-out infinite;
+}
+
+.footer-night-city__vehicle { animation: footer-night-city-vehicle-travel 20s linear infinite; }
+
+.footer-night-city[data-running="false"] * { animation-play-state: paused !important; }
+
+.footer-night-city[data-reduced-motion="true"] * { animation: none !important; }
+.footer-night-city[data-reduced-motion="true"] .footer-night-city__ring { opacity: 0.15; }
+.footer-night-city[data-reduced-motion="true"] .footer-night-city__vehicle { transform: translateX(var(--vehicle-rest-x)); }
+
+@keyframes footer-night-city-window-pulse {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.14; }
+}
+
+@keyframes footer-night-city-amber-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes footer-night-city-twinkle { 50% { opacity: 0.08; } }
+
+@keyframes footer-night-city-searchlight {
+  0%, 100% { transform: rotate(-48deg); }
+  50% { transform: rotate(48deg); }
+}
+
+@keyframes footer-night-city-scan-ring {
+  0% { transform: scale(0.4); opacity: 0.7; }
+  100% { transform: scale(7); opacity: 0; }
+}
+
+@keyframes footer-night-city-vehicle-travel {
+  from { transform: translateX(0); }
+  to { transform: translateX(1560px); }
+}
+
+@media (min-width: 640px) { .footer-night-city__spacer { height: 9rem; } }
+@media (min-width: 1024px) { .footer-night-city__spacer { height: 11rem; } }
+
+/* Keep a recognizable tower and neighboring buildings on narrow screens,
+   rather than cropping a full-height desktop canvas into a tiny strip. */
+@media (max-width: 1023px) { .footer-night-city__scene { height: 480px; } }
+@media (max-width: 639px) { .footer-night-city__scene { height: 360px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-night-city * { animation: none !important; }
+  .footer-night-city__ring { opacity: 0.15; }
+  .footer-night-city__vehicle { transform: translateX(var(--vehicle-rest-x)); }
+}

@@ -2,26 +2,30 @@ import Link from "next/link";
 
 const AUDIENCES = [
   {
-    title: "Website owners",
-    description: "See exposure clearly before it reaches your customers.",
+    title: "Website Owners",
+    description:
+      "Review your domain settings and understand what is publicly visible.",
     icon: "world",
     href: "/solutions/website-owners",
   },
   {
     title: "Developers",
-    description: "Catch misconfigurations before you ship.",
+    description:
+      "Check security configurations across websites, applications, and services.",
     icon: "code",
     href: "/solutions/developers",
   },
   {
-    title: "Small businesses",
-    description: "A practical start without a security team.",
+    title: "Small Businesses",
+    description:
+      "Understand your online assets and review important security settings.",
     icon: "building-store",
     href: "/solutions/small-businesses",
   },
   {
-    title: "Security teams",
-    description: "Keep assets, checks and findings organized.",
+    title: "Security Teams",
+    description:
+      "Explore internet-facing assets, configurations, and findings that may need attention.",
     icon: "shield-lock",
     href: "/solutions/security-teams",
   },
@@ -90,8 +94,13 @@ export default function WhoItsFor() {
           Who it is for
         </p>
         <h2 id="who-its-for-heading" className="heading-2 mt-3 max-w-3xl text-balance">
-          Built for the people who own the website
+          Who Can Use Securelyze?
         </h2>
+        <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-text-secondary sm:text-base">
+          Securelyze helps people responsible for websites, applications, and
+          internet-facing infrastructure understand their security
+          configurations and publicly visible assets.
+        </p>
         <ul className="mt-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {AUDIENCES.map((audience) => (
             <li key={audience.href} className="min-w-0">

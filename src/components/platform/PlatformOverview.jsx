@@ -10,7 +10,7 @@ const PILLARS = [
   {
     title: "Website Security Check",
     description:
-      "Review SSL/TLS certificate context, DNS security, browser-facing headers, and email-security signals in one place.",
+      "Review DNS records, SSL/TLS certificates, email authentication, and HTTP security headers for your domains and websites.",
     href: "#website-security-check",
     icon: WebsiteIcon,
     status: "4 dedicated tools",
@@ -19,7 +19,7 @@ const PILLARS = [
   {
     title: "Asset Discovery",
     description:
-      "Map publicly discoverable subdomains, domains, hosts, and internet-facing services.",
+      "Discover publicly visible subdomains, IP addresses, open ports, and network services associated with your targets.",
     href: "/platform/asset-discovery",
     icon: AssetsIcon,
     status: "5 dedicated pages",
@@ -95,20 +95,23 @@ export default function PlatformOverview() {
         <div className="max-w-[46rem]">
           <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
             <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-            The platform
+            The Securelyze Platform
           </p>
 
           <h1
             id="platform-overview-heading"
             className="mt-4 text-balance text-[2.25rem] font-bold leading-[1.04] tracking-[-0.05em] text-charcoal sm:text-[2.75rem] lg:text-[3.25rem]"
           >
-            Explore the Securelyze Platform
+            One Platform to Check Security and Discover Assets
           </h1>
 
           <p className="mt-5 max-w-[41rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:mt-6 sm:text-base">
-            Securelyze brings website security checks and asset discovery
-            together, so you can review public security signals and understand
-            the assets that make up your external surface.
+            Review security settings across your domains and discover publicly
+            visible assets, including subdomains, IP addresses, open ports, and
+            network services. Your online presence includes more than a website:
+            domains, DNS records, email settings, and the services behind those
+            assets all contribute to what is visible on the internet. Securelyze
+            helps you review this information in one place.
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -120,7 +123,7 @@ export default function PlatformOverview() {
               href="/platform/asset-discovery"
               className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-border bg-white px-5 text-sm font-semibold tracking-[-0.01em] text-dark-green transition-colors duration-200 hover:border-emerald/40 hover:bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-none sm:w-auto"
             >
-              View Asset Discovery
+              Explore Asset Discovery
               <ArrowRightIcon className="h-3.5 w-3.5" />
             </Link>
           </div>

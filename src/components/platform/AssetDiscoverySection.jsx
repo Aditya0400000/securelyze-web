@@ -8,22 +8,26 @@ const ASSET_DISCOVERY_ROUTE = "/platform/asset-discovery";
 const DISCOVERY_CAPABILITIES = [
   {
     title: "Subdomain Discovery",
-    description: "Find publicly discoverable subdomains tied to a domain.",
+    description:
+      "Find publicly visible subdomains associated with a domain and see how they relate to your online presence.",
     href: "/platform/asset-discovery/subdomain-discovery",
   },
   {
     title: "Domain Discovery",
-    description: "Review domains and related DNS context.",
+    description:
+      "Explore domain-related information and identify associated domains where supported.",
     href: "/platform/asset-discovery/domain-discovery",
   },
   {
     title: "IP & Host Discovery",
-    description: "Map internet-facing hosts and IP context.",
+    description:
+      "Identify publicly visible IP addresses and hosts associated with your target.",
     href: "/platform/asset-discovery/ip-host-discovery",
   },
   {
     title: "Port & Service Discovery",
-    description: "Review exposed services and port context.",
+    description:
+      "Review open ports and publicly accessible network services to understand which services may be exposed.",
     href: "/platform/asset-discovery/port-service-discovery",
   },
 ];
@@ -54,13 +58,14 @@ export default function AssetDiscoverySection() {
               id="asset-discovery-heading"
               className="mt-4 max-w-[36rem] text-balance text-[2rem] font-bold leading-[1.06] tracking-[-0.045em] text-white sm:text-[2.25rem] lg:text-[2.75rem]"
             >
-              Know What&rsquo;s Exposed on the Internet
+              Discover What&rsquo;s Visible on the Internet
             </h2>
 
             <p className="mt-5 max-w-[34rem] text-pretty text-[14.5px] leading-[1.75] text-white/75 sm:text-[15px]">
-              Asset Discovery brings publicly discoverable subdomains, domains,
-              hosts, and internet-facing services into one connected view, so
-              you can understand the shape of your external footprint.
+              Find publicly visible assets associated with your domain or other
+              supported targets. Explore subdomains, IP addresses, open ports,
+              and network services to better understand your internet-facing
+              infrastructure.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
@@ -87,8 +92,8 @@ export default function AssetDiscoverySection() {
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
               <p className="mt-3 max-w-[30rem] text-[11px] leading-[1.6] text-white/60">
-                A connected view of the public assets and services that shape
-                your external footprint.
+                A connected view of the public assets and services associated
+                with your targets.
               </p>
             </div>
           </div>

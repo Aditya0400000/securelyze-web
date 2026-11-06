@@ -8,7 +8,7 @@ import WebsiteSecurityCheckSection from "@/components/platform/WebsiteSecurityCh
 export const metadata = {
   title: "Platform | Securelyze",
   description:
-    "Explore the Securelyze platform: website security checks and asset discovery, with clear previews of current and planned capabilities.",
+    "Review website security configurations and discover publicly visible assets with Securelyze. Explore clearly labeled previews of both platform capabilities.",
 };
 
 export default function PlatformPage() {

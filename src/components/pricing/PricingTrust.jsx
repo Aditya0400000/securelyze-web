@@ -2,23 +2,23 @@ import { EyeIcon, LayersIcon, WalletOffIcon } from "./PricingIcons";
 
 const POINTS = [
   {
-    title: "Silver is free",
+    title: "Clear security information",
     description:
-      "The Silver plan is presented at $0/month for essential website security checks.",
+      "Understand what domain records, certificates, email settings, and HTTP headers can tell you.",
     icon: WalletOffIcon,
     iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   {
-    title: "Custom is proposed",
+    title: "A practical starting point",
     description:
-      "Custom pricing and advanced capabilities are shown for planning and are not yet available online.",
+      "Use the public capability overviews to learn which tools match the question you want to explore.",
     icon: LayersIcon,
     iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
   },
   {
-    title: "Proposed details are labeled",
+    title: "Public asset visibility",
     description:
-      "Check limits and custom features are marked as proposed and may change.",
+      "Learn how public domains, hosts, and services relate. Visibility alone does not confirm a vulnerability.",
     icon: EyeIcon,
     iconClass: "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
   },
@@ -54,17 +54,18 @@ export default function PricingTrust() {
             <div>
               <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#047857]">
                 <span aria-hidden="true" className="h-px w-8 bg-[#047857]/45" />
-                Trust &amp; transparency
+                What makes the information useful
               </p>
               <h2
                 id="pricing-trust-heading"
                 className="mt-4 max-w-[24rem] text-balance text-[1.7rem] font-bold leading-[1.12] tracking-[-0.045em] text-[#101A18] sm:text-[2rem] lg:text-[2.2rem]"
               >
-                Clear plans, without the fine print.
+                Understand what to review next
               </h2>
               <p className="mt-4 max-w-[25rem] text-pretty text-[13.5px] leading-[1.7] text-[#475569]">
-                Silver is free for essential checks. Custom pricing is scoped to
-                your team, with advanced capabilities still proposed.
+                Review security configuration topics and public asset
+                relationships without treating every observation as a
+                confirmed security issue.
               </p>
             </div>
 

@@ -22,86 +22,86 @@ import SolutionHeroCard from "./SolutionHeroCard";
 import SolutionSectionHeading from "./SolutionSectionHeading";
 
 const HERO_CARD_FOOTER =
-  "A clear starting point for external visibility.";
+  "Public information to support further investigation.";
 
 const HERO_ITEMS = [
   {
     icon: GlobeIcon,
     title: "Domains",
-    detail: "Primary web properties.",
+    detail: "Domain information and DNS relationships.",
   },
   {
     icon: RadarIcon,
     title: "Subdomains",
-    detail: "Public hostnames and hierarchy.",
+    detail: "Visible hostnames beneath a domain.",
   },
   {
     icon: AssetsIcon,
     title: "Hosts & services",
-    detail: "Internet-facing endpoints.",
+    detail: "Public addresses and available services.",
   },
   {
     icon: ShieldIcon,
     title: "Security context",
-    detail: "Checks connected to the footprint.",
+    detail: "DNS, TLS, headers, and email settings.",
   },
 ];
 
 const CHALLENGES = [
   {
-    title: "Maintaining visibility across domains and subdomains",
+    title: "Domains outside the inventory",
     description:
-      "Public hostnames can accumulate across teams, campaigns, and environments. Without a shared inventory, parts of the footprint can fall outside a routine review.",
+      "Domains and subdomains can span teams, providers, and older projects. Public information can surface names that need ownership and scope verification.",
   },
   {
-    title: "Keeping track of external-facing IP addresses and hosts",
+    title: "Hostname-to-address relationships",
     description:
-      "Hosts and IP addresses may change as infrastructure evolves. Keeping them connected to the domains they support makes the external surface easier to understand.",
+      "Several hostnames may share an address, proxy, or provider. Those relationships add context, but do not establish ownership or reveal all underlying infrastructure.",
   },
   {
-    title: "Understanding exposed ports and services",
+    title: "Expected and unexpected services",
     description:
-      "Internet-facing ports and services may exist alongside the applications you intended to expose. A clear view helps teams identify what is publicly reachable.",
+      "Available port and service information can help teams question unexpected exposure. A public service is not, by itself, evidence of a vulnerability.",
   },
   {
-    title: "Reviewing website security configurations across multiple assets",
+    title: "Configuration differences",
     description:
-      "Certificates, DNS records, and headers can differ across properties. Reviewing each asset with consistent context helps teams avoid gaps.",
+      "Certificate coverage, DNS records, HTTP policies, and email authentication can differ between assets. Review each setting against the purpose of the service.",
   },
   {
-    title: "Identifying overlooked or forgotten digital assets",
+    title: "Assets left behind by projects",
     description:
-      "Legacy domains, new subdomains, and temporary hosts can remain public after a project changes. Periodic visibility reviews help bring them back into scope.",
+      "Legacy names and temporary hosts may remain public after a migration or handoff. Validate whether they are still needed and who is responsible for them.",
   },
   {
-    title: "Organizing security information for regular reviews",
+    title: "Information that needs validation",
     description:
-      "Asset and configuration details are often spread across tools. A connected review path helps teams keep context organized for the next assessment.",
+      "Public records and observed service details can be incomplete or outdated. Separate useful leads from conclusions that require authorized testing.",
   },
 ];
 
 const CHECKS = [
   {
     title: "SSL/TLS Analysis",
-    description: "Review certificate and HTTPS configuration information.",
+    description: "Examine certificate validity, hostname coverage, and available HTTPS configuration details.",
     href: "/platform/website-security-check/ssl-tls",
     icon: CertificateIcon,
   },
   {
     title: "DNS Security",
-    description: "Understand DNS records and domain configuration.",
+    description: "Review published records, service targets, nameservers, and resolution relationships.",
     href: "/platform/website-security-check/dns-security",
     icon: NetworkIcon,
   },
   {
     title: "Security Headers",
-    description: "Review browser-facing security header configuration.",
+    description: "Examine HTTP security policies and assess their suitability for the application.",
     href: "/platform/website-security-check/security-headers",
     icon: CodeIcon,
   },
   {
     title: "Email Security",
-    description: "Understand SPF, DKIM and DMARC configuration.",
+    description: "Review SPF, DKIM, and DMARC configuration, including policy and alignment concepts.",
     href: "/platform/website-security-check/email-security",
     icon: MailIcon,
   },
@@ -111,28 +111,28 @@ const ASSET_CATEGORIES = [
   {
     title: "Domain Discovery",
     description:
-      "Understand the primary domains that shape an organization's public footprint.",
+      "Review domain information, DNS relationships, and related domains where supported.",
     href: "/platform/asset-discovery/domain-discovery",
     icon: GlobeIcon,
   },
   {
     title: "Subdomain Discovery",
     description:
-      "Review how public subdomains and hostnames connect to a domain.",
+      "Explore publicly visible hostnames and how they relate to parent domains and shared targets.",
     href: "/platform/asset-discovery/subdomain-discovery",
     icon: RadarIcon,
   },
   {
     title: "IP & Host Discovery",
     description:
-      "Explore how IP addresses and hosts fit into the external environment.",
+      "Review public IPv4 and IPv6 relationships and hostnames that share addresses.",
     href: "/platform/asset-discovery/ip-host-discovery",
     icon: AssetsIcon,
   },
   {
     title: "Port & Service Discovery",
     description:
-      "Review how internet-facing ports and services appear in the asset view.",
+      "Examine available information about exposed ports, service labels, and response context.",
     href: "/platform/asset-discovery/port-service-discovery",
     icon: LayersIcon,
   },
@@ -140,112 +140,112 @@ const ASSET_CATEGORIES = [
 
 const WORKFLOW_STEPS = [
   {
-    title: "Discover Assets",
+    title: "Establish the public scope",
     description:
-      "Explore domains, subdomains, IPs, hosts and available service information.",
+      "Explore domain, hostname, address, and service relationships, then validate which assets belong in scope.",
   },
   {
-    title: "Review Security Configuration",
+    title: "Examine configuration",
     description:
-      "Explore relevant SSL/TLS, DNS, security headers and email security information.",
+      "Use the relevant DNS, TLS, HTTP header, and email authentication guides to interpret available details.",
   },
   {
-    title: "Understand and Prioritize Reviews",
+    title: "Plan further investigation",
     description:
-      "Use the available information to identify assets and configuration areas that may need further investigation.",
+      "Decide what needs ownership confirmation, configuration review, or separate authorized testing.",
   },
 ];
 
 const USE_CASES = [
   {
-    title: "Reviewing an organization's external-facing assets.",
+    title: "Scoping an external review",
     label: "External assets",
     description:
-      "Start with the domains, subdomains, hosts, and services that shape the external surface.",
+      "Use public asset relationships as leads when defining and validating assessment scope.",
   },
   {
-    title: "Reviewing newly added domains and subdomains.",
+    title: "Adding domains or subdomains",
     label: "New domains",
     description:
-      "Review the public surface connected to a new domain or subdomain as it joins the environment.",
+      "Review the public names, addresses, and services associated with a newly introduced asset.",
   },
   {
-    title: "Reviewing website configuration after infrastructure changes.",
+    title: "After infrastructure changes",
     label: "Infrastructure change",
     description:
-      "Revisit certificate, DNS, header, and asset context when hosting or routing changes.",
+      "Revisit DNS targets, certificate coverage, and HTTP policies after routing or hosting changes.",
   },
   {
-    title: "Understanding exposed services.",
+    title: "Questioning service exposure",
     label: "Exposed services",
     description:
-      "Explore the hosts, ports, and services that make up the external-facing environment.",
+      "Compare available port and service details with the services expected on each public host.",
   },
   {
-    title: "Conducting periodic reviews or preparing for a deeper assessment.",
+    title: "Preparing a deeper assessment",
     label: "Periodic review",
     description:
-      "Use a consistent review path to revisit asset and configuration context before a broader security assessment.",
+      "Use available findings to identify questions for service owners and plan authorized validation.",
   },
 ];
 
 const BENEFITS = [
   {
-    title: "Better visibility into external-facing assets.",
+    title: "Define review scope",
     description:
-      "Understand the domains, subdomains, hosts, ports, and services that shape the public surface.",
+      "Use public domains, addresses, and service relationships to inform scope discussions.",
     icon: EyeIcon,
   },
   {
-    title: "Easier access to domain and host information.",
+    title: "Investigate asset relationships",
     description:
-      "Find the domain and host context that explains how the external environment is organized.",
+      "Consider shared DNS targets and public addresses without treating them as ownership proof.",
     icon: NetworkIcon,
   },
   {
-    title: "A clearer view of available website security checks.",
+    title: "Interpret configuration details",
     description:
-      "Review SSL/TLS, DNS, security header, and email security context in one place.",
+      "Relate DNS, TLS, HTTP headers, and email authentication to the assets under review.",
     icon: ShieldIcon,
   },
   {
-    title: "More organized information for security reviews.",
+    title: "Separate leads from findings",
     description:
-      "Keep asset and configuration details organized, with a clearer view of areas that may need further investigation.",
+      "Use public information to decide what requires confirmation before making a security conclusion.",
     icon: CompassIcon,
   },
 ];
 
 const FAQS = [
   {
-    question: "What asset discovery information can Security Teams explore?",
+    question: "Which Asset Discovery areas can teams explore?",
     answer:
-      "Security Teams can explore Domain Discovery, Subdomain Discovery, IP & Host Discovery, and Port & Service Discovery to understand how public domains, subdomains, hosts, IP addresses, ports, and services fit together.",
+      "The capability pages cover public domains, subdomains, IP addresses, hosts, ports, and services. Available information can help with scoping and investigation, but public sources may not provide a complete inventory.",
   },
   {
-    question: "Can Securelyze help identify subdomains and hosts?",
+    question: "Do shared addresses or related domains prove ownership?",
     answer:
-      "Yes. Subdomain Discovery and IP & Host Discovery explain how public subdomains, hosts, and IP addresses fit into the external-facing environment.",
+      "No. Shared hosting, DNS providers, proxies, and content-delivery networks can connect unrelated systems. Validate ownership and authorization before adding assets to an assessment.",
   },
   {
-    question: "Can teams review SSL/TLS and DNS configuration?",
+    question: "Which security configuration areas are covered?",
     answer:
-      "Yes. SSL/TLS Analysis and DNS Security explain certificate, HTTPS, DNS record, and domain configuration context.",
+      "The guides cover certificate and HTTPS settings, DNS records, HTTP security headers, and SPF, DKIM, and DMARC. These are configuration review areas, not a full application or infrastructure assessment.",
   },
   {
-    question: "Can Securelyze identify exposed ports and services?",
+    question: "What can port and service information tell us?",
     answer:
-      "Yes. Port & Service Discovery explains how internet-facing ports and services can be reviewed in the asset view.",
+      "Available port, service, and response details can help you identify exposure that needs review. They do not confirm a service version, a vulnerability, or that access is safe.",
   },
   {
-    question: "Does Securelyze provide continuous attack surface monitoring?",
+    question: "Do these pages provide continuous monitoring?",
     answer:
-      "No. Securelyze does not currently provide continuous attack surface monitoring or automated change detection. You can use the available Asset Discovery and Website Security Check pages to review asset and configuration context.",
+      "No. These pages are informational, and capability examples use sample data. They do not run live scans, monitor assets continuously, or provide automated change alerts.",
   },
   {
-    question: "Does Securelyze automatically detect and fix vulnerabilities?",
+    question: "Do discovery results confirm vulnerabilities?",
     answer:
-      "No. Securelyze does not automatically detect or fix vulnerabilities, and it does not provide vulnerability management or automatic remediation. You can use the available pages to review asset and configuration information and decide what may need further investigation.",
+      "No. Public visibility and configuration observations are leads for investigation. Confirm vulnerabilities through separate authorized testing. These pages do not automatically detect vulnerabilities or change asset configurations.",
   },
 ];
 
@@ -284,25 +284,24 @@ function SecurityTeamsHero() {
 
             <p className="mt-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
               <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-              SOLUTIONS FOR SECURITY TEAMS
+              FOR SECURITY TEAMS
             </p>
 
             <h1
               id="security-teams-heading"
               className="mt-4 max-w-[48rem] text-balance text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-[3.25rem] lg:text-[3.45rem] xl:text-[3.6rem]"
             >
-              Clearer Visibility Across Your Digital Attack Surface
+              Explore Your Internet-Facing Infrastructure
             </h1>
 
             <p className="mt-6 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
-              Understand your external-facing digital assets and review website
-              security configurations with a more organized approach to security
-              visibility.
+              Review domains, hosts, exposed services, and security configurations
+              to identify areas that may need attention.
             </p>
 
             <p className="mt-4 max-w-[44rem] text-pretty text-[12.5px] leading-[1.7] text-text-muted">
-              See how asset context and website security details fit together in
-              one review path.
+              Combine asset relationships with configuration information to plan
+              further investigation.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -350,14 +349,14 @@ function ChallengesSection() {
           <div>
             <SolutionSectionHeading
               id="security-team-challenges-heading"
-              eyebrow="Where visibility gets difficult"
-              title="Security Challenges for Security Teams"
-              description="External assets and configuration details change across teams and environments. Keeping the public surface visible is an ongoing part of a security review."
+              eyebrow="Review challenges"
+              title="Where public information needs context"
+              description="Internet-facing assets cross team and provider boundaries. Understanding their relationships helps teams decide what belongs in scope and what needs validation."
             />
 
             <p className="mt-6 max-w-[34rem] border-l-2 border-emerald/30 pl-4 text-[12.5px] leading-[1.75] text-text-muted">
-              A connected view helps teams keep asset context organized before
-              it is needed for a review.
+              Treat public information as evidence to validate, rather than a
+              complete or verified inventory.
             </p>
           </div>
 
@@ -400,13 +399,12 @@ function ChecksSection() {
             <SolutionSectionHeading
               id="security-team-security-checks-heading"
               eyebrow="Security checks"
-              title="Security Checks Teams Can Explore"
-              description="Review the public configuration details behind the assets in your external footprint."
+              title="Examine security configuration"
+              description="Use DNS, TLS, HTTP header, and email authentication details to frame specific configuration questions."
             />
 
             <p className="mt-5 max-w-[38rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Use the checks together to build a clearer picture of website
-              configuration.
+              Configuration observations need application and service-owner context.
             </p>
           </div>
 
@@ -458,19 +456,18 @@ function AssetsSection() {
             <SolutionSectionHeading
               id="security-team-asset-discovery-heading"
               eyebrow="Asset discovery"
-              title="Asset Discovery and External Visibility"
-              description="Asset Discovery is the starting point for external visibility. Explore how public domains, subdomains, hosts, ports, and services fit together so your team can understand the external-facing environment and organize asset information for review."
+              title="Explore the assets in scope"
+              description="Explore public domains, subdomains, addresses, hosts, and available service information. Use those relationships to support an inventory review and identify questions for asset owners."
             />
 
             <p className="mt-5 max-w-[42rem] text-[13px] leading-[1.75] text-text-secondary">
-              Use these views together to keep public assets connected to the
-              domains and services they support, then carry that context into a
-              security review.
+              Public sources may be incomplete. Confirm ownership, service
+              purpose, and authorization before testing an asset.
             </p>
 
             <p className="mt-4 max-w-[42rem] text-[11.5px] leading-[1.65] text-text-muted">
-              A connected view makes the public surface easier to review and
-              discuss with your team.
+              A relationship between public assets is a useful lead, not a
+              confirmed security finding.
             </p>
           </div>
 
@@ -535,8 +532,8 @@ function WorkflowSection() {
         <SolutionSectionHeading
           id="security-team-workflow-heading"
           eyebrow="A practical workflow"
-          title="A Structured Security Review Workflow"
-          description="Use a structured review path to move from external assets to the configuration context that may need further investigation."
+          title="From public information to investigation"
+          description="Establish the asset scope, interpret available configuration details, and determine what needs separate validation."
           tone="dark"
         />
 
@@ -583,8 +580,8 @@ function UseCasesSection() {
         <SolutionSectionHeading
           id="security-team-use-cases-heading"
           eyebrow="When to use it"
-          title="When Security Teams Can Use Securelyze"
-          description="Use the platform as a review aid at moments when external assets or configuration context need to be organized."
+          title="Support focused security reviews"
+          description="Use the discovery and configuration topics when defining scope, reviewing changes, or preparing a deeper assessment."
         />
 
         <ul className="mt-10 grid gap-0 sm:grid-cols-2">
@@ -635,8 +632,8 @@ function BenefitsSection() {
         <SolutionSectionHeading
           id="security-team-benefits-heading"
           eyebrow="Benefits"
-          title="Benefits for Security Teams"
-          description="A clearer view of the external-facing assets and configuration context that support a security review."
+          title="Use public information with context"
+          description="Connect asset relationships and configuration observations to specific investigation questions."
           align="center"
         />
 
@@ -683,8 +680,8 @@ function FaqSection() {
         <SolutionSectionHeading
           id="security-team-faqs-heading"
           eyebrow="FAQs"
-          title="Questions Security Teams Ask"
-          description="Short answers about asset discovery and website security checks."
+          title="Security team questions"
+          description="Coverage, interpretation, and the limits of public asset information."
           align="center"
         />
 
@@ -713,8 +710,8 @@ export default function SecurityTeamsPage() {
       <SolutionClosingCta
         layout="split"
         id="security-teams-cta"
-        title="Get a Clearer View of Your External Attack Surface"
-        description="Explore your digital assets and review available website security information with Securelyze."
+        title="Start with your internet-facing assets"
+        description="Explore the platform's Asset Discovery and security configuration guides to plan your review."
         primary={{
           label: "Explore Securelyze",
           href: "/platform",

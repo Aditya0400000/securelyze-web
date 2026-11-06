@@ -10,7 +10,7 @@ import PricingTrust from "@/components/pricing/PricingTrust";
 export const metadata = {
   title: "Pricing | Securelyze",
   description:
-    "Explore Securelyze plans: Silver for essential security checks at $0/month, and a proposed Custom plan for tailored security needs.",
+    "Explore Securelyze's Free plan, listed at $0, and learn about supported security configuration checks and internet-facing asset discovery.",
 };
 
 export default function PricingPage() {

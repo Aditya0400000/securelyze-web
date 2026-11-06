@@ -207,8 +207,8 @@ export default function SecurityBestPracticesContent() {
           as="h3"
           size="md"
           eyebrow="Best Practices"
-          title="Six habits that keep security from drifting."
-          description="A concise set of recurring practices for the work that keeps a website's security posture from quietly degrading between reviews."
+          title="Six practices for regular security reviews"
+          description="Practical steps for maintaining software, account access, HTTPS, headers, DNS, and backups."
         />
 
         <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -226,8 +226,8 @@ export default function SecurityBestPracticesContent() {
               Make the checks part of the work.
             </h4>
             <p className="mt-2 max-w-[30rem] text-[12px] leading-[1.65] text-[#64748B]">
-              Security posture drifts when reviews only happen once. A simple
-              rhythm is easier to sustain than a large annual cleanup.
+              Revisit settings as services change. Adjust the review schedule
+              to your systems and the people responsible for them.
             </p>
           </div>
 
@@ -249,9 +249,8 @@ export default function SecurityBestPracticesContent() {
         </div>
 
         <p className="mt-5 max-w-[52rem] text-[11px] leading-[1.7] text-[#64748B]">
-          These practices are general guidance. Securelyze helps you review
-          public website signals; it does not automatically apply changes, fix
-          findings, or guarantee security.
+          Securelyze covers configuration review and Asset Discovery. These
+          resources do not apply changes or replace a security assessment.
         </p>
       </div>
     </section>

@@ -22,61 +22,61 @@ import SolutionHeroCard from "./SolutionHeroCard";
 import SolutionSectionHeading from "./SolutionSectionHeading";
 
 const HERO_CARD_FOOTER =
-  "A practical view of your online presence.";
+  "Understand the services behind your business online.";
 
 const HERO_ITEMS = [
   {
     icon: CertificateIcon,
     title: "Website connection",
-    detail: "Certificate and HTTPS context.",
+    detail: "Certificate validity and HTTPS settings.",
   },
   {
     icon: NetworkIcon,
     title: "Domain records",
-    detail: "DNS records that route your business.",
+    detail: "Where website and email traffic goes.",
   },
   {
     icon: MailIcon,
     title: "Email authentication",
-    detail: "SPF, DKIM, and DMARC context.",
+    detail: "Settings used to verify domain email.",
   },
   {
     icon: RadarIcon,
     title: "Public assets",
-    detail: "Domains, hosts, and services.",
+    detail: "Public domains, hosts, and services.",
   },
 ];
 
 const CHALLENGES = [
   {
-    title: "Security configurations are difficult to understand",
+    title: "Settings spread across providers",
     description:
-      "Technical settings are often spread across hosting, DNS, and email tools. A clearer view can make the basics easier to review.",
+      "Your website, domain, and email may use different providers. Understanding each provider's settings helps you know where to ask for help.",
   },
   {
-    title: "SSL certificates and HTTPS need attention",
+    title: "Certificate warnings",
     description:
-      "Expired certificates or incomplete HTTPS settings can affect trust and access. It helps to know where to look.",
+      "An expired certificate or a name mismatch can cause browser warnings. Learn which certificate details matter for your business website.",
   },
   {
-    title: "DNS records may be incorrectly configured",
+    title: "Website and email routing",
     description:
-      "Missing, conflicting, or unintended records can affect how your website and email work.",
+      "Domain records connect your business name to its website and email services. Old or incorrect records can interfere with those connections.",
   },
   {
-    title: "Company email domains need authentication",
+    title: "Email sent using your domain",
     description:
-      "SPF, DKIM, and DMARC help receiving servers verify your business email. Gaps can affect deliverability and trust.",
+      "Email authentication helps receiving systems check whether a message is authorized to use your domain. Review it when setting up business email.",
   },
   {
-    title: "Domains and subdomains may be forgotten",
+    title: "Forgotten public services",
     description:
-      "A business can accumulate public hostnames over time. A clear inventory helps you see what is part of your online presence.",
+      "An old campaign site or unused application can remain public. Knowing the associated domains and hosts helps you decide what still belongs in use.",
   },
   {
-    title: "Small teams may not have security specialists",
+    title: "Knowing what to ask",
     description:
-      "You may be managing security alongside operations, marketing, and everything else. Plain-language context helps you decide what to review next.",
+      "You do not need to manage every setting yourself. Clear explanations help you prepare specific questions for a developer or service provider.",
   },
 ];
 
@@ -84,27 +84,27 @@ const CHECKS = [
   {
     title: "SSL/TLS Analysis",
     description:
-      "Understand the certificate and HTTPS setup for your business website.",
+      "Learn what your website's certificate and encrypted connection settings tell visitors.",
     href: "/platform/website-security-check/ssl-tls",
     icon: CertificateIcon,
   },
   {
     title: "DNS Security",
-    description: "Review the DNS records that support your business domain.",
+    description: "Understand the records that connect your business domain to its services.",
     href: "/platform/website-security-check/dns-security",
     icon: NetworkIcon,
   },
   {
     title: "Security Headers",
     description:
-      "Understand the browser-facing settings that affect your website.",
+      "Learn about the security instructions your website sends to visitors' browsers.",
     href: "/platform/website-security-check/security-headers",
     icon: CodeIcon,
   },
   {
     title: "Email Security",
     description:
-      "Review SPF, DKIM and DMARC for your business email domain.",
+      "Understand SPF, DKIM, and DMARC settings used to authenticate email from your domain.",
     href: "/platform/website-security-check/email-security",
     icon: MailIcon,
   },
@@ -114,28 +114,28 @@ const ASSET_CATEGORIES = [
   {
     title: "Domain Discovery",
     description:
-      "Understand the primary domains that make up your business's public footprint.",
+      "Review domain details and related domains where supported.",
     href: "/platform/asset-discovery/domain-discovery",
     icon: GlobeIcon,
   },
   {
     title: "Subdomain Discovery",
     description:
-      "Review public subdomains that may sit alongside your main website.",
+      "Explore public names for shops, applications, or other services under your domain.",
     href: "/platform/asset-discovery/subdomain-discovery",
     icon: RadarIcon,
   },
   {
     title: "IP & Host Discovery",
     description:
-      "Explore the IP addresses and hosts connected to your public environment.",
+      "See how public hostnames relate to the addresses used to reach their services.",
     href: "/platform/asset-discovery/ip-host-discovery",
     icon: AssetsIcon,
   },
   {
     title: "Port & Service Discovery",
     description:
-      "Review internet-facing ports and services that may need attention.",
+      "Understand available information about public services and whether their exposure is expected.",
     href: "/platform/asset-discovery/port-service-discovery",
     icon: LayersIcon,
   },
@@ -143,107 +143,107 @@ const ASSET_CATEGORIES = [
 
 const WORKFLOW_STEPS = [
   {
-    title: "Start With Your Domain",
+    title: "Choose your business domain",
     description:
-      "Enter or identify the business domain you want to understand.",
+      "Begin with the domain for your website or business email.",
   },
   {
-    title: "Explore Security Information",
+    title: "Learn what the settings mean",
     description:
-      "Review the available website security checks and asset discovery information.",
+      "Read the relevant configuration explanations and explore related public assets.",
   },
   {
-    title: "Understand Areas That Need Attention",
+    title: "Ask about the next step",
     description:
-      "Use the available information to identify configuration areas worth reviewing.",
+      "Use the details to discuss a concern with your developer or service provider.",
   },
 ];
 
 const USE_CASES = [
   {
-    title: "Launching a new business website.",
+    title: "Launching a website",
     label: "New website",
     description:
-      "Review the public security signals and asset context you plan to launch with.",
+      "Include domain records, certificates, and browser security settings in your launch checklist.",
   },
   {
-    title: "Setting up a new business domain.",
+    title: "Setting up a domain",
     label: "New domain",
     description:
-      "Understand the DNS records and public details connected to a new domain.",
+      "Understand how the domain connects to the website and services your business will use.",
   },
   {
-    title: "Configuring company email.",
+    title: "Changing email providers",
     label: "Email setup",
     description:
-      "Review the SPF, DKIM, and DMARC context for the domain used to send business email.",
+      "Review authentication settings with your provider so they match the services sending your business email.",
   },
   {
-    title: "Changing hosting or DNS settings.",
+    title: "Moving your website",
     label: "Hosting or DNS",
     description:
-      "Check whether a provider or DNS change has altered the context you expect.",
+      "Revisit domain records and HTTPS settings when your site moves to another hosting provider.",
   },
   {
-    title: "Reviewing or expanding your online presence.",
+    title: "Adding services or reviewing old ones",
     label: "Review or expand",
     description:
-      "Revisit certificates, headers, email settings, and public assets when reviewing an existing site or adding new domains, subdomains, and services.",
+      "Explore associated subdomains and hosts when adding a shop, application, or campaign site, or deciding what to retire.",
   },
 ];
 
 const BENEFITS = [
   {
-    title: "Better visibility into website security.",
+    title: "Know what supports your business",
     description:
-      "See how certificates, DNS, headers, email settings, and public assets fit together.",
+      "Understand how your domains, website, email, and public services connect.",
     icon: EyeIcon,
   },
   {
-    title: "Easier access to domain security information.",
+    title: "Understand provider settings",
     description:
-      "Find the context that explains how your business domain is configured.",
+      "Learn which domain and website settings to discuss with each provider.",
     icon: NetworkIcon,
   },
   {
-    title: "Awareness of email authentication configuration.",
+    title: "Ask informed email questions",
     description:
-      "Understand the SPF, DKIM, and DMARC details that support business email.",
+      "Recognize the authentication settings your email provider needs to review.",
     icon: MailIcon,
   },
   {
-    title: "Understanding exposed assets and where to start.",
+    title: "Choose a practical next step",
     description:
-      "See the public domains, hosts, and services that make up your online presence, with a practical starting point for security reviews.",
+      "Use specific configuration details to decide what needs clarification or further review.",
     icon: CompassIcon,
   },
 ];
 
 const FAQS = [
   {
-    question: "Can small businesses use Securelyze without a security team?",
+    question: "Do I need a security team to get started?",
     answer:
-      "Yes. The pages are written to explain technical topics in plain language. You can start with the overview, follow the checks that are relevant to your business, and share the context with a developer or hosting provider if a change is needed.",
+      "No. Start with the explanations for your website, domain, or email settings. If a change is needed, share the details with the developer or provider who manages that service.",
   },
   {
-    question: "What website security checks are available?",
+    question: "What can I learn about my business's public services?",
     answer:
-      "Securelyze includes SSL/TLS, DNS, security headers, and email security checks, plus Asset Discovery for public domains, subdomains, hosts, and services.",
+      "Securelyze covers internet-facing security analysis and Asset Discovery. The pages explain website and domain settings, plus publicly visible domains, subdomains, hosts, and available service information.",
   },
   {
-    question: "Can I review my business email security?",
+    question: "What does email authentication tell me?",
     answer:
-      "Yes. The Email Security page explains SPF, DKIM, and DMARC context for the domain used to send email.",
+      "SPF, DKIM, and DMARC help receiving systems check messages that use your domain. The Email Security page explains these settings and what to discuss with your email provider.",
   },
   {
-    question: "Can Securelyze help me discover subdomains?",
+    question: "Is a public asset always a security problem?",
     answer:
-      "Asset Discovery includes a Subdomain Discovery page that explains how public subdomains can be reviewed.",
+      "No. Websites and many business services need to be public. Review whether an asset is expected, still needed, and managed by the right team. Public visibility alone does not confirm a vulnerability.",
   },
   {
-    question: "Does Securelyze automatically fix security issues?",
+    question: "Will these pages fix settings or run a live check?",
     answer:
-      "No. Securelyze does not automatically fix security issues. The available pages help you review configuration context and identify areas that may need attention.",
+      "No. These pages explain the capabilities and link to further guidance. Capability examples use sample data. They do not run live checks or change your business's settings.",
   },
 ];
 
@@ -282,20 +282,19 @@ function SmallBusinessesHero() {
 
             <p className="mt-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
               <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-              SOLUTIONS FOR SMALL BUSINESSES
+              FOR SMALL BUSINESSES
             </p>
 
             <h1
               id="small-businesses-heading"
               className="mt-4 max-w-[48rem] text-balance text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-[3.25rem] lg:text-[3.45rem] xl:text-[3.6rem]"
             >
-              Practical Website Security for Growing Businesses
+              Know What&apos;s Visible Across Your Business
             </h1>
 
             <p className="mt-6 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
-              Understand your website security configuration, business domain,
-              email security and exposed digital assets without needing a large
-              technical team.
+              Understand your public-facing domains, services, and security
+              settings without unnecessary complexity.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -303,7 +302,7 @@ function SmallBusinessesHero() {
                 href="/platform#website-security-check"
                 className="btn-primary group w-full sm:w-auto"
               >
-                Explore Website Security
+                Review Security Settings
                 <ArrowRightIcon className="h-4 w-4" />
               </Link>
               <Link
@@ -319,7 +318,7 @@ function SmallBusinessesHero() {
           <div className="min-w-0">
             <SolutionHeroCard
               eyebrow="Small business view"
-              title="The basics in one place"
+              title="Website, email, and public assets"
               icon={ShieldIcon}
               items={HERO_ITEMS}
               footer={HERO_CARD_FOOTER}
@@ -344,13 +343,13 @@ function ChallengesSection() {
             <SolutionSectionHeading
               id="small-business-challenges-heading"
               eyebrow="Common challenges"
-              title="Common Security Challenges for Small Businesses"
-              description="Small teams often manage the website, domain, email, and hosting at the same time. These are the details that can be easy to overlook without a dedicated security specialist."
+              title="Questions small teams face"
+              description="When providers manage different services, it can be hard to know which settings matter or who is responsible for them. Start with the areas below."
             />
 
             <p className="mt-6 max-w-[34rem] border-l-2 border-emerald/30 pl-4 text-[12.5px] leading-[1.75] text-text-muted">
-              You do not need a security team to start with a clearer view of
-              the basics.
+              Start with the question you need answered, then involve your
+              provider when a setting needs review.
             </p>
           </div>
 
@@ -393,13 +392,12 @@ function ChecksSection() {
             <SolutionSectionHeading
               id="small-business-security-checks-heading"
               eyebrow="Security checks"
-              title="Essential Website Security Checks"
-              description="Review the public configuration details behind your website, domain, and email setup."
+              title="Understand your business settings"
+              description="Learn what domain records, certificates, browser security settings, and email authentication mean for your business."
             />
 
             <p className="mt-5 max-w-[38rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Explore each check to understand the security context behind your
-              website, domain, and email setup.
+              Choose the guide that matches your website, domain, or email question.
             </p>
           </div>
 
@@ -451,18 +449,18 @@ function AssetsSection() {
             <SolutionSectionHeading
               id="small-business-asset-discovery-heading"
               eyebrow="Asset discovery"
-              title="Understand Your Business's Digital Assets"
-              description="Asset Discovery brings public domains, subdomains, hosts, ports, and services into a connected view. For a small business, it is a way to see the external-facing environment around your website."
+              title="Know which services are public"
+              description="Your online presence may include more than the main website. Explore associated domains, subdomains, and hosts, plus available information about publicly reachable services."
             />
 
             <p className="mt-5 max-w-[42rem] text-[13px] leading-[1.75] text-text-secondary">
-              A clear inventory makes it easier to see what belongs to your
-              business online and what may need a closer look.
+              Public information can help with an inventory, but it does not
+              verify ownership or show every asset.
             </p>
 
             <p className="mt-4 max-w-[42rem] text-[11.5px] leading-[1.65] text-text-muted">
-              Use these categories together to understand the public footprint
-              around your business.
+              Use these categories to understand the names, hosts, and services
+              associated with your business.
             </p>
           </div>
 
@@ -527,8 +525,8 @@ function WorkflowSection() {
         <SolutionSectionHeading
           id="small-business-workflow-heading"
           eyebrow="A practical workflow"
-          title="How Securelyze Helps"
-          description="Use a structured review path to move from your business domain to the configuration areas that may need attention."
+          title="Start with one business question"
+          description="Choose the service you want to understand, learn about its settings, and identify who can help with any follow-up."
           tone="dark"
         />
 
@@ -576,8 +574,8 @@ function UseCasesSection() {
         <SolutionSectionHeading
           id="small-business-use-cases-heading"
           eyebrow="When to use it"
-          title="When Small Businesses Can Use Securelyze"
-          description="Use the platform as a review aid at moments when your website, domain, or email setup is changing."
+          title="When a review is useful"
+          description="A new website, provider change, or unused service is a reason to revisit what your business makes public."
         />
 
         <ul className="mt-10 grid gap-0 sm:grid-cols-2">
@@ -628,8 +626,8 @@ function BenefitsSection() {
         <SolutionSectionHeading
           id="small-business-benefits-heading"
           eyebrow="Benefits"
-          title="Benefits for Small Businesses"
-          description="A clearer view of the website security details that support your business."
+          title="Make sense of the details"
+          description="Get enough understanding to ask useful questions without having to become a security specialist."
           align="center"
         />
 
@@ -678,7 +676,7 @@ function FaqSection() {
           id="small-business-faqs-heading"
           eyebrow="FAQs"
           title="Small Business FAQs"
-          description="Short answers about website security checks, asset discovery, and practical next steps."
+          description="What you can learn and when to involve a service provider."
           align="center"
         />
 
@@ -707,8 +705,8 @@ export default function SmallBusinessesPage() {
       <SolutionClosingCta
         layout="split"
         id="small-businesses-cta"
-        title="Make Your Business Website Security Easier to Understand"
-        description="Explore your website configuration and digital assets with Securelyze."
+        title="Understand your business's online presence"
+        description="Explore the platform to learn about your domains, public services, and security settings."
         primary={{
           label: "Explore Securelyze",
           href: "/platform",

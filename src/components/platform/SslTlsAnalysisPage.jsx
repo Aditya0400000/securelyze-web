@@ -20,51 +20,52 @@ const SECTION_LINKS = [
 
 const REVIEW_ITEMS = [
   {
-    title: "Certificate information",
+    title: "Certificate details",
     description:
-      "Common name, subject alternative names, serial, and the served certificate details.",
+      "Review the common name, subject alternative names, and other details in the served certificate.",
   },
   {
-    title: "Validity",
+    title: "Certificate validity",
     description:
-      "The certificate's valid-from and valid-to dates, shown as a clear window.",
+      "Review whether the certificate is currently valid and the dates that define its validity window.",
   },
   {
-    title: "Expiration",
+    title: "Certificate expiration",
     description:
-      "The expiry date and how much of the validity window remains.",
+      "Check when the certificate is scheduled to expire and how much time remains.",
   },
   {
-    title: "Issuer",
+    title: "Certificate issuer",
     description:
-      "The certificate authority and chain context behind the served certificate.",
+      "See which certificate authority issued the certificate.",
   },
   {
-    title: "HTTPS",
+    title: "HTTPS settings",
     description:
-      "Whether the site responds over HTTPS and how the connection is presented.",
+      "Review whether the site responds over HTTPS and how the connection is presented.",
   },
   {
     title: "TLS configuration",
     description:
-      "Certificate chain and algorithm context, including signature and key algorithms.",
+      "Review available certificate-chain, signature, and key-algorithm context for the HTTPS connection.",
   },
 ];
 
 const HOW_IT_WORKS = [
   {
-    title: "Domain entry",
-    description: "Start with the domain whose certificate and HTTPS context you want to review.",
+    title: "Enter a domain",
+    description:
+      "Start with the domain whose certificate and HTTPS settings you want to review.",
   },
   {
-    title: "Analysis",
+    title: "Review the certificate",
     description:
-      "Review the certificate and connection details available to the check.",
+      "Review the certificate and connection details available for the domain.",
   },
   {
-    title: "Results",
+    title: "Read the results",
     description:
-      "See certificate, validity, issuer, HTTPS, and TLS configuration context in one summary.",
+      "Use the summary to understand the certificate, validity, issuer, HTTPS, and available TLS context.",
   },
 ];
 
@@ -115,46 +116,49 @@ const FAQ_ITEMS = [
   {
     question: "Does this page run a live SSL/TLS check?",
     answer:
-      "No. This page explains the capability.",
+      "No. This page explains the capability, and the example panel uses sample data. It does not run a live check.",
   },
   {
-    question: "What certificate details can be reviewed?",
+    question: "What does SSL/TLS Analysis examine?",
     answer:
-      "The review is designed to show certificate presence, common name, subject alternative names, issuer, validity window, expiration, serial, and algorithm context when those details are available.",
+      "It reviews certificate details, validity, issuer, expiration, HTTPS behavior, and available TLS configuration context for a domain.",
   },
   {
-    question: "Why does certificate expiration matter?",
+    question: "Why is an SSL/TLS certificate important?",
     answer:
-      "An expired certificate can trigger browser warnings and interrupt trust. Reviewing the validity window helps you plan renewal before the certificate expires.",
+      "A certificate helps a browser verify the identity of the site and establish an encrypted connection. A valid certificate is one part of a secure connection, not a guarantee that the site is secure.",
   },
   {
-    question: "Is TLS configuration part of the review?",
+    question: "What happens when an SSL/TLS certificate expires?",
     answer:
-      "The review is designed to include certificate chain and algorithm context. It does not perform a live configuration audit or guarantee that every TLS setting is covered.",
+      "Browsers may show a warning, and visitors may be unable to establish a trusted connection. Reviewing the expiration date helps you plan renewal.",
   },
   {
-    question: "Does SSL/TLS Analysis replace a full security assessment?",
+    question: "Does a valid certificate mean my website is completely secure?",
     answer:
-      "No. It focuses on the certificate and HTTPS layer. Use it alongside the other Website Security Check tools and a broader security review.",
+      "No. A certificate protects the connection between the browser and the site. It does not cover application code, authentication, server configuration, or other security controls.",
   },
 ];
 
 const RELATED_TOOLS = [
   {
     title: "DNS Security",
-    description: "Review DNS records, nameservers, and resolution context.",
+    description:
+      "Review DNS records that connect your domain to websites, email, and other services.",
     icon: NetworkIcon,
     href: "/platform/website-security-check/dns-security",
   },
   {
     title: "Security Headers",
-    description: "Check browser-facing HTTP security headers and policy.",
+    description:
+      "Review HTTP response headers that help browsers apply security protections.",
     icon: CodeIcon,
     href: "/platform/website-security-check/security-headers",
   },
   {
     title: "Email Security",
-    description: "Review SPF, DKIM, and DMARC authentication signals.",
+    description:
+      "Review SPF, DKIM, and DMARC records used to help verify email senders.",
     icon: MailIcon,
     href: "/platform/website-security-check/email-security",
   },
@@ -492,20 +496,19 @@ function SslTlsHero() {
           <Reveal className="min-w-0">
             <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">
               <span aria-hidden="true" className="h-px w-8 bg-emerald" />
-              Website Security Check
+              SSL/TLS Security
             </p>
 
             <h1
               id="ssl-tls-heading"
               className="mt-4 max-w-[46rem] text-balance text-[2.4rem] font-semibold leading-[1.03] tracking-[-0.055em] text-charcoal sm:text-[3rem] lg:text-[3.35rem]"
             >
-              SSL/TLS Analysis
+              Review Your SSL/TLS Certificate and HTTPS Settings
             </h1>
 
             <p className="mt-5 max-w-[44rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
-              Understand the certificate and connection signals behind a
-              website&apos;s HTTPS posture, from issuer and validity to HTTPS
-              status and TLS configuration context.
+              Check your website&apos;s certificate details and HTTPS
+              configuration to understand how secure connections are set up.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -548,10 +551,10 @@ function SslTlsHero() {
 
             <ul className="mt-4 space-y-2.5 border-t border-border pt-4">
               {[
-                "Certificate information",
-                "Validity & expiration",
-                "Issuer & algorithm context",
-                "HTTPS & TLS configuration",
+                "Certificate validity and expiration",
+                "Certificate issuer",
+                "HTTPS connection settings",
+                "Available TLS configuration details",
               ].map((item) => (
                 <li
                   key={item}
@@ -602,23 +605,22 @@ export default function SslTlsAnalysisPage() {
                 <div className="mt-4 space-y-4 sm:mt-5">
                   <p className={`max-w-[48rem] ${BODY_TEXT}`}>
                     SSL/TLS is the encryption layer between a browser and a
-                    website. A current, correctly issued certificate helps
-                    visitors confirm they are connecting to the intended site,
-                    and HTTPS keeps the connection from being readable in
-                    transit.
+                    website. A valid certificate helps a browser verify the
+                    identity of the site it is connecting to, and HTTPS helps
+                    protect the connection in transit.
                   </p>
                   <BulletList
                     items={[
-                      "Protects data in transit between visitors and the site.",
-                      "Supports visitor trust with a valid HTTPS connection.",
-                      "Helps avoid browser warnings caused by missing or expired certificates.",
-                      "Surfaces certificate lifecycle details that are easy to overlook.",
+                      "Helps protect data sent between visitors and the site.",
+                      "Supports a trusted HTTPS connection.",
+                      "Helps you review expiration details before they cause browser warnings.",
+                      "Shows certificate lifecycle details that are easy to overlook.",
                     ]}
                   />
                   <Callout title="Certificate context is one signal">
                     A certificate alone does not make a site secure. Issuer,
-                    hostname coverage, validity, HTTPS behavior, and TLS
-                    configuration all contribute to the connection picture.
+                    hostname coverage, validity, HTTPS behavior, and available
+                    TLS configuration all contribute to the connection picture.
                   </Callout>
                 </div>
               </section>
@@ -633,8 +635,8 @@ export default function SslTlsAnalysisPage() {
                 </SectionHeading>
                 <div className="mt-4 space-y-5 sm:mt-5">
                   <p className={`max-w-[48rem] ${BODY_TEXT}`}>
-                    Website Security Check is designed to present the
-                    certificate and HTTPS context available from a scan.
+                    This page explains the certificate and HTTPS details the
+                    check is designed to present for a domain.
                   </p>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {REVIEW_ITEMS.map((item) => (
@@ -642,8 +644,8 @@ export default function SslTlsAnalysisPage() {
                     ))}
                   </div>
                   <p className="text-[11.5px] leading-[1.65] text-text-muted">
-                    Fields shown depend on the certificate and connection data
-                    available from a scan.
+                    Fields shown depend on the certificate and connection
+                    details available for a domain.
                   </p>
                 </div>
               </section>
@@ -659,7 +661,7 @@ export default function SslTlsAnalysisPage() {
                 <div className="mt-4 space-y-5 sm:mt-5">
                   <p className={`max-w-[48rem] ${BODY_TEXT}`}>
                     The intended flow is simple: start with a domain, review the
-                    analysis, and read the certificate and HTTPS context in one
+                    certificate details, and read the HTTPS context in one
                     summary.
                   </p>
                   <ol className="grid gap-3 sm:grid-cols-3">
@@ -679,8 +681,9 @@ export default function SslTlsAnalysisPage() {
                   Example result
                 </SectionHeading>
                 <p className={`mt-4 max-w-[48rem] sm:mt-5 ${BODY_TEXT}`}>
-                  The panel below shows the kind of certificate and HTTPS
-                  context the analysis is designed to present.
+                  The panel below uses sample data to show the kind of
+                  certificate and HTTPS context the analysis is designed to
+                  present.
                 </p>
                 <SampleResultsPanel />
               </section>
@@ -732,7 +735,7 @@ export default function SslTlsAnalysisPage() {
                     href="/platform#website-security-check"
                     className="btn-primary group w-full shrink-0 sm:w-auto"
                   >
-                    Open Security Check
+                    Explore Security Checks
                     <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
                   </Link>
                 </div>

@@ -2,18 +2,21 @@ import Reveal from "@/components/platform/Reveal";
 
 const STEPS = [
   {
-    title: "Sign in",
-    description: "Enter your email and we send you a one-time code. There is no password to create.",
+    title: "Choose a Tool",
+    description:
+      "Select Website Security Check or Asset Discovery based on what you want to examine.",
     preview: "code",
   },
   {
-    title: "Add your domain",
-    description: "Tell Securelyze which website to review, then run a security check or asset discovery.",
+    title: "Enter Your Target",
+    description:
+      "Enter a domain or another supported target to begin your check.",
     preview: "domain",
   },
   {
-    title: "Review your results",
-    description: "See what each check found and what to fix first. Results above are a sample.",
+    title: "Review Your Results",
+    description:
+      "Explore the findings, understand the security information, and identify what may need further review.",
     preview: "results",
   },
 ];
@@ -99,8 +102,12 @@ export default function HowItWorksSection() {
           How it works
         </p>
         <h2 id="how-it-works-heading" className="heading-2 mt-3 max-w-3xl text-balance">
-          From sign in to results in three steps
+          Get Started in Three Simple Steps
         </h2>
+        <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-text-secondary sm:text-base">
+          Choose a tool, enter a supported target, and review the available
+          results.
+        </p>
         <ol className="mt-6 grid grid-cols-1 gap-3.5 md:grid-cols-3 lg:mt-8">
           {STEPS.map(({ title, description, preview }, index) => {
             const Preview = PREVIEWS[preview];

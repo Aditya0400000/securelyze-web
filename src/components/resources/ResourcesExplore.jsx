@@ -19,9 +19,9 @@ export default function ResourcesExplore() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <ResourcesSectionHeading
           id="explore-heading"
-          eyebrow="03 / Explore"
-          title="Try it yourself, then keep up with what changes."
-          description="Practical tutorials for checking the signals yourself, plus a place for product updates when there are verified changes to share."
+          eyebrow="EXPLORE"
+          title="Explore Security Tools and Resources"
+          description="Find tools and resources to review security configurations, discover internet-facing assets, and better understand your online infrastructure."
         />
 
         <div className="mt-10">

@@ -24,10 +24,11 @@ export default function HomeFinalCta() {
                 START WITH VISIBILITY
               </p>
               <h2 id="home-final-cta-heading" className="heading-2 mt-3 text-balance text-white!">
-                Ready to see your exposure?
+                Get a Clearer View of Your Security
               </h2>
               <p className="mt-4 text-pretty text-[15px] leading-[1.75] text-soft-green/75">
-                Discover what your website reveals to the public. Run your first security scan and understand what needs attention.
+                Review security configurations and discover internet-facing
+                assets to better understand your digital infrastructure.
               </p>
             </div>
 
@@ -35,7 +36,7 @@ export default function HomeFinalCta() {
               href={PLATFORM_LOGIN_URL}
               className="btn-primary group w-full shrink-0 justify-self-start motion-reduce:transition-none! sm:w-auto lg:justify-self-end"
             >
-              Start free scan
+              Get Started
               <ArrowRightIcon className="size-4 transition-transform duration-200 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none" />
             </Link>
           </div>

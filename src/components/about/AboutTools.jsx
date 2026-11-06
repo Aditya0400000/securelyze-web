@@ -11,8 +11,8 @@ import {
 } from "./AboutIcons";
 
 const CHECKER_SIGNALS = [
-  { label: "SSL / TLS", icon: CertificateIcon },
-  { label: "DNS", icon: NetworkIcon },
+  { label: "SSL/TLS", icon: CertificateIcon },
+  { label: "DNS & email", icon: NetworkIcon },
   { label: "Security headers", icon: CodeIcon },
 ];
 
@@ -41,13 +41,12 @@ export default function AboutTools() {
             id="tools-heading"
             className="mt-4 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
           >
-            Two views of the same public picture.
+            What You Can Explore with Securelyze
           </h2>
           <p className="mx-auto mt-5 max-w-[37rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px]">
-            The Security Checker looks at how a website is configured. Asset
-            Discovery widens the frame to the public assets connected to it.
-            Each answers a different question; together they form a more useful
-            starting point.
+            From domain settings to publicly visible network services,
+            Securelyze helps you examine useful information about your
+            internet-facing assets.
           </p>
         </div>
 
@@ -69,10 +68,10 @@ export default function AboutTools() {
                 </span>
                 <div>
                   <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
-                    Configuration context
+                    Security configuration
                   </p>
                   <p className="mt-0.5 text-[11px] font-semibold text-[#183B32]">
-                    Security Checker
+                    Website Security Check
                   </p>
                 </div>
               </div>
@@ -82,12 +81,12 @@ export default function AboutTools() {
             </div>
 
             <h3 className="relative mt-8 max-w-[27rem] text-balance text-[1.3rem] font-bold leading-[1.2] tracking-[-0.035em] text-[#101A18] sm:text-[1.55rem]">
-              Understand a website&rsquo;s public configuration.
+              Review important security settings.
             </h3>
             <p className="relative mt-3 max-w-[29rem] text-pretty text-[13.5px] leading-[1.7] text-[#475569]">
-              Review SSL/TLS certificate context, DNS records, and
-              browser-facing security headers in one place, with enough context
-              to decide what deserves a closer look.
+              Review DNS records, SSL/TLS certificate information, email
+              authentication, and HTTP security headers. Use the available
+              details to decide which settings need further review.
             </p>
 
             <div className="relative mt-6 flex flex-wrap gap-2">
@@ -111,7 +110,7 @@ export default function AboutTools() {
                 href="/platform#website-security-check"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#101A18] px-4 text-[12px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(16,26,24,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#183B32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#059669] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
-                Open the Security Checker
+                Explore Security Checks
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
             </div>
@@ -131,7 +130,7 @@ export default function AboutTools() {
                 </span>
                 <div>
                   <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-white/55">
-                    External footprint
+                    Public assets
                   </p>
                   <p className="mt-0.5 text-[11px] font-semibold text-white/85">
                     Asset Discovery
@@ -144,12 +143,12 @@ export default function AboutTools() {
             </div>
 
             <h3 className="relative mt-8 max-w-[27rem] text-balance text-[1.3rem] font-bold leading-[1.2] tracking-[-0.035em] text-white sm:text-[1.55rem]">
-              See the public assets around a website.
+              Explore internet-facing assets.
             </h3>
             <p className="relative mt-3 max-w-[29rem] text-pretty text-[13.5px] leading-[1.7] text-white/65">
-              Surface related domains, subdomains, and internet-facing
-              endpoints that may make up a broader public footprint, extending
-              the view beyond the home page.
+              Explore publicly visible domains, subdomains, IP addresses,
+              hosts, and available port and service information. Related-domain
+              information depends on what is supported and publicly available.
             </p>
 
             <div className="relative mt-6 grid grid-cols-3 gap-2">
@@ -180,7 +179,7 @@ export default function AboutTools() {
                 href="#ecosystem"
                 className="group inline-flex items-center gap-2 text-[11.5px] font-semibold text-[#10B981] transition-colors duration-200 hover:text-[#D1FAE5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-4 focus-visible:ring-offset-[#101A18] motion-reduce:transition-none"
               >
-                See how the view connects
+                See how the tools connect
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </a>
               <span className="inline-flex items-center gap-1.5 text-[9px] font-medium uppercase tracking-[0.13em] text-white/45">
@@ -213,12 +212,11 @@ export default function AboutTools() {
                 Start with visibility
               </p>
               <h2 className="mt-4 max-w-[37rem] text-balance text-[1.65rem] font-bold leading-[1.14] tracking-[-0.045em] text-white sm:text-[2.1rem]">
-                See what your website shares with the public.
+                Start Exploring Your Security
               </h2>
               <p className="mt-4 max-w-[34rem] text-pretty text-[13.5px] leading-[1.7] text-white/65">
-                Use the Security Checker to review the public configuration of
-                a website, then follow the signals that matter to your next
-                question.
+                Review security configurations and explore internet-facing
+                assets to better understand your online infrastructure.
               </p>
             </div>
 
@@ -227,7 +225,7 @@ export default function AboutTools() {
                 href="/platform#website-security-check"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#10B981] px-4 text-[12px] font-semibold tracking-[-0.005em] text-[#101A18] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_14px_30px_-18px_rgba(5,150,105,0.9)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#059669] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101A18] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
-                Open the Security Checker
+                Explore Security Checks
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
               <Link

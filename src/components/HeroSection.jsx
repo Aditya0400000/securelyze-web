@@ -25,21 +25,22 @@ export default function HeroSection() {
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full bg-emerald-light shadow-[0_0_8px_var(--emerald-light)]"
             />
-            Free website security checker
+            INTERNET-FACING SECURITY &amp; ASSET DISCOVERY
           </p>
 
           <h1
             id="hero-heading"
             className="mt-5 max-w-[44rem] text-balance text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.055em] text-white sm:mt-6 sm:text-[3.4rem] lg:text-[3rem] xl:text-[3.75rem]"
           >
-            See your website the way an{" "}
-            <span className="whitespace-nowrap text-emerald-light">attacker&apos;</span> does
+            See What&apos;s{" "}
+            <span className="whitespace-nowrap text-emerald-light">Exposed.</span>{" "}
+            Know What to Check.
           </h1>
 
           <p className="mt-5 max-w-[36rem] text-pretty text-[15px] leading-[1.75] text-soft-green/75 sm:mt-6 sm:text-base">
-            Securelyze checks your SSL/TLS certificate, DNS records, security
-            headers and email authentication, then finds the subdomains, hosts
-            and open services anyone on the internet can reach.
+            Discover internet-facing assets, check security configurations, and
+            review security-related findings across your domains, IP addresses,
+            and network services.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
@@ -47,7 +48,7 @@ export default function HeroSection() {
               href={PLATFORM_LOGIN_URL}
               className="group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-emerald px-5 text-[14px] font-semibold tracking-[-0.01em] text-charcoal shadow-[0_10px_24px_-14px_rgba(16,185,129,0.65)] transition-[transform,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-[0_14px_28px_-16px_rgba(5,150,105,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-light focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-safe:hover:-translate-y-px motion-reduce:transition-none"
             >
-              Start free scan
+              Start Security Check
               <span
                 aria-hidden="true"
                 className="text-[15px] transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
@@ -60,7 +61,7 @@ export default function HeroSection() {
               href="#how-it-works"
               className="group inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/20 bg-white/[0.06] px-5 text-[14px] font-semibold tracking-[-0.01em] text-white transition-[transform,border-color,background-color] duration-200 ease-out hover:border-emerald/55 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-light focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-safe:hover:-translate-y-px motion-reduce:transition-none"
             >
-              See how it works
+              Explore Tools
             </a>
           </div>
 

@@ -7,19 +7,19 @@ const FAQS = [
       "No. The guides and tutorials on this page are free to read. No account is required to browse the educational content.",
   },
   {
-    question: "Does Securelyze automatically fix security issues?",
+    question: "Does this page run checks or change my settings?",
     answer:
-      "No. Securelyze is designed to help review public website signals. It does not automatically apply changes, fix findings, or guarantee security.",
+      "No. These resources explain security configuration and Asset Discovery. The walkthroughs show manual steps using browser or DNS tools; the page does not run scans or change settings.",
   },
   {
     question: "Where should I start?",
     answer:
-      "Start with Learn for the fundamentals, then use the tutorials in Explore to inspect the signals yourself.",
+      "Start with Learn for concepts. Explore has walkthroughs and answers. The platform link below leads to the tool overviews.",
   },
   {
-    question: "Are articles and product updates available?",
+    question: "Which resources can I read now?",
     answer:
-      "No articles or product updates have been published yet.",
+      "The concept guides and walkthroughs on this page are available. Journal articles, Security Insights, case studies, and product updates have not been published.",
   },
 ];
 
@@ -42,9 +42,8 @@ export default function ResourcesQuickAnswers() {
             A few things to know.
           </h3>
           <p className="mt-3 max-w-[28rem] text-[12px] leading-[1.65] text-[#64748B]">
-            Short answers about the resources and what Securelyze does. If you
-            are looking for a specific product answer, start with the platform
-            pages or the guides above.
+            Answers about what is available here and how to find the platform
+            overviews.
           </p>
         </div>
 

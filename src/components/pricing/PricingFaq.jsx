@@ -2,24 +2,24 @@ import { CheckIcon, ChevronDownIcon } from "./PricingIcons";
 
 const FAQS = [
   {
-    question: "What is included in the Silver plan?",
+    question: "How much does Securelyze cost?",
     answer:
-      "Silver includes basic SSL/TLS, domain/DNS, security-header, and HTTPS checks, plus a basic issue summary. The 100-checks-per-month limit is a proposed plan limit.",
+      "Securelyze's current Free plan is listed at $0.",
   },
   {
-    question: "Is the Silver plan really $0?",
+    question: "What can I explore, and do I need an account?",
     answer:
-      "Yes. Silver is presented at $0/month. The crossed-out $49 figure is a visual reference only, not a previous or discounted price.",
+      "The linked public overviews cover DNS, SSL/TLS, email authentication, HTTP headers, and Asset Discovery without requiring sign-in. They explain the capabilities and use sample data, not live results. The hosted platform has a separate sign-in page and its own access requirements.",
   },
   {
-    question: "What is the Custom plan?",
+    question: "Does Securelyze automatically fix security issues?",
     answer:
-      "Custom is designed for teams that need higher limits, multiple users, advanced scanning, detailed reports and integrations, or priority support. These custom capabilities are proposed and not yet available for online purchase.",
+      "The information is intended for review and follow-up. These public pages do not run live scans or change your configuration. Validate a concern and involve the person responsible for the setting before making changes.",
   },
   {
-    question: "How do I get started?",
+    question: "Can I check any website or domain?",
     answer:
-      "Use the Website Security Checker to run a basic check. Demo scheduling and sales contact routes are not yet connected.",
+      "Only assess websites, domains, and other assets you own or are authorized to assess. A public address or an open port is not permission to test a system.",
   },
 ];
 
@@ -66,16 +66,16 @@ export default function PricingFaq() {
               id="pricing-faq-heading"
               className="mt-4 max-w-[25rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem]"
             >
-              Pricing questions, answered plainly.
+              Questions about Free access
             </h2>
             <p className="mt-5 max-w-[26rem] text-pretty text-[14px] leading-[1.7] text-[#475569]">
-              A quick look at how the Silver and Custom plans are presented,
-              including which details are still proposed.
+              What the Free plan costs, where the links take you, and how to
+              use security information responsibly.
             </p>
 
             <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1FAE5] bg-[#ECFDF5] px-3 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.13em] text-[#047857]">
               <CheckIcon className="h-3 w-3 text-[#047857]" />
-              Silver is free · Custom is proposed
+              Free plan · $0
             </p>
           </div>
 

@@ -12,28 +12,28 @@ const CHECKS = [
   {
     title: "SSL/TLS Analysis",
     description:
-      "Review certificate information, HTTPS status, and TLS configuration context.",
+      "Review certificate validity, issuer details, expiration, and available HTTPS settings.",
     icon: CertificateIcon,
     href: "/platform/website-security-check/ssl-tls",
   },
   {
     title: "DNS Security",
     description:
-      "Explore DNS records, nameserver context, and resolution details.",
+      "Review the DNS records that connect your domain to websites, email services, and other resources.",
     icon: NetworkIcon,
     href: "/platform/website-security-check/dns-security",
   },
   {
     title: "Security Headers",
     description:
-      "Check important HTTP security headers and browser-facing policy.",
+      "Check HTTP response headers that help browsers apply security protections.",
     icon: CodeIcon,
     href: "/platform/website-security-check/security-headers",
   },
   {
     title: "Email Security",
     description:
-      "Review SPF, DKIM, and DMARC records that help verify senders and reduce spoofing risk.",
+      "Review SPF, DKIM, and DMARC records used to help verify email senders.",
     icon: MailIcon,
     href: "/platform/website-security-check/email-security",
   },
@@ -101,13 +101,13 @@ export default function WebsiteSecurityCheckSection() {
             id="website-security-check-heading"
             className="mt-4 text-balance text-[2rem] font-bold leading-[1.06] tracking-[-0.045em] text-charcoal sm:text-[2.35rem] lg:text-[2.75rem]"
           >
-            Review the signals that shape your public security posture.
+            Check Your Website&apos;s Security Settings
           </h2>
 
           <p className="mt-5 max-w-[41rem] text-pretty text-[15px] leading-[1.75] text-text-secondary sm:mt-6 sm:text-base">
-            Inspect SSL/TLS certificate context, DNS security, browser-facing
-            headers, and email-security signals in one place. HTTPS checks sit
-            within SSL/TLS Analysis.
+            Review important security configurations across your website and
+            domain, including DNS records, SSL/TLS certificates, email
+            authentication, and HTTP security headers.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -136,7 +136,8 @@ export default function WebsiteSecurityCheckSection() {
             className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald"
           />
           Each tool opens a dedicated page with clearly labeled illustrative
-          examples.
+          examples. These pages help you review configuration information; they
+          do not change settings or apply fixes.
         </p>
       </div>
     </section>

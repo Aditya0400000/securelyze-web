@@ -10,7 +10,7 @@ import { SUBDOMAIN_DISCOVERY_CONTENT } from "@/components/platform/assetDiscover
 export const metadata = {
   title: "Subdomain Discovery | Asset Discovery | Securelyze",
   description:
-    "Understand how Subdomain Discovery organizes publicly discoverable hostnames, DNS context, and parent-domain relationships.",
+    "Find publicly visible subdomains associated with your domain and understand the websites, applications, and services connected to it.",
 };
 
 export default function SubdomainDiscoveryRoute() {

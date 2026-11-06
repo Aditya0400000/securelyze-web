@@ -29,16 +29,16 @@ export default function PricingCta() {
                 id="pricing-cta-heading"
                 className="mt-4 max-w-[37rem] text-balance text-[1.65rem] font-bold leading-[1.14] tracking-[-0.045em] text-white sm:text-[2.1rem]"
               >
-                Better Security Starts with Better Visibility.
+                Start Exploring Securelyze
               </h2>
 
               <p className="mt-4 max-w-[34rem] text-pretty text-[13.5px] leading-[1.7] text-white/65">
-                Explore your website&rsquo;s security signals and discover your
-                public-facing digital assets.
+                Choose a security check or asset discovery tool to learn more
+                about your internet-facing environment.
               </p>
 
               <p className="mt-6 max-w-[34rem] text-[9.5px] font-medium uppercase tracking-[0.16em] text-white/55">
-                Silver is free. No subscription required for the basic plan.
+                Free plan · $0
               </p>
             </div>
 
@@ -47,7 +47,7 @@ export default function PricingCta() {
                 href="/platform#website-security-check"
                 className="group inline-flex h-11 w-full min-w-0 items-center justify-center gap-2 rounded-xl bg-emerald px-4 text-center text-[12px] font-semibold tracking-[-0.005em] text-charcoal shadow-[var(--shadow-btn-primary)] transition-[background-color,transform] duration-200 ease-out hover:bg-emerald-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-safe:hover:-translate-y-px motion-reduce:transition-none sm:w-auto"
               >
-                Check Website Security
+                Get Started
                 <ArrowRightIcon className="size-3.5 shrink-0 transition-transform duration-200 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
               <Link

@@ -9,10 +9,10 @@ import {
 const SIGNALS = [
   {
     number: "01",
-    overline: "Connection context",
-    title: "SSL / TLS",
+    overline: "Encrypted connections",
+    title: "SSL/TLS certificates",
     description:
-      "Review certificate presence and context, including details exposed during a connection.",
+      "Understand certificate validity, hostname coverage, and the settings behind an HTTPS connection.",
     icon: CertificateIcon,
     iconClass:
       "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
@@ -20,10 +20,10 @@ const SIGNALS = [
   },
   {
     number: "02",
-    overline: "Routing & services",
-    title: "DNS",
+    overline: "Routing & email",
+    title: "DNS & email authentication",
     description:
-      "See how records route traffic and support services such as email and domain verification.",
+      "Review domain records and learn how SPF, DKIM, and DMARC help authenticate email sent using a domain.",
     icon: NetworkIcon,
     iconClass:
       "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
@@ -34,7 +34,7 @@ const SIGNALS = [
     overline: "Browser policy",
     title: "HTTP security headers",
     description:
-      "Understand which browser-facing policies are advertised, and where the configuration may deserve a closer look.",
+      "Learn how HTTP headers set browser security rules and which values may need a closer look.",
     icon: CodeIcon,
     iconClass:
       "border-[#D1FAE5] bg-[#ECFDF5] text-[#059669]",
@@ -42,10 +42,10 @@ const SIGNALS = [
   },
   {
     number: "04",
-    overline: "External footprint",
+    overline: "Public infrastructure",
     title: "Internet-facing assets",
     description:
-      "Map public-facing domains, subdomains, and related endpoints that make up a broader footprint.",
+      "Explore domains, subdomains, IP addresses, hosts, and available port and service information.",
     icon: RadarIcon,
     iconClass:
       "border-[#D1FAE5] bg-[#ECFDF5] text-[#047857]",
@@ -69,20 +69,22 @@ export default function AboutSignals() {
           <div className="lg:col-span-7">
             <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
               <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
-              What you can understand
+              Understanding the platform
             </p>
             <h2
               id="signals-heading"
               className="mt-4 max-w-[39rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
             >
-              The public signals behind a clearer security picture.
+              A Clearer View of Your Internet-Facing Security
             </h2>
           </div>
 
           <p className="max-w-[34rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px] lg:col-span-5 lg:justify-self-end">
-            Securelyze focuses on what a website makes visible to the public.
-            Used together, these signals help you ask better questions about
-            configuration and exposure.
+            Your online presence includes more than a website. Domains,
+            subdomains, IP addresses, and network services can all be visible on
+            the internet. Securelyze helps you explore these assets and review
+            important security configurations so you can better understand your
+            digital infrastructure.
           </p>
         </div>
 
@@ -129,12 +131,12 @@ export default function AboutSignals() {
           <div className="flex items-center gap-2 text-[#047857]">
             <ShieldIcon className="h-4 w-4 shrink-0" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.13em]">
-              Signals, not guarantees
+              Information for review
             </span>
           </div>
           <p className="text-[11.5px] leading-[1.6] text-[#64748B] sm:ml-2">
-            These signals are context for review, not a substitute for a full
-            security assessment.
+            Public information can guide further investigation. It does not
+            confirm a vulnerability or replace a full security assessment.
           </p>
         </div>
       </div>

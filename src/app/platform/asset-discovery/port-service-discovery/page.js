@@ -10,7 +10,7 @@ import { PORT_SERVICE_DISCOVERY_CONTENT } from "@/components/platform/assetDisco
 export const metadata = {
   title: "Port & Service Discovery | Asset Discovery | Securelyze",
   description:
-    "Understand how Port & Service Discovery organizes internet-facing ports, service context, and exposure patterns.",
+    "Review available information about open ports and publicly accessible network services and understand what may be reachable from the internet.",
 };
 
 export default function PortServiceDiscoveryRoute() {

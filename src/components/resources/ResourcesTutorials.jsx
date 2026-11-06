@@ -46,7 +46,7 @@ const TUTORIALS = [
     icon: LockIcon,
     accent: "lime",
     steps: [
-      "Open the site in a browser and look at the address bar. An https:// address and a lock indicator mean the page is using a TLS connection. The exact icon varies by browser.",
+      "Open the site in a browser and inspect its connection details. Check for an https:// address and review any certificate or connection warnings.",
       "Try the http:// version of the URL. A well-configured site should redirect to HTTPS rather than serve the page over an unencrypted connection.",
       "Open developer tools and review the Network or Security panel. Confirm that the main document and important resources load over HTTPS.",
       "Watch for mixed-content warnings. A page can be served over HTTPS while still loading some insecure resources.",
@@ -59,7 +59,7 @@ const TUTORIALS = [
     number: "02",
     title: "Understanding SSL/TLS certificates",
     description:
-      "Learn what a certificate proves and which details are worth checking.",
+      "Learn what a certificate tells you and which details are worth checking.",
     difficulty: "Beginner",
     time: "6 min",
     icon: CertificateIcon,
@@ -86,7 +86,7 @@ const TUTORIALS = [
     steps: [
       "Use a public DNS lookup tool or a command-line tool such as dig or nslookup.",
       "Review A and AAAA records for web hosting, CNAME records for aliases, and MX records for email routing.",
-      "Check TXT records for SPF, DKIM, DMARC, and domain-verification entries.",
+      "Check TXT records for SPF and domain verification. Look up DMARC at _dmarc.example.com and DKIM keys using the selector supplied by your email provider.",
       "Compare the records with the services you expect. Remove stale entries you no longer use, and protect the account that controls the records.",
     ],
     takeaway:
@@ -116,7 +116,7 @@ const TUTORIALS = [
     number: "05",
     title: "Understanding SPF, DKIM, and DMARC",
     description:
-      "See how the three email authentication records work together.",
+      "See how SPF, DKIM, and DMARC work together to authenticate domain email.",
     difficulty: "Intermediate",
     time: "9 min",
     icon: MailIcon,
@@ -124,7 +124,7 @@ const TUTORIALS = [
     steps: [
       "Look up the domain's TXT records and find the SPF record that begins with v=spf1. It lists the senders authorized to send mail for the domain.",
       "Find the DKIM selector and public key published in DNS. The selector is usually provided by your email provider.",
-      "Find the DMARC record at _dmarc.yourdomain.com. It tells receiving servers what to do when authentication fails and where to send reports.",
+      "Find the DMARC record at _dmarc.yourdomain.com. It publishes a policy for messages that fail DMARC authentication and can specify where to send reports.",
       "Start DMARC with a monitoring policy before moving to quarantine or reject. Use the reports to find legitimate senders you may have missed.",
     ],
     takeaway:

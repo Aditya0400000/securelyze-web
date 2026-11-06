@@ -6,32 +6,32 @@ const FAQS = [
   {
     question: "What is Securelyze?",
     answer:
-      "Securelyze reviews your website’s public security setup, including SSL/TLS, DNS, security headers and email authentication, and discovers the domains, subdomains, hosts and services exposed to the internet.",
+      "Securelyze is a platform for reviewing security configurations and discovering internet-facing assets. It helps you understand information about domains, DNS, SSL/TLS, email security, IP addresses, and network services.",
   },
   {
-    question: "How do I sign in?",
+    question: "What can I check with Securelyze?",
     answer:
-      "Enter your email and we send you a one-time code. There is no password to create.",
+      "You can use the available tools to review DNS records, SSL/TLS certificates, email authentication, HTTP security headers, and information about internet-facing assets and services.",
   },
   {
-    question: "Is Securelyze free to use?",
+    question: "What is Asset Discovery?",
     answer:
-      "Yes, you can start for free. No credit card is needed to begin.",
+      "Asset Discovery helps you find publicly visible assets associated with a target, including supported domain, subdomain, IP address, and service information.",
   },
   {
-    question: "What does the website security check review?",
+    question: "Does Securelyze fix security issues automatically?",
     answer:
-      "SSL/TLS certificates and configuration, DNS records, HTTP security headers, HTTPS status, and SPF, DKIM and DMARC email security.",
+      "No. Securelyze helps you review security configurations and findings. Any necessary changes or fixes must be assessed and carried out separately.",
   },
   {
-    question: "What does asset discovery find?",
+    question: "Do I need technical knowledge to use Securelyze?",
     answer:
-      "Subdomains, related domains, IP addresses and hosts, and open ports and services that are visible from the internet.",
+      "You can begin with basic information, such as a domain name. Results are presented in an organized format, although some technical knowledge may help when reviewing detailed findings.",
   },
   {
-    question: "Do I need to install anything?",
+    question: "Should I only scan assets I own?",
     answer:
-      "No. Securelyze runs in your browser on the Securelyze platform.",
+      "Only scan or assess systems you own or have permission to test. Make sure you have the appropriate authorization before using security tools on third-party systems.",
   },
 ];
 

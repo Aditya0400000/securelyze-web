@@ -62,7 +62,7 @@ const GUIDES = [
     icon: CertificateIcon,
     accent: "teal",
     description:
-      "A TLS certificate proves that a server is allowed to present a particular domain and enables encrypted connections. HTTPS is HTTP carried over that encrypted connection, so visitors can exchange data without it being readable in transit.",
+      "A TLS certificate helps a browser verify the hostname it connects to. HTTPS uses TLS to encrypt data exchanged between the browser and the server.",
     takeaway:
       "A valid, current certificate is necessary but not sufficient. Check that HTTPS is used consistently and that the certificate matches the domain.",
   },
@@ -73,7 +73,7 @@ const GUIDES = [
     icon: NetworkIcon,
     accent: "amber",
     description:
-      "DNS translates domain names into the records that route traffic and support services such as email. Misconfigured records can redirect visitors, weaken email trust, or leave services exposed without an obvious change to the website.",
+      "DNS records connect domain names to websites, mail servers, and other services. Incorrect or outdated records can send traffic to unintended systems or disrupt access.",
     takeaway:
       "Review the records you actually need, remove stale entries, and protect the account that controls your DNS.",
   },
@@ -95,7 +95,7 @@ const GUIDES = [
     icon: MailIcon,
     accent: "lime",
     description:
-      "SPF lists servers allowed to send mail for your domain. DKIM adds a cryptographic signature to outgoing messages. DMARC tells receiving servers what to do when authentication fails and gives you reporting on the results.",
+      "SPF identifies permitted sending servers for a domain. DKIM lets receiving systems verify a message's signature. DMARC checks whether SPF or DKIM authentication aligns with the visible sender domain and publishes a policy for failures.",
     takeaway:
       "Use all three together. SPF and DKIM support authentication; DMARC turns that evidence into a policy.",
   },
@@ -175,8 +175,8 @@ export default function SecurityGuidesContent() {
           as="h3"
           size="md"
           eyebrow="Security Guides"
-          title="The essentials, explained without the jargon."
-          description="Five starting points for understanding the public signals that shape a website's security picture, followed by a checklist you can use for a periodic review."
+          title="Five concepts behind common security settings"
+          description="Read about website security fundamentals, TLS, DNS, HTTP headers, and email authentication. Then use the checklist to organize a review."
         />
 
         <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -210,9 +210,9 @@ export default function SecurityGuidesContent() {
                 A practical website security checklist
               </h4>
               <p className="mt-3 text-[12.5px] leading-[1.7] text-white/60">
-                Use this as a starting point for a periodic review. It is not a
-                full audit, but it helps you catch common configuration gaps
-                before they become bigger problems.
+                Use this checklist to organize routine maintenance and
+                configuration questions. Review the settings you manage and
+                discuss provider-managed settings with the responsible team.
               </p>
               <p className="mt-5 text-[10px] leading-[1.65] text-white/55">
                 Covers public configuration and operational basics. It does not

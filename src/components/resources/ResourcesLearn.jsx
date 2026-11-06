@@ -33,9 +33,9 @@ export default function ResourcesLearn() {
       <div className="mx-auto w-full max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24">
         <ResourcesSectionHeading
           id="learn-heading"
-          eyebrow="01 / Learn"
-          title="Build a foundation you can actually use."
-          description="Start with the fundamentals, then move into practical habits. Everything in this section is written to be understood, not just skimmed."
+          eyebrow="LEARN"
+          title="Understand Security, One Concept at a Time"
+          description="Explore essential security concepts, from domain configurations and HTTPS to internet-facing assets and network services."
         />
 
         <nav

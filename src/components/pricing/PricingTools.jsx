@@ -10,8 +10,8 @@ import {
 } from "./PricingIcons";
 
 const CHECKER_SIGNALS = [
-  { label: "SSL / TLS", icon: CertificateIcon },
-  { label: "DNS records", icon: NetworkIcon },
+  { label: "SSL/TLS", icon: CertificateIcon },
+  { label: "DNS & email", icon: NetworkIcon },
   { label: "HTTP headers", icon: CodeIcon },
 ];
 
@@ -46,13 +46,12 @@ export default function PricingTools() {
             id="pricing-tools-heading"
             className="mt-4 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
           >
-            A premium toolkit.{" "}
-            <span className="text-[#047857]">A zero-dollar price.</span>
+            Explore the Tools{" "}
+            <span className="text-[#047857]">Available to You</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[38rem] text-pretty text-[14.5px] leading-[1.7] text-[#475569] sm:text-[15px]">
-            Inspect a website&rsquo;s public security signals or widen the view
-            to the assets around it. Both tools sit at the center of the
-            Securelyze experience.
+            Review important security configurations and explore publicly
+            visible assets using Securelyze&apos;s available tools.
           </p>
         </div>
 
@@ -77,7 +76,7 @@ export default function PricingTools() {
                   <ShieldScanIcon className="h-5 w-5" />
                 </span>
                 <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
-                  Configuration context
+                  Security configuration
                 </p>
               </div>
               <span className="hidden rounded-full border border-[#E2E8F0] bg-white/80 px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-[#64748B] sm:inline-flex">
@@ -86,18 +85,17 @@ export default function PricingTools() {
             </div>
 
             <h3 className="relative mt-8 max-w-[28rem] text-balance text-[1.35rem] font-bold leading-[1.2] tracking-[-0.035em] text-[#101A18] sm:text-[1.6rem]">
-              Website Security Checker
+              Website Security Check
             </h3>
             <p className="relative mt-3 max-w-[30rem] text-pretty text-[13.5px] leading-[1.7] text-[#475569]">
-              Inspect supported website security signals and configuration,
-              from SSL/TLS certificate context and DNS records to HTTPS setup
-              and browser-facing headers.
+              Review DNS records, SSL/TLS certificates, email authentication,
+              and HTTP security headers.
             </p>
 
             <div className="relative mt-7 rounded-2xl border border-[#E2E8F0] bg-white/80 p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
               <div className="flex items-center justify-between gap-3 border-b border-[#F1F5F9] pb-2.5">
                 <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
-                  Public configuration view
+                  Configuration topics
                 </span>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-3">
@@ -130,7 +128,7 @@ export default function PricingTools() {
                 href="/platform#website-security-check"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#101A18] px-4 text-[12px] font-semibold tracking-[-0.005em] text-white shadow-[0_12px_28px_-18px_rgba(16,26,24,0.75)] transition-[background-color,transform] duration-200 ease-out hover:bg-[#183B32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8FAFC] motion-safe:hover:-translate-y-px motion-reduce:transition-none"
               >
-                Explore Security Checker
+                Explore Security Checks
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
               </Link>
             </div>
@@ -149,7 +147,7 @@ export default function PricingTools() {
                   <RadarIcon className="h-5 w-5" />
                 </span>
                 <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-white/50">
-                  External footprint
+                  Internet-facing assets
                 </p>
               </div>
               <span className="hidden rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-white/50 sm:inline-flex">
@@ -161,15 +159,14 @@ export default function PricingTools() {
               Asset Discovery
             </h3>
             <p className="relative mt-3 max-w-[30rem] text-pretty text-[13.5px] leading-[1.7] text-white/65">
-              Explore discoverable public-facing domains, subdomains, and
-              digital assets that may make up a broader external footprint,
-              extending the view beyond the home page.
+              Explore publicly visible domains, subdomains, IP addresses,
+              ports, and network services.
             </p>
 
             <div className="relative mt-7 overflow-hidden rounded-2xl border border-white/[0.09] bg-[#183B32]/80 p-3.5">
               <div className="flex items-center justify-between gap-3 border-b border-white/[0.07] pb-2.5">
                 <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-white/50">
-                  Public footprint view
+                  Asset relationships
                 </span>
               </div>
 

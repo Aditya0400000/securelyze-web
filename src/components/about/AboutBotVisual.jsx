@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 const MESSAGES = [
   "Hi, I am Secu.",
-  "I scan your site and explain every result.",
-  "Stay secure!",
+  "Let's take a closer look at what's visible.",
+  "Start with the public view.",
 ];
 
 const TYPE_INTERVAL = 38;
@@ -265,7 +265,7 @@ export default function AboutBotVisual() {
           aria-labelledby="about-bot-title"
           className="h-auto w-full overflow-visible"
         >
-          <title id="about-bot-title">White AI robot</title>
+          <title id="about-bot-title">Secu, the Securelyze robot</title>
 
           <g className="about-bot-float">
             <ellipse
