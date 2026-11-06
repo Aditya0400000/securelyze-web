@@ -24,6 +24,17 @@
   border-color: var(--status-high-text);
 }
 
+#contact-content .contact-form-control[aria-invalid="true"]:focus {
+  border-color: var(--status-high-text);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-high-text) 15%, transparent);
+}
+
+@media (max-width: 639px) {
+  #contact-content .contact-form-control {
+    font-size: 1rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #contact-content .contact-form-control {
     transition: none;
