@@ -156,7 +156,7 @@ export default function SecurityBasicsContent() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.025)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_70%)]"
+        className="site-light-grid site-light-grid--center"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

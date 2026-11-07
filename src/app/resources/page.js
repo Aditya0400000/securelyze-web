@@ -22,6 +22,7 @@ export default function ResourcesPage() {
       <ResourcesExplore />
       <ResourcesCta
         id="resources-closing-cta"
+        badgeEyebrow
         eyebrow="Keep learning"
         heading="Explore the settings and assets behind your domain."
         description="Use the platform overview to explore supported security checks and Asset Discovery, or revisit the checklist for a practical review."

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ArrowRightIcon } from "@/components/about/AboutIcons";
 import { PLATFORM_LOGIN_URL } from "@/lib/siteLinks";
+import HomeSectionBadge from "./HomeSectionBadge";
 
 export default function HomeFinalCta() {
   return (
@@ -20,9 +21,9 @@ export default function HomeFinalCta() {
 
           <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12">
             <div className="min-w-0 max-w-[38rem]">
-              <p className="text-[11px] font-semibold uppercase leading-relaxed tracking-[0.18em] text-emerald-light">
+              <HomeSectionBadge>
                 START WITH VISIBILITY
-              </p>
+              </HomeSectionBadge>
               <h2 id="home-final-cta-heading" className="heading-2 mt-3 text-balance text-white!">
                 Get a Clearer View of Your Security
               </h2>

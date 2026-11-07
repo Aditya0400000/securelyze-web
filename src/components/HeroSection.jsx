@@ -14,6 +14,7 @@ export default function HeroSection() {
       aria-labelledby="hero-heading"
       className="home-light-hero relative isolate overflow-hidden border-b border-border-subtle font-sans text-charcoal selection:bg-soft-green selection:text-charcoal"
     >
+      <div aria-hidden="true" className="site-light-grid" />
       <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-10 lg:px-8 lg:pb-20 lg:pt-16 xl:gap-12">
         <div className="min-w-0">
           <HomeSectionBadge>

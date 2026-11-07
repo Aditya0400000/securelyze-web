@@ -30,7 +30,7 @@ export default function ResourcesLearn() {
       aria-labelledby="learn-heading"
       className="relative scroll-mt-28 bg-white font-sans"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-8 pt-16 sm:px-6 sm:pb-10 sm:pt-20 lg:px-8 lg:pb-12 lg:pt-24">
         <ResourcesSectionHeading
           id="learn-heading"
           eyebrow="LEARN"

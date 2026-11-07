@@ -13,7 +13,7 @@ export default function ResourcesExplore() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute right-[-10rem] top-[-8rem] h-[28rem] w-[28rem] rounded-full bg-[#10B981]/[0.08] blur-[100px]" />
         <div className="absolute bottom-[-10rem] left-[-8rem] h-[24rem] w-[24rem] rounded-full bg-[#10B981]/[0.08] blur-[100px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.025)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_72%)]" />
+        <div className="site-light-grid site-light-grid--right" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

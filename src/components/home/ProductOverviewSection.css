@@ -1,21 +1,103 @@
 .home-product-overview {
   background-image: radial-gradient(
-    ellipse 36rem 22rem at 20% 9rem,
-    color-mix(in srgb, var(--emerald) 7%, transparent),
-    transparent 75%
+    ellipse 36rem 26rem at 18% 9rem,
+    color-mix(in srgb, var(--soft-green) 65%, transparent),
+    transparent 78%
   ), radial-gradient(
     ellipse 44rem 30rem at 78% 68%,
-    color-mix(in srgb, var(--soft-green) 45%, transparent),
+    color-mix(in srgb, var(--soft-green) 55%, transparent),
     transparent 78%
   );
 }
 
 .home-product-overview .product-dashboard-shell {
-  box-shadow: var(--shadow-card), inset 0 1px 0 var(--white);
+  border-color: color-mix(in srgb, var(--border) 85%, var(--emerald));
+  box-shadow: var(--shadow-card-hover), inset 0 1px 0 var(--white);
+}
+
+.home-product-overview .product-service-sidebar {
+  background: color-mix(in srgb, var(--light) 35%, var(--white));
+}
+
+.home-product-overview .product-service-option {
+  border-color: transparent;
+  background: transparent;
+  transition: background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.home-product-overview .product-service-option::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 1rem;
+  bottom: 1rem;
+  width: 3px;
+  border-radius: var(--radius-full);
+  background: var(--emerald-hover);
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.home-product-overview .product-service-option[aria-selected="true"] {
+  border-color: color-mix(in srgb, var(--emerald) 20%, var(--border));
+  background: color-mix(in srgb, var(--soft-green) 45%, var(--white));
+  box-shadow: var(--shadow-card);
+}
+
+.home-product-overview .product-service-option[aria-selected="true"]::before {
+  opacity: 1;
+}
+
+.home-product-overview .product-service-icon {
+  box-shadow: var(--shadow-sm);
 }
 
 .home-product-overview .product-dashboard-panels {
   display: grid;
+  background: radial-gradient(ellipse at 90% 5%, color-mix(in srgb, var(--soft-green) 35%, transparent), transparent 65%), var(--light);
+}
+
+.home-product-overview .product-preview-window {
+  box-shadow: var(--shadow-card);
+}
+
+.home-product-overview .product-preview-body {
+  background: color-mix(in srgb, var(--border) 12%, var(--white));
+}
+
+.home-product-overview .product-preview-surface {
+  box-shadow: var(--shadow-sm);
+}
+
+.home-product-overview .product-report-surface {
+  background: radial-gradient(ellipse at 50% 10%, color-mix(in srgb, var(--soft-green) 38%, transparent), transparent 75%), var(--white);
+}
+
+.home-product-overview .product-asset-result,
+.home-product-overview .product-report-surface,
+.home-product-overview .product-discovery-root,
+.home-product-overview .product-security-result {
+  transition: transform 240ms ease-out, border-color 240ms ease, box-shadow 240ms ease, background-color 240ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-product-overview .product-service-option[aria-selected="false"]:hover {
+    border-color: var(--border);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .home-product-overview .product-asset-result:hover,
+  .home-product-overview .product-report-surface:hover,
+  .home-product-overview .product-discovery-root:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--emerald) 30%, var(--border));
+    box-shadow: var(--shadow-card);
+  }
+
+  .home-product-overview .product-security-result:hover {
+    background-color: color-mix(in srgb, var(--soft-green) 25%, var(--white));
+  }
 }
 
 /* Both panels share one grid cell, keeping the section stable while they fade. */
@@ -35,7 +117,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-product-overview .product-dashboard-panel { transition: none; }
+  .home-product-overview .product-dashboard-panel,
+  .home-product-overview .product-service-option,
+  .home-product-overview .product-service-option::before,
+  .home-product-overview .product-asset-result,
+  .home-product-overview .product-report-surface,
+  .home-product-overview .product-discovery-root,
+  .home-product-overview .product-security-result { transition: none; }
+
+  .home-product-overview .product-asset-result:hover,
+  .home-product-overview .product-report-surface:hover,
+  .home-product-overview .product-discovery-root:hover { transform: none; }
 }
 
 /* Compact tree connections on phones; the wider layout uses the inline SVG. */

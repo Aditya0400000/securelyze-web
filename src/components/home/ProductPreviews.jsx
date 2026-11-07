@@ -47,22 +47,26 @@ const SECURITY_CHECKS = [
 
 function PreviewFrame({ children }) {
   return (
-    <figure className="flex min-h-72 w-full flex-1 flex-col rounded-xl border border-border bg-light p-3 sm:p-4">
-      <figcaption className="mb-4 flex items-center justify-between gap-3">
-        <span className="font-mono text-[11px] text-text-secondary">example.com</span>
-        <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-white px-2 py-1 text-[10px] font-medium text-text-muted">
+    <figure className="product-preview-window flex min-h-72 w-full flex-1 flex-col overflow-hidden rounded-xl border border-border bg-light">
+      <figcaption className="product-preview-browser flex flex-wrap items-center justify-between gap-2 border-b border-border-subtle bg-white px-3 py-3 sm:px-4">
+        <span className="flex min-w-0 items-center gap-3">
+          <span aria-hidden="true" className="flex shrink-0 gap-1">{[0, 1, 2].map(dot => <span key={dot} className="size-1 rounded-full bg-text-muted/25" />)}</span>
+          <span className="font-mono text-[11px] text-text-secondary">example.com</span>
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-md border border-border-subtle bg-light px-2 py-1 text-[10px] font-medium text-text-muted">
           <span aria-hidden="true" className="size-1 rounded-full bg-emerald-hover" />
           Sample data
         </span>
       </figcaption>
-      {children}
+      <div className="product-preview-body flex flex-1 flex-col p-3 sm:p-4">{children}</div>
     </figure>
   );
 }
 
 function ResultBadge({ status, tone = "pass" }) {
   return (
-    <span className={`shrink-0 rounded-md px-1.5 py-1 text-[10px] font-medium leading-3 ${tone === "warning" ? "bg-[var(--status-warning-bg)] text-[var(--status-warning-text)]" : "bg-[var(--status-pass-bg)] text-[var(--status-pass-text)]"}`}>
+    <span className={`inline-flex shrink-0 items-center gap-1 rounded-md px-1.5 py-1 text-[10px] font-medium leading-3 ${tone === "warning" ? "bg-[var(--status-warning-bg)] text-[var(--status-warning-text)]" : "bg-[var(--status-pass-bg)] text-[var(--status-pass-text)]"}`}>
+      <span aria-hidden="true" className="size-1 rounded-full bg-current opacity-70" />
       {status}
     </span>
   );
@@ -72,11 +76,11 @@ export function SecurityCheckPreview() {
   return (
     <PreviewFrame>
       <div className="grid flex-1 gap-3 sm:grid-cols-[minmax(0,1.2fr)_minmax(0,.8fr)]">
-        <ul aria-label="Sample website security check results" className="flex flex-col justify-center divide-y divide-border-subtle rounded-xl border border-border bg-white px-3">
+        <ul aria-label="Sample website security check results" className="product-preview-surface flex flex-col justify-center divide-y divide-border-subtle rounded-xl border border-border bg-white px-3">
           {SECURITY_CHECKS.map(({ label, icon: Icon, status, tone }) => (
-            <li key={label} className="flex min-h-12 items-center justify-between gap-2 py-2.5">
+            <li key={label} className="product-security-result flex min-h-12 items-center justify-between gap-2 py-2.5">
               <span className="flex min-w-0 items-center gap-2 text-[12px] font-medium leading-4 text-charcoal">
-                <span className="shrink-0 text-emerald-hover">
+                <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-soft-green/25 text-emerald-hover">
                   {typeof Icon === "string" ? <ProductIcon name={Icon} className="size-4" /> : <Icon className="size-4" />}
                 </span>
                 {label}
@@ -85,7 +89,7 @@ export function SecurityCheckPreview() {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 sm:flex-col sm:justify-center sm:text-center">
+        <div className="product-preview-surface product-report-surface flex items-center gap-3 rounded-xl border border-border bg-white p-4 sm:flex-col sm:justify-center sm:text-center">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border bg-light text-emerald-hover sm:size-12">
             <ProductIcon name="shield" className="size-6" />
           </span>
@@ -116,7 +120,7 @@ export function AssetDiscoveryPreview() {
   return (
     <PreviewFrame>
       <div className="grid flex-1 sm:grid-cols-[minmax(0,.8fr)_2rem_minmax(0,1.2fr)] sm:items-center">
-        <div className="flex items-center justify-center gap-2 rounded-xl border border-emerald/15 bg-white px-3 py-3 sm:flex-col sm:gap-2.5 sm:py-4">
+        <div className="product-preview-surface product-discovery-root flex items-center justify-center gap-2 rounded-xl border border-emerald/15 bg-white px-3 py-3 sm:flex-col sm:gap-2.5 sm:py-4">
           <GlobeIcon className="size-5 shrink-0 text-emerald-hover" />
           <span className="whitespace-nowrap font-mono text-[11px] font-medium text-charcoal">example.com</span>
         </div>
@@ -126,8 +130,8 @@ export function AssetDiscoveryPreview() {
         </svg>
         <ul aria-label="Sample assets related to example.com" className="product-discovery-nodes grid gap-3">
           {DISCOVERY_NODES.map(({ label, example, icon: Icon }) => (
-            <li key={label} className="flex min-h-16 items-center gap-2.5 rounded-xl border border-border bg-white px-3 py-2">
-              <span className="shrink-0 text-emerald-hover"><Icon className="size-4" /></span>
+            <li key={label} className="product-preview-surface product-asset-result flex min-h-16 items-center gap-2.5 rounded-xl border border-border bg-white px-3 py-2">
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-soft-green/25 text-emerald-hover"><Icon className="size-4" /></span>
               <div className="min-w-0">
                 <p className="text-[12px] font-medium leading-4 text-charcoal">{label}</p>
                 <p className="mt-1 text-[10px] leading-4 text-text-muted">{example}</p>

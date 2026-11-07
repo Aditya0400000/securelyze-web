@@ -189,6 +189,7 @@ export default function SolutionsOverviewPage() {
         aria-labelledby="solutions-heading"
         className="relative isolate overflow-hidden border-b border-border bg-gradient-to-b from-light via-white to-white py-16 sm:py-20 lg:py-24"
       >
+        <div aria-hidden="true" className="site-light-grid site-light-grid--center -z-10" />
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[56rem] text-center">
             <p className="relative mx-auto flex w-fit items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-dark-green">

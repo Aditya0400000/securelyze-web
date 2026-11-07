@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import {
   CertificateIcon,
   CodeIcon,
@@ -67,10 +68,7 @@ export default function AboutSignals() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-12 lg:items-end lg:gap-10">
           <div className="lg:col-span-7">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
-              <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
-              Understanding the platform
-            </p>
+            <HomeSectionBadge>Understanding the platform</HomeSectionBadge>
             <h2
               id="signals-heading"
               className="mt-4 max-w-[39rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"

@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* Static Resources-style squares, softly localized behind light-page content. */
+.site-light-grid {
+  --site-grid-position: 38% 42%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--charcoal) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--charcoal) 5%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at var(--site-grid-position), black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
+  mask-image: radial-gradient(ellipse 65% 55% at var(--site-grid-position), black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
+}
+
+.site-light-grid--center {
+  --site-grid-position: 50% 42%;
+}
+
+.site-light-grid--right {
+  --site-grid-position: 68% 40%;
+}
+
 /* ==========================================================================
    SECURELYZE CENTRALIZED GLOBAL DESIGN SYSTEM
    All core design values, colors, typography, surfaces, buttons, forms,

@@ -35,18 +35,15 @@ export default function HeroScanVisual() {
         </div>
 
         <div className="hero-card-scene__overview">
-          <div className="flex items-start justify-between gap-3">
-            <div>
+          <div className="flex items-center justify-between gap-3">
               <h2 className="text-[17px] font-semibold tracking-[-0.035em] sm:text-[19px]">Security Overview</h2>
-              <span className="mt-2 inline-flex items-center gap-1.5 rounded-md bg-light px-2 py-1 text-[10px] font-medium text-text-muted">
+              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-md bg-light px-2 py-1 text-[10px] font-medium text-text-muted">
                 <span className="h-1 w-1 rounded-full bg-emerald-hover" />Sample data
               </span>
-            </div>
-            <span className="text-text-muted/60"><SecurityIcon className="h-4 w-4" /></span>
           </div>
 
           <div className="hero-card-scene__overview-body">
-            <span className="hero-card-scene__shield"><SecurityIcon className="h-10 w-10" /></span>
+            <span className="hero-card-scene__shield"><SecurityIcon className="h-7 w-7" /></span>
             <p className="mt-3 text-[12px] font-medium leading-5">Website Security Check</p>
             <p className="mt-1 font-mono text-[10px] text-text-muted">example.com</p>
           </div>
@@ -59,7 +56,7 @@ export default function HeroScanVisual() {
             <div className="min-w-0 flex-1">
               <h3 className="text-[12px] font-semibold leading-5 tracking-[-0.015em] sm:text-[13px]">{check.label}</h3>
               <p className="mt-0.5 text-[10px] leading-4 text-text-muted sm:text-[11px]">{check.detail}</p>
-              <div className="hero-card-scene__progress"><span /></div>
+              <div className="hero-card-scene__progress">{[0, 1, 2, 3, 4].map(segment => <span key={segment} />)}</div>
             </div>
           </div>
         ))}

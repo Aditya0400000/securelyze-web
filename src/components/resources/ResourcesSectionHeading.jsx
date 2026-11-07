@@ -1,3 +1,5 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
+
 export default function ResourcesSectionHeading({
   id,
   eyebrow,
@@ -17,23 +19,7 @@ export default function ResourcesSectionHeading({
     <div
       className={`${isCentered ? "mx-auto max-w-[45rem] text-center" : "max-w-[44rem]"} ${className}`}
     >
-      <p
-        className={`flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] ${
-          isCentered ? "justify-center" : ""
-        } ${isDark ? "text-[#10B981]" : "text-[#059669]"}`}
-      >
-        <span
-          aria-hidden="true"
-          className={`h-px w-8 ${isDark ? "bg-[#10B981]/45" : "bg-[#059669]/45"}`}
-        />
-        {eyebrow}
-        {isCentered ? (
-          <span
-            aria-hidden="true"
-            className={`h-px w-8 ${isDark ? "bg-[#10B981]/45" : "bg-[#059669]/45"}`}
-          />
-        ) : null}
-      </p>
+      <HomeSectionBadge>{eyebrow}</HomeSectionBadge>
 
       <Heading
         id={id}

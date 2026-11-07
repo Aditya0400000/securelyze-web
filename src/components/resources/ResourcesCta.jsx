@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 
 import { ArrowRightIcon } from "../about/AboutIcons";
 import SmoothAnchor from "./SmoothAnchor";
@@ -16,6 +17,7 @@ function ActionLink({ href, className, children }) {
 export default function ResourcesCta({
   id = "resources-cta",
   eyebrow = "Keep learning",
+  badgeEyebrow = false,
   heading,
   description,
   primary,
@@ -42,13 +44,17 @@ export default function ResourcesCta({
 
           <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12">
             <div className="min-w-0">
-              <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald">
-                <span
-                  aria-hidden="true"
-                  className="size-1.5 rounded-full bg-emerald"
-                />
-                {eyebrow}
-              </p>
+              {badgeEyebrow ? (
+                <HomeSectionBadge>{eyebrow}</HomeSectionBadge>
+              ) : (
+                <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald">
+                  <span
+                    aria-hidden="true"
+                    className="size-1.5 rounded-full bg-emerald"
+                  />
+                  {eyebrow}
+                </p>
+              )}
 
               <h2
                 id={`${id}-heading`}

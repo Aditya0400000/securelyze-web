@@ -277,6 +277,7 @@ function SecurityTeamsHero() {
       aria-labelledby="security-teams-heading"
       className="relative isolate overflow-hidden border-b border-border bg-gradient-to-b from-light via-background to-white py-16 font-sans sm:py-20 lg:py-24"
     >
+      <div aria-hidden="true" className="site-light-grid site-light-grid--right" />
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-center xl:grid-cols-[minmax(0,1fr)_24rem] xl:gap-16">
           <div className="min-w-0 max-w-[52rem]">

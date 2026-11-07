@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import Link from "next/link";
 
 import {
@@ -32,11 +33,7 @@ export default function AboutTools() {
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[44rem] text-center">
-          <p className="flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
-            <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
-            The tools
-            <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
-          </p>
+          <HomeSectionBadge>The tools</HomeSectionBadge>
           <h2
             id="tools-heading"
             className="mt-4 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
@@ -204,13 +201,7 @@ export default function AboutTools() {
 
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
             <div>
-              <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#10B981]">
-                <span
-                  aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-[#10B981]"
-                />
-                Start with visibility
-              </p>
+              <HomeSectionBadge>Start with visibility</HomeSectionBadge>
               <h2 className="mt-4 max-w-[37rem] text-balance text-[1.65rem] font-bold leading-[1.14] tracking-[-0.045em] text-white sm:text-[2.1rem]">
                 Start Exploring Your Security
               </h2>

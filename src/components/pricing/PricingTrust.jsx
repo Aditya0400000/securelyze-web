@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import { EyeIcon, LayersIcon, WalletOffIcon } from "./PricingIcons";
 
 const POINTS = [
@@ -47,15 +48,12 @@ export default function PricingTrust() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.025)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_0%_50%,black,transparent_58%)]"
+            className="site-light-grid"
           />
 
           <div className="relative grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start lg:gap-12">
             <div>
-              <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#047857]">
-                <span aria-hidden="true" className="h-px w-8 bg-[#047857]/45" />
-                What makes the information useful
-              </p>
+              <HomeSectionBadge>What makes the information useful</HomeSectionBadge>
               <h2
                 id="pricing-trust-heading"
                 className="mt-4 max-w-[24rem] text-balance text-[1.7rem] font-bold leading-[1.12] tracking-[-0.045em] text-[#101A18] sm:text-[2rem] lg:text-[2.2rem]"

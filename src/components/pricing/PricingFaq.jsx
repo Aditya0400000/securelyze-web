@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import { CheckIcon, ChevronDownIcon } from "./PricingIcons";
 
 const FAQS = [
@@ -58,10 +59,7 @@ export default function PricingFaq() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-9 lg:grid-cols-12 lg:gap-14">
           <div className="min-w-0 lg:col-span-4">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#047857]">
-              <span aria-hidden="true" className="h-px w-8 bg-[#047857]/45" />
-              FAQ
-            </p>
+            <HomeSectionBadge>FAQ</HomeSectionBadge>
             <h2
               id="pricing-faq-heading"
               className="mt-4 max-w-[25rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem]"

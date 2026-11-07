@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import { ChevronDownIcon } from "../pricing/PricingIcons";
 
 const FAQS = [
@@ -32,9 +33,7 @@ export default function ResourcesQuickAnswers() {
     >
       <div className="grid gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-10">
         <div>
-          <p className="text-[9px] font-semibold uppercase tracking-[0.17em] text-[#059669]">
-            Quick answers
-          </p>
+          <HomeSectionBadge>Quick answers</HomeSectionBadge>
           <h3
             id="faqs-heading"
             className="mt-2 text-[1.35rem] font-semibold leading-[1.2] tracking-[-0.035em] text-[#101A18] sm:text-[1.5rem]"

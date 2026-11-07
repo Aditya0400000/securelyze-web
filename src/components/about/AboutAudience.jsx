@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import {
   CompassIcon,
   DeveloperIcon,
@@ -53,10 +54,7 @@ export default function AboutAudience() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="min-w-0 lg:col-span-5">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#059669]">
-              <span aria-hidden="true" className="h-px w-8 bg-[#059669]/45" />
-              Who it helps
-            </p>
+            <HomeSectionBadge>Who it helps</HomeSectionBadge>
             <h2
               id="audience-heading"
               className="mt-4 max-w-[32rem] text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"
@@ -149,9 +147,7 @@ export default function AboutAudience() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-[#34D399]/35 bg-white/65 text-[#047857]">
                   <CompassIcon className="h-4 w-4" />
                 </span>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#047857]">
-                  Our mission
-                </p>
+                <HomeSectionBadge>Our mission</HomeSectionBadge>
               </div>
               <h3
                 id="mission-heading"

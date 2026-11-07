@@ -32,7 +32,7 @@ export default function ContactContent() {
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-[-12rem] size-[34rem] rounded-full bg-soft-green/65 blur-3xl" />
           <div className="absolute right-[-8rem] top-[-4rem] size-[26rem] rounded-full bg-emerald/10 blur-3xl" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.03)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_34%_0%,black,transparent_72%)]" />
+          <div className="site-light-grid site-light-grid--right" />
         </div>
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center lg:gap-14 lg:px-8 xl:grid-cols-[minmax(0,1fr)_26rem]">

@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import Link from "next/link";
 
 import { ArrowRightIcon, CheckIcon } from "./PricingIcons";
@@ -448,18 +449,12 @@ export default function PricingHero() {
         <div className="absolute -left-28 bottom-[-10rem] h-[24rem] w-[24rem] rounded-full border border-[#E2E8F0]" />
         <div className="absolute -right-36 top-24 h-[30rem] w-[30rem] rounded-full border border-[#E2E8F0]/80" />
         <div className="absolute -right-20 top-40 h-[21rem] w-[21rem] rounded-full border border-dashed border-[#E2E8F0]/80" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.022)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.022)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_28%,black,transparent_72%)]" />
+        <div className="site-light-grid site-light-grid--center" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[52rem] text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-[#E2E8F0] bg-white/60 px-3.5 py-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#475569] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-sm">
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#10B981] shadow-[0_0_10px_rgba(16,185,129,0.55)]"
-            />
-            SIMPLE PRICING
-          </p>
+          <HomeSectionBadge>SIMPLE PRICING</HomeSectionBadge>
 
           <h1
             id="pricing-plans-heading"

@@ -263,6 +263,7 @@ function SecurityTopicHero({ topic, heroVisual }) {
       className="relative isolate overflow-hidden border-b border-border bg-gradient-to-b from-light via-background to-white font-sans selection:bg-emerald selection:text-charcoal"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div aria-hidden="true" className="site-light-grid" />
         <div className="absolute -left-24 top-[-12rem] h-[30rem] w-[30rem] rounded-full bg-soft-green/40 blur-3xl" />
         <div className="absolute right-[-8rem] top-[-5rem] h-[24rem] w-[24rem] rounded-full bg-emerald/10 blur-3xl" />
         <div className="absolute bottom-0 left-1/2 h-40 w-[42rem] -translate-x-1/2 rounded-full bg-emerald/5 blur-3xl" />

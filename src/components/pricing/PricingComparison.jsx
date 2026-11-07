@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import { CheckIcon } from "./PricingIcons";
 
 // Keep these lists in sync with the plan features shown in PricingHero.
@@ -114,18 +115,12 @@ export default function PricingComparison() {
         <div className="absolute left-1/2 top-0 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-[#E2E8F0]/55 blur-[110px]" />
         <div className="absolute -left-28 bottom-16 h-64 w-64 rounded-full border border-[#E2E8F0]" />
         <div className="absolute -right-32 top-20 h-80 w-80 rounded-full border border-dashed border-[#E2E8F0]/80" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,26,24,0.022)_1px,transparent_1px),linear-gradient(90deg,rgba(16,26,24,0.022)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_18%,black,transparent_68%)]" />
+        <div className="site-light-grid site-light-grid--right" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[48rem] text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-[#E2E8F0] bg-white/70 px-3.5 py-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#475569] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-sm">
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#10B981] shadow-[0_0_10px_rgba(16,185,129,0.55)]"
-            />
-            What&rsquo;s included
-          </p>
+          <HomeSectionBadge>What&rsquo;s included</HomeSectionBadge>
 
           <h2
             id="plans-features-heading"

@@ -1,3 +1,4 @@
+import HomeSectionBadge from "@/components/home/HomeSectionBadge";
 import Link from "next/link";
 
 import {
@@ -37,11 +38,7 @@ export default function PricingTools() {
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[45rem] text-center">
-          <p className="flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#047857]">
-            <span aria-hidden="true" className="h-px w-8 bg-[#047857]/45" />
-            The tools
-            <span aria-hidden="true" className="h-px w-8 bg-[#047857]/45" />
-          </p>
+          <HomeSectionBadge>The tools</HomeSectionBadge>
           <h2
             id="pricing-tools-heading"
             className="mt-4 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.045em] text-[#101A18] sm:text-[2.35rem] lg:text-[2.7rem]"

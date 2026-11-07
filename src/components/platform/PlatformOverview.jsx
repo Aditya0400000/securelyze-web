@@ -84,6 +84,7 @@ export default function PlatformOverview() {
       className="relative scroll-mt-24 overflow-hidden bg-gradient-to-b from-light via-background to-white py-16 font-sans sm:py-20 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div aria-hidden="true" className="site-light-grid site-light-grid--center" />
         <div className="absolute left-1/2 top-0 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-border/55 blur-[110px]" />
         <div className="absolute -left-28 bottom-10 h-64 w-64 rounded-full border border-border" />
         <div className="absolute -right-32 top-16 h-80 w-80 rounded-full border border-dashed border-border/80" />
