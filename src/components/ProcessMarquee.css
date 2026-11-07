@@ -1,0 +1,40 @@
+/* Remove only the shared Hero/strip boundary; other Hero styling is untouched. */
+.home-light-hero:has(+ .home-feature-strip) {
+  border-bottom-width: 0;
+}
+
+.home-feature-strip .home-feature-strip__frame::before,
+.home-feature-strip .home-feature-strip__frame::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.home-feature-strip .home-feature-strip__frame::before {
+  left: 0;
+  border-right: 0;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.home-feature-strip .home-feature-strip__frame::after {
+  right: 0;
+  border-left: 0;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.home-feature-strip .home-feature-strip__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 1.25rem;
+  background: var(--border);
+  transform: translateY(-50%);
+  pointer-events: none;
+}

@@ -1,3 +1,5 @@
+import "./ProcessMarquee.css";
+
 const PROCESS_ITEMS = [
   { label: "Subdomain Discovery", icon: "subdomains" },
   { label: "Asset Discovery", icon: "assets" },
@@ -77,34 +79,36 @@ export default function ProcessMarquee() {
   return (
     <section
       aria-labelledby="process-marquee-heading"
-      className="home-feature-strip relative z-10 border-y border-border bg-white font-sans text-charcoal shadow-sm"
+      className="home-feature-strip relative z-10 bg-white font-sans text-charcoal"
     >
       <h2 id="process-marquee-heading" className="sr-only">
         Security checks and asset discovery in the Securelyze process
       </h2>
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-          role="region"
-          aria-labelledby="process-marquee-heading"
-          tabIndex={0}
-          className="overflow-x-auto overscroll-x-contain scroll-smooth rounded-sm [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:scroll-auto"
-        >
-          <ul className="flex w-max min-w-full items-center py-5">
-            {PROCESS_ITEMS.map((item) => (
-              <li
-                key={item.label}
-                className="flex flex-1 shrink-0 items-center justify-center gap-2.5 whitespace-nowrap border-r border-border px-5 first:pl-0 last:border-r-0 last:pr-0 lg:px-3 xl:px-6"
-              >
-                <span aria-hidden="true" className="shrink-0 text-emerald-hover">
-                  <ProcessIcon name={item.icon} />
-                </span>
-                <span className="text-[12px] font-medium leading-5 tracking-[-0.01em] sm:text-[13px] lg:text-[12px] xl:text-[13px]">
-                  {item.label}
-                </span>
-              </li>
-            ))}
-          </ul>
+        <div className="home-feature-strip__frame relative px-4 sm:px-5">
+          <div
+            role="region"
+            aria-labelledby="process-marquee-heading"
+            tabIndex={0}
+            className="overflow-x-auto overscroll-x-contain scroll-smooth rounded-sm [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:scroll-auto"
+          >
+            <ul className="flex w-max min-w-full items-center py-5 sm:py-6">
+              {PROCESS_ITEMS.map((item) => (
+                <li
+                  key={item.label}
+                  className="home-feature-strip__item relative flex flex-1 shrink-0 items-center justify-center gap-2 whitespace-nowrap px-4 lg:px-2 xl:px-4"
+                >
+                  <span aria-hidden="true" className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-soft-green/40 text-emerald-hover">
+                    <ProcessIcon name={item.icon} />
+                  </span>
+                  <span className="text-[12px] font-medium leading-5 tracking-[-0.01em] xl:text-[13px]">
+                    {item.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
