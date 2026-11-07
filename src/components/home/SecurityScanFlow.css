@@ -1,0 +1,238 @@
+.home-security-flow {
+  background-image: radial-gradient(ellipse 42rem 30rem at 78% 64%, color-mix(in srgb, var(--soft-green) 55%, transparent), transparent 76%), radial-gradient(ellipse 32rem 20rem at 18% 12%, color-mix(in srgb, var(--emerald) 5%, transparent), transparent 75%);
+}
+
+.home-security-flow .scan-flow-workflow {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.home-security-flow .scan-flow-workflow::before {
+  content: "";
+  position: absolute;
+  left: 1.75rem;
+  top: 3.25rem;
+  bottom: 3.25rem;
+  width: 2px;
+  background: color-mix(in srgb, var(--emerald) 24%, var(--border));
+}
+
+.home-security-flow .scan-flow-step-button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 6.5rem;
+  border-radius: var(--radius-xl);
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.home-security-flow .scan-flow-step-button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.home-security-flow .scan-flow-step-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--white);
+  color: var(--emerald-hover);
+  transition: border-color 240ms ease, background-color 240ms ease;
+}
+
+.home-security-flow .scan-flow-step-number {
+  position: absolute;
+  right: -0.125rem;
+  bottom: -0.125rem;
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--white);
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.home-security-flow .scan-flow-step-copy {
+  padding: 0.875rem 0.75rem;
+  border-radius: var(--radius-xl);
+  transition: background-color 240ms ease;
+}
+
+.home-security-flow .scan-flow-step-button[aria-pressed="true"] .scan-flow-step-copy {
+  background: color-mix(in srgb, var(--soft-green) 35%, transparent);
+}
+
+.home-security-flow .scan-flow-step-button[aria-pressed="true"] .scan-flow-step-icon {
+  border-color: color-mix(in srgb, var(--emerald) 35%, var(--border));
+  background: var(--soft-green);
+}
+
+.home-security-flow .scan-flow-scene {
+  position: relative;
+  height: 22.5rem;
+  isolation: isolate;
+}
+
+.home-security-flow .scan-flow-connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.home-security-flow .scan-flow-path {
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: stroke 240ms ease;
+}
+
+.home-security-flow .scan-flow-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 13rem;
+  height: 13rem;
+  border: 1px solid color-mix(in srgb, var(--emerald) 12%, transparent);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--soft-green) 15%, transparent);
+  transform: translate(-50%, -50%);
+}
+
+.home-security-flow .scan-flow-hub::before,
+.home-security-flow .scan-flow-hub::after {
+  content: "";
+  position: absolute;
+  inset: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--emerald) 16%, transparent);
+  border-radius: inherit;
+}
+
+.home-security-flow .scan-flow-hub::after { inset: 2.5rem; }
+
+.home-security-flow .scan-flow-shield {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  height: 6.5rem;
+  border: 1px solid color-mix(in srgb, var(--emerald) 20%, transparent);
+  border-radius: var(--radius-3xl);
+  background: color-mix(in srgb, var(--soft-green) 75%, var(--white));
+  box-shadow: var(--shadow-card);
+}
+
+.home-security-flow .scan-flow-panel {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) 1.25rem;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: 5.25rem;
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+  transition: border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.home-security-flow .scan-flow-panel-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  color: var(--emerald-hover);
+}
+
+.home-security-flow .scan-flow-panel-copy { min-width: 0; }
+.home-security-flow .scan-flow-panel--tls { top: 0; left: 0; width: 44%; }
+.home-security-flow .scan-flow-panel--dns { top: 1.75rem; right: 0; width: 43%; }
+.home-security-flow .scan-flow-panel--headers { bottom: 1.75rem; left: 0; width: 46%; }
+.home-security-flow .scan-flow-panel--email { bottom: 0; right: 0; width: 44%; }
+
+.home-security-flow .scan-flow-composition[data-active-step="scan"] .scan-flow-panel--tls,
+.home-security-flow .scan-flow-composition[data-active-step="discover"] .scan-flow-panel--dns,
+.home-security-flow .scan-flow-composition[data-active-step="assess"] .scan-flow-panel--headers,
+.home-security-flow .scan-flow-composition[data-active-step="assess"] .scan-flow-panel--email {
+  border-color: color-mix(in srgb, var(--emerald) 40%, var(--border));
+}
+
+.home-security-flow [data-active-step="scan"] .scan-flow-path--scan,
+.home-security-flow [data-active-step="discover"] .scan-flow-path--discover,
+.home-security-flow [data-active-step="assess"] .scan-flow-path--assess {
+  stroke: color-mix(in srgb, var(--emerald) 55%, var(--border));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-security-flow .scan-flow-step-button:hover .scan-flow-step-copy {
+    background: color-mix(in srgb, var(--soft-green) 25%, transparent);
+  }
+  .home-security-flow .scan-flow-panel:hover {
+    border-color: color-mix(in srgb, var(--emerald) 45%, var(--border));
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@media (max-width: 639px) {
+  .home-security-flow .scan-flow-scene { height: auto; padding-top: 11rem; }
+  .home-security-flow .scan-flow-connections { display: none; }
+  .home-security-flow .scan-flow-hub {
+    top: 0;
+    width: 10rem;
+    height: 10rem;
+    transform: translateX(-50%);
+  }
+  .home-security-flow .scan-flow-shield { width: 5rem; height: 5.5rem; }
+  .home-security-flow .scan-flow-shield svg { width: 3rem; height: 3rem; }
+  .home-security-flow .scan-flow-layers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .home-security-flow .scan-flow-panel {
+    position: relative;
+    inset: auto;
+    width: auto;
+    grid-template-columns: minmax(0, 1fr) 1.25rem;
+    align-content: start;
+    gap: 0.625rem;
+    padding: 0.75rem;
+  }
+  .home-security-flow .scan-flow-panel-copy { grid-column: 1 / -1; grid-row: 2; }
+  .home-security-flow .scan-flow-indicator { grid-column: 2; grid-row: 1; }
+  .home-security-flow .scan-flow-scene::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 9rem;
+    height: 2rem;
+    border-left: 1px solid color-mix(in srgb, var(--emerald) 35%, var(--border));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-security-flow .scan-flow-step-icon,
+  .home-security-flow .scan-flow-step-copy,
+  .home-security-flow .scan-flow-path,
+  .home-security-flow .scan-flow-panel { transition: none; }
+}

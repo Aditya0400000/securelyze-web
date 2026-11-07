@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { CONTACT_URL, PLATFORM_LOGIN_URL } from "@/lib/siteLinks";
+import useNavbarVisibility from "./useNavbarVisibility";
+import "./Navbar.css";
 
 const HOMEPAGE_LINKS = {
   platform: "/#platform",
@@ -494,7 +496,7 @@ function ExploreCta({ className = "", onClick }) {
     <Link
       href={PLATFORM_LOGIN_URL}
       onClick={onClick}
-      className={`group inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-emerald px-4 text-[13px] font-semibold tracking-[-0.005em] text-charcoal shadow-[0_6px_18px_-12px_rgba(16,185,129,0.6)] transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-[0_10px_24px_-14px_rgba(5,150,105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
+      className={`navbar-explore-cta group inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-emerald px-4 text-[13px] font-semibold tracking-[-0.005em] text-charcoal shadow-[0_6px_18px_-12px_rgba(16,185,129,0.6)] transition-[transform,translate,background-color,box-shadow] duration-200 ease-out hover:bg-emerald-hover hover:shadow-[0_10px_24px_-14px_rgba(5,150,105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-px motion-reduce:transition-none ${className}`}
     >
       <span>Explore Full Platform</span>
       <ArrowRight
@@ -711,7 +713,7 @@ function DropdownContent({ item, onLinkClick }) {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ variant } = {}) {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState(null);
@@ -721,6 +723,8 @@ export default function Navbar() {
   const triggerRefs = useRef({});
   const menuRefs = useRef({});
   const hoverOpenedMenuRef = useRef(null);
+
+  useNavbarVisibility(headerRef, variant === "home");
 
   const closeNavigation = useCallback(() => {
     hoverOpenedMenuRef.current = null;
@@ -922,8 +926,9 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
+      data-navigation-open={Boolean(openMenu || mobileOpen)}
       onClickCapture={handleHeaderClickCapture}
-      className="sticky top-0 z-50 w-full border-b border-border bg-white/95 font-sans shadow-[0_1px_2px_rgba(16,26,24,0.035)] backdrop-blur-md"
+      className={`sticky top-0 z-50 w-full border-b border-border bg-white/95 font-sans shadow-[0_1px_2px_rgba(16,26,24,0.035)] backdrop-blur-md ${variant === "home" ? "homepage-navbar" : ""}`}
     >
       <nav
         aria-label="Primary"

@@ -14,7 +14,7 @@ export default function Home() {
   return (
    <main className="min-h-screen bg-white">
      <AnnouncementBar />
-     <Navbar />
+     <Navbar variant="home" />
      <HeroSection />
      <ProcessMarquee />
      <ProductOverviewSection />

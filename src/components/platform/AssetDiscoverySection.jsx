@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ArrowRightIcon } from "../about/AboutIcons";
-import AssetDiscoveryGlobeVisual from "./AssetDiscoveryGlobeVisual";
+import AssetDiscoveryStackVisual from "./AssetDiscoveryStackVisual";
 
 const ASSET_DISCOVERY_ROUTE = "/platform/asset-discovery";
 
@@ -99,7 +99,7 @@ export default function AssetDiscoverySection() {
           </div>
 
           <div className="min-w-0 lg:col-span-7">
-            <AssetDiscoveryGlobeVisual />
+            <AssetDiscoveryStackVisual />
           </div>
         </div>
 

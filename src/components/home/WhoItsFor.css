@@ -1,0 +1,23 @@
+.home-audiences {
+  background-image: radial-gradient(ellipse 42rem 28rem at 82% 30%, color-mix(in srgb, var(--soft-green) 40%, transparent), transparent 76%);
+}
+
+.home-audiences .audience-feature-card {
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-audiences .audience-feature-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--emerald) 35%, var(--border));
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-audiences .audience-feature-card,
+  .home-audiences .audience-feature-card:hover {
+    transition: none;
+    transform: none;
+  }
+}

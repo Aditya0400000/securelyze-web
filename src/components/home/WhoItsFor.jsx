@@ -1,4 +1,7 @@
 import Link from "next/link";
+import HomeSectionBadge from "./HomeSectionBadge";
+import AudiencePreview from "./AudiencePreviews";
+import "./WhoItsFor.css";
 
 const AUDIENCES = [
   {
@@ -62,11 +65,11 @@ function AudienceIcon({ name }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
       data-audience-icon={name}
-      className="size-5.5 text-emerald transition-transform duration-250 ease-out motion-safe:group-hover:-translate-y-0.5 motion-reduce:transition-none"
+      className="size-5 text-emerald-hover"
     >
       {ICON_PATHS[name].map((path) => <path key={path} d={path} />)}
     </svg>
@@ -77,31 +80,36 @@ function AudienceCard({ title, description, icon, href }) {
   return (
     <Link
       href={href}
-      className="group block h-full min-w-0 rounded-card border border-border bg-surface p-4 transition-[transform,border-color,box-shadow] duration-250 ease-out hover:border-emerald hover:shadow-[var(--shadow-card-ring)] focus-visible:border-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-safe:hover:-translate-y-1 motion-reduce:transition-none"
+      aria-labelledby={`who-audience-title-${icon}`}
+      aria-describedby={`who-audience-description-${icon}`}
+      className="audience-feature-card flex h-full min-w-0 flex-col rounded-3xl border border-border bg-white p-5 shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 focus-visible:ring-offset-white"
     >
-      <AudienceIcon name={icon} />
-      <h3 className="mb-1 mt-2.5 text-[15px] font-medium leading-snug text-charcoal">{title}</h3>
-      <p className="text-[13px] leading-[1.55] text-text-secondary">{description}</p>
+      <div className="flex items-center gap-3">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border bg-light"><AudienceIcon name={icon} /></span>
+        <h3 id={`who-audience-title-${icon}`} className="text-[18px] font-semibold leading-tight tracking-[-0.03em] text-charcoal">{title}</h3>
+      </div>
+      <p id={`who-audience-description-${icon}`} className="mt-3 text-[14px] leading-[1.7] text-text-secondary">{description}</p>
+      <div className="mt-auto pt-6"><AudiencePreview type={icon} /></div>
     </Link>
   );
 }
 
 export default function WhoItsFor() {
   return (
-    <section id="who-its-for" aria-labelledby="who-its-for-heading" className="bg-white pb-8 pt-9 font-sans sm:pb-10">
+    <section id="who-its-for" aria-labelledby="who-its-for-heading" className="home-audiences relative isolate overflow-hidden bg-white py-16 font-sans sm:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="inline-flex rounded-full border border-soft-green bg-soft-green/30 px-3 py-1.5 text-xs font-medium text-emerald-hover">
+        <HomeSectionBadge>
           Who it is for
-        </p>
-        <h2 id="who-its-for-heading" className="heading-2 mt-3 max-w-3xl text-balance">
+        </HomeSectionBadge>
+        <h2 id="who-its-for-heading" className="mt-5 max-w-4xl text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.045em] text-charcoal sm:text-[36px] lg:text-[44px]">
           Who Can Use Securelyze?
         </h2>
-        <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-text-secondary sm:text-base">
+        <p className="mt-5 max-w-3xl text-pretty text-[15px] leading-[1.75] text-text-secondary sm:text-base">
           Securelyze helps people responsible for websites, applications, and
           internet-facing infrastructure understand their security
           configurations and publicly visible assets.
         </p>
-        <ul className="mt-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-9 grid auto-rows-fr grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-10 xl:grid-cols-4">
           {AUDIENCES.map((audience) => (
             <li key={audience.href} className="min-w-0">
               <AudienceCard {...audience} />

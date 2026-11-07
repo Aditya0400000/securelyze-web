@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ArrowRightIcon } from "./AboutIcons";
-import AboutBotVisual from "./AboutBotVisual";
+import AboutInfrastructureVisual from "./AboutInfrastructureVisual";
 
 const SIGNAL_LABELS = [
   "SSL/TLS",
@@ -87,7 +87,7 @@ export default function AboutHero() {
         </div>
 
         <div className="min-w-0">
-          <AboutBotVisual />
+          <AboutInfrastructureVisual />
         </div>
       </div>
     </section>

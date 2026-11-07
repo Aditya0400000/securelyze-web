@@ -12,7 +12,7 @@ function ProcessIcon({ name }) {
     "aria-hidden": "true",
     viewBox: "0 0 24 24",
     fill: "none",
-    className: "h-[17px] w-[17px]",
+    className: "h-[18px] w-[18px] shrink-0",
     stroke: "currentColor",
     strokeWidth: "1.6",
     strokeLinecap: "round",
@@ -73,40 +73,38 @@ function ProcessIcon({ name }) {
   );
 }
 
-function MarqueeGroup({ clone = false }) {
-  return (
-    <div
-      aria-hidden={clone ? "true" : undefined}
-      className={`process-marquee__group ${clone ? "process-marquee__clone" : ""}`.trim()}
-    >
-      {PROCESS_ITEMS.map((item) => (
-        <div key={item.label} className="process-marquee__item">
-          <span className="process-marquee__icon">
-            <ProcessIcon name={item.icon} />
-          </span>
-          <span className="process-marquee__label">{item.label}</span>
-          <span aria-hidden="true" className="process-marquee__separator" />
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function ProcessMarquee() {
   return (
     <section
       aria-labelledby="process-marquee-heading"
-      className="process-marquee relative overflow-hidden border-y border-white/10 bg-dark-green py-4 font-sans text-soft-green sm:py-5"
+      className="home-feature-strip relative z-10 border-y border-border bg-white font-sans text-charcoal shadow-sm"
     >
       <h2 id="process-marquee-heading" className="sr-only">
         Security checks and asset discovery in the Securelyze process
       </h2>
 
-      <div className="process-marquee__viewport relative overflow-hidden">
-        <div className="process-marquee__track flex w-max items-center">
-          {Array.from({ length: 8 }, (_, index) => (
-            <MarqueeGroup key={index} clone={index > 0} />
-          ))}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          role="region"
+          aria-labelledby="process-marquee-heading"
+          tabIndex={0}
+          className="overflow-x-auto overscroll-x-contain scroll-smooth rounded-sm [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus-ring motion-reduce:scroll-auto"
+        >
+          <ul className="flex w-max min-w-full items-center py-5">
+            {PROCESS_ITEMS.map((item) => (
+              <li
+                key={item.label}
+                className="flex flex-1 shrink-0 items-center justify-center gap-2.5 whitespace-nowrap border-r border-border px-5 first:pl-0 last:border-r-0 last:pr-0 lg:px-3 xl:px-6"
+              >
+                <span aria-hidden="true" className="shrink-0 text-emerald-hover">
+                  <ProcessIcon name={item.icon} />
+                </span>
+                <span className="text-[12px] font-medium leading-5 tracking-[-0.01em] sm:text-[13px] lg:text-[12px] xl:text-[13px]">
+                  {item.label}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

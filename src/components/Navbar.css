@@ -1,0 +1,72 @@
+/* Opt in on the homepage; shared navigation elsewhere stays unchanged. */
+.homepage-navbar {
+  background: var(--white);
+  border-color: color-mix(in srgb, var(--dark-green) 9%, transparent);
+  box-shadow: none;
+  transform: translateY(0);
+  transition: transform 240ms ease;
+}
+
+.homepage-navbar[data-scroll-hidden="true"] {
+  transform: translateY(calc(-100% - 1px));
+  pointer-events: none;
+}
+
+/* Reveal synchronously before the browser scrolls a focused link into view. */
+.homepage-navbar:focus-within {
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: none;
+}
+
+.homepage-navbar nav[aria-label="Primary"] > div:first-of-type {
+  gap: 0.25rem;
+}
+
+.homepage-navbar .navbar-explore-cta {
+  height: var(--btn-height);
+  border-radius: var(--radius-btn);
+  background: var(--charcoal);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.homepage-navbar .navbar-explore-cta:hover {
+  background: var(--dark-green);
+  box-shadow: var(--shadow-sm);
+}
+
+.homepage-navbar .navbar-explore-cta svg {
+  color: var(--emerald-light);
+}
+
+.homepage-navbar nav[aria-label="Primary"] [id^="nav-trigger-"]:hover,
+.homepage-navbar nav[aria-label="Primary"] [id^="nav-trigger-"][aria-expanded="true"] {
+  background: var(--light);
+  color: var(--emerald-hover);
+}
+
+.homepage-navbar nav[aria-label="Primary"] a:hover {
+  color: var(--emerald-hover);
+}
+
+.homepage-navbar nav[aria-label="Primary"] .navbar-explore-cta:hover {
+  color: var(--white);
+}
+
+.homepage-navbar nav[aria-label="Primary"] > div:first-of-type > a:not(:hover),
+.homepage-navbar nav[aria-label="Primary"] [id^="nav-trigger-"]:not([aria-expanded="true"]):not(:hover) {
+  color: var(--text-primary);
+}
+
+/* Overlay the mobile menu without moving the hero or changing sticky height. */
+.homepage-navbar #mobile-navigation {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  box-shadow: var(--shadow-dropdown);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-navbar { transition: none; }
+}

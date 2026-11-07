@@ -1,0 +1,41 @@
+.about-infrastructure .about-infrastructure__scene {
+  transform-origin: 50% 50%;
+  transition: transform 300ms ease-out, filter 300ms ease-out;
+}
+
+.about-infrastructure .about-infrastructure__node {
+  transform-origin: 0 0;
+  transition: transform 300ms ease-out;
+}
+
+.about-infrastructure .about-infrastructure__tile {
+  transition: stroke 300ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-infrastructure:hover .about-infrastructure__scene {
+    transform: scale(1.025);
+    filter: drop-shadow(0 5px 8px color-mix(in srgb, var(--emerald-hover) 9%, transparent));
+  }
+
+  .about-infrastructure .about-infrastructure__node:hover {
+    transform: scale(1.04);
+  }
+
+  .about-infrastructure .about-infrastructure__node:hover .about-infrastructure__tile {
+    stroke: var(--soft-green-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-infrastructure .about-infrastructure__scene,
+  .about-infrastructure .about-infrastructure__node,
+  .about-infrastructure .about-infrastructure__tile {
+    transition: none;
+  }
+
+  .about-infrastructure:hover .about-infrastructure__scene,
+  .about-infrastructure .about-infrastructure__node:hover {
+    transform: none;
+  }
+}
